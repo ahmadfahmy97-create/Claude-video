@@ -101,6 +101,8 @@ const BigStat: React.FC<{g: G}> = ({g}) => {
   const slam = spring({frame, fps, config: {damping: 9, stiffness: 260, mass: 0.6}});
   const shake = frame < 8 ? Math.sin(frame * 2.2) * (8 - frame) * 1.6 : 0;
   return (
+    <>
+    {g.confetti ? <Confetti seed={g.value} /> : null}
     <Centered y={g.y ?? 420} style={{opacity: exit, transform: `translateY(-50%) translateX(${shake}px)`}}>
       <div
         style={{
@@ -134,6 +136,7 @@ const BigStat: React.FC<{g: G}> = ({g}) => {
       </div>
       <div style={{fontFamily: ANTON, fontSize: 64, color: 'white', marginTop: -6, opacity: enter, ...stroke(10)}}>{g.top}</div>
     </Centered>
+    </>
   );
 };
 

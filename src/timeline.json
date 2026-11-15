@@ -1,508 +1,510 @@
 {
  "fps": 30,
- "durationInFrames": 1675,
+ "durationInFrames": 1582,
  "captions": [
   {
-   "start": 0.04,
-   "end": 1.34,
+   "start": 0.08,
+   "end": 0.78,
    "words": [
     {
-     "text": "Cuma",
-     "start": 0.04,
-     "end": 0.34
-    },
-    {
-     "text": "ada",
-     "start": 0.34,
-     "end": 0.5
-    },
-    {
-     "text": "rangka",
-     "start": 0.5,
-     "end": 0.88
-    },
-    {
-     "text": "saja",
-     "start": 0.88,
-     "end": 1.34
-    }
-   ],
-   "y": 1300
-  },
-  {
-   "start": 1.34,
-   "end": 2.233,
-   "words": [
-    {
-     "text": "yang",
-     "start": 1.34,
-     "end": 1.64
-    },
-    {
-     "text": "saya",
-     "start": 1.64,
-     "end": 1.78
-    },
-    {
-     "text": "buat.",
-     "start": 1.78,
-     "end": 2.0
-    }
-   ],
-   "y": 1300
-  },
-  {
-   "start": 2.233,
-   "end": 2.913,
-   "words": [
-    {
-     "text": "Rangka",
-     "start": 2.233,
-     "end": 2.393
-    },
-    {
-     "text": "tiang,",
-     "start": 2.393,
-     "end": 2.893
-    }
-   ],
-   "y": 1300
-  },
-  {
-   "start": 2.913,
-   "end": 3.963,
-   "words": [
-    {
-     "text": "rangka",
-     "start": 2.913,
-     "end": 3.213
-    },
-    {
-     "text": "bumbung...",
-     "start": 3.213,
-     "end": 3.713
-    }
-   ],
-   "y": 1300
-  },
-  {
-   "start": 17.937,
-   "end": 19.577,
-   "words": [
-    {
-     "text": "Kita",
-     "start": 17.937,
-     "end": 18.397
-    },
-    {
-     "text": "tunjuk",
-     "start": 18.397,
-     "end": 18.877
-    },
-    {
-     "text": "agropelancongan",
-     "start": 18.877,
-     "end": 19.577
+     "text": "Cikgu,",
+     "start": 0.08,
+     "end": 0.64
     }
    ],
    "y": 1100
   },
   {
-   "start": 19.577,
-   "end": 19.657,
+   "start": 0.78,
+   "end": 1.48,
    "words": [
     {
-     "text": "kita.",
-     "start": 19.577,
-     "end": 19.657
-    }
-   ],
-   "y": 1100
-  },
-  {
-   "start": 19.657,
-   "end": 20.513,
-   "words": [
-    {
-     "text": "Satu,",
-     "start": 19.657,
-     "end": 20.513
-    }
-   ],
-   "y": 1100
-  },
-  {
-   "start": 20.513,
-   "end": 20.713,
-   "words": [
-    {
-     "text": "dua,",
-     "start": 20.513,
-     "end": 20.713
-    }
-   ],
-   "y": 1100
-  },
-  {
-   "start": 20.713,
-   "end": 21.22,
-   "words": [
-    {
-     "text": "tiga!",
-     "start": 20.713,
-     "end": 21.033
-    }
-   ],
-   "y": 1100
-  },
-  {
-   "start": 21.22,
-   "end": 22.897,
-   "words": [
-    {
-     "text": "Saya",
-     "start": 21.22,
-     "end": 21.5
-    },
-    {
-     "text": "rakamkan",
-     "start": 21.5,
-     "end": 22.437
-    },
-    {
-     "text": "jutaan",
-     "start": 22.437,
-     "end": 22.777
-    },
-    {
-     "text": "terima",
-     "start": 22.777,
-     "end": 22.897
-    }
-   ],
-   "y": 1200
-  },
-  {
-   "start": 22.897,
-   "end": 24.61,
-   "words": [
-    {
-     "text": "kasih",
-     "start": 22.897,
-     "end": 23.077
-    },
-    {
-     "text": "kepada",
-     "start": 23.077,
-     "end": 23.567
-    },
-    {
-     "text": "Pengarah",
-     "start": 23.567,
-     "end": 24.61
-    }
-   ],
-   "y": 1300
-  },
-  {
-   "start": 24.61,
-   "end": 25.31,
-   "words": [
-    {
-     "text": "FAMA,",
-     "start": 24.61,
-     "end": 25.07
-    }
-   ],
-   "y": 1300
-  },
-  {
-   "start": 25.31,
-   "end": 26.91,
-   "words": [
-    {
-     "text": "timbalan-timbalan",
-     "start": 25.31,
-     "end": 26.77
-    },
-    {
-     "text": "dan",
-     "start": 26.77,
-     "end": 26.91
-    }
-   ],
-   "y": 1300
-  },
-  {
-   "start": 26.91,
-   "end": 27.96,
-   "words": [
-    {
-     "text": "juga",
-     "start": 26.91,
-     "end": 27.07
-    },
-    {
-     "text": "rakan-rakan",
-     "start": 27.07,
-     "end": 27.43
-    },
-    {
-     "text": "FAMA.",
-     "start": 27.43,
-     "end": 27.71
-    }
-   ],
-   "y": 1300
-  },
-  {
-   "start": 28.147,
-   "end": 29.927,
-   "words": [
-    {
-     "text": "Tanpa",
-     "start": 28.147,
-     "end": 28.667
-    },
-    {
-     "text": "usaha",
-     "start": 28.667,
-     "end": 29.187
-    },
-    {
-     "text": "dan",
-     "start": 29.187,
-     "end": 29.467
-    },
-    {
-     "text": "sokongan",
-     "start": 29.467,
-     "end": 29.927
-    }
-   ],
-   "y": 1200
-  },
-  {
-   "start": 29.927,
-   "end": 31.067,
-   "words": [
-    {
-     "text": "tuan-tuan",
-     "start": 29.927,
-     "end": 30.307
-    },
-    {
-     "text": "dan",
-     "start": 30.307,
-     "end": 30.467
-    },
-    {
-     "text": "puan-puan,",
-     "start": 30.467,
-     "end": 30.987
-    }
-   ],
-   "y": 1300
-  },
-  {
-   "start": 31.067,
-   "end": 32.783,
-   "words": [
-    {
-     "text": "mungkin",
-     "start": 31.067,
-     "end": 31.727
-    },
-    {
-     "text": "tidak",
-     "start": 31.727,
-     "end": 32.283
-    },
-    {
-     "text": "adalah",
-     "start": 32.283,
-     "end": 32.543
+     "text": "universiti",
+     "start": 0.78,
+     "end": 1.08
     },
     {
      "text": "apa",
-     "start": 32.543,
-     "end": 32.783
+     "start": 1.08,
+     "end": 1.22
+    },
+    {
+     "text": "yang...",
+     "start": 1.22,
+     "end": 1.48
+    }
+   ],
+   "y": 1100
+  },
+  {
+   "start": 1.48,
+   "end": 2.46,
+   "words": [
+    {
+     "text": "NUS?",
+     "start": 1.48,
+     "end": 2.24
+    }
+   ],
+   "y": 760
+  },
+  {
+   "start": 2.46,
+   "end": 2.993,
+   "words": [
+    {
+     "text": "Singapura.",
+     "start": 2.46,
+     "end": 2.78
+    }
+   ],
+   "y": 760
+  },
+  {
+   "start": 2.993,
+   "end": 3.967,
+   "words": [
+    {
+     "text": "Itu",
+     "start": 2.993,
+     "end": 3.273
+    },
+    {
+     "text": "the",
+     "start": 3.273,
+     "end": 3.713
+    },
+    {
+     "text": "best.",
+     "start": 3.713,
+     "end": 3.913
     }
    ],
    "y": 1300
   },
   {
-   "start": 32.783,
-   "end": 33.993,
+   "start": 3.967,
+   "end": 4.713,
    "words": [
     {
-     "text": "yang",
-     "start": 32.783,
-     "end": 32.943
+     "text": "Top",
+     "start": 3.967,
+     "end": 4.133
     },
     {
-     "text": "kita",
-     "start": 32.943,
-     "end": 33.203
-    },
-    {
-     "text": "ada",
-     "start": 33.203,
-     "end": 33.733
-    },
-    {
-     "text": "hari",
-     "start": 33.733,
-     "end": 33.993
+     "text": "5.",
+     "start": 4.133,
+     "end": 4.563
     }
    ],
    "y": 1300
   },
   {
-   "start": 33.993,
-   "end": 34.533,
+   "start": 4.713,
+   "end": 5.493,
    "words": [
     {
-     "text": "ini",
-     "start": 33.993,
-     "end": 34.233
+     "text": "Sampai",
+     "start": 4.713,
+     "end": 4.913
     },
     {
-     "text": "di",
-     "start": 34.233,
-     "end": 34.353
+     "text": "mereka",
+     "start": 4.913,
+     "end": 5.113
     },
     {
-     "text": "sini.",
-     "start": 34.353,
-     "end": 34.533
+     "text": "pun",
+     "start": 5.113,
+     "end": 5.273
+    },
+    {
+     "text": "mai",
+     "start": 5.273,
+     "end": 5.493
+    }
+   ],
+   "y": 1400
+  },
+  {
+   "start": 5.493,
+   "end": 6.263,
+   "words": [
+    {
+     "text": "buat",
+     "start": 5.493,
+     "end": 5.653
+    },
+    {
+     "text": "kajian.",
+     "start": 5.653,
+     "end": 6.013
+    }
+   ],
+   "y": 1300
+  },
+  {
+   "start": 16.58,
+   "end": 18.36,
+   "words": [
+    {
+     "text": "Tanpa",
+     "start": 16.58,
+     "end": 17.1
+    },
+    {
+     "text": "usaha",
+     "start": 17.1,
+     "end": 17.62
+    },
+    {
+     "text": "dan",
+     "start": 17.62,
+     "end": 17.9
+    },
+    {
+     "text": "sokongan",
+     "start": 17.9,
+     "end": 18.36
     }
    ],
    "y": 1200
   },
   {
-   "start": 34.533,
-   "end": 37.167,
+   "start": 18.36,
+   "end": 19.5,
    "words": [
     {
-     "text": "Maka",
-     "start": 34.533,
-     "end": 34.767
+     "text": "tuan-tuan",
+     "start": 18.36,
+     "end": 18.74
     },
-    {
-     "text": "datanglah",
-     "start": 34.767,
-     "end": 36.1
-    },
-    {
-     "text": "sokongan",
-     "start": 36.1,
-     "end": 37.167
-    }
-   ],
-   "y": 1300
-  },
-  {
-   "start": 37.167,
-   "end": 37.967,
-   "words": [
     {
      "text": "dan",
-     "start": 37.167,
-     "end": 37.327
+     "start": 18.74,
+     "end": 18.9
     },
     {
-     "text": "sumbangan",
-     "start": 37.327,
-     "end": 37.687
-    },
-    {
-     "text": "ini,",
-     "start": 37.687,
-     "end": 37.927
+     "text": "puan-puan,",
+     "start": 18.9,
+     "end": 19.42
     }
    ],
    "y": 1300
   },
   {
-   "start": 37.967,
-   "end": 39.32,
+   "start": 19.5,
+   "end": 21.217,
    "words": [
     {
-     "text": "maka",
-     "start": 37.967,
-     "end": 38.487
+     "text": "mungkin",
+     "start": 19.5,
+     "end": 20.16
     },
     {
-     "text": "inilah",
-     "start": 38.487,
-     "end": 38.84
+     "text": "tidak",
+     "start": 20.16,
+     "end": 20.717
     },
+    {
+     "text": "adalah",
+     "start": 20.717,
+     "end": 20.977
+    },
+    {
+     "text": "apa",
+     "start": 20.977,
+     "end": 21.217
+    }
+   ],
+   "y": 1300
+  },
+  {
+   "start": 21.217,
+   "end": 22.427,
+   "words": [
     {
      "text": "yang",
-     "start": 38.84,
-     "end": 39.08
+     "start": 21.217,
+     "end": 21.377
     },
     {
      "text": "kita",
-     "start": 39.08,
-     "end": 39.32
+     "start": 21.377,
+     "end": 21.637
+    },
+    {
+     "text": "ada",
+     "start": 21.637,
+     "end": 22.167
+    },
+    {
+     "text": "hari",
+     "start": 22.167,
+     "end": 22.427
     }
    ],
-   "y": 1300
+   "y": 1200
   },
   {
-   "start": 39.32,
-   "end": 39.82,
+   "start": 22.427,
+   "end": 23.04,
    "words": [
     {
-     "text": "ada.",
-     "start": 39.32,
-     "end": 39.57
+     "text": "ini",
+     "start": 22.427,
+     "end": 22.667
+    },
+    {
+     "text": "di",
+     "start": 22.667,
+     "end": 22.787
+    },
+    {
+     "text": "sini.",
+     "start": 22.787,
+     "end": 22.967
+    }
+   ],
+   "y": 1100
+  },
+  {
+   "start": 23.04,
+   "end": 24.34,
+   "words": [
+    {
+     "text": "Cuma",
+     "start": 23.04,
+     "end": 23.34
+    },
+    {
+     "text": "ada",
+     "start": 23.34,
+     "end": 23.5
+    },
+    {
+     "text": "rangka",
+     "start": 23.5,
+     "end": 23.88
+    },
+    {
+     "text": "saja",
+     "start": 23.88,
+     "end": 24.34
+    }
+   ],
+   "y": 1400
+  },
+  {
+   "start": 24.34,
+   "end": 25.233,
+   "words": [
+    {
+     "text": "yang",
+     "start": 24.34,
+     "end": 24.64
+    },
+    {
+     "text": "saya",
+     "start": 24.64,
+     "end": 24.78
+    },
+    {
+     "text": "buat.",
+     "start": 24.78,
+     "end": 25.0
+    }
+   ],
+   "y": 1400
+  },
+  {
+   "start": 25.233,
+   "end": 25.923,
+   "words": [
+    {
+     "text": "Rangka",
+     "start": 25.233,
+     "end": 25.403
+    },
+    {
+     "text": "tiang,",
+     "start": 25.403,
+     "end": 25.903
+    }
+   ],
+   "y": 1400
+  },
+  {
+   "start": 25.923,
+   "end": 26.473,
+   "words": [
+    {
+     "text": "rangka",
+     "start": 25.923,
+     "end": 26.223
+    },
+    {
+     "text": "bumbung...",
+     "start": 26.223,
+     "end": 26.473
+    }
+   ],
+   "y": 1400
+  },
+  {
+   "start": 26.473,
+   "end": 29.323,
+   "words": [
+    {
+     "text": "Maka",
+     "start": 26.473,
+     "end": 26.723
+    },
+    {
+     "text": "datanglah",
+     "start": 26.967,
+     "end": 28.29
+    },
+    {
+     "text": "sokongan",
+     "start": 28.29,
+     "end": 29.323
+    }
+   ],
+   "y": 1400
+  },
+  {
+   "start": 29.323,
+   "end": 30.333,
+   "words": [
+    {
+     "text": "dan",
+     "start": 29.323,
+     "end": 29.483
+    },
+    {
+     "text": "sumbangan",
+     "start": 29.483,
+     "end": 29.843
+    },
+    {
+     "text": "ini.",
+     "start": 29.843,
+     "end": 30.083
     }
    ],
    "y": 1300
   },
   {
-   "start": 43.383,
-   "end": 44.763,
+   "start": 35.133,
+   "end": 36.513,
    "words": [
     {
      "text": "Kalau",
-     "start": 43.383,
-     "end": 44.023
+     "start": 35.133,
+     "end": 35.773
     },
     {
      "text": "ikut",
-     "start": 44.023,
-     "end": 44.623
+     "start": 35.773,
+     "end": 36.373
     },
     {
      "text": "tadi,",
-     "start": 44.623,
-     "end": 44.763
+     "start": 36.373,
+     "end": 36.513
     }
    ],
    "y": 1300
   },
   {
-   "start": 44.763,
-   "end": 45.813,
+   "start": 36.513,
+   "end": 37.563,
    "words": [
     {
      "text": "kuning",
-     "start": 44.763,
-     "end": 45.203
+     "start": 36.513,
+     "end": 36.953
     },
     {
      "text": "ni",
-     "start": 45.203,
-     "end": 45.283
+     "start": 36.953,
+     "end": 37.033
     },
     {
      "text": "premium.",
-     "start": 45.283,
-     "end": 45.563
+     "start": 37.033,
+     "end": 37.313
+    }
+   ],
+   "y": 1300
+  },
+  {
+   "start": 44.07,
+   "end": 45.71,
+   "words": [
+    {
+     "text": "Kita",
+     "start": 44.07,
+     "end": 44.53
+    },
+    {
+     "text": "tunjuk",
+     "start": 44.53,
+     "end": 45.01
+    },
+    {
+     "text": "agropelancongan",
+     "start": 45.01,
+     "end": 45.71
+    }
+   ],
+   "y": 1300
+  },
+  {
+   "start": 45.71,
+   "end": 45.79,
+   "words": [
+    {
+     "text": "kita.",
+     "start": 45.71,
+     "end": 45.79
+    }
+   ],
+   "y": 1300
+  },
+  {
+   "start": 45.79,
+   "end": 46.647,
+   "words": [
+    {
+     "text": "Satu,",
+     "start": 45.79,
+     "end": 46.647
+    }
+   ],
+   "y": 1300
+  },
+  {
+   "start": 46.647,
+   "end": 46.847,
+   "words": [
+    {
+     "text": "dua,",
+     "start": 46.647,
+     "end": 46.847
+    }
+   ],
+   "y": 1300
+  },
+  {
+   "start": 46.847,
+   "end": 47.417,
+   "words": [
+    {
+     "text": "tiga!",
+     "start": 46.847,
+     "end": 47.167
     }
    ],
    "y": 1300
@@ -510,392 +512,407 @@
  ],
  "speech": [
   [
-   0.04,
-   3.713
+   0.08,
+   6.013
   ],
   [
-   17.937,
-   39.57
+   16.58,
+   30.083
   ],
   [
-   43.383,
-   45.563
+   35.133,
+   37.313
+  ],
+  [
+   44.07,
+   47.167
   ]
  ],
  "gfx": [
   {
-   "type": "tag",
-   "start": 0.05,
-   "piece": "hook",
-   "text": "PENGUSAHA HARUMANIS Y.A",
-   "dur": 3.717,
-   "y": 290,
-   "h": 80
-  },
-  {
-   "type": "bigstat",
-   "start": 3.817,
-   "piece": "cheque",
-   "bottom": "GERAN NAIK TARAF",
-   "value": "RM195,000",
-   "top": "UNTUK HARUMANIS Y.A",
-   "dur": 2.3,
-   "y": 430,
-   "h": 390
-  },
-  {
-   "type": "beforeafter",
-   "start": 6.117,
-   "piece": "arrive",
-   "before": "RANGKA TIANG & BUMBUNG",
-   "after": "PUSAT AGROPELANCONGAN",
-   "dur": 2.5,
-   "y": 430,
-   "h": 330
-  },
-  {
-   "type": "location",
-   "start": 8.767,
-   "piece": "arrive",
-   "title": "Harumanis Y.A",
-   "sub": "Kg. Baru Panggas, Chuping, Perlis",
-   "dur": 4.6,
-   "y": 300,
-   "h": 110
-  },
-  {
-   "type": "tag",
-   "start": 13.567,
-   "piece": "orchard",
-   "text": "KEBUN MANGGA HARUMANIS",
-   "dur": 4.1,
-   "y": 290,
-   "h": 80
-  },
-  {
-   "type": "sticker",
-   "start": 14.667,
-   "piece": "orchard",
-   "emoji": "🥭",
-   "dur": 2.0,
-   "y": 420,
-   "h": 180
-  },
-  {
    "type": "nametag",
-   "start": 17.917,
-   "piece": "photo",
+   "start": 0.03,
+   "piece": "hook",
    "name": "Tuan Haji Abang Ahmad Kerdee",
    "role": "Pengerusi FAMA",
-   "dur": 3.283,
+   "dur": 2.8,
    "y": 1300,
    "h": 130
   },
   {
-   "type": "flash",
-   "start": 20.803,
-   "piece": "photo",
-   "dur": 0.397
+   "type": "sticker",
+   "start": 1.53,
+   "piece": "hook",
+   "emoji": "🎓",
+   "dur": 1.5,
+   "y": 1020,
+   "h": 180
+  },
+  {
+   "type": "stamp",
+   "start": 4.037,
+   "piece": "hook",
+   "text": "TOP 5!",
+   "dur": 1.0,
+   "y": 1100,
+   "h": 190
+  },
+  {
+   "type": "headline",
+   "start": 6.183,
+   "piece": "kebun",
+   "kicker": "CHUPING, PERLIS",
+   "text": "TURUN PADANG KE KEBUN HARUMANIS",
+   "dur": 2.65,
+   "y": 410,
+   "h": 360
+  },
+  {
+   "type": "sticker",
+   "start": 9.233,
+   "piece": "kebun2",
+   "emoji": "🥭",
+   "dur": 1.6,
+   "y": 1020,
+   "h": 180
   },
   {
    "type": "tag",
-   "start": 21.25,
-   "piece": "speech",
-   "text": "UCAPAN PENGUSAHA",
-   "dur": 2.5,
+   "start": 11.15,
+   "piece": "taklimat",
+   "text": "DENGAR SENDIRI DARI PENGUSAHA",
+   "dur": 2.75,
    "y": 290,
    "h": 80
   },
   {
+   "type": "tag",
+   "start": 16.55,
+   "piece": "ucapan",
+   "text": "PENGUSAHA HARUMANIS Y.A",
+   "dur": 3.4,
+   "y": 290,
+   "h": 80
+  },
+  {
+   "type": "beforeafter",
+   "start": 23.5,
+   "piece": "ucapan",
+   "before": "RANGKA TIANG & BUMBUNG",
+   "after": "PUSAT AGROPELANCONGAN",
+   "dur": 3.6,
+   "y": 1100,
+   "h": 330
+  },
+  {
+   "type": "bigstat",
+   "start": 30.233,
+   "piece": "cek",
+   "bottom": "GERAN NAIK TARAF",
+   "value": "RM195,000",
+   "top": "UNTUK HARUMANIS Y.A",
+   "dur": 3.0,
+   "confetti": true,
+   "y": 430,
+   "h": 390
+  },
+  {
    "type": "sticker",
-   "start": 29.467,
-   "piece": "speech",
-   "emoji": "🤝",
+   "start": 33.533,
+   "piece": "premium",
+   "emoji": "🥭",
+   "dur": 1.5,
+   "y": 1020,
+   "h": 180
+  },
+  {
+   "type": "stamp",
+   "start": 36.983,
+   "piece": "premium",
+   "text": "GRED PREMIUM",
+   "dur": 1.117,
+   "y": 420,
+   "h": 190
+  },
+  {
+   "type": "tag",
+   "start": 37.65,
+   "piece": "ketawa",
+   "text": "✍️ BUKU PELAWAT",
+   "dur": 3.0,
+   "y": 1420,
+   "h": 80
+  },
+  {
+   "type": "sticker",
+   "start": 39.5,
+   "piece": "ketawa",
+   "emoji": "😄",
    "dur": 1.6,
    "y": 420,
    "h": 180
   },
   {
-   "type": "stamp",
-   "start": 39.883,
-   "piece": "grant",
-   "text": "TAHNIAH!",
-   "dur": 2.4,
-   "confetti": true,
-   "y": 420,
-   "h": 190
-  },
-  {
-   "type": "stamp",
-   "start": 45.233,
-   "piece": "premium",
-   "text": "GRED PREMIUM",
-   "dur": 1.1,
-   "y": 420,
-   "h": 190
-  },
-  {
-   "type": "tag",
-   "start": 45.883,
-   "piece": "book",
-   "text": "✍️ TANDATANGAN BUKU PELAWAT",
-   "dur": 4.4,
-   "y": 1420,
-   "h": 80
+   "type": "flash",
+   "start": 46.937,
+   "piece": "foto",
+   "dur": 0.396
   },
   {
    "type": "flash",
-   "start": 50.483,
+   "start": 47.383,
    "piece": "outro",
    "dur": 0.4
   },
   {
    "type": "endcard",
-   "start": 51.033,
+   "start": 47.833,
    "piece": "outro",
-   "line1": "Dulu cuma rangka...",
-   "line2": "Kini Pusat Agropelancongan Harumanis",
-   "cta": "Jom singgah musim Harumanis!",
-   "dur": 4.8,
+   "line1": "Pengerusi FAMA turun padang",
+   "line2": "Bersama Pengusaha Harumanis Y.A",
+   "cta": "Sokong usahawan tani kita!",
+   "dur": 4.9,
    "y": 1265,
    "h": 420
   }
  ],
  "sfx": [
   {
-   "name": "pop_whoosh",
-   "start": 0.05,
-   "volume": 0.35
-  },
-  {
-   "name": "riser",
-   "start": 2.293,
-   "volume": 0.22
-  },
-  {
-   "name": "impact_big",
-   "start": 3.817,
-   "volume": 0.42
-  },
-  {
-   "name": "coin_win",
-   "start": 3.937,
-   "volume": 0.22
-  },
-  {
-   "name": "whoosh_cine",
-   "start": 6.117,
-   "volume": 0.18
-  },
-  {
-   "name": "click_ui",
-   "start": 7.017,
-   "volume": 0.5
-  },
-  {
-   "name": "pop_hard",
-   "start": 7.317,
-   "volume": 0.35
-  },
-  {
-   "name": "pop_long",
-   "start": 8.767,
-   "volume": 0.4
-  },
-  {
    "name": "pop_bubble",
-   "start": 14.667,
+   "start": 1.53,
    "volume": 0.45
   },
   {
-   "name": "shutter",
-   "start": 20.773,
-   "volume": 0.65
-  },
-  {
-   "name": "whoosh_air",
-   "start": 21.25,
-   "volume": 0.14
-  },
-  {
-   "name": "pop_bubble",
-   "start": 29.467,
+   "name": "pop_hard",
+   "start": 4.037,
    "volume": 0.4
   },
   {
-   "name": "impact_logo",
-   "start": 39.883,
-   "volume": 0.32
+   "name": "riser",
+   "start": 5.073,
+   "volume": 0.2
   },
   {
-   "name": "achievement",
-   "start": 40.033,
-   "volume": 0.25
+   "name": "whoosh_cine",
+   "start": 6.183,
+   "volume": 0.16
+  },
+  {
+   "name": "pop_long",
+   "start": 9.233,
+   "volume": 0.4
+  },
+  {
+   "name": "click_select",
+   "start": 11.15,
+   "volume": 0.4
+  },
+  {
+   "name": "whoosh_air",
+   "start": 16.55,
+   "volume": 0.14
+  },
+  {
+   "name": "click_ui",
+   "start": 24.4,
+   "volume": 0.45
   },
   {
    "name": "pop_hard",
-   "start": 45.233,
+   "start": 24.7,
+   "volume": 0.3
+  },
+  {
+   "name": "impact_big",
+   "start": 30.233,
+   "volume": 0.4
+  },
+  {
+   "name": "coin_win",
+   "start": 30.383,
+   "volume": 0.22
+  },
+  {
+   "name": "pop_bubble",
+   "start": 33.533,
+   "volume": 0.4
+  },
+  {
+   "name": "pop_hard",
+   "start": 36.983,
    "volume": 0.4
   },
   {
    "name": "pop_long",
-   "start": 45.883,
+   "start": 39.5,
    "volume": 0.35
   },
   {
    "name": "shutter",
-   "start": 50.453,
-   "volume": 0.55
+   "start": 46.907,
+   "volume": 0.65
+  },
+  {
+   "name": "shutter",
+   "start": 47.353,
+   "volume": 0.5
   },
   {
    "name": "positive",
-   "start": 51.033,
+   "start": 47.833,
    "volume": 0.3
   }
  ],
  "zooms": [
   {
    "start": 0.0,
-   "scale": 1.1,
-   "piece": "hook",
-   "ox": 0.222,
-   "oy": 0.461
-  },
-  {
-   "start": 2.233,
-   "scale": 1.22,
-   "piece": "hook",
-   "ox": 0.378,
-   "oy": 0.374
-  },
-  {
-   "start": 3.767,
-   "scale": 1.0,
-   "piece": "cheque",
-   "ox": 0.244,
-   "oy": 0.439
-  },
-  {
-   "start": 3.817,
    "scale": 1.08,
-   "piece": "cheque",
-   "ox": 0.244,
-   "oy": 0.439
+   "piece": "hook",
+   "ox": 0.2,
+   "oy": 0.356
   },
   {
-   "start": 6.067,
-   "scale": 1.0,
-   "piece": "arrive",
-   "ox": 0.208,
-   "oy": 0.442
-  },
-  {
-   "start": 10.817,
-   "scale": 1.06,
-   "piece": "arrive",
-   "ox": 0.8,
-   "oy": 0.323
-  },
-  {
-   "start": 13.467,
-   "scale": 1.0,
-   "piece": "orchard",
-   "ox": 0.722,
-   "oy": 0.452
-  },
-  {
-   "start": 15.667,
-   "scale": 1.08,
-   "piece": "orchard",
-   "ox": 0.673,
-   "oy": 0.438
-  },
-  {
-   "start": 17.867,
-   "scale": 1.0,
-   "piece": "photo",
-   "ox": 0.8,
-   "oy": 0.438
-  },
-  {
-   "start": 19.833,
-   "scale": 1.06,
-   "piece": "photo",
-   "ox": 0.8,
-   "oy": 0.438
-  },
-  {
-   "start": 21.2,
-   "scale": 1.0,
-   "piece": "speech",
-   "ox": 0.571,
-   "oy": 0.489
-  },
-  {
-   "start": 28.067,
-   "scale": 1.04,
-   "piece": "speech",
-   "ox": 0.309,
-   "oy": 0.481
-  },
-  {
-   "start": 31.067,
+   "start": 2.933,
    "scale": 1.16,
-   "piece": "speech",
-   "ox": 0.225,
-   "oy": 0.47
+   "piece": "hook",
+   "ox": 0.232,
+   "oy": 0.358
   },
   {
-   "start": 33.733,
-   "scale": 1.24,
-   "piece": "speech",
-   "ox": 0.241,
-   "oy": 0.468
+   "start": 4.633,
+   "scale": 1.26,
+   "piece": "hook",
+   "ox": 0.2,
+   "oy": 0.42
   },
   {
-   "start": 39.733,
+   "start": 6.133,
    "scale": 1.0,
-   "piece": "grant",
-   "ox": 0.308,
-   "oy": 0.27
+   "piece": "kebun",
+   "ox": 0.693,
+   "oy": 0.438
   },
   {
-   "start": 39.883,
+   "start": 6.183,
+   "scale": 1.06,
+   "piece": "kebun",
+   "ox": 0.693,
+   "oy": 0.438
+  },
+  {
+   "start": 8.833,
+   "scale": 1.04,
+   "piece": "kebun2",
+   "ox": 0.79,
+   "oy": 0.369
+  },
+  {
+   "start": 11.1,
+   "scale": 1.0,
+   "piece": "taklimat",
+   "ox": 0.8,
+   "oy": 0.518
+  },
+  {
+   "start": 11.9,
    "scale": 1.1,
-   "piece": "grant",
-   "ox": 0.281,
-   "oy": 0.427
+   "piece": "taklimat",
+   "ox": 0.8,
+   "oy": 0.518
   },
   {
-   "start": 43.333,
+   "start": 13.9,
+   "scale": 1.08,
+   "piece": "taklimat2",
+   "ox": 0.494,
+   "oy": 0.358
+  },
+  {
+   "start": 16.5,
+   "scale": 1.04,
+   "piece": "ucapan",
+   "ox": 0.313,
+   "oy": 0.482
+  },
+  {
+   "start": 22.067,
+   "scale": 1.14,
+   "piece": "ucapan",
+   "ox": 0.277,
+   "oy": 0.471
+  },
+  {
+   "start": 25.233,
+   "scale": 1.22,
+   "piece": "ucapan",
+   "ox": 0.333,
+   "oy": 0.378
+  },
+  {
+   "start": 26.767,
+   "scale": 1.06,
+   "piece": "ucapan",
+   "ox": 0.368,
+   "oy": 0.578
+  },
+  {
+   "start": 30.133,
    "scale": 1.0,
-   "piece": "premium",
-   "ox": 0.72,
-   "oy": 0.431
+   "piece": "cek",
+   "ox": 0.438,
+   "oy": 0.317
   },
   {
-   "start": 44.783,
-   "scale": 1.12,
+   "start": 30.233,
+   "scale": 1.08,
+   "piece": "cek",
+   "ox": 0.2,
+   "oy": 0.391
+  },
+  {
+   "start": 33.333,
+   "scale": 1.0,
    "piece": "premium",
    "ox": 0.2,
-   "oy": 0.337
+   "oy": 0.392
   },
   {
-   "start": 45.833,
+   "start": 35.133,
+   "scale": 1.1,
+   "piece": "premium",
+   "ox": 0.2,
+   "oy": 0.329
+  },
+  {
+   "start": 37.6,
    "scale": 1.0,
-   "piece": "book",
-   "ox": 0.668,
-   "oy": 0.547
+   "piece": "ketawa",
+   "ox": 0.538,
+   "oy": 0.552
   },
   {
-   "start": 47.933,
+   "start": 41.0,
+   "scale": 1.1,
+   "piece": "ketawa",
+   "ox": 0.549,
+   "oy": 0.508
+  },
+  {
+   "start": 44.0,
+   "scale": 1.0,
+   "piece": "foto",
+   "ox": 0.8,
+   "oy": 0.437
+  },
+  {
+   "start": 45.967,
    "scale": 1.06,
-   "piece": "book",
-   "ox": 0.774,
-   "oy": 0.48
+   "piece": "foto",
+   "ox": 0.8,
+   "oy": 0.439
   },
   {
-   "start": 50.433,
+   "start": 47.333,
    "scale": 1.0,
    "piece": "outro",
    "ox": 0.2,
@@ -903,90 +920,107 @@
   }
  ],
  "cuts": [
-  2.233,
-  3.767,
-  6.067,
-  8.6,
-  10.8,
-  13.467,
-  15.667,
-  17.867,
-  19.833,
-  21.2,
+  0.733,
+  2.933,
+  3.967,
+  4.133,
+  4.633,
+  6.133,
+  8.833,
+  11.1,
+  13.9,
+  16.5,
+  20.167,
   22.067,
-  23.567,
-  25.267,
-  28.067,
-  32.233,
-  33.633,
-  34.567,
-  37.933,
-  39.733,
-  43.333,
-  45.833,
-  47.933,
-  50.433
+  23.0,
+  25.233,
+  26.767,
+  27.7,
+  28.933,
+  30.133,
+  33.333,
+  37.6,
+  44.0,
+  45.967,
+  47.333
  ],
  "pieces": [
   {
    "id": "hook",
    "start": 0.0,
-   "end": 3.7666666666666666,
-   "music": "under"
+   "end": 6.133333333333334,
+   "music": "under",
+   "cut": "flash"
   },
   {
-   "id": "cheque",
-   "start": 3.7666666666666666,
-   "end": 6.066666666666666,
-   "music": "up"
+   "id": "kebun",
+   "start": 6.133333333333334,
+   "end": 8.833333333333334,
+   "music": "up",
+   "cut": "flash"
   },
   {
-   "id": "arrive",
-   "start": 6.066666666666666,
-   "end": 13.466666666666667,
-   "music": "up"
+   "id": "kebun2",
+   "start": 8.833333333333334,
+   "end": 11.1,
+   "music": "up",
+   "cut": "hard"
   },
   {
-   "id": "orchard",
-   "start": 13.466666666666667,
-   "end": 17.866666666666667,
-   "music": "up"
+   "id": "taklimat",
+   "start": 11.1,
+   "end": 13.9,
+   "music": "up",
+   "cut": "hard"
   },
   {
-   "id": "photo",
-   "start": 17.866666666666667,
-   "end": 21.2,
-   "music": "under"
+   "id": "taklimat2",
+   "start": 13.9,
+   "end": 16.5,
+   "music": "up",
+   "cut": "hard"
   },
   {
-   "id": "speech",
-   "start": 21.2,
-   "end": 39.733333333333334,
-   "music": "under"
+   "id": "ucapan",
+   "start": 16.5,
+   "end": 30.133333333333333,
+   "music": "under",
+   "cut": "flash"
   },
   {
-   "id": "grant",
-   "start": 39.733333333333334,
-   "end": 43.333333333333336,
-   "music": "up"
+   "id": "cek",
+   "start": 30.133333333333333,
+   "end": 33.333333333333336,
+   "music": "up",
+   "cut": "flash"
   },
   {
    "id": "premium",
-   "start": 43.333333333333336,
-   "end": 45.833333333333336,
-   "music": "under"
+   "start": 33.333333333333336,
+   "end": 37.6,
+   "music": "under",
+   "cut": "flash"
   },
   {
-   "id": "book",
-   "start": 45.833333333333336,
-   "end": 50.43333333333333,
-   "music": "up"
+   "id": "ketawa",
+   "start": 37.6,
+   "end": 44.0,
+   "music": "up",
+   "cut": "flash"
+  },
+  {
+   "id": "foto",
+   "start": 44.0,
+   "end": 47.333333333333336,
+   "music": "under",
+   "cut": "flash"
   },
   {
    "id": "outro",
-   "start": 50.43333333333333,
-   "end": 55.833333333333336,
-   "music": "up"
+   "start": 47.333333333333336,
+   "end": 52.733333333333334,
+   "music": "up",
+   "cut": "hard"
   }
  ]
 }

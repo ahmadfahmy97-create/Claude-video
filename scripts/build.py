@@ -314,7 +314,7 @@ for s, e in speech:
 gfx, sfx, zooms, pieces_meta = [], [], [], []
 for po in pieces_out:
     p, to_out = po["p"], po["to_out"]
-    pieces_meta.append(dict(id=p["id"], start=po["start"] / FPS, end=po["end"] / FPS, music=p.get("music", "under")))
+    pieces_meta.append(dict(id=p["id"], start=po["start"] / FPS, end=po["end"] / FPS, music=p.get("music", "under"), cut=p.get("cut", "flash")))
     pg = []
     for (t, typ, props) in p.get("gfx", []):
         props = dict(props)

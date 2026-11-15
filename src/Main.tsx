@@ -16,7 +16,7 @@ import {Graphic} from './Graphics';
 
 type Zoom = {start: number; scale: number; piece: string; ox?: number; oy?: number};
 const zooms = timeline.zooms as Zoom[];
-const pieces = timeline.pieces as {id: string; start: number; end: number; music?: string}[];
+const pieces = timeline.pieces as {id: string; start: number; end: number; music?: string; cut?: string}[];
 
 const MUSIC = 'music/m33.mp3';
 const MUSIC_IN = 14; // start where the track has already built up, so the hook has energy
@@ -45,6 +45,7 @@ const Footage: React.FC = () => {
   let bump = 1;
   for (const p of pieces) {
     const f0 = Math.round(p.start * fps);
+    if (p.cut === 'hard') continue;
     if (f0 > 0 && frame >= f0 && frame < f0 + 10) bump = interpolate(frame - f0, [0, 9], [1.07, 1], {extrapolateRight: 'clamp'});
   }
   return (
@@ -60,6 +61,7 @@ const SectionFlash: React.FC = () => {
   let o = 0;
   for (const p of pieces) {
     const f0 = Math.round(p.start * fps);
+    if (p.cut === 'hard') continue;
     if (f0 > 0 && frame >= f0 && frame < f0 + 5) o = interpolate(frame - f0, [0, 4], [0.22, 0]);
   }
   return <AbsoluteFill style={{backgroundColor: 'white', opacity: o, pointerEvents: 'none'}} />;
