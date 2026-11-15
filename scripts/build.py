@@ -23,6 +23,8 @@ _edl = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(_edl)
 PIECES = _edl.PIECES
 SNAP = getattr(_edl, "SNAP", False)
+# clips that are letterboxed instead of filled, e.g. a 16:9 logo sting: {clip: {"w": width, "x": left}}
+FIT = {p["clip"]: p["fit"] for p in PIECES if p.get("fit")}
 RAW = os.environ.get("RAW_DIR", getattr(_edl, "RAW_DIR", "/home/user/raw"))
 WORK = os.environ.get("WORK_DIR", f"/home/user/work/{PROJECT}")
 FOOT = f"{ROOT}/public/footage/{PROJECT}"
@@ -129,7 +131,7 @@ pieces_out = []
 for p in PIECES:
     subs = []
     for (a, b) in p["ranges"]:
-        if SNAP:
+        if SNAP and not p.get("mute"):
             a, b = snap_range(p["clip"], a, b)
         subs += tighten_range(p["clip"], a, b, p.get("tighten"))
     # frame quantise
@@ -153,7 +155,10 @@ for p in PIECES:
     # ---- voice audio
     gain = p.get("voice_gain", 1.0)
     for (a, b, f, n) in mapped:
-        seg = audio(p["clip"])[int(round(a * SR)): int(round(a * SR)) + int(round(n * SR / FPS))].copy()
+        if p.get("mute"):  # picture-only piece (the clip may have no audio at all)
+            seg = np.zeros(int(round(n * SR / FPS)), dtype=np.float32)
+        else:
+            seg = audio(p["clip"])[int(round(a * SR)): int(round(a * SR)) + int(round(n * SR / FPS))].copy()
         need = int(round(n * SR / FPS))
         if len(seg) < need:
             seg = np.pad(seg, (0, need - len(seg)))
@@ -228,12 +233,17 @@ subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "f32le", "-ar", str(SR), "-
 def render_chunk(i_c):
     i, (clip, src, n) = i_c
     out = f"{WORK}/chunk_{i:03d}.mp4"
-    key = f"{clip}|{src:.4f}|{n}"
+    fit = FIT.get(clip)
+    if fit:
+        vf = (f"fps=30,scale={fit['w']}:-2:flags=lanczos,"
+              f"pad=1080:1920:{fit.get('x', (1080 - fit['w']) // 2)}:(oh-ih)/2:black,format=yuv420p")
+    else:
+        vf = "fps=30,scale=1080:1920:flags=lanczos,eq=contrast=1.04:saturation=1.10,format=yuv420p"
+    key = f"{clip}|{src:.4f}|{n}|{vf}"
     if os.path.exists(out) and os.path.exists(out + ".key") and open(out + ".key").read() == key:
         return out
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{src:.4f}", "-i", f"{RAW}/{clip}.MP4",
-                    "-map", "0:v:0", "-an", "-vf",
-                    "fps=30,scale=1080:1920:flags=lanczos,eq=contrast=1.04:saturation=1.10,format=yuv420p",
+                    "-map", "0:v:0", "-an", "-vf", vf,
                     "-frames:v", str(n), "-c:v", "libx264", "-preset", "fast", "-crf", "15",
                     "-g", "30", "-threads", "2", out], check=True)
     open(out + ".key", "w").write(key)
@@ -349,7 +359,7 @@ for s, e in speech:
 gfx, sfx, zooms, pieces_meta = [], [], [], []
 for po in pieces_out:
     p, to_out = po["p"], po["to_out"]
-    pieces_meta.append(dict(id=p["id"], start=po["start"] / FPS, end=po["end"] / FPS))
+    pieces_meta.append(dict(id=p["id"], start=po["start"] / FPS, end=po["end"] / FPS, plain=bool(p.get("plain"))))
     pg = []
     for (t, typ, props) in p.get("gfx", []):
         props = dict(props)

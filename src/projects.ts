@@ -11,7 +11,7 @@ export type Timeline = {
   sfx: {name: string; start: number; volume: number}[];
   zooms: {start: number; scale: number; piece: string; ox?: number; oy?: number}[];
   cuts: number[];
-  pieces: {id: string; start: number; end: number}[];
+  pieces: {id: string; start: number; end: number; plain?: boolean}[];
 };
 
 export type Project = {
@@ -38,6 +38,7 @@ export const PROJECTS: Record<string, Project> = {
     musicUnder: 0.07,
     musicOpen: 0.26,
     musicFadeFrames: 40,
+    loudPieces: ['closing'],
   },
 };
 

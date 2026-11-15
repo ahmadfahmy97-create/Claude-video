@@ -41,7 +41,7 @@ const Footage: React.FC = () => {
   let bump = 1;
   for (const p of pieces) {
     const f0 = Math.round(p.start * fps);
-    if (f0 > 0 && frame >= f0 && frame < f0 + 10) bump = interpolate(frame - f0, [0, 9], [1.07, 1], {extrapolateRight: 'clamp'});
+    if (!p.plain && f0 > 0 && frame >= f0 && frame < f0 + 10) bump = interpolate(frame - f0, [0, 9], [1.07, 1], {extrapolateRight: 'clamp'});
   }
   return (
     <AbsoluteFill style={{transform: `scale(${scale * bump})`, transformOrigin: `${ox * 100}% ${oy * 100}%`}}>
@@ -57,7 +57,7 @@ const SectionFlash: React.FC = () => {
   let o = 0;
   for (const p of pieces) {
     const f0 = Math.round(p.start * fps);
-    if (f0 > 0 && frame >= f0 && frame < f0 + 6) o = interpolate(frame - f0, [0, 5], [0.45, 0]);
+    if (!p.plain && f0 > 0 && frame >= f0 && frame < f0 + 6) o = interpolate(frame - f0, [0, 5], [0.45, 0]);
   }
   return <AbsoluteFill style={{backgroundColor: 'white', opacity: o, pointerEvents: 'none'}} />;
 };

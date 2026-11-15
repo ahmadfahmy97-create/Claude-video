@@ -146,4 +146,10 @@ PIECES = [
         sfx=[(389.21, "pop_long", 0.4), (393.99, "applause_small", 0.22)],
         zoom=[(386.94, 1.0), (389.21, 1.12), (395.07, 1.22)],
     ),
+    # ---------------------------------------------------------------- CLOSING STING (Pejabat Pengerusi FAMA)
+    dict(
+        id="closing", clip="closing", ranges=[(0.0, 5.0)], tighten=None, mute=True, plain=True,
+        fit=dict(w=994, x=3),  # 16:9 logo on black, centred on the safe area (x 60-940)
+        sfx=[(0.0, "whoosh_cine", 0.35), (0.40, "impact_logo", 0.45)],
+    ),
 ]
