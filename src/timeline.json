@@ -2401,14 +2401,9 @@
  ],
  "sfx": [
   {
-   "name": "impact_whoosh",
+   "name": "pop_long",
    "start": 0.0,
-   "volume": 0.55
-  },
-  {
-   "name": "riser",
-   "start": 0.18,
-   "volume": 0.25
+   "volume": 0.4
   },
   {
    "name": "impact_logo",
@@ -2421,29 +2416,14 @@
    "volume": 0.35
   },
   {
-   "name": "whoosh_cine",
-   "start": 5.867,
-   "volume": 0.45
-  },
-  {
-   "name": "whoosh_fast",
-   "start": 9.75,
-   "volume": 0.3
-  },
-  {
-   "name": "whoosh_fast",
-   "start": 13.753,
-   "volume": 0.3
-  },
-  {
    "name": "pop_long",
    "start": 18.21,
    "volume": 0.45
   },
   {
-   "name": "whoosh_cine",
+   "name": "whoosh_fast",
    "start": 21.567,
-   "volume": 0.35
+   "volume": 0.18
   },
   {
    "name": "pop_bubble",
@@ -2451,34 +2431,14 @@
    "volume": 0.6
   },
   {
-   "name": "whoosh_fast",
-   "start": 25.567,
-   "volume": 0.3
-  },
-  {
    "name": "coins",
    "start": 26.687,
    "volume": 0.5
   },
   {
-   "name": "whoosh_fast",
-   "start": 28.7,
-   "volume": 0.3
-  },
-  {
    "name": "pop_hard",
    "start": 34.047,
    "volume": 0.45
-  },
-  {
-   "name": "whoosh_air",
-   "start": 34.833,
-   "volume": 0.3
-  },
-  {
-   "name": "whoosh_fast",
-   "start": 37.02,
-   "volume": 0.25
   },
   {
    "name": "pop_long",
@@ -2491,22 +2451,17 @@
    "volume": 0.4
   },
   {
-   "name": "whoosh_fast",
-   "start": 44.667,
-   "volume": 0.3
-  },
-  {
-   "name": "impact_whoosh",
+   "name": "pop_hard",
    "start": 51.053,
-   "volume": 0.35
+   "volume": 0.4
   },
   {
-   "name": "whoosh_air",
+   "name": "whoosh_fast",
    "start": 53.533,
-   "volume": 0.22
+   "volume": 0.18
   },
   {
-   "name": "pop_whoosh",
+   "name": "pop_bubble",
    "start": 55.847,
    "volume": 0.5
   },
@@ -2516,19 +2471,9 @@
    "volume": 0.5
   },
   {
-   "name": "swoosh_accent",
-   "start": 62.02,
-   "volume": 0.35
-  },
-  {
    "name": "coins",
    "start": 64.313,
    "volume": 0.55
-  },
-  {
-   "name": "whoosh_cine",
-   "start": 65.067,
-   "volume": 0.4
   },
   {
    "name": "impact_big",
@@ -2546,19 +2491,14 @@
    "volume": 0.3
   },
   {
-   "name": "whoosh_air",
+   "name": "whoosh_fast",
    "start": 75.567,
-   "volume": 0.3
+   "volume": 0.18
   },
   {
    "name": "pop_long",
    "start": 75.857,
    "volume": 0.45
-  },
-  {
-   "name": "whoosh_fast",
-   "start": 80.8,
-   "volume": 0.3
   },
   {
    "name": "correct",
@@ -2586,34 +2526,19 @@
    "volume": 0.45
   },
   {
-   "name": "whoosh_cine",
+   "name": "whoosh_fast",
    "start": 93.367,
-   "volume": 0.4
+   "volume": 0.18
   },
   {
-   "name": "impact_whoosh",
+   "name": "impact_logo",
    "start": 103.747,
-   "volume": 0.45
-  },
-  {
-   "name": "whoosh_air",
-   "start": 104.567,
-   "volume": 0.3
-  },
-  {
-   "name": "swoosh_accent",
-   "start": 107.867,
-   "volume": 0.4
+   "volume": 0.35
   },
   {
    "name": "pop_hard",
    "start": 110.087,
    "volume": 0.45
-  },
-  {
-   "name": "whoosh_fast",
-   "start": 111.0,
-   "volume": 0.3
   },
   {
    "name": "impact_logo",
@@ -2624,11 +2549,6 @@
    "name": "positive",
    "start": 115.8,
    "volume": 0.3
-  },
-  {
-   "name": "whoosh_cine",
-   "start": 118.167,
-   "volume": 0.35
   },
   {
    "name": "positive",
