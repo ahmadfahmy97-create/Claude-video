@@ -1,7 +1,7 @@
 """Edit decision list – Lawatan Pengerusi FAMA ke Pusat Jualan & Agropelancongan Harumanis Y.A
 (Kg. Baru Panggas, Chuping, Perlis – 10 November 2026).
 
-v2: the story is the Pengerusi FAMA engaging with the pengusaha ("Cikgu") – asking, listening,
+v3: hook = the gift ("kuning ni premium"); the story is the Pengerusi FAMA engaging with the pengusaha ("Cikgu") – asking, listening,
 laughing, shaking hands, receiving his Harumanis.
 
 Every piece plays the audio of `clip` over the source `ranges` (seconds).
@@ -21,18 +21,17 @@ NAME = "Tuan Haji Abang Ahmad Kerdee"
 ROLE = "Pengerusi FAMA"
 
 PIECES = [
-    # ---------------------------------------------------------------- HOOK: Pengerusi quizzes Cikgu about NUS
+    # ---------------------------------------------------------------- HOOK: the pengusaha's gift, Pengerusi: "kuning ni premium"
     dict(
-        id="hook", clip="0556", ranges=[(6.02, 8.95), (13.30, 16.40), (17.86, 19.36)], tighten=0.10, voice_gain=1.1,
-        caption="Cikgu, universiti apa yang... NUS? Singapura. Itu the best. Top 5. Sampai mereka pun mai buat kajian.",
-        broll=[(6.02, "0556", 5.45), (6.75, None, 0)],  # someone walks in front of the lens at 6.2-6.7
+        id="hook", clip="0566", ranges=[(59.0, 63.0)], tighten=None, voice_gain=0.9,
+        caption="Kalau ikut tadi, kuning ni premium.",
         gfx=[
-            (6.05, "nametag", dict(name=NAME, role=ROLE, dur=2.8)),
-            (7.55, "sticker", dict(emoji="🎓", dur=1.5)),
-            (15.40, "stamp", dict(text="TOP 5!", dur=1.0)),
+            (59.02, "tag", dict(text="🥭 HADIAH DARI PENGUSAHA", dur=2.7)),
+            (59.80, "nametag", dict(name=NAME, role=ROLE, dur=2.6)),
+            (61.80, "stamp", dict(text="GRED PREMIUM", dur=1.2)),
         ],
-        sfx=[(7.55, "pop_bubble", 0.45), (15.40, "pop_hard", 0.4), (18.30, "riser", 0.2)],
-        zoom=[(6.02, 1.08), (13.30, 1.16), (17.86, 1.26)],
+        sfx=[(59.02, "pop_whoosh", 0.35), (61.80, "pop_hard", 0.45), (61.90, "coin_win", 0.2)],
+        zoom=[(59.0, 1.0), (59.9, 1.12), (61.8, 1.2)],
     ),
     # ---------------------------------------------------------------- turun padang: orchard with the pengusaha
     dict(
@@ -62,6 +61,18 @@ PIECES = [
         caption="",
         zoom=[(100.0, 1.08)],
     ),
+    # ---------------------------------------------------------------- casual chat: the research visit from NUS
+    dict(
+        id="nus", clip="0556", ranges=[(6.02, 8.95), (13.30, 14.40), (17.86, 19.36)], tighten=0.10, voice_gain=1.1,
+        caption="Cikgu, universiti apa yang... NUS? Singapura. Itu the best. Sampai mereka pun mai buat kajian.",
+        broll=[(6.02, "0556", 5.45), (6.75, None, 0)],  # someone walks in front of the lens at 6.2-6.7
+        gfx=[
+            (6.05, "tag", dict(text="SEMBANG SANTAI DENGAN PENGUSAHA", dur=2.8)),
+            (7.55, "sticker", dict(emoji="🎓", dur=1.5)),
+        ],
+        sfx=[(6.05, "click_select", 0.35), (7.55, "pop_bubble", 0.45)],
+        zoom=[(6.02, 1.08), (13.30, 1.16), (17.86, 1.22)],
+    ),
     # ---------------------------------------------------------------- the pengusaha's thanks, Pengerusi listening
     dict(
         id="ucapan", clip="0565", ranges=[(9.70, 17.25), (17.40, 21.58), (23.40, 27.35)], tighten=0.12,
@@ -83,17 +94,6 @@ PIECES = [
         gfx=[(14.70, "bigstat", dict(bottom="GERAN NAIK TARAF", value="RM195,000", top="UNTUK HARUMANIS Y.A", dur=3.0, confetti=True))],
         sfx=[(14.70, "impact_big", 0.4), (14.85, "coin_win", 0.22)],
         zoom=[(14.6, 1.0), (14.70, 1.08)],
-    ),
-    # ---------------------------------------------------------------- the gift: "kuning ni premium"
-    dict(
-        id="premium", clip="0566", ranges=[(58.2, 62.45)], tighten=None, voice_gain=0.9,
-        caption="Kalau ikut tadi, kuning ni premium.",
-        gfx=[
-            (58.40, "sticker", dict(emoji="🥭", dur=1.5)),
-            (61.85, "stamp", dict(text="GRED PREMIUM", dur=1.4)),
-        ],
-        sfx=[(58.40, "pop_bubble", 0.4), (61.85, "pop_hard", 0.4)],
-        zoom=[(58.2, 1.0), (60.0, 1.1)],
     ),
     # ---------------------------------------------------------------- laughing together over the visitors' book
     dict(

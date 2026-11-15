@@ -322,7 +322,7 @@ for po in pieces_out:
             props["items"] = [[name, round(to_out(tt), 3)] for name, tt in props["items"]]
         g = dict(type=typ, start=round(to_out(t), 3), piece=p["id"], **props)
         # never spill into the next section
-        spill = {"bigstat": 0.35, "stamp": 0.5, "sticker": 0.5}.get(typ, 0.0)  # let the big number breathe over the cut
+        spill = {"bigstat": 0.2, "sticker": 0.2}.get(typ, 0.0)  # let the big number breathe over the cut
         g["dur"] = round(min(g["dur"], po["end"] / FPS + spill - g["start"]), 3)
         pg.append(g)
     pg.sort(key=lambda g: g["start"])
