@@ -37,7 +37,6 @@ export const PROJECTS: Record<string, Project> = {
     music: 'music/m34.mp3',
     musicUnder: 0.07,
     musicOpen: 0.26,
-    loudPieces: ['outro'],
     musicFadeFrames: 40,
   },
 };

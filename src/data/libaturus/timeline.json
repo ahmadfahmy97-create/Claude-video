@@ -1,6 +1,6 @@
 {
  "fps": 30,
- "durationInFrames": 3313,
+ "durationInFrames": 3204,
  "captions": [
   {
    "start": 0.0,
@@ -1793,17 +1793,6 @@
    "dur": 4.6,
    "y": 1160,
    "h": 360
-  },
-  {
-   "type": "endcard",
-   "start": 106.915,
-   "piece": "outro",
-   "line1": "#FAMASANTUNI",
-   "line2": "ADA SOALAN UNTUK FAMA?",
-   "cta": "KOMEN DI BAWAH",
-   "dur": 3.35,
-   "y": 1000,
-   "h": 420
   }
  ],
  "sfx": [
@@ -1986,11 +1975,6 @@
    "name": "applause_small",
    "start": 104.108,
    "volume": 0.22
-  },
-  {
-   "name": "whoosh_cine",
-   "start": 106.915,
-   "volume": 0.3
   }
  ],
  "zooms": [
@@ -2238,13 +2222,6 @@
    "piece": "pintu",
    "ox": 0.535,
    "oy": 0.202
-  },
-  {
-   "start": 106.8,
-   "scale": 1.0,
-   "piece": "outro",
-   "ox": 0.8,
-   "oy": 0.304
   }
  ],
  "cuts": [
@@ -2301,8 +2278,7 @@
   99.5,
   101.133,
   104.1,
-  105.2,
-  106.8
+  105.2
  ],
  "pieces": [
   {
@@ -2369,11 +2345,6 @@
    "id": "pintu",
    "start": 98.5,
    "end": 106.8
-  },
-  {
-   "id": "outro",
-   "start": 106.8,
-   "end": 110.43333333333334
   }
  ]
 }

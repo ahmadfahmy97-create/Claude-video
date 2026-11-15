@@ -146,11 +146,4 @@ PIECES = [
         sfx=[(389.21, "pop_long", 0.4), (393.99, "applause_small", 0.22)],
         zoom=[(386.94, 1.0), (389.21, 1.12), (395.07, 1.22)],
     ),
-    # ---------------------------------------------------------------- OUTRO (picture only, music up)
-    dict(
-        id="outro", clip="0583", ranges=[(1.0, 4.4)], tighten=None, mute=True,
-        gfx=[(1.05, "endcard", dict(line1="#FAMASANTUNI", line2="ADA SOALAN UNTUK FAMA?",
-                                    cta="KOMEN DI BAWAH", dur=3.35))],
-        sfx=[(1.05, "whoosh_cine", 0.3)],
-    ),
 ]
