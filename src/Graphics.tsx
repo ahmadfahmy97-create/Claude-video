@@ -565,6 +565,106 @@ const Sticker: React.FC<{g: G}> = ({g}) => {
   );
 };
 
+// ------------------------------------------------------------------------------ Harumanis additions
+const Nametag: React.FC<{g: G}> = ({g}) => {
+  const {frame, fps, enter, exit} = useAnim(g.dur);
+  const bar = spring({frame: frame - 2, fps, config: {damping: 16, stiffness: 160}});
+  const role = spring({frame: frame - 7, fps, config: {damping: 14, stiffness: 200}});
+  return (
+    <div style={{position: 'absolute', left: SAFE.left, top: g.y ?? 1100, transform: 'translateY(-50%)', opacity: exit}}>
+      <div style={{display: 'flex', alignItems: 'stretch', filter: 'drop-shadow(0 10px 24px rgba(0,0,0,0.45))'}}>
+        <div style={{width: 12, background: C.mango, borderRadius: 6, transform: `scaleY(${bar})`}} />
+        <div style={{marginLeft: 14, overflow: 'hidden'}}>
+          <div
+            style={{
+              fontFamily: MONT,
+              fontWeight: 900,
+              fontSize: 40,
+              color: C.black,
+              background: 'white',
+              padding: '8px 20px',
+              borderRadius: 10,
+              transform: `translateX(${interpolate(enter, [0, 1], [-640, 0])}px)`,
+              whiteSpace: 'nowrap',
+            }}
+          >
+            {g.name}
+          </div>
+          <div
+            style={{
+              display: 'inline-block',
+              marginTop: 8,
+              fontFamily: MONT,
+              fontWeight: 800,
+              fontSize: 32,
+              letterSpacing: 2,
+              color: 'white',
+              background: C.green,
+              padding: '6px 16px',
+              borderRadius: 8,
+              transform: `translateX(${interpolate(role, [0, 1], [-420, 0])}px)`,
+            }}
+          >
+            {g.role.toUpperCase()}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// "DULU <struck-out> -> KINI <stamped>" – tells the whole story in one card
+const BeforeAfter: React.FC<{g: G}> = ({g}) => {
+  const {frame, fps, enter, exit} = useAnim(g.dur);
+  const strike = interpolate(frame, [Math.round(0.9 * fps), Math.round(0.9 * fps) + 6], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const now = spring({frame: frame - Math.round(1.2 * fps), fps, config: {damping: 10, stiffness: 240, mass: 0.6}});
+  const label = (t: string, bg: string, fg: string) => (
+    <span style={{fontFamily: MONT, fontWeight: 900, fontSize: 30, letterSpacing: 3, background: bg, color: fg, padding: '4px 14px', borderRadius: 8}}>{t}</span>
+  );
+  return (
+    <Centered y={g.y ?? 1000} style={{opacity: exit}}>
+      <div style={{opacity: enter, transform: `translateY(${interpolate(enter, [0, 1], [30, 0])}px)`, textAlign: 'center'}}>
+        {label('DULU', 'rgba(11,11,11,0.85)', 'white')}
+        <div style={{position: 'relative', display: 'inline-block', marginTop: 8}}>
+          <div style={{fontFamily: ANTON, fontSize: 70, color: 'white', lineHeight: 1.05, opacity: interpolate(strike, [0, 1], [1, 0.7]), ...stroke(10)}}>{g.before}</div>
+          <div
+            style={{
+              position: 'absolute',
+              left: -12,
+              top: '52%',
+              height: 12,
+              width: `${strike * 106}%`,
+              background: C.red,
+              borderRadius: 6,
+              transform: 'rotate(-4deg)',
+              transformOrigin: 'left center',
+              boxShadow: '0 3px 10px rgba(0,0,0,0.5)',
+            }}
+          />
+        </div>
+      </div>
+      <div
+        style={{
+          marginTop: 18,
+          textAlign: 'center',
+          opacity: interpolate(now, [0, 0.3], [0, 1], {extrapolateRight: 'clamp'}),
+          transform: `scale(${interpolate(now, [0, 1], [1.8, 1])}) rotate(-3deg)`,
+        }}
+      >
+        {label('KINI', C.mango, C.black)}
+        <div style={{fontFamily: ANTON, fontSize: 92, color: C.mango, lineHeight: 1.02, marginTop: 6, textShadow: '0 12px 30px rgba(0,0,0,0.5)', ...stroke(14)}}>{g.after}</div>
+      </div>
+    </Centered>
+  );
+};
+
+// camera-flash for the group photos
+const Flash: React.FC<{g: G}> = ({g}) => {
+  const frame = useCurrentFrame();
+  const o = interpolate(frame, [0, 1, 10], [0, 0.85, 0], {extrapolateRight: 'clamp'});
+  return <AbsoluteFill style={{backgroundColor: 'white', opacity: o}} />;
+};
+
 export const Graphic: React.FC<{g: G}> = ({g}) => {
   switch (g.type) {
     case 'headline':
@@ -597,6 +697,12 @@ export const Graphic: React.FC<{g: G}> = ({g}) => {
       return <Question g={g} />;
     case 'endcard':
       return <EndCard g={g} />;
+    case 'nametag':
+      return <Nametag g={g} />;
+    case 'beforeafter':
+      return <BeforeAfter g={g} />;
+    case 'flash':
+      return <Flash g={g} />;
     default:
       return null;
   }

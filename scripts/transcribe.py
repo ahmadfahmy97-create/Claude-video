@@ -29,7 +29,7 @@ for clip in clips:
         segs, info = model.transcribe(
             audio, language="ms", word_timestamps=True, vad_filter=True, vad_parameters={"min_silence_duration_ms": 400, "speech_pad_ms": 300, "threshold": 0.35},
             beam_size=3, condition_on_previous_text=False,
-            initial_prompt="Video TikTok bahasa Melayu santai, campur sikit English.")
+            initial_prompt="Video TikTok bahasa Melayu santai tentang mangga Harum Manis Perlis, campur sikit English.")
         data = []
         for s in segs:
             data.append({

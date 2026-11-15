@@ -134,7 +134,7 @@ for p in PIECES:
         fade = int(0.008 * SR)
         seg[:fade] *= np.linspace(0, 1, fade)
         seg[-fade:] *= np.linspace(1, 0, fade)
-        voice_parts.append((p["id"], seg, gain))
+        voice_parts.append((p["id"], seg, gain, p.get("ambient", False)))
 
     # ---- video schedule
     switches = sorted(p.get("broll", []))
@@ -173,7 +173,7 @@ video_chunks = merged
 print(f"{len(video_chunks)} video chunks")
 
 # ------------------------------------------------------------------ voice track
-def norm_piece(x):
+def norm_piece(x, ambient=False):
     db = band_db(x)
     if len(db) == 0:
         return x
@@ -182,13 +182,14 @@ def norm_piece(x):
     frames = x[: len(db) * hop].reshape(len(db), hop)
     rms = np.sqrt((frames[act] ** 2).mean()) if act.any() else 1e-3
     target = 10 ** (-20 / 20)
-    return x * min(target / max(rms, 1e-4), 8.0)
+    # speech is levelled to -20 dBFS; natural sound (applause, room tone) is only nudged
+    return x * min(target / max(rms, 1e-4), 2.0 if ambient else 8.0)
 
 
 by_piece = {}
-for pid, seg, g in voice_parts:
-    by_piece.setdefault(pid, []).append((seg, g))
-voice = np.concatenate([norm_piece(np.concatenate([s for s, _ in v])) * v[0][1] for pid, v in by_piece.items()])
+for pid, seg, g, amb in voice_parts:
+    by_piece.setdefault(pid, []).append((seg, g, amb))
+voice = np.concatenate([norm_piece(np.concatenate([s for s, _, _ in v]), v[0][2]) * v[0][1] for pid, v in by_piece.items()])
 raw_voice = f"{WORK}/voice_raw.f32"
 voice.astype(np.float32).tofile(raw_voice)
 subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "f32le", "-ar", str(SR), "-ac", "1", "-i", raw_voice,
@@ -313,7 +314,7 @@ for s, e in speech:
 gfx, sfx, zooms, pieces_meta = [], [], [], []
 for po in pieces_out:
     p, to_out = po["p"], po["to_out"]
-    pieces_meta.append(dict(id=p["id"], start=po["start"] / FPS, end=po["end"] / FPS))
+    pieces_meta.append(dict(id=p["id"], start=po["start"] / FPS, end=po["end"] / FPS, music=p.get("music", "under")))
     pg = []
     for (t, typ, props) in p.get("gfx", []):
         props = dict(props)
@@ -321,13 +322,14 @@ for po in pieces_out:
             props["items"] = [[name, round(to_out(tt), 3)] for name, tt in props["items"]]
         g = dict(type=typ, start=round(to_out(t), 3), piece=p["id"], **props)
         # never spill into the next section
-        spill = {"bigstat": 0.5, "stamp": 0.6, "sticker": 0.7}.get(typ, 0.0)  # let the big number breathe over the cut
+        spill = {"bigstat": 0.35, "stamp": 0.5, "sticker": 0.5}.get(typ, 0.0)  # let the big number breathe over the cut
         g["dur"] = round(min(g["dur"], po["end"] / FPS + spill - g["start"]), 3)
         pg.append(g)
     pg.sort(key=lambda g: g["start"])
     # a new box graphic replaces the previous one (a stamp may sit on top of a combo card)
+    LAYER = ("heat", "flash", "tag", "nametag", "location", "sticker")  # these sit alongside a box graphic
     for a, b in zip(pg, pg[1:]):
-        if a["type"] in ("heat",) or b["type"] in ("heat",):
+        if a["type"] in LAYER or b["type"] in LAYER:
             continue
         if a["type"] == "combo" and b["type"] == "stamp":
             b["over"] = True

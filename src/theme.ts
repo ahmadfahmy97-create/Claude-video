@@ -32,6 +32,7 @@ export const C = {
   black: '#0B0B0B',
   red: '#EF4444',
   orange: '#FF6B1A',
+  mango: '#FFB703',
 };
 
 // TikTok + Instagram Reels safe area on a 1080x1920 canvas.

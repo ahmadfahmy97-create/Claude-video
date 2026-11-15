@@ -112,9 +112,11 @@ SIZES = {  # height, candidate centre ys (inside the 230..1480 safe band)
     "checklist": (150, [1060, 380, 980]),
     "warning": (290, [980, 410, 1080]),
     "question": (240, [400, 980]),
-    "endcard": (420, [1000, 1080, 440]),
+    "endcard": (420, [1265, 445]),
+    "nametag": (130, [1100, 1300, 330]),
+    "beforeafter": (330, [1000, 430, 1100]),
     "location": (110, [300, 1080]),
-    "tag": (80, [290, 1080]),
+    "tag": (80, [290, 1080, 1420]),
     "sticker": (180, [1020, 420, 640]),
 }
 placed = []
