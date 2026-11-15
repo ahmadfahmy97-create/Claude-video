@@ -4,17 +4,16 @@ Vertical 1080×1920 / 30 fps short for TikTok & Instagram Reels, built with Remo
 Footage: 10 Nov 2026, Kg. Baru Panggas, Chuping, Perlis (Drive folder "YA Harum manis").
 The previous project (FAMA Pasar Tani Simpang 4) is kept in `archive/fama-simpang4/`.
 
-## Story (≈56 s)
-1. **Hook** – owner: "Cuma ada rangka saja yang saya buat. Rangka tiang, rangka bumbung..."
-2. **Payoff** – RM195,000 Geran Naik Taraf cheque, natural applause
-3. Arrival montage – DULU rangka → KINI Pusat Agropelancongan, location card
-4. Mango orchard
-5. Group photo at the FAMA agrotourism sign – Pengerusi: "Kita tunjuk agropelancongan kita. Satu, dua, tiga!"
-6. Owner's thank-you speech (b-roll of FAMA officials, cheque, slide)
-7. Grant – TAHNIAH!
-8. "Kalau ikut tadi, kuning ni premium."
-9. Visitors' book
-10. Group photo at the welcome banner + end card
+## Story (≈57 s incl. closing) – the Pengerusi FAMA engaging with the pengusaha
+1. **Hook** – the pengusaha's Harumanis gift; Pengerusi: "Kalau ikut tadi, kuning ni premium." (GRED PREMIUM)
+2. Turun padang – orchard walk with the pengusaha
+3. Listening to the pengusaha's briefing
+4. Casual chat – "Cikgu, universiti apa?" … NUS … "sampai mereka pun mai buat kajian"
+5. Pengusaha's thank-you speech, cutaway to the Pengerusi listening (DULU rangka → KINI agropelancongan)
+6. Handshake over the RM195,000 Geran Naik Taraf cheque, natural applause
+7. Laughing together over the visitors' book
+8. Group photo – "Kita tunjuk agropelancongan kita. Satu, dua, tiga!" + end card
+9. Abang Kerdee closing (logo animation)
 
 ## Closing
 `public/closing/closing_abang_kerdee.mp4` (16:9 logo animation, 5 s) is appended by `src/Closing.tsx`:
