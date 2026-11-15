@@ -565,6 +565,342 @@ const Sticker: React.FC<{g: G}> = ({g}) => {
   );
 };
 
+// ------------------------------------------------------------------------------ libaturus pieces
+const Search: React.FC<{g: G}> = ({g}) => {
+  const {frame, fps, enter, exit} = useAnim(g.dur, 6);
+  const t0 = Math.round((g.typeAt ?? 0.4) * fps);
+  const td = Math.round((g.typeDur ?? 1.2) * fps);
+  const text: string = g.text;
+  const n = Math.floor(interpolate(frame, [t0, t0 + td], [0, text.length], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}));
+  const caret = frame % 16 < 9;
+  const done = frame >= t0 + td;
+  const sugg: string[] = g.suggest ?? [];
+  const press = spring({frame: frame - t0 - td - 2, fps, config: {damping: 10, stiffness: 300, mass: 0.4}});
+  return (
+    <Centered y={g.y ?? 960} style={{opacity: exit}}>
+      <div
+        style={{
+          width: SAFE_W - 40,
+          background: 'white',
+          borderRadius: 44,
+          boxShadow: '0 22px 60px rgba(0,0,0,0.5)',
+          transform: `translateY(${interpolate(enter, [0, 1], [120, 0])}px) scale(${interpolate(enter, [0, 1], [0.85, 1]) * (done ? 1 + 0.03 * Math.sin(press * Math.PI) : 1)})`,
+          opacity: enter,
+          overflow: 'hidden',
+        }}
+      >
+        <div style={{display: 'flex', alignItems: 'center', gap: 20, padding: '24px 32px'}}>
+          <svg width="52" height="52" viewBox="0 0 48 48">
+            <circle cx="20" cy="20" r="13" stroke="#5F6368" strokeWidth="5" fill="none" />
+            <path d="M30 30 L42 42" stroke="#5F6368" strokeWidth="6" strokeLinecap="round" />
+          </svg>
+          <div style={{fontFamily: MONT, fontWeight: 700, fontSize: 54, color: n ? '#111' : '#9AA0A6', whiteSpace: 'nowrap', flex: 1}}>
+            {n ? text.slice(0, n) : 'Cari...'}
+            <span style={{opacity: caret ? 1 : 0, color: C.green, fontWeight: 400}}>|</span>
+          </div>
+        </div>
+        {sugg.map((s, i) => {
+          const sp = spring({frame: frame - t0 - td - 4 - i * 4, fps, config: {damping: 14, stiffness: 220}});
+          return (
+            <div
+              key={i}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: 18,
+                padding: '14px 36px',
+                borderTop: '2px solid #EEE',
+                fontFamily: MONT,
+                fontWeight: 600,
+                fontSize: 40,
+                color: '#333',
+                opacity: sp,
+                height: interpolate(sp, [0, 1], [0, 78]),
+                boxSizing: 'border-box',
+                overflow: 'hidden',
+              }}
+            >
+              <svg width="34" height="34" viewBox="0 0 48 48">
+                <circle cx="20" cy="20" r="13" stroke="#9AA0A6" strokeWidth="5" fill="none" />
+                <path d="M30 30 L42 42" stroke="#9AA0A6" strokeWidth="6" strokeLinecap="round" />
+              </svg>
+              {s}
+            </div>
+          );
+        })}
+      </div>
+    </Centered>
+  );
+};
+
+const Lower: React.FC<{g: G}> = ({g}) => {
+  const {frame, fps, exit} = useAnim(g.dur, 8);
+  const bar = spring({frame, fps, config: {damping: 16, stiffness: 160}});
+  const txt = spring({frame: frame - 6, fps, config: {damping: 15, stiffness: 180}});
+  return (
+    <div style={{position: 'absolute', left: SAFE.left, top: g.y ?? 1080, transform: 'translateY(-50%)', opacity: exit}}>
+      <div style={{display: 'flex', alignItems: 'stretch', overflow: 'hidden', borderRadius: 14, boxShadow: '0 14px 34px rgba(0,0,0,0.45)', width: interpolate(bar, [0, 1], [0, SAFE_W - 60])}}>
+        <div style={{width: 16, background: C.yellow, flexShrink: 0}} />
+        <div style={{background: 'linear-gradient(120deg, rgba(6,78,59,0.96), rgba(22,163,74,0.94))', padding: '16px 26px', flex: 1, whiteSpace: 'nowrap'}}>
+          <div style={{fontFamily: MONT, fontWeight: 900, fontSize: 40, color: 'white', transform: `translateX(${interpolate(txt, [0, 1], [-40, 0])}px)`, opacity: txt}}>{g.name}</div>
+          <div style={{fontFamily: MONT, fontWeight: 700, fontSize: 32, color: C.yellow, transform: `translateX(${interpolate(txt, [0, 1], [-60, 0])}px)`, opacity: txt, letterSpacing: 0.5}}>{g.role}</div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const Nope: React.FC<{g: G}> = ({g}) => {
+  const {frame, fps, exit} = useAnim(g.dur, 6);
+  const s = spring({frame, fps, config: {damping: 11, stiffness: 260, mass: 0.6}});
+  const sf = Math.round((g.strike ?? 0.6) * fps);
+  const strike = interpolate(frame, [sf, sf + 5], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const x = spring({frame: frame - sf - 3, fps, config: {damping: 8, stiffness: 300, mass: 0.5}});
+  const shake = frame >= sf && frame < sf + 10 ? Math.sin((frame - sf) * 2.4) * (10 - (frame - sf)) * 1.4 : 0;
+  return (
+    <Centered y={g.y ?? 960} style={{opacity: exit}}>
+      <div style={{transform: `translateX(${shake}px) scale(${interpolate(s, [0, 1], [1.6, 1])})`, opacity: interpolate(s, [0, 0.3], [0, 1], {extrapolateRight: 'clamp'}), display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+        <div style={{fontFamily: MONT, fontWeight: 900, fontSize: 34, letterSpacing: 3, color: 'white', background: C.red, padding: '8px 22px', borderRadius: 10, marginBottom: 12}}>{g.kicker}</div>
+        <div style={{position: 'relative'}}>
+          <div style={{fontFamily: ANTON, fontSize: 118, lineHeight: 1.02, color: 'white', textAlign: 'center', textShadow: '0 12px 30px rgba(0,0,0,0.55)', ...stroke(14), opacity: interpolate(strike, [0, 1], [1, 0.8])}}>
+            {g.text}
+          </div>
+          <div style={{position: 'absolute', left: -14, right: -14, top: '50%', height: 20, background: C.red, borderRadius: 10, transform: `rotate(-6deg) scaleX(${strike})`, transformOrigin: 'left center', boxShadow: '0 4px 14px rgba(0,0,0,0.5)'}} />
+        </div>
+      </div>
+      <div
+        style={{
+          position: 'absolute',
+          right: 10,
+          top: -70,
+          width: 130,
+          height: 130,
+          borderRadius: '50%',
+          background: C.red,
+          border: '8px solid white',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          fontFamily: MONT,
+          fontWeight: 900,
+          fontSize: 86,
+          color: 'white',
+          transform: `scale(${x}) rotate(${interpolate(x, [0, 1], [-40, 8])}deg)`,
+          boxShadow: '0 10px 30px rgba(0,0,0,0.5)',
+        }}
+      >
+        ✕
+      </div>
+    </Centered>
+  );
+};
+
+const Hashtag: React.FC<{g: G}> = ({g}) => {
+  const {frame, fps, exit} = useAnim(g.dur, 8);
+  const text: string = g.text;
+  const sweep = interpolate(frame, [10, 24], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const glow = 0.5 + 0.5 * Math.sin(frame / 5);
+  const hs = spring({frame, fps, config: {damping: 9, stiffness: 240, mass: 0.6}});
+  const fontSize = text.length > 10 ? 112 : 140;
+  return (
+    <>
+      {frame < 40 ? <Confetti seed={text} /> : null}
+      <Centered y={g.y ?? 960} style={{opacity: exit}}>
+        <div style={{display: 'flex', alignItems: 'baseline'}}>
+          <span
+            style={{
+              fontFamily: ANTON,
+              fontSize: fontSize * 1.15,
+              color: C.green,
+              transform: `scale(${hs}) rotate(${interpolate(hs, [0, 1], [-30, -8])}deg)`,
+              display: 'inline-block',
+              marginRight: 6,
+              ...stroke(14, 'white'),
+            }}
+          >
+            #
+          </span>
+          {text.split('').map((ch, i) => {
+            const s = spring({frame: frame - 2 - i * 1.2, fps, config: {damping: 11, stiffness: 260, mass: 0.45}});
+            const hi = i >= 4; // FAMA | SANTUNI
+            return (
+              <span
+                key={i}
+                style={{
+                  display: 'inline-block',
+                  fontFamily: ANTON,
+                  fontSize,
+                  lineHeight: 1,
+                  color: hi ? C.yellow : 'white',
+                  transform: `translateY(${interpolate(s, [0, 1], [-70, 0])}px) scale(${interpolate(s, [0, 1], [1.8, 1])})`,
+                  opacity: interpolate(s, [0, 0.3], [0, 1], {extrapolateRight: 'clamp'}),
+                  textShadow: hi ? `0 0 ${18 + glow * 22}px rgba(255,214,10,${0.45 + glow * 0.35}), 0 12px 30px rgba(0,0,0,0.6)` : '0 12px 30px rgba(0,0,0,0.6)',
+                  ...stroke(13),
+                }}
+              >
+                {ch}
+              </span>
+            );
+          })}
+        </div>
+        <div style={{height: 14, width: `${sweep * 92}%`, background: `linear-gradient(90deg, ${C.green}, ${C.yellow})`, borderRadius: 7, marginTop: 10, boxShadow: '0 6px 18px rgba(0,0,0,0.4)'}} />
+      </Centered>
+    </>
+  );
+};
+
+const Goal: React.FC<{g: G}> = ({g}) => {
+  const {frame, fps, enter, exit} = useAnim(g.dur, 8);
+  const total: number = g.total ?? 13;
+  const done: number = g.done ?? 10;
+  const pf = Math.round((g.pending ?? 99) * fps);
+  const pend = frame >= pf;
+  return (
+    <Centered y={g.y ?? 960} style={{opacity: exit}}>
+      <div
+        style={{
+          width: SAFE_W - 20,
+          background: 'rgba(11,11,11,0.78)',
+          borderRadius: 34,
+          padding: '24px 30px 30px',
+          border: '3px solid rgba(255,255,255,0.25)',
+          boxShadow: '0 18px 50px rgba(0,0,0,0.45)',
+          transform: `scale(${interpolate(enter, [0, 1], [0.7, 1])})`,
+          opacity: enter,
+          textAlign: 'center',
+        }}
+      >
+        <div style={{display: 'inline-block', fontFamily: MONT, fontWeight: 900, fontSize: 34, color: C.black, background: C.yellow, padding: '6px 20px', borderRadius: 10, letterSpacing: 2}}>{g.kicker}</div>
+        <div style={{fontFamily: ANTON, fontSize: 62, color: 'white', lineHeight: 1.1, marginTop: 10}}>{g.title}</div>
+        <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 14, marginTop: 18}}>
+          {new Array(total).fill(0).map((_, i) => {
+            const isDone = i < done;
+            const s = spring({frame: frame - 10 - i * 3, fps, config: {damping: 12, stiffness: 260, mass: 0.5}});
+            const p = pend && !isDone ? 1 + 0.12 * Math.sin((frame - pf) / 3) : 1;
+            return (
+              <div
+                key={i}
+                style={{
+                  width: 84,
+                  height: 84,
+                  borderRadius: '50%',
+                  background: isDone ? C.green : pend ? C.red : 'rgba(255,255,255,0.18)',
+                  border: `5px solid ${isDone ? '#B9F6CA' : pend ? '#FFD4D4' : 'rgba(255,255,255,0.4)'}`,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontFamily: MONT,
+                  fontWeight: 900,
+                  fontSize: 44,
+                  color: 'white',
+                  transform: `scale(${s * p})`,
+                }}
+              >
+                {isDone ? '☕' : pend ? '?' : ''}
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </Centered>
+  );
+};
+
+const Ladder: React.FC<{g: G}> = ({g}) => {
+  const {frame, fps, enter, exit} = useAnim(g.dur, 8);
+  const sf = Math.round(g.strike * fps);
+  const hf = Math.round(g.hero * fps);
+  const cf = Math.round(g.chip * fps);
+  const hero = spring({frame: frame - hf, fps, config: {damping: 9, stiffness: 240, mass: 0.6}});
+  const chip = spring({frame: frame - cf, fps, config: {damping: 10, stiffness: 260}});
+  // once the hero price lands, the other franchises shrink into a small strip at the top
+  const away = spring({frame: frame - hf + 4, fps, config: {damping: 16, stiffness: 180}});
+  const items = g.items as [string, number][];
+  return (
+    <Centered y={g.y ?? 960} style={{opacity: exit}}>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          transform: `translateY(${interpolate(away, [0, 1], [0, -150])}px) scale(${interpolate(away, [0, 1], [1, 0.55])})`,
+          opacity: interpolate(away, [0, 1], [1, 0.8]),
+          marginBottom: interpolate(away, [0, 1], [0, -235]),
+        }}
+      >
+        <div style={{fontFamily: MONT, fontWeight: 900, fontSize: 36, color: 'white', background: 'rgba(11,11,11,0.78)', padding: '6px 20px', borderRadius: 10, letterSpacing: 2, opacity: enter}}>{g.label}</div>
+        {items.map(([name, at], i) => {
+          const f = Math.round(at * fps);
+          const s = spring({frame: frame - f, fps, config: {damping: 10, stiffness: 260, mass: 0.5}});
+          const st = interpolate(frame, [sf + i * 3, sf + i * 3 + 6], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+          return (
+            <div key={i} style={{position: 'relative', marginTop: 12, transform: `scale(${s})`, opacity: s}}>
+              <div
+                style={{
+                  fontFamily: ANTON,
+                  fontSize: 100,
+                  lineHeight: 1.05,
+                  color: 'white',
+                  background: `rgba(220,38,38,${0.92 - st * 0.35})`,
+                  padding: '2px 34px',
+                  borderRadius: 16,
+                  boxShadow: '0 10px 26px rgba(0,0,0,0.45)',
+                }}
+              >
+                {name}
+              </div>
+              <div style={{position: 'absolute', left: -14, right: -14, top: '47%', height: 14, background: C.yellow, borderRadius: 7, transform: `rotate(-7deg) scaleX(${st})`, transformOrigin: 'left center', boxShadow: '0 3px 10px rgba(0,0,0,0.5)'}} />
+            </div>
+          );
+        })}
+      </div>
+      <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', opacity: interpolate(hero, [0, 0.3], [0, 1], {extrapolateRight: 'clamp'}), transform: `scale(${interpolate(hero, [0, 1], [2.2, 1])}) rotate(-3deg)`, height: frame < hf ? 0 : undefined}}>
+        <div style={{fontFamily: MONT, fontWeight: 900, fontSize: 38, color: C.black, background: C.yellow, padding: '6px 20px', borderRadius: 10}}>{g.heroLabel}</div>
+        <div style={{fontFamily: ANTON, fontSize: 220, lineHeight: 1, color: C.yellow, textShadow: '0 14px 40px rgba(0,0,0,0.55)', ...stroke(18)}}>{g.heroText}</div>
+      </div>
+      <div style={{marginTop: 6, fontFamily: MONT, fontWeight: 900, fontSize: 44, color: 'white', background: C.green, padding: '10px 28px', borderRadius: 999, transform: `scale(${chip})`, boxShadow: '0 10px 26px rgba(0,0,0,0.45)', height: frame < cf ? 0 : undefined, overflow: 'hidden'}}>🔒 {g.chipText}</div>
+    </Centered>
+  );
+};
+
+const Roi: React.FC<{g: G}> = ({g}) => {
+  const {frame, fps, enter, exit} = useAnim(g.dur, 8);
+  const count = Math.round(interpolate(frame, [0, Math.round(0.75 * fps)], [1, g.value], {extrapolateRight: 'clamp', easing: (t) => 1 - Math.pow(1 - t, 3)}));
+  const landed = frame >= Math.round(0.75 * fps);
+  const slam = spring({frame: frame - Math.round(0.75 * fps), fps, config: {damping: 8, stiffness: 300, mass: 0.6}});
+  const sf = Math.round(g.stamp * fps);
+  const st = spring({frame: frame - sf, fps, config: {damping: 10, stiffness: 280, mass: 0.7}});
+  return (
+    <>
+      {frame >= sf && frame < sf + 50 ? <Confetti seed={'roi' + g.start} /> : null}
+      <Centered y={g.y ?? 960} style={{opacity: exit}}>
+        <div style={{display: 'flex', alignItems: 'flex-end', gap: 18, opacity: enter}}>
+          <div style={{fontFamily: ANTON, fontSize: 260, lineHeight: 0.9, color: C.yellow, transform: `scale(${landed ? interpolate(slam, [0, 1], [1.35, 1]) : 1})`, textShadow: '0 14px 40px rgba(0,0,0,0.55)', ...stroke(18), minWidth: 300, textAlign: 'right'}}>{count}</div>
+          <div style={{fontFamily: ANTON, fontSize: 100, color: 'white', marginBottom: 24, ...stroke(12)}}>{g.unit}</div>
+        </div>
+        <div
+          style={{
+            marginTop: 10,
+            fontFamily: ANTON,
+            fontSize: 92,
+            color: C.yellow,
+            padding: '6px 30px',
+            border: `9px solid ${C.yellow}`,
+            borderRadius: 22,
+            background: 'rgba(6,78,59,0.9)',
+            transform: `scale(${interpolate(st, [0, 1], [3, 1])}) rotate(-6deg)`,
+            opacity: interpolate(st, [0, 0.25], [0, 1], {extrapolateRight: 'clamp'}),
+            boxShadow: '0 16px 50px rgba(0,0,0,0.5)',
+            whiteSpace: 'nowrap',
+          }}
+        >
+          ✓ {g.stampText}
+        </div>
+      </Centered>
+    </>
+  );
+};
+
 export const Graphic: React.FC<{g: G}> = ({g}) => {
   switch (g.type) {
     case 'headline':
@@ -597,6 +933,20 @@ export const Graphic: React.FC<{g: G}> = ({g}) => {
       return <Question g={g} />;
     case 'endcard':
       return <EndCard g={g} />;
+    case 'search':
+      return <Search g={g} />;
+    case 'lower':
+      return <Lower g={g} />;
+    case 'nope':
+      return <Nope g={g} />;
+    case 'hashtag':
+      return <Hashtag g={g} />;
+    case 'goal':
+      return <Goal g={g} />;
+    case 'ladder':
+      return <Ladder g={g} />;
+    case 'roi':
+      return <Roi g={g} />;
     default:
       return null;
   }

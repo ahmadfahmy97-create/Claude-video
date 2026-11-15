@@ -4,8 +4,8 @@
   "version": "1.0.0",
   "scripts": {
     "studio": "remotion studio",
-    "preview": "scripts/render.sh preview",
-    "render": "scripts/render.sh final"
+    "preview": "scripts/render.sh",
+    "render": "scripts/render.sh"
   },
   "dependencies": {
     "@remotion/cli": "4.0.543",

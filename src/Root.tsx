@@ -1,15 +1,21 @@
 import React from 'react';
 import {Composition} from 'remotion';
 import {Main} from './Main';
-import timeline from './timeline.json';
+import {PROJECTS} from './projects';
 
 export const RemotionRoot: React.FC = () => (
-  <Composition
-    id="Main"
-    component={Main}
-    durationInFrames={timeline.durationInFrames}
-    fps={timeline.fps}
-    width={1080}
-    height={1920}
-  />
+  <>
+    {Object.entries(PROJECTS).map(([id, p]) => (
+      <Composition
+        key={id}
+        id={id}
+        component={Main}
+        defaultProps={{project: id}}
+        durationInFrames={p.timeline.durationInFrames}
+        fps={p.timeline.fps}
+        width={1080}
+        height={1920}
+      />
+    ))}
+  </>
 );

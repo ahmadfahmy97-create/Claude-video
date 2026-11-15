@@ -1,14 +1,15 @@
 import React from 'react';
 import {interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
-import timeline from './timeline.json';
+import {useTimeline} from './projects';
 import {C, CX, MONT, SAFE_W, stroke} from './theme';
 
 type Word = {text: string; start: number; end: number};
 type Page = {start: number; end: number; words: Word[]; y?: number};
 
-const KEY = /^(RM\d+|\d+%?|SARA|FAMA|Super|El|Nino\.?|Combo|Madani|Happy|Hour|30%|50%|3)[.,!?]?$/i;
+const KEY = /^(RM[\d,]+|\d+%?|SARA|FAMA|Super|El|Nino\.?|Combo|Madani|Happy|Hour|30%|50%|3|KopieSatu|Santuni|santuni|menyantuni|ke-9|2027|lima|dua|tiga|Perlis)[.,!?:]?$/i;
 
 export const Captions: React.FC = () => {
+  const timeline = useTimeline();
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const t = frame / fps;

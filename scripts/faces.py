@@ -1,8 +1,9 @@
-"""Detect faces in public/footage/base.mp4 and place captions / graphics / zoom origins
-so nothing sits on top of a face. Updates src/timeline.json in place.
+"""Detect faces in public/footage/<project>/base.mp4 and place captions / graphics / zoom origins
+so nothing sits on top of a face. Updates src/data/<project>/timeline.json in place.
 
-Usage: python3 scripts/faces.py
+Usage: python3 scripts/faces.py <project>
 """
+import sys
 import json
 import os
 import subprocess
@@ -12,15 +13,18 @@ import numpy as np
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MODEL = os.environ.get("YUNET", "/home/user/models/yunet.onnx")
-CACHE = f"{ROOT}/src/faces.json"
+PROJECT = sys.argv[1]
+DATA = f"{ROOT}/src/data/{PROJECT}"
+BASE = f"{ROOT}/public/footage/{PROJECT}/base.mp4"
+CACHE = f"{DATA}/faces.json"
 W, H, STEP = 540, 960, 3  # analyse at half res, every 3rd frame (10 fps)
 
-tl = json.load(open(f"{ROOT}/src/timeline.json"))
+tl = json.load(open(f"{DATA}/timeline.json"))
 FPS = tl["fps"]
 
-if not os.path.exists(CACHE) or os.path.getmtime(CACHE) < os.path.getmtime(f"{ROOT}/public/footage/base.mp4"):
+if not os.path.exists(CACHE) or os.path.getmtime(CACHE) < os.path.getmtime(BASE):
     det = cv2.FaceDetectorYN.create(MODEL, "", (W, H), 0.55)
-    proc = subprocess.Popen(["ffmpeg", "-v", "error", "-i", f"{ROOT}/public/footage/base.mp4", "-vf",
+    proc = subprocess.Popen(["ffmpeg", "-v", "error", "-i", BASE, "-vf",
                              f"select='not(mod(n\\,{STEP}))',scale={W}:{H}", "-vsync", "0", "-f", "rawvideo",
                              "-pix_fmt", "bgr24", "-"], stdout=subprocess.PIPE)
     faces = []
@@ -116,6 +120,13 @@ SIZES = {  # height, candidate centre ys (inside the 230..1480 safe band)
     "location": (110, [300, 1080]),
     "tag": (80, [290, 1080]),
     "sticker": (180, [1020, 420, 640]),
+    "search": (340, [930, 1010, 560]),
+    "lower": (120, [1080, 1150, 320]),
+    "nope": (280, [960, 1040, 520]),
+    "hashtag": (200, [960, 1040, 480]),
+    "goal": (400, [940, 1000]),
+    "ladder": (560, [930, 980]),
+    "roi": (380, [950, 1010]),
 }
 placed = []
 for g in tl["gfx"]:
@@ -127,7 +138,8 @@ for g in tl["gfx"]:
         g["y"] = base["y"] + 150
     else:
         best = None
-        for i, y in enumerate(ys):
+        extra = [y for y in (1000, 1080, 1160, 880) if all(abs(y - c) > 40 for c in ys) and 230 + h / 2 <= y <= 1480 - h / 2]
+        for i, y in enumerate(list(ys) + extra):
             o = overlap(g["start"], g["start"] + g["dur"], y - h / 2, y + h / 2) + i * 2000  # prefer earlier slots
             # don't sit on another graphic that is still on screen
             for q in placed:
@@ -163,5 +175,5 @@ for p in tl["captions"]:
     moved += best[1] != 1300
 print("captions moved:", moved)
 
-json.dump(tl, open(f"{ROOT}/src/timeline.json", "w"), ensure_ascii=False, indent=1)
+json.dump(tl, open(f"{DATA}/timeline.json", "w"), ensure_ascii=False, indent=1)
 print("updated src/timeline.json")

@@ -1,9 +1,10 @@
-"""Turn scripts/edl.py into:
-  public/footage/base.mp4   – cut picture (A-roll + B-roll) with cleaned voice track
-  src/timeline.json         – captions, graphics, sfx, zooms, speech intervals (output seconds)
+"""Turn projects/<project>/edl.py into:
+  public/footage/<project>/base.mp4 – cut picture (A-roll + B-roll) with cleaned voice track
+  src/data/<project>/timeline.json  – captions, graphics, sfx, zooms, speech intervals (output seconds)
 
-Usage: python3 scripts/build.py [--skip-video]
+Usage: python3 scripts/build.py <project> [--skip-video]
 """
+import importlib.util
 import difflib
 import json
 import os
@@ -14,16 +15,23 @@ from concurrent.futures import ThreadPoolExecutor
 
 import numpy as np
 
-sys.path.insert(0, os.path.dirname(__file__))
-from edl import PIECES  # noqa: E402
-
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-RAW = os.environ.get("RAW_DIR", "/home/user/raw")
-WORK = os.environ.get("WORK_DIR", "/home/user/work")
+PROJECT = [a for a in sys.argv[1:] if not a.startswith("--")][0]
+PDIR = f"{ROOT}/projects/{PROJECT}"
+_spec = importlib.util.spec_from_file_location("edl", f"{PDIR}/edl.py")
+_edl = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(_edl)
+PIECES = _edl.PIECES
+SNAP = getattr(_edl, "SNAP", False)
+RAW = os.environ.get("RAW_DIR", getattr(_edl, "RAW_DIR", "/home/user/raw"))
+WORK = os.environ.get("WORK_DIR", f"/home/user/work/{PROJECT}")
+FOOT = f"{ROOT}/public/footage/{PROJECT}"
+DATA = f"{ROOT}/src/data/{PROJECT}"
+os.makedirs(DATA, exist_ok=True)
 FPS = 30
 SR = 48000
 os.makedirs(WORK, exist_ok=True)
-os.makedirs(f"{ROOT}/public/footage", exist_ok=True)
+os.makedirs(FOOT, exist_ok=True)
 SKIP_VIDEO = "--skip-video" in sys.argv
 
 # ------------------------------------------------------------------ audio helpers
@@ -55,8 +63,24 @@ def band_db(x):
 
 
 def words_of(clip):
-    d = json.load(open(f"{ROOT}/transcripts/{clip}.json"))
+    d = json.load(open(f"{PDIR}/transcripts/{clip}.json"))
     return [w for s in d["segments"] for w in s["words"]]
+
+
+def snap_range(clip, a, b):
+    """Move range edges to the quietest 10 ms frame nearby so no syllable gets clipped."""
+    def quietest(t0, t1):
+        x = audio(clip)[int(max(t0, 0) * SR): int(t1 * SR)]
+        db = band_db(x)
+        if len(db) == 0:
+            return None
+        k = 3
+        pad = np.pad(db, (k // 2, k // 2), mode="edge")
+        sm = np.convolve(pad, np.ones(k) / k, mode="valid")
+        return max(t0, 0) + (int(np.argmin(sm)) + 0.5) / 100
+    na = quietest(a - 0.18, a + 0.04)
+    nb = quietest(b - 0.04, b + 0.18)
+    return (na if na is not None else a, nb if nb is not None else b)
 
 
 def tighten_range(clip, a, b, keep_gap):
@@ -105,6 +129,8 @@ pieces_out = []
 for p in PIECES:
     subs = []
     for (a, b) in p["ranges"]:
+        if SNAP:
+            a, b = snap_range(p["clip"], a, b)
         subs += tighten_range(p["clip"], a, b, p.get("tighten"))
     # frame quantise
     mapped = []  # (src_a, src_b, out_frame_start, nframes)
@@ -131,6 +157,8 @@ for p in PIECES:
         need = int(round(n * SR / FPS))
         if len(seg) < need:
             seg = np.pad(seg, (0, need - len(seg)))
+        if p.get("mute"):
+            seg[:] = 0
         fade = int(0.008 * SR)
         seg[:fade] *= np.linspace(0, 1, fade)
         seg[-fade:] *= np.linspace(1, 0, fade)
@@ -220,8 +248,8 @@ if not SKIP_VIDEO:
             f.write(f"file '{fn}'\n")
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", f"{WORK}/concat.txt",
                     "-i", f"{WORK}/voice.wav", "-map", "0:v", "-map", "1:a", "-c:v", "copy",
-                    "-c:a", "aac", "-b:a", "256k", "-shortest", f"{ROOT}/public/footage/base.mp4"], check=True)
-    print("wrote public/footage/base.mp4")
+                    "-c:a", "aac", "-b:a", "256k", "-shortest", f"{FOOT}/base.mp4"], check=True)
+    print(f"wrote {FOOT}/base.mp4")
 
 # ------------------------------------------------------------------ captions
 def norm_tok(t):
@@ -290,6 +318,14 @@ for po in pieces_out:
             page = []
     if page:
         caption_pages.append(page)
+    # don't leave a lone word flashing on screen: glue it to the page before
+    k = len(caption_pages) - 1
+    while k > 0 and caption_pages[k - 1] and caption_pages[k - 1][0] in words_out:
+        pg, prev = caption_pages[k], caption_pages[k - 1]
+        if len(pg) == 1 and pg[0]["end"] - pg[0]["start"] < 0.6 and len(prev) <= 4:
+            prev.append(pg[0])
+            del caption_pages[k]
+        k -= 1
     for w in words_out:
         speech.append([w["start"], w["end"]])
 
@@ -319,9 +355,16 @@ for po in pieces_out:
         props = dict(props)
         if typ == "checklist":
             props["items"] = [[name, round(to_out(tt), 3)] for name, tt in props["items"]]
-        g = dict(type=typ, start=round(to_out(t), 3), piece=p["id"], **props)
+        g0 = to_out(t)
+        for k in [k for k in props if k.endswith("_t")]:
+            v = props.pop(k)
+            if isinstance(v, list):  # [[label, source_time], ...]
+                props[k[:-2]] = [[name, round(to_out(tt) - g0, 3)] for name, tt in v]
+            else:
+                props[k[:-2]] = round(to_out(v) - g0, 3)
+        g = dict(type=typ, start=round(g0, 3), piece=p["id"], **props)
         # never spill into the next section
-        spill = {"bigstat": 0.5, "stamp": 0.6, "sticker": 0.7}.get(typ, 0.0)  # let the big number breathe over the cut
+        spill = {"bigstat": 0.5, "stamp": 0.6, "sticker": 0.7, "hashtag": 1.4, "nope": 0.8}.get(typ, 0.0)  # let the big number breathe over the cut
         g["dur"] = round(min(g["dur"], po["end"] / FPS + spill - g["start"]), 3)
         pg.append(g)
     pg.sort(key=lambda g: g["start"])
@@ -351,8 +394,16 @@ for (clip, src, n) in video_chunks:
         cuts.append(round(f / FPS, 3))
     f += n
 
+# a graphic that spills past its section must still make room for the next one
+gfx.sort(key=lambda g: g["start"])
+for a, b in zip(gfx, gfx[1:]):
+    if "heat" in (a["type"], b["type"]) or b.get("over"):
+        continue
+    if a["start"] + a["dur"] > b["start"]:
+        a["dur"] = round(b["start"] - a["start"], 3)
+
 zooms.sort(key=lambda z: z["start"])
 json.dump(dict(fps=FPS, durationInFrames=TOTAL, captions=pages_out, speech=speech_m, gfx=gfx, sfx=sfx,
                zooms=zooms, cuts=cuts, pieces=pieces_meta),
-          open(f"{ROOT}/src/timeline.json", "w"), ensure_ascii=False, indent=1)
-print("wrote src/timeline.json:", len(pages_out), "caption pages,", len(gfx), "graphics,", len(sfx), "sfx")
+          open(f"{DATA}/timeline.json", "w"), ensure_ascii=False, indent=1)
+print(f"wrote {DATA}/timeline.json:", len(pages_out), "caption pages,", len(gfx), "graphics,", len(sfx), "sfx")
