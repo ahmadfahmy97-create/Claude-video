@@ -19,6 +19,28 @@ const zooms = timeline.zooms as Zoom[];
 const pieces = timeline.pieces as {id: string; start: number; end: number}[];
 
 const MUSIC = 'music/m473.mp3';
+// Closing logo sting (landscape 1920x1080, 5 s, no audio) appended after the edit.
+export const CLOSING_FRAMES = 150;
+const MAIN_FRAMES = timeline.durationInFrames;
+
+const Closing: React.FC = () => {
+  const frame = useCurrentFrame();
+  const o = interpolate(frame, [0, 8], [0, 1], {extrapolateRight: 'clamp'});
+  const w = 920; // keeps the logo clear of the TikTok/IG right-hand buttons
+  return (
+    <AbsoluteFill style={{backgroundColor: 'black', opacity: o}}>
+      <div style={{position: 'absolute', left: 500 - w / 2, top: 940 - (w * 9) / 32, width: w, height: (w * 9) / 16}}>
+        <OffthreadVideo src={staticFile('closing/closing.mp4')} muted style={{width: '100%', height: '100%'}} />
+      </div>
+    </AbsoluteFill>
+  );
+};
+
+const FadeToBlack: React.FC = () => {
+  const frame = useCurrentFrame();
+  const o = interpolate(frame, [MAIN_FRAMES - 10, MAIN_FRAMES - 1], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  return <AbsoluteFill style={{backgroundColor: 'black', opacity: o}} />;
+};
 
 const useZoom = () => {
   const frame = useCurrentFrame();
@@ -85,7 +107,7 @@ const musicVolume = (frame: number, fps: number, total: number) => {
     d = Math.min(d, Math.abs(t - s), Math.abs(t - e));
   }
   const piece = pieces.find((p) => t >= p.start && t < p.end)?.id;
-  const open = piece === 'react' ? 0.34 : 0.24;
+  const open = piece === 'react' ? 0.34 : frame >= MAIN_FRAMES ? 0.3 : 0.24;
   const under = 0.075; // music sits ~-22 dB under the voice
   let v = interpolate(d, [0, 0.35], [under, open], {extrapolateRight: 'clamp'});
   v *= interpolate(frame, [0, 12], [0.6, 1], {extrapolateRight: 'clamp'});
@@ -97,15 +119,24 @@ export const Main: React.FC = () => {
   const {fps, durationInFrames} = useVideoConfig();
   return (
     <AbsoluteFill style={{backgroundColor: 'black'}}>
-      <Footage />
-      <Grade />
-      {(timeline.gfx as any[]).map((g, i) => (
-        <Sequence key={i} from={Math.round(g.start * fps)} durationInFrames={Math.round(g.dur * fps)} layout="none">
-          <Graphic g={g} />
-        </Sequence>
-      ))}
-      <Captions />
-      <SectionFlash />
+      <Sequence durationInFrames={MAIN_FRAMES}>
+        <Footage />
+        <Grade />
+        {(timeline.gfx as any[]).map((g, i) => (
+          <Sequence key={i} from={Math.round(g.start * fps)} durationInFrames={Math.round(g.dur * fps)} layout="none">
+            <Graphic g={g} />
+          </Sequence>
+        ))}
+        <Captions />
+        <SectionFlash />
+        <FadeToBlack />
+      </Sequence>
+      <Sequence from={MAIN_FRAMES} durationInFrames={CLOSING_FRAMES}>
+        <Closing />
+      </Sequence>
+      <Sequence from={MAIN_FRAMES + 4} durationInFrames={fps * 5} layout="none">
+        <Audio src={staticFile('sfx/impact_logo.mp3')} volume={0.4} />
+      </Sequence>
 
       <Audio src={staticFile(MUSIC)} loop volume={(f) => musicVolume(f, fps, durationInFrames)} />
       {(timeline.sfx as {name: string; start: number; volume: number}[]).map((s, i) => (
