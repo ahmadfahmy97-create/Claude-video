@@ -13,6 +13,7 @@ import {
 import timeline from './timeline.json';
 import {Captions} from './Captions';
 import {Graphic} from './Graphics';
+import {CLOSING_OVERLAP, Closing, MAIN_FRAMES} from './Closing';
 
 type Zoom = {start: number; scale: number; piece: string; ox?: number; oy?: number};
 const zooms = timeline.zooms as Zoom[];
@@ -88,7 +89,8 @@ const musicVolume = (frame: number, fps: number, total: number) => {
     d = Math.min(d, Math.abs(t - s), Math.abs(t - e));
   }
   const piece = pieces.find((p) => t >= p.start && t < p.end);
-  const open = piece?.music === 'up' ? 0.36 : 0.22; // montage / natural-sound pieces let the music breathe
+  const inClosing = frame >= MAIN_FRAMES - CLOSING_OVERLAP;
+  const open = piece?.music === 'up' || inClosing ? 0.36 : 0.22; // montage / natural-sound pieces let the music breathe
   const under = 0.06; // music sits ~-22 dB under the voice
   let v = interpolate(d, [0, 0.35], [under, open], {extrapolateRight: 'clamp'});
   v *= interpolate(frame, [0, 12], [0.6, 1], {extrapolateRight: 'clamp'});
@@ -100,15 +102,20 @@ export const Main: React.FC = () => {
   const {fps, durationInFrames} = useVideoConfig();
   return (
     <AbsoluteFill style={{backgroundColor: 'black'}}>
-      <Footage />
-      <Grade />
-      {(timeline.gfx as any[]).map((g, i) => (
-        <Sequence key={i} from={Math.round(g.start * fps)} durationInFrames={Math.round(g.dur * fps)} layout="none">
-          <Graphic g={g} />
-        </Sequence>
-      ))}
-      <Captions />
-      <SectionFlash />
+      <Sequence durationInFrames={MAIN_FRAMES}>
+        <Footage />
+        <Grade />
+        {(timeline.gfx as any[]).map((g, i) => (
+          <Sequence key={i} from={Math.round(g.start * fps)} durationInFrames={Math.round(g.dur * fps)} layout="none">
+            <Graphic g={g} />
+          </Sequence>
+        ))}
+        <Captions />
+        <SectionFlash />
+      </Sequence>
+      <Sequence from={MAIN_FRAMES - CLOSING_OVERLAP}>
+        <Closing />
+      </Sequence>
 
       <Audio src={staticFile(MUSIC)} trimBefore={MUSIC_IN * fps} volume={(f) => musicVolume(f, fps, durationInFrames)} />
       {(timeline.sfx as {name: string; start: number; volume: number}[]).map((s, i) => (

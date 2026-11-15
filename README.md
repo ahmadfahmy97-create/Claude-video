@@ -16,6 +16,11 @@ The previous project (FAMA Pasar Tani Simpang 4) is kept in `archive/fama-simpan
 9. Visitors' book
 10. Group photo at the welcome banner + end card
 
+## Closing
+`public/closing/closing_abang_kerdee.mp4` (16:9 logo animation, 5 s) is appended by `src/Closing.tsx`:
+scaled to 56 %, centred on the safe area, 8-frame cross-fade from the end card, soft whoosh + logo hit,
+music carried through and faded out.
+
 ## Pipeline
 
 1. `scripts/transcribe.py <raw_dir> transcripts/turbo` – faster-whisper large-v3-turbo first pass.
