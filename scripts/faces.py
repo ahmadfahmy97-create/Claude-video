@@ -115,6 +115,7 @@ SIZES = {  # height, candidate centre ys (inside the 230..1480 safe band)
     "endcard": (420, [1000, 1080, 440]),
     "location": (110, [300, 1080]),
     "tag": (80, [290, 1080]),
+    "sticker": (180, [1020, 420, 640]),
 }
 placed = []
 for g in tl["gfx"]:

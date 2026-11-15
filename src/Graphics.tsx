@@ -282,7 +282,7 @@ const Price: React.FC<{g: G}> = ({g}) => {
     <Centered y={g.y ?? 420} style={{opacity: exit}}>
       <div style={{display: 'flex', alignItems: 'center', gap: 34}}>
         <div style={{position: 'relative', opacity: enter, transform: `scale(${interpolate(enter, [0, 1], [0.5, 1])})`}}>
-          <div style={{fontFamily: MONT, fontWeight: 800, fontSize: 30, color: 'white', textAlign: 'center', ...stroke(7)}}>HARGA PASARAN</div>
+          <div style={{fontFamily: MONT, fontWeight: 800, fontSize: 30, color: 'white', textAlign: 'center', ...stroke(7)}}>{g.oldLabel ?? 'HARGA PASARAN'}</div>
           <div style={{fontFamily: ANTON, fontSize: 130, color: 'white', lineHeight: 1, opacity: interpolate(strike, [0, 1], [1, 0.75]), ...stroke(14)}}>
             {g.old}
           </div>
@@ -303,7 +303,7 @@ const Price: React.FC<{g: G}> = ({g}) => {
         </div>
         <div style={{opacity: interpolate(n, [0, 0.3], [0, 1], {extrapolateRight: 'clamp'}), transform: `scale(${interpolate(n, [0, 1], [2, 1])}) rotate(-4deg)`}}>
           <div style={{fontFamily: MONT, fontWeight: 900, fontSize: 34, color: C.black, background: C.yellow, borderRadius: 10, padding: '4px 14px', textAlign: 'center'}}>
-            HARGA AGRO MADANI
+            {g.newLabel ?? 'HARGA AGRO MADANI'}
           </div>
           <div style={{fontFamily: ANTON, fontSize: 190, color: C.yellow, lineHeight: 1, textShadow: '0 12px 30px rgba(0,0,0,0.5)', ...stroke(16)}}>{g.new}</div>
         </div>
@@ -538,6 +538,33 @@ const EndCard: React.FC<{g: G}> = ({g}) => {
   );
 };
 
+const Sticker: React.FC<{g: G}> = ({g}) => {
+  const {frame, fps, exit} = useAnim(g.dur, 6);
+  const s = spring({frame, fps, config: {damping: 7, stiffness: 300, mass: 0.5}});
+  const wiggle = Math.sin(frame / 2.5) * 8 * Math.max(0, 1 - frame / 20);
+  return (
+    <Centered y={g.y ?? 420} style={{opacity: exit}}>
+      <div
+        style={{
+          width: 170,
+          height: 170,
+          borderRadius: '50%',
+          background: 'white',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          fontSize: 112,
+          boxShadow: '0 12px 34px rgba(0,0,0,0.4)',
+          border: `8px solid ${C.yellow}`,
+          transform: `scale(${s}) rotate(${-10 + wiggle}deg)`,
+        }}
+      >
+        {g.emoji}
+      </div>
+    </Centered>
+  );
+};
+
 export const Graphic: React.FC<{g: G}> = ({g}) => {
   switch (g.type) {
     case 'headline':
@@ -564,6 +591,8 @@ export const Graphic: React.FC<{g: G}> = ({g}) => {
       return <Warning g={g} />;
     case 'heat':
       return <Heat g={g} />;
+    case 'sticker':
+      return <Sticker g={g} />;
     case 'question':
       return <Question g={g} />;
     case 'endcard':

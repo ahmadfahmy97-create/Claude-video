@@ -33,6 +33,56 @@ PIECES = [
         sfx=[(5.38, "whoosh_cine", 0.45), (9.74, "whoosh_fast", 0.3), (14.08, "whoosh_fast", 0.3), (18.92, "pop_long", 0.45)],
         zoom=[(5.38, 1.0), (8.4, 1.1)],
     ),
+    # ---------------------------------------------------------------- WALKABOUT: TALKING TO VENDORS
+    dict(
+        id="v_kacau", clip="0523", ranges=[(23.75, 27.75)], tighten=None,
+        caption="Niaga okey, sini? Okey. FAMA ada kacau tak? Tak.",
+        gfx=[
+            (23.75, "tag", dict(text="JALAN-JALAN PASAR TANI", dur=2.4)),
+            (26.94, "sticker", dict(emoji="😄", dur=1.0)),
+        ],
+        sfx=[(23.75, "whoosh_cine", 0.35), (26.94, "pop_bubble", 0.6)],
+        zoom=[(23.75, 1.0), (25.64, 1.14)],
+    ),
+    dict(
+        id="v_daging", clip="0523", ranges=[(195.50, 198.62)], tighten=None, voice_gain=1.15,
+        caption="RM28, kita jual RM26 sekilo. Oh, murah. Paling murah.",
+        gfx=[(195.50, "price", dict(old="RM28", new="RM26", oldLabel="HARGA LUAR", newLabel="SEKILO DI SINI", strikeAt=1.1, dur=3.1))],
+        sfx=[(195.45, "whoosh_fast", 0.3), (196.62, "coins", 0.5)],
+        zoom=[(195.45, 1.06)],
+    ),
+    dict(
+        id="v_habis", clip="0523", ranges=[(175.42, 179.08), (182.32, 184.78)], tighten=None,
+        caption="Lama dah meniaga sini, okey? Boleh? Ini petang hari habis ya? Biasanya habis? Habis lah.",
+        gfx=[(184.00, "stamp", dict(text="LAKU HABIS!", dur=1.3))],
+        sfx=[(175.42, "whoosh_fast", 0.3), (184.00, "pop_hard", 0.45)],
+        zoom=[(175.42, 1.0), (182.32, 1.1)],
+    ),
+    dict(
+        id="v_kakjah", clip="0527", ranges=[(10.36, 11.22), (13.28, 14.60), (15.08, 16.45), (17.24, 19.28)], tighten=None,
+        caption="Meniaga okey, kak? Antara orang yang lama. Haa, meniaga dekat sini. Dia punya killer produk ni.",
+        broll=[(14.60, "0527", 19.0)],
+        gfx=[
+            (10.36, "tag", dict(text="GERAI KAK JAH", dur=2.4)),
+            (18.10, "sticker", dict(emoji="🔥", dur=1.3)),
+        ],
+        sfx=[(10.36, "whoosh_air", 0.3), (14.60, "whoosh_fast", 0.25), (18.10, "pop_long", 0.45)],
+        zoom=[(10.36, 1.0), (13.28, 1.1)],
+    ),
+    dict(
+        id="v_original", clip="0527", ranges=[(31.48, 33.72), (35.40, 37.40)], tighten=None,
+        caption="Tak buat yang color-color tu? Tak buat. Orang tak minat, orang nak yang original.",
+        gfx=[(36.80, "stamp", dict(text="ORIGINAL!", dur=1.2))],
+        sfx=[(36.80, "pop_hard", 0.4)],
+        zoom=[(31.48, 1.06), (35.40, 1.16)],
+    ),
+    dict(
+        id="v_bangun", clip="0528", ranges=[(5.48, 11.86), (13.26, 15.75)], tighten=None, voice_gain=1.2,
+        caption="Pukul berapa bangun pagi-pagi ni? Kau ambil orang punya? Tak. Buat sendiri? Dia buat sendiri. Subhanallah. Empat pagi bangun lah. Tahajud dulu lah.",
+        gfx=[(13.28, "bigstat", dict(bottom="PENIAGA KUIH TRADISIONAL", value="4 PAGI", top="DAH BANGUN!", dur=2.4))],
+        sfx=[(5.48, "whoosh_fast", 0.3), (13.28, "impact_whoosh", 0.35)],
+        zoom=[(5.48, 1.0), (9.66, 1.1), (13.26, 1.22)],
+    ),
     # ---------------------------------------------------------------- COMBO MADANI
     dict(
         id="combo", clip="0545", ranges=[(148.82, 162.20)], tighten=0.12,
@@ -99,26 +149,6 @@ PIECES = [
              (323.55, "swoosh_accent", 0.4), (333.80, "pop_hard", 0.45), (370.70, "whoosh_fast", 0.3),
              (375.80, "impact_logo", 0.4), (376.0, "positive", 0.3)],
         zoom=[(285.10, 1.0), (291.9, 1.1), (297.4, 1.2), (298.2, 1.0), (323.55, 1.18), (332.78, 1.06)],
-    ),
-    # ---------------------------------------------------------------- HUMAN MOMENTS
-    dict(
-        id="kuih", clip="0528", ranges=[(13.10, 15.80)], tighten=0.10, voice_gain=1.3,
-        caption="Empat pagi bangun lah. Tahajud dulu lah.",
-        gfx=[(13.10, "tag", dict(text="PENIAGA KUIH TRADISIONAL", dur=2.6))],
-        sfx=[(13.10, "whoosh_fast", 0.3)],
-        zoom=[(13.10, 1.25)],
-    ),
-    dict(
-        id="doa", clip="0549", ranges=[(108.00, 113.80)], tighten=0.10, voice_gain=1.2,
-        caption="Ketabahan dan kesabaran dalam menghadapi ujian kehilangan insan yang tersayang ini.",
-        gfx=[(108.0, "tag", dict(text="ZIARAH SANTUNI", dur=3.0))],
-        sfx=[(108.0, "whoosh_air", 0.25)],
-        zoom=[(108.0, 1.12)],
-    ),
-    dict(
-        id="warm", clip="0547", ranges=[(24.0, 27.4)], tighten=None, voice_gain=0.45,
-        caption="",
-        sfx=[],
     ),
     dict(
         id="outro", clip="0545", ranges=[(408.30, 412.40)], tighten=None,
