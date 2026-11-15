@@ -127,6 +127,9 @@ SIZES = {  # height, candidate centre ys (inside the 230..1480 safe band)
     "goal": (400, [940, 1000]),
     "ladder": (560, [930, 980]),
     "roi": (380, [950, 1010]),
+    "chapter": (230, [960, 1060, 860]),
+    "qcard": (180, [400, 1040, 1120]),
+    "versus": (260, [980, 1060, 900]),
 }
 placed = []
 for g in tl["gfx"]:
@@ -168,7 +171,9 @@ for p in tl["captions"]:
                 if g["type"] in ("location", "tag"):
                     gy0, gy1 = g["y"] - g["h"] / 2, g["y"] + g["h"] / 2
                 if y + cap_h / 2 > gy0 - 20 and y - cap_h / 2 < gy1 + 20:
-                    o += 1e9
+                    # prefer the slot that collides for the shortest time if every slot collides
+                    shared = min(p["end"], g["start"] + g["dur"]) - max(p["start"], g["start"])
+                    o += 1e8 * (1 + shared)
         if best is None or o < best[0]:
             best = (o, y)
     p["y"] = best[1]

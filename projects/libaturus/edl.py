@@ -1,7 +1,8 @@
 """Edit decision list – Libat Urus & Perjumpaan Kumpulan Sasar FAMA, Perlis (Pengerusi FAMA Malaysia).
 
 Story: the question everyone asks ("FAMA buat apa?") -> the chairman's promise -> #FAMASantuni
--> the concrete answer: KopieSatu (cheap licence, 18-month payback) -> call to action.
+-> "tonight we explain everything, ask anything" -> FAMA Perlis briefing -> questions from the floor
+-> the chairman's answer -> KopieSatu in brief -> "the door of FAMA Perlis is open".
 
 Every piece plays the speaker's audio from `clip` over the source `ranges` (seconds).
 Range edges are snapped to the quietest 10 ms nearby and pauses inside a range are tightened by build.py.
@@ -27,7 +28,7 @@ PIECES = [
             (104.30, "search", dict(text="FAMA buat apa?", typeAt_t=108.15, typeDur=1.1,
                                     suggest=["mana pergi FAMA?", "FAMA tolong apa?", "FAMA bantu siapa?"], dur=6.4)),
         ],
-        sfx=[(104.30, "whoosh_cine", 0.35), (108.60, "typing", 0.32), (110.05, "pop_hard", 0.4)],
+        sfx=[(104.30, "whoosh_cine", 0.35), (108.15, "typing", 0.32), (110.05, "pop_hard", 0.4)],
         zoom=[(104.30, 1.12), (108.55, 1.32)],
     ),
     # ---------------------------------------------------------------- PROMISE
@@ -42,89 +43,114 @@ PIECES = [
         sfx=[(461.90, "whoosh_air", 0.25), (471.43, "impact_big", 0.42), (472.95, "click_select", 0.5)],
         zoom=[(461.78, 1.0), (463.72, 1.14), (470.10, 1.0), (471.43, 1.28)],
     ),
-    # ---------------------------------------------------------------- CONTEXT
-    dict(
-        id="perlis", clip=S, ranges=[(23.25, 27.75)], tighten=0.10,
-        caption="Perlis merupakan negeri yang ke-9 yang saya dah turun.",
-        broll=[(23.25, "0555", 0.3)],
-        gfx=[(25.40, "bigstat", dict(bottom="PERLIS", value="KE-9", top="NEGERI DILAWATI", dur=2.6))],
-        sfx=[(23.25, "whoosh_fast", 0.3), (25.40, "impact_whoosh", 0.4)],
-    ),
     # ---------------------------------------------------------------- #FAMASANTUNI
     dict(
-        id="santuni", clip=S, ranges=[(399.75, 408.66), (413.24, 418.95)], tighten=0.12,
-        caption="Di hari pertama saya menjadi Pengerusi FAMA Malaysia, saya telah melancarkan satu tanda pagar. Apa slogan? Slogannya adalah FAMA Santuni.",
-        broll=[(399.75, "0587", 0.8), (401.96, None, 0)],
+        id="santuni", clip=S, ranges=[(404.08, 408.66), (413.24, 418.95)], tighten=0.12,
+        caption="Saya telah melancarkan satu tanda pagar. Apa slogan? Slogannya adalah FAMA Santuni.",
+        broll=[(404.08, "0587", 0.8), (406.54, None, 0)],
         gfx=[
             (407.50, "tag", dict(text="# TANDA PAGAR", dur=2.2)),
             (416.80, "hashtag", dict(text="FAMASANTUNI", dur=3.9)),
         ],
         sfx=[(413.24, "pop_bubble", 0.45), (415.90, "riser", 0.3), (416.80, "impact_logo", 0.5), (416.85, "achievement", 0.25)],
-        zoom=[(401.96, 1.0), (404.08, 1.12), (413.24, 1.2), (416.80, 1.34)],
+        zoom=[(406.54, 1.08), (413.24, 1.2), (416.80, 1.34)],
     ),
     dict(
-        id="santuni2", clip=S, ranges=[(419.94, 426.80), (435.91, 439.30)], tighten=0.12,
-        caption="InsyaAllah selagi saya jadi pengerusi kat sini, semua warga kerja FAMA akan menyantuni semua orang. Tapi tuan-tuan, santuni ni bukan maksudnya meluluskan.",
-        broll=[(424.70, "0591", 0.4), (435.91, None, 0)],
+        id="lulus", clip=S, ranges=[(435.91, 439.30)], tighten=0.12,
+        caption="Tapi tuan-tuan, santuni ni bukan maksudnya meluluskan.",
         gfx=[(438.30, "stamp", dict(text="SANTUNI ≠ LULUS", dur=1.9))],
         sfx=[(438.30, "pop_hard", 0.45)],
-        zoom=[(419.94, 1.06), (435.91, 1.1), (437.70, 1.3)],
+        zoom=[(435.91, 1.1), (437.70, 1.3)],
     ),
-    # ---------------------------------------------------------------- KOPIESATU
+    # ---------------------------------------------------------------- "TONIGHT, ASK ANYTHING"
     dict(
-        id="kpi", clip=S, ranges=[(653.88, 656.30), (659.84, 665.05), (666.75, 671.95), (673.41, 680.50)], tighten=0.12,
-        caption="Kenapa saya tekankan KopieSatu? KPI saya adalah sehingga tahun 2027, semua negeri di Malaysia ada outlet ataupun premis KopieSatu. Ada tinggal dua ataupun tiga negeri saja yang belum ada KopieSatu.",
-        gfx=[
-            (653.88, "question", dict(text="KENAPA KOPIESATU?", dur=2.3)),
-            (661.80, "goal", dict(kicker="KPI 2027", title="SEMUA NEGERI ADA KOPIESATU", total=13,
-                                  done=10, pending_t=675.83, dur=18.7)),
-        ],
-        sfx=[(653.88, "whoosh_cine", 0.35), (661.80, "pop_long", 0.4), (675.83, "click_ui", 0.5)],
-        zoom=[(653.88, 1.15), (659.84, 1.0), (666.75, 1.1), (673.41, 1.0), (675.83, 1.18)],
+        id="tanya", clip=S, ranges=[(356.60, 364.08)], tighten=0.12,
+        caption="Jadi malam ni kita ceritakan habis kepada tuan-tuan dan puan-puan, apa itu FAMA. Kalau ada soalan, boleh tanya.",
+        broll=[(357.74, "0585", 0.8), (359.54, "0563", 49.0), (361.88, None, 0)],
+        gfx=[(361.88, "sticker", dict(emoji="🙋", dur=1.8))],
+        sfx=[(356.60, "whoosh_fast", 0.3), (361.88, "pop_bubble", 0.5)],
+        zoom=[(361.88, 1.16)],
     ),
+    # ---------------------------------------------------------------- FAMA PERLIS BRIEFING
     dict(
-        id="harga", clip=S, ranges=[(693.70, 699.50), (699.98, 708.05)], tighten=0.12,
-        caption="Orang lain RM200,000, orang lain sampai RM400,000, RM600,000. Tapi KopieSatu tuan-tuan, licensingnya RM20,000 lah. RM20,000 tu pula kita ikat selama lima tahun.",
+        id="daftar", clip="0566", ranges=[(16.85, 21.61), (25.35, 29.49)], tighten=0.12,
+        caption="Tuan-tuan boleh daftar dengan kami sebagai usahawan FAMA. Bila kita buka vendor, procurement dan sebagainya, kita akan buat jemputan kepada tuan-tuan.",
         gfx=[
-            (693.70, "ladder", dict(label="FRANCAIS LAIN", items_t=[["RM200K", 694.74], ["RM400K", 697.10], ["RM600K", 698.60]],
-                                    strike_t=700.10, heroText="RM20K", heroLabel="LESEN KOPIESATU", hero_t=701.98,
-                                    chipText="IKAT 5 TAHUN", chip_t=706.54, dur=14.3)),
+            (16.85, "chapter", dict(kicker="BAHAGIAN 1", title="TAKLIMAT FAMA PERLIS", dur=2.4)),
+            (25.35, "combo", dict(title="DAFTAR USAHAWAN FAMA", items=["Jemputan vendor", "Procurement"], dur=5.0)),
         ],
-        sfx=[(694.74, "pop_bubble", 0.4), (697.10, "pop_bubble", 0.4), (698.60, "pop_bubble", 0.45),
-             (700.10, "swoosh_accent", 0.35), (701.98, "impact_whoosh", 0.45), (702.05, "coin_win", 0.32),
-             (706.54, "click_select", 0.45)],
-        zoom=[(693.70, 1.0), (699.98, 1.14), (704.34, 1.0), (706.30, 1.16)],
+        sfx=[(16.85, "whoosh_cine", 0.35), (16.95, "impact_whoosh", 0.3), (25.35, "pop_long", 0.4)],
     ),
     dict(
-        id="desaru", clip=S, ranges=[(820.43, 829.62), (838.25, 844.15)], tighten=0.12,
-        caption="Di Desaru, Johor, ada seorang usahawan yang buka KopieSatu. Dia kata modal dia semua sekali RM120,000. Tuan-tuan nak tahu, 18 bulan sahaja, dia dah dapat balik modal.",
-        broll=[(824.20, "0585", 3.2), (827.10, None, 0)],
+        id="gerai", clip="0569", ranges=[(5.96, 9.26), (11.70, 14.70), (19.32, 25.16)], tighten=0.12,
+        caption="So tuan-tuan yang ada peniaga buah, boleh mohon untuk naik taraf kedai tuan-tuan. Bukan kita bagi secara tunai, kita bagi secara komponen peralatan.",
         gfx=[
-            (820.50, "location", dict(title="Desaru, Johor", sub="Usahawan KopieSatu", dur=3.6)),
-            (828.40, "bigstat", dict(bottom="MODAL", value="RM120K", top="SEMUA SEKALI", dur=2.3)),
-            (839.10, "roi", dict(value=18, unit="BULAN", stampText="BALIK MODAL", stamp_t=843.00, dur=5.2)),
+            (5.96, "tag", dict(text="NAIK TARAF GERAI BUAH", dur=3.0)),
+            (19.54, "versus", dict(no="TUNAI", yesText="PERALATAN", yes_t=23.92, dur=5.6)),
         ],
-        sfx=[(820.50, "pop_long", 0.4), (828.40, "coins", 0.45), (838.30, "riser_stutter", 0.28),
-             (839.75, "impact_big", 0.45), (843.00, "coin_win", 0.4), (843.05, "correct", 0.25)],
-        zoom=[(820.43, 1.0), (827.10, 1.1), (838.25, 1.18), (843.00, 1.3)],
+        sfx=[(5.96, "whoosh_fast", 0.25), (19.54, "click_select", 0.45), (23.92, "correct", 0.35)],
+        zoom=[(5.96, 1.0), (19.32, 1.12)],
     ),
-    # ---------------------------------------------------------------- CALL TO ACTION
     dict(
-        id="cta", clip=S, ranges=[(864.90, 877.58)], tighten=0.12,
-        caption="Kalau ada yang pencen-pencen, yang duit gratuiti tak bergerak lagi tu, bolehlah fikir-fikirkan untuk buat perniagaan KopieSatu yang ketiga di Negeri Perlis.",
-        broll=[(866.10, "0586", 6.2), (869.96, "0579", 38.2), (871.60, None, 0)],
+        id="dm", clip="0564", ranges=[(39.96, 46.36)], tighten=0.12,
+        caption="Tuan-tuan DM lah. Facebook, TikTok, Instagram ni. InsyaAllah kita akan update.",
+        gfx=[(40.06, "combo", dict(title="DM FAMA PERLIS", items=["Facebook", "TikTok", "Instagram"], dur=6.0))],
+        sfx=[(40.06, "pop_long", 0.4), (41.44, "click_ui", 0.4), (42.18, "click_ui", 0.4), (42.60, "click_ui", 0.4)],
+    ),
+    # ---------------------------------------------------------------- QUESTIONS FROM THE FLOOR
+    dict(
+        id="q_bungkus", clip="0580", ranges=[(1.54, 9.64), (12.63, 15.09)], tighten=0.12, voice_gain=1.1,
+        caption="Bimbingan untuk pembungkusan tu, adakah memang mesti produk makanan saja? Yang non-makanan boleh tak? Macam kami punya produk tu, kokopit tu lah.",
         gfx=[
-            (867.70, "sticker", dict(emoji="💰", dur=1.6)),
-            (874.40, "bigstat", dict(bottom="KOPIESATU", value="KE-3", top="DI PERLIS?", dur=3.2)),
+            (1.54, "chapter", dict(kicker="BAHAGIAN 2", title="SESI SOAL JAWAB", dur=2.2)),
+            (4.10, "qcard", dict(label="SOALAN PESERTA", text="Bantuan pembungkusan untuk produk bukan makanan?", dur=10.6)),
         ],
-        sfx=[(867.70, "pop_bubble", 0.5), (874.40, "impact_whoosh", 0.4)],
-        zoom=[(864.90, 1.0), (871.60, 1.12), (874.34, 1.25)],
+        sfx=[(1.54, "whoosh_cine", 0.35), (1.64, "impact_whoosh", 0.3), (4.10, "pop_bubble", 0.45)],
+        zoom=[(1.54, 1.0), (7.40, 1.12)],
+    ),
+    dict(
+        id="q_kelapa", clip="0581", ranges=[(13.14, 20.34), (30.90, 34.96)], tighten=0.12, voice_gain=1.1,
+        caption="Selepas 4 tahun, kita tengok dalam konteks yang ada sekarang, kelapa sudah jatuh harga. Jadi bagaimana untuk masa hadapan kita?",
+        broll=[(30.90, "0572", 1.0), (32.60, None, 0)],
+        gfx=[(13.14, "qcard", dict(label="SOALAN PESERTA", text="Harga kelapa jatuh. Apa masa depan penanam?", dur=11.0))],
+        sfx=[(13.14, "pop_bubble", 0.45), (18.16, "swoosh_accent", 0.3)],
+        zoom=[(13.14, 1.0), (18.16, 1.12)],
+    ),
+    dict(
+        id="jawab", clip="0584", ranges=[(1.06, 7.52), (9.22, 10.44), (10.89, 15.47)], tighten=0.12,
+        caption="Bila disebut geran tadi, FAMA ataupun agensi, Jabatan Pertanian, dia tak bagi duit tau. Dia bagi barang, dia bagi benda.",
+        gfx=[
+            (1.06, "tag", dict(text="JAWAPAN PENGERUSI", dur=2.6)),
+            (9.62, "versus", dict(no="DUIT", yesText="BARANG", yes_t=12.35, dur=5.2)),
+        ],
+        sfx=[(1.06, "whoosh_air", 0.25), (9.62, "click_select", 0.45), (12.35, "correct", 0.35)],
+        zoom=[(1.06, 1.0), (9.22, 1.15)],
+    ),
+    # ---------------------------------------------------------------- KOPIESATU (short)
+    dict(
+        id="kopi", clip=S, ranges=[(700.68, 708.05)], tighten=0.12,
+        caption="KopieSatu tuan-tuan, licensingnya RM20,000 lah. RM20,000 tu pula kita ikat selama lima tahun.",
+        gfx=[
+            (700.68, "tag", dict(text="☕ KOPIESATU", dur=2.0)),
+            (701.98, "bigstat", dict(bottom="LESEN KOPIESATU", value="RM20K", top="IKAT 5 TAHUN", dur=5.2)),
+        ],
+        sfx=[(700.68, "whoosh_fast", 0.3), (701.98, "impact_whoosh", 0.42), (702.05, "coin_win", 0.3)],
+        zoom=[(700.68, 1.0), (704.34, 1.14)],
+    ),
+    # ---------------------------------------------------------------- CLOSE
+    dict(
+        id="pintu", clip=S, ranges=[(386.94, 396.51)], tighten=0.12,
+        caption="Saya buka pintu FAMA Negeri Perlis untuk tuan-tuan datang lagi sekali. Boleh tak boleh? Boleh jumpa dengan pengarah.",
+        broll=[(393.99, "0591", 0.4), (395.07, None, 0)],
+        gfx=[(389.21, "headline", dict(kicker="FAMA NEGERI PERLIS", text="PINTU SENTIASA TERBUKA", dur=4.6))],
+        sfx=[(389.21, "pop_long", 0.4), (393.99, "applause_small", 0.22)],
+        zoom=[(386.94, 1.0), (389.21, 1.12), (395.07, 1.22)],
     ),
     # ---------------------------------------------------------------- OUTRO (picture only, music up)
     dict(
         id="outro", clip="0583", ranges=[(1.0, 4.4)], tighten=None, mute=True,
-        gfx=[(1.05, "endcard", dict(line1="#FAMASANTUNI", line2="BERMINAT BUKA KOPIESATU?",
-                                    cta="HUBUNGI FAMA NEGERI", dur=3.35))],
+        gfx=[(1.05, "endcard", dict(line1="#FAMASANTUNI", line2="ADA SOALAN UNTUK FAMA?",
+                                    cta="KOMEN DI BAWAH", dur=3.35))],
         sfx=[(1.05, "whoosh_cine", 0.3)],
     ),
 ]

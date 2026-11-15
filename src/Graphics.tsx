@@ -901,6 +901,100 @@ const Roi: React.FC<{g: G}> = ({g}) => {
   );
 };
 
+const Chapter: React.FC<{g: G}> = ({g}) => {
+  const {frame, fps, D} = useAnim(g.dur, 8);
+  const inn = spring({frame, fps, config: {damping: 16, stiffness: 200}});
+  const out = interpolate(frame, [D - 8, D], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const x = interpolate(inn, [0, 1], [-1200, 0]) + out * 1200;
+  const t = spring({frame: frame - 5, fps, config: {damping: 13, stiffness: 220}});
+  return (
+    <div style={{position: 'absolute', left: 0, width: 1080, top: g.y ?? 960, transform: `translateY(-50%) translateX(${x}px)`}}>
+      <div style={{marginLeft: SAFE.left - 20, width: SAFE_W + 40, transform: 'skewY(-4deg)', boxShadow: '0 18px 46px rgba(0,0,0,0.5)', borderRadius: 18, overflow: 'hidden'}}>
+        <div style={{background: C.yellow, padding: '8px 30px', fontFamily: MONT, fontWeight: 900, fontSize: 34, letterSpacing: 4, color: C.black}}>{g.kicker}</div>
+        <div style={{background: 'linear-gradient(110deg, #064E3B, #16A34A)', padding: '18px 30px 22px'}}>
+          <div style={{fontFamily: ANTON, fontSize: 96, lineHeight: 1.02, color: 'white', transform: `translateX(${interpolate(t, [0, 1], [80, 0])}px)`, opacity: t}}>{g.title}</div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const QCard: React.FC<{g: G}> = ({g}) => {
+  const {frame, fps, enter, exit} = useAnim(g.dur, 8);
+  const pulse = 1 + 0.06 * Math.max(0, Math.sin(frame / 4)) * Math.max(0, 1 - frame / 45);
+  return (
+    <Centered y={g.y ?? 420} style={{opacity: exit}}>
+      <div
+        style={{
+          width: SAFE_W - 20,
+          display: 'flex',
+          alignItems: 'center',
+          gap: 22,
+          background: 'rgba(255,255,255,0.97)',
+          borderRadius: 30,
+          padding: '20px 26px',
+          boxShadow: '0 18px 46px rgba(0,0,0,0.45)',
+          borderLeft: `14px solid ${C.green}`,
+          transform: `translateY(${interpolate(enter, [0, 1], [-60, 0])}px) scale(${interpolate(enter, [0, 1], [0.85, 1])})`,
+          opacity: enter,
+        }}
+      >
+        <div style={{width: 96, height: 96, borderRadius: '50%', background: C.green, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, transform: `scale(${pulse})`}}>
+          <svg width="54" height="54" viewBox="0 0 48 48">
+            <rect x="17" y="5" width="14" height="24" rx="7" fill="white" />
+            <path d="M11 22c0 7 6 12 13 12s13-5 13-12" stroke="white" strokeWidth="4" fill="none" strokeLinecap="round" />
+            <path d="M24 34v8M17 42h14" stroke="white" strokeWidth="4" strokeLinecap="round" />
+          </svg>
+        </div>
+        <div>
+          <div style={{fontFamily: MONT, fontWeight: 900, fontSize: 28, letterSpacing: 3, color: C.green}}>{g.label}</div>
+          <div style={{fontFamily: MONT, fontWeight: 800, fontSize: 44, lineHeight: 1.12, color: C.black}}>{g.text}</div>
+        </div>
+      </div>
+    </Centered>
+  );
+};
+
+const Versus: React.FC<{g: G}> = ({g}) => {
+  const {frame, fps, exit} = useAnim(g.dur, 8);
+  const a = spring({frame, fps, config: {damping: 11, stiffness: 260, mass: 0.5}});
+  const st = interpolate(frame, [6, 12], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const yf = Math.round((g.yes ?? 1) * fps);
+  const b = spring({frame: frame - yf, fps, config: {damping: 9, stiffness: 280, mass: 0.6}});
+  const chip = (bg: string): React.CSSProperties => ({
+    display: 'flex',
+    alignItems: 'center',
+    gap: 14,
+    fontFamily: ANTON,
+    fontSize: 84,
+    color: 'white',
+    background: bg,
+    padding: '6px 28px 6px 18px',
+    borderRadius: 22,
+    boxShadow: '0 14px 34px rgba(0,0,0,0.45)',
+    whiteSpace: 'nowrap',
+  });
+  return (
+    <Centered y={g.y ?? 960} style={{opacity: exit}}>
+      <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 18}}>
+        <div style={{position: 'relative', transform: `scale(${a}) rotate(-3deg)`, opacity: interpolate(st, [0, 1], [1, 0.82])}}>
+          <div style={chip('rgba(127,29,29,0.92)')}>
+            <span style={{fontFamily: MONT, fontWeight: 900, fontSize: 64, color: '#FCA5A5'}}>✕</span>
+            {g.no}
+          </div>
+          <div style={{position: 'absolute', left: -10, right: -10, top: '50%', height: 14, background: C.red, borderRadius: 7, transform: `rotate(-6deg) scaleX(${st})`, transformOrigin: 'left center'}} />
+        </div>
+        <div style={{transform: `scale(${interpolate(b, [0, 1], [2, 1])}) rotate(2deg)`, opacity: interpolate(b, [0, 0.3], [0, 1], {extrapolateRight: 'clamp'})}}>
+          <div style={chip('linear-gradient(120deg, #15803D, #22C55E)')}>
+            <span style={{fontFamily: MONT, fontWeight: 900, fontSize: 64, color: C.yellow}}>✓</span>
+            {g.yesText}
+          </div>
+        </div>
+      </div>
+    </Centered>
+  );
+};
+
 export const Graphic: React.FC<{g: G}> = ({g}) => {
   switch (g.type) {
     case 'headline':
@@ -947,6 +1041,12 @@ export const Graphic: React.FC<{g: G}> = ({g}) => {
       return <Ladder g={g} />;
     case 'roi':
       return <Roi g={g} />;
+    case 'chapter':
+      return <Chapter g={g} />;
+    case 'qcard':
+      return <QCard g={g} />;
+    case 'versus':
+      return <Versus g={g} />;
     default:
       return null;
   }
