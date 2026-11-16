@@ -18,7 +18,9 @@ type Zoom = {start: number; scale: number; piece: string; ox?: number; oy?: numb
 const zooms = timeline.zooms as Zoom[];
 const pieces = timeline.pieces as {id: string; start: number; end: number; soft?: boolean}[];
 
-const MUSIC = 'music/m709.mp3'; // Mixkit 'The Long Road' (hopeful, builds in the second half)
+const MUSIC = 'music/m839.mp3'; // Mixkit 'Tears of Joy' – fun, uplifting, 140 s (covers the edit + logo)
+// This track is mastered ~14 dB hotter than the previous one; scale it so the voice stays on top.
+const MUSIC_GAIN = 0.3;
 // Closing logo sting (landscape 1920x1080, 5 s, no audio) appended after the edit.
 export const CLOSING_FRAMES = 150;
 const MAIN_FRAMES = timeline.durationInFrames;
@@ -122,7 +124,7 @@ const musicVolume = (frame: number, fps: number, total: number) => {
   let v = interpolate(d, [0, 0.35], [under, open], {extrapolateRight: 'clamp'});
   v *= interpolate(frame, [0, 12], [0.6, 1], {extrapolateRight: 'clamp'});
   v *= interpolate(frame, [total - 75, total - 1], [1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  return v;
+  return v * MUSIC_GAIN;
 };
 
 export const Main: React.FC = () => {
