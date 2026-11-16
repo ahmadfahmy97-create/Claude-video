@@ -112,7 +112,7 @@ PIECES = [
     ),
     # ---------------------------------------------------------------- FAMA'S PLAN: 5 PASAR TANI WITH AN OKU LOT
     dict(
-        id="pasartani", clip=S, ranges=[(632.15, 653.55)], tighten=0.12,
+        id="pasartani", clip=S, ranges=[(632.15, 653.90)], tighten=0.12,
         caption="Saya punya planning, saya beritahu KP, tahun depan, saya tak nak yang 200 lebih punya pasar tani, saya nak pioneer paling kurang 5 pasar tani ada lot promosi OKU. Kita bagi peluang mereka untuk berniaga, sebab kalau FAMA tak bagi peluang, kita tak jadi contoh.",
         drop_words=["menaikah"],
         broll=[(634.26, "0662", 8.0), (637.10, "0657", 1.0), (639.24, None, 0),
@@ -126,11 +126,20 @@ PIECES = [
              (651.10, "pop_hard", 0.4)],
         zoom=[(632.15, 1.0), (639.24, 1.1), (642.3, 1.2), (651.10, 1.12)],
     ),
+    # ---------------------------------------------------------------- CLOSING: THANK YOU + SALAM
     dict(
-        id="outro", clip=S, ranges=[(738.85, 742.60)], tighten=None,  # runs past the clip end: silent tail under the end card
+        id="terima", clip=S, ranges=[(689.60, 698.00)], tighten=0.12,
+        caption="Jadi saya rasa saya ucapkan terima kasih kepada PPDK ANIPS ni juga, kerana menyambut kehadiran kami.",
+        broll=[(689.60, "0687", 10.5), (693.10, "0693", 1.5)],
+        sfx=[(689.55, "woosh_reverb", 0.14), (695.90, "harp_rise", 0.22)],
+        soft=True,
+    ),
+    dict(
+        id="outro", clip=S, ranges=[(738.85, 744.40)], tighten=None,  # runs past the clip end: silent tail under the end card
         caption="Assalamualaikum warahmatullahi wabarakatuh.",
         broll=[(738.85, "0694", 1.0)],
-        gfx=[(738.90, "endcard", dict(line1="Lawatan ke PPDK ANIPS", line2="Pemerkasaan Anak Istimewa, Aspirasi Bersama", cta="Kongsi kalau anda tersentuh 🤍", dur=3.6))],
-        sfx=[(739.0, "bell_chime", 0.3)],
+        gfx=[(740.35, "endcard", dict(line1="Lawatan ke PPDK ANIPS", line2="Pemerkasaan Anak Istimewa, Aspirasi Bersama", cta="Kongsi kalau anda tersentuh 🤍", dur=4.0))],
+        sfx=[(740.35, "bell_chime", 0.3)],
+        soft=True,
     ),
 ]

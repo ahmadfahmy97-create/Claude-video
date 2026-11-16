@@ -1,6 +1,6 @@
 {
  "fps": 30,
- "durationInFrames": 3536,
+ "durationInFrames": 3815,
  "captions": [
   {
    "start": 0.09,
@@ -2394,7 +2394,7 @@
   },
   {
    "start": 112.91,
-   "end": 114.203,
+   "end": 114.343,
    "words": [
     {
      "text": "kita",
@@ -2420,30 +2420,145 @@
    "y": 1400
   },
   {
-   "start": 114.203,
-   "end": 115.583,
+   "start": 114.507,
+   "end": 115.687,
    "words": [
     {
-     "text": "Assalamualaikum",
-     "start": 114.203,
-     "end": 115.263
+     "text": "Jadi",
+     "start": 114.507,
+     "end": 115.147
     },
     {
-     "text": "warahmatullahi",
-     "start": 115.263,
-     "end": 115.583
+     "text": "saya",
+     "start": 115.147,
+     "end": 115.387
+    },
+    {
+     "text": "rasa",
+     "start": 115.387,
+     "end": 115.547
+    },
+    {
+     "text": "saya",
+     "start": 115.547,
+     "end": 115.687
     }
    ],
    "y": 1400
   },
   {
-   "start": 115.583,
-   "end": 115.913,
+   "start": 115.687,
+   "end": 117.047,
+   "words": [
+    {
+     "text": "ucapkan",
+     "start": 115.687,
+     "end": 116.027
+    },
+    {
+     "text": "terima",
+     "start": 116.027,
+     "end": 116.247
+    },
+    {
+     "text": "kasih",
+     "start": 116.247,
+     "end": 116.527
+    },
+    {
+     "text": "kepada",
+     "start": 116.527,
+     "end": 117.047
+    }
+   ],
+   "y": 1300
+  },
+  {
+   "start": 117.047,
+   "end": 119.187,
+   "words": [
+    {
+     "text": "PPDK",
+     "start": 117.047,
+     "end": 117.947
+    },
+    {
+     "text": "ANIPS",
+     "start": 117.947,
+     "end": 118.577
+    },
+    {
+     "text": "ni",
+     "start": 118.577,
+     "end": 118.677
+    },
+    {
+     "text": "juga,",
+     "start": 118.677,
+     "end": 118.937
+    }
+   ],
+   "y": 1300
+  },
+  {
+   "start": 119.917,
+   "end": 121.177,
+   "words": [
+    {
+     "text": "kerana",
+     "start": 119.917,
+     "end": 120.167
+    },
+    {
+     "text": "menyambut",
+     "start": 120.167,
+     "end": 120.657
+    },
+    {
+     "text": "kehadiran",
+     "start": 120.657,
+     "end": 121.177
+    }
+   ],
+   "y": 1300
+  },
+  {
+   "start": 121.177,
+   "end": 121.703,
+   "words": [
+    {
+     "text": "kami.",
+     "start": 121.177,
+     "end": 121.557
+    }
+   ],
+   "y": 1300
+  },
+  {
+   "start": 121.703,
+   "end": 123.083,
+   "words": [
+    {
+     "text": "Assalamualaikum",
+     "start": 121.703,
+     "end": 122.763
+    },
+    {
+     "text": "warahmatullahi",
+     "start": 122.763,
+     "end": 123.083
+    }
+   ],
+   "y": 1300
+  },
+  {
+   "start": 123.083,
+   "end": 123.413,
    "words": [
     {
      "text": "wabarakatuh.",
-     "start": 115.583,
-     "end": 115.663
+     "start": 123.083,
+     "end": 123.163
     }
    ],
    "y": 1300
@@ -2460,7 +2575,11 @@
   ],
   [
    84.127,
-   115.663
+   118.937
+  ],
+  [
+   119.917,
+   123.163
   ]
  ],
  "gfx": [
@@ -2604,18 +2723,18 @@
    "start": 112.91,
    "piece": "pasartani",
    "text": "FAMA JADI CONTOH",
-   "dur": 1.823,
+   "dur": 2.0,
    "y": 1100,
    "h": 190
   },
   {
    "type": "endcard",
-   "start": 114.183,
+   "start": 123.133,
    "piece": "outro",
    "line1": "Lawatan ke PPDK ANIPS",
    "line2": "Pemerkasaan Anak Istimewa, Aspirasi Bersama",
    "cta": "Kongsi kalau anda tersentuh 🤍",
-   "dur": 3.6,
+   "dur": 4.0,
    "y": 440,
    "h": 420
   }
@@ -2762,8 +2881,18 @@
    "volume": 0.4
   },
   {
+   "name": "woosh_reverb",
+   "start": 114.467,
+   "volume": 0.14
+  },
+  {
+   "name": "harp_rise",
+   "start": 119.917,
+   "volume": 0.22
+  },
+  {
    "name": "bell_chime",
-   "start": 114.283,
+   "start": 123.133,
    "volume": 0.3
   }
  ],
@@ -2958,7 +3087,14 @@
    "oy": 0.387
   },
   {
-   "start": 114.13333333333334,
+   "start": 114.46666666666667,
+   "scale": 1.0,
+   "piece": "terima",
+   "ox": 0.764,
+   "oy": 0.464
+  },
+  {
+   "start": 121.63333333333334,
    "scale": 1.0,
    "piece": "outro",
    "ox": 0.8,
@@ -3020,63 +3156,82 @@
   110.767,
   112.9,
   113.033,
-  114.133
+  114.467,
+  117.967,
+  121.633
  ],
  "pieces": [
   {
    "id": "hook",
    "start": 0.0,
-   "end": 10.333333333333334
+   "end": 10.333333333333334,
+   "soft": false
   },
   {
    "id": "saf",
    "start": 10.333333333333334,
-   "end": 30.533333333333335
+   "end": 30.533333333333335,
+   "soft": false
   },
   {
    "id": "pengasas",
    "start": 30.533333333333335,
-   "end": 40.166666666666664
+   "end": 40.166666666666664,
+   "soft": false
   },
   {
    "id": "salam",
    "start": 40.166666666666664,
-   "end": 46.63333333333333
+   "end": 46.63333333333333,
+   "soft": false
   },
   {
    "id": "kisah",
    "start": 46.63333333333333,
-   "end": 62.6
+   "end": 62.6,
+   "soft": false
   },
   {
    "id": "dapur1",
    "start": 62.6,
-   "end": 65.86666666666666
+   "end": 65.86666666666666,
+   "soft": false
   },
   {
    "id": "dapur2",
    "start": 65.86666666666666,
-   "end": 74.73333333333333
+   "end": 74.73333333333333,
+   "soft": false
   },
   {
    "id": "kebun",
    "start": 74.73333333333333,
-   "end": 88.36666666666666
+   "end": 88.36666666666666,
+   "soft": false
   },
   {
    "id": "laman",
    "start": 88.36666666666666,
-   "end": 98.16666666666667
+   "end": 98.16666666666667,
+   "soft": false
   },
   {
    "id": "pasartani",
    "start": 98.16666666666667,
-   "end": 114.13333333333334
+   "end": 114.46666666666667,
+   "soft": false
+  },
+  {
+   "id": "terima",
+   "start": 114.46666666666667,
+   "end": 121.63333333333334,
+   "soft": true
   },
   {
    "id": "outro",
-   "start": 114.13333333333334,
-   "end": 117.86666666666666
+   "start": 121.63333333333334,
+   "end": 127.16666666666667,
+   "soft": true
   }
  ]
 }

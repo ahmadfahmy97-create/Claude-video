@@ -16,7 +16,7 @@ import {Graphic} from './Graphics';
 
 type Zoom = {start: number; scale: number; piece: string; ox?: number; oy?: number};
 const zooms = timeline.zooms as Zoom[];
-const pieces = timeline.pieces as {id: string; start: number; end: number}[];
+const pieces = timeline.pieces as {id: string; start: number; end: number; soft?: boolean}[];
 
 const MUSIC = 'music/m709.mp3'; // Mixkit 'The Long Road' (hopeful, builds in the second half)
 // Closing logo sting (landscape 1920x1080, 5 s, no audio) appended after the edit.
@@ -66,7 +66,7 @@ const Footage: React.FC = () => {
   let bump = 1;
   for (const p of pieces) {
     const f0 = Math.round(p.start * fps);
-    if (f0 > 0 && frame >= f0 && frame < f0 + 10) bump = interpolate(frame - f0, [0, 9], [1.07, 1], {extrapolateRight: 'clamp'});
+    if (f0 > 0 && !p.soft && frame >= f0 && frame < f0 + 10) bump = interpolate(frame - f0, [0, 9], [1.07, 1], {extrapolateRight: 'clamp'});
   }
   return (
     <AbsoluteFill style={{transform: `scale(${scale * bump})`, transformOrigin: `${ox * 100}% ${oy * 100}%`}}>
@@ -79,11 +79,20 @@ const SectionFlash: React.FC = () => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   let o = 0;
+  let dip = 0;
   for (const p of pieces) {
     const f0 = Math.round(p.start * fps);
-    if (f0 > 0 && frame >= f0 && frame < f0 + 6) o = interpolate(frame - f0, [0, 5], [0.45, 0]);
+    if (f0 <= 0) continue;
+    if (p.soft) {
+      if (frame >= f0 - 7 && frame < f0 + 9) dip = interpolate(frame - f0, [-7, 0, 9], [0, 0.85, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+    } else if (frame >= f0 && frame < f0 + 6) o = interpolate(frame - f0, [0, 5], [0.45, 0]);
   }
-  return <AbsoluteFill style={{backgroundColor: 'white', opacity: o, pointerEvents: 'none'}} />;
+  return (
+    <>
+      <AbsoluteFill style={{backgroundColor: 'white', opacity: o, pointerEvents: 'none'}} />
+      <AbsoluteFill style={{backgroundColor: 'black', opacity: dip, pointerEvents: 'none'}} />
+    </>
+  );
 };
 
 // soft vignette + bottom gradient so captions stay readable on bright footage
@@ -107,8 +116,9 @@ const musicVolume = (frame: number, fps: number, total: number) => {
     d = Math.min(d, Math.abs(t - s), Math.abs(t - e));
   }
   const piece = pieces.find((p) => t >= p.start && t < p.end)?.id;
-  const open = piece === 'react' ? 0.34 : frame >= MAIN_FRAMES ? 0.3 : 0.24;
-  const under = 0.075; // music sits ~-22 dB under the voice
+  const closing = piece === 'terima' || piece === 'outro';
+  const open = closing || frame >= MAIN_FRAMES ? 0.34 : 0.24;
+  const under = closing ? 0.095 : 0.075; // music sits ~-22 dB under the voice
   let v = interpolate(d, [0, 0.35], [under, open], {extrapolateRight: 'clamp'});
   v *= interpolate(frame, [0, 12], [0.6, 1], {extrapolateRight: 'clamp'});
   v *= interpolate(frame, [total - 75, total - 1], [1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
