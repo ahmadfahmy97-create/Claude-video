@@ -71,7 +71,7 @@ def tighten_range(clip, a, b, keep_gap):
     k = 5  # 50 ms median smoothing
     pad = np.pad(db, (k // 2, k // 2), mode="edge")
     sm = np.array([np.median(pad[i:i + k]) for i in range(len(db))])
-    silent = sm < speech - 15
+    silent = sm < speech - 24  # soft trailing words (e.g. "berniaga") stay in
     # smooth: ignore tiny blips
     out, i, n = [], 0, len(silent)
     cuts = []
@@ -319,6 +319,8 @@ for po in pieces_out:
         props = dict(props)
         if typ == "checklist":
             props["items"] = [[name, round(to_out(tt), 3)] for name, tt in props["items"]]
+        if typ == "saf":
+            props["taps"] = [round(to_out(tt), 3) for tt in props["taps"]]
         g = dict(type=typ, start=round(to_out(t), 3), piece=p["id"], **props)
         # never spill into the next section
         spill = {"bigstat": 0.5, "stamp": 0.6, "sticker": 0.7}.get(typ, 0.0)  # let the big number breathe over the cut

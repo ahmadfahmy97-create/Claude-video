@@ -1,4 +1,6 @@
-# Lawatan FAMA – Pasar Tani Kekal Simpang 4 (Remotion edit)
+# Lawatan Pengerusi FAMA – PPDK Anak Istimewa Perlis (Remotion edit)
+
+_Previous edit (FAMA Pasar Tani Simpang 4) is in git history before this commit._
 
 Vertical 1080×1920 / 30 fps short for TikTok & Instagram Reels, built with Remotion.
 
@@ -29,5 +31,5 @@ Raw footage (`/home/user/raw/*.MP4`) and `public/footage/` are not committed (to
 - Music sits ~-22 dB under speech and rises in gaps.
 
 ## Assets
-- SFX & music: Mixkit (free licence, commercial use, no attribution required).
+- SFX & music: Mixkit (free licence, commercial use, no attribution required). Music: "The Long Road" (m709).
 - Fonts: Montserrat, Anton (SIL Open Font Licence), bundled in `public/fonts`.

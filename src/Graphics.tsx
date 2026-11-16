@@ -246,7 +246,7 @@ const Confetti: React.FC<{seed: string}> = ({seed}) => {
 
 const Stamp: React.FC<{g: G}> = ({g}) => {
   const {frame, fps, exit} = useAnim(g.dur);
-  const s = spring({frame, fps, config: {damping: 10, stiffness: 280, mass: 0.7}});
+  const s = spring({frame, fps, config: {damping: 15, stiffness: 300, mass: 0.6}});
   return (
     <>
       {g.confetti ? <Confetti seed={g.text} /> : null}
@@ -565,6 +565,128 @@ const Sticker: React.FC<{g: G}> = ({g}) => {
   );
 };
 
+// ------------------------------------------------------------------------------ deaf jemaah: tap passes along the saf
+const Person: React.FC<{x: number; y: number; s: number; fill: string; ring?: string; glow?: number}> = ({x, y, s, fill, ring, glow = 0}) => (
+  <g transform={`translate(${x} ${y}) scale(${s})`}>
+    {glow > 0 ? <circle cx={0} cy={-10} r={58} fill={C.yellow} opacity={0.45 * glow} /> : null}
+    <circle cx={0} cy={-46} r={17} fill={fill} stroke={ring ?? 'none'} strokeWidth={ring ? 5 : 0} />
+    <path d="M-28 22 Q-28 -22 0 -24 Q28 -22 28 22 Z" fill={fill} stroke={ring ?? 'none'} strokeWidth={ring ? 5 : 0} />
+  </g>
+);
+
+const Saf: React.FC<{g: G}> = ({g}) => {
+  const {frame, fps, enter, exit} = useAnim(g.dur);
+  const t = g.start + frame / fps;
+  const N = 6;
+  const W = SAFE_W - 20;
+  const taps: number[] = g.taps ?? [];
+  const sight = interpolate(frame, [Math.round(0.5 * fps), Math.round(1.1 * fps)], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  // imam bows on every tap
+  const bow = taps.reduce((m, tt) => Math.max(m, interpolate(t - tt, [-0.35, -0.1, 0.4, 0.7], [0, 1, 1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'})), 0);
+  const xs = Array.from({length: N}, (_, i) => 70 + (i * (W - 140)) / (N - 1));
+  const glowOf = (k: number) =>
+    taps.reduce((m, tt) => Math.max(m, interpolate(t - tt - k * 0.14, [0, 0.06, 0.42], [0, 1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'})), 0);
+  return (
+    <Centered y={g.y ?? 1000} style={{opacity: exit}}>
+      <div
+        style={{
+          width: W,
+          background: 'rgba(6,78,59,0.9)',
+          borderRadius: 30,
+          border: '4px solid rgba(255,255,255,0.75)',
+          boxShadow: '0 18px 50px rgba(0,0,0,0.45)',
+          transform: `translateY(${interpolate(enter, [0, 1], [80, 0])}px) scale(${interpolate(enter, [0, 1], [0.9, 1])})`,
+          opacity: enter,
+          padding: '18px 0 10px',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+        }}
+      >
+        <div style={{fontFamily: MONT, fontWeight: 900, fontSize: 32, color: C.yellow, letterSpacing: 1.5}}>CARA JEMAAH PEKAK SOLAT</div>
+        <svg width={W} height={250} viewBox={`0 0 ${W} 250`}>
+          {/* imam */}
+          <g transform={`translate(${W / 2} 82) rotate(${bow * 0})`}>
+            <g transform={`translate(0 ${bow * 10}) scale(1 ${1 - bow * 0.25})`}>
+              <Person x={0} y={0} s={1.05} fill={C.yellow} />
+            </g>
+          </g>
+          <text x={W / 2} y={128} textAnchor="middle" fontFamily={MONT} fontWeight={900} fontSize={22} fill="white">IMAM</text>
+          {/* sight line from the far-right makmum */}
+          <line
+            x1={xs[N - 1]}
+            y1={175}
+            x2={xs[N - 1] + (W / 2 + 40 - xs[N - 1]) * sight}
+            y2={175 + (70 - 175) * sight}
+            stroke={C.yellow}
+            strokeWidth={5}
+            strokeDasharray="10 9"
+            strokeLinecap="round"
+          />
+          {xs.map((x, i) => {
+            const k = N - 1 - i; // 0 = far right
+            const gl = glowOf(k);
+            return <Person key={i} x={x} y={205} s={0.85} fill={gl > 0.3 ? C.yellow : 'white'} ring={k === 0 ? C.yellow : undefined} glow={gl} />;
+          })}
+          {/* tap arcs between neighbours */}
+          {xs.slice(0, N - 1).map((x, i) => {
+            const k = N - 2 - i; // arc from person k (right) to k+1 (left)
+            const gl = glowOf(k + 0.5);
+            const x0 = xs[i + 1] - 18;
+            const x1 = x + 18;
+            return (
+              <path key={`a${i}`} d={`M${x0} 160 Q${(x0 + x1) / 2} 128 ${x1} 160`} stroke={C.yellow} strokeWidth={6} fill="none" strokeLinecap="round" opacity={gl} />
+            );
+          })}
+        </svg>
+        <div style={{fontFamily: MONT, fontWeight: 800, fontSize: 28, color: 'white', marginTop: -4}}>Tepuk bahu → sebelah → sampai hujung saf</div>
+      </div>
+    </Centered>
+  );
+};
+
+// ------------------------------------------------------------------------------ FAMA sign: "F" (three fingers) swept left -> right
+const Sign: React.FC<{g: G}> = ({g}) => {
+  const {frame, fps, enter, exit} = useAnim(g.dur);
+  const bars = [0, 1, 2].map((i) => spring({frame: frame - 6 - i * 4, fps, config: {damping: 12, stiffness: 220}}));
+  const sweep = interpolate(frame, [Math.round(1.0 * fps), Math.round(2.2 * fps)], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const word = spring({frame: frame - Math.round(2.3 * fps), fps, config: {damping: 10, stiffness: 240}});
+  return (
+    <Centered y={g.y ?? 420} style={{opacity: exit}}>
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: 26,
+          background: 'rgba(11,11,11,0.82)',
+          borderRadius: 28,
+          padding: '20px 30px',
+          border: `4px solid ${C.yellow}`,
+          boxShadow: '0 16px 44px rgba(0,0,0,0.45)',
+          transform: `scale(${interpolate(enter, [0, 1], [0.6, 1])})`,
+          opacity: enter,
+        }}
+      >
+        <svg width={230} height={170} viewBox="0 0 230 170">
+          <text x={8} y={120} fontFamily={ANTON} fontSize={120} fill="white">F</text>
+          {bars.map((b, i) => (
+            <rect key={i} x={70} y={34 + i * 34} width={110 * b} height={20} rx={10} fill={C.yellow} />
+          ))}
+          <line x1={20} y1={150} x2={20 + 190 * sweep} y2={150} stroke={C.green} strokeWidth={8} strokeLinecap="round" />
+          <path d={`M${20 + 190 * sweep - 4} 138 l16 12 l-16 12`} fill="none" stroke={C.green} strokeWidth={8} strokeLinecap="round" strokeLinejoin="round" opacity={sweep > 0.05 ? 1 : 0} />
+        </svg>
+        <div>
+          <div style={{fontFamily: MONT, fontWeight: 900, fontSize: 30, color: C.yellow, letterSpacing: 1.2}}>SIMBOL BAHASA ISYARAT</div>
+          <div style={{fontFamily: ANTON, fontSize: 110, color: 'white', lineHeight: 1, transform: `scale(${interpolate(word, [0, 1], [0.4, 1])})`, transformOrigin: 'left center', opacity: interpolate(word, [0, 0.3], [0, 1], {extrapolateRight: 'clamp'})}}>
+            FAMA
+          </div>
+          <div style={{fontFamily: MONT, fontWeight: 800, fontSize: 26, color: 'white'}}>Disahkan komuniti OKU</div>
+        </div>
+      </div>
+    </Centered>
+  );
+};
+
 export const Graphic: React.FC<{g: G}> = ({g}) => {
   switch (g.type) {
     case 'headline':
@@ -595,6 +717,10 @@ export const Graphic: React.FC<{g: G}> = ({g}) => {
       return <Sticker g={g} />;
     case 'question':
       return <Question g={g} />;
+    case 'saf':
+      return <Saf g={g} />;
+    case 'sign':
+      return <Sign g={g} />;
     case 'endcard':
       return <EndCard g={g} />;
     default:

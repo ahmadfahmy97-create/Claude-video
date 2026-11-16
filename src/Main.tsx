@@ -18,7 +18,7 @@ type Zoom = {start: number; scale: number; piece: string; ox?: number; oy?: numb
 const zooms = timeline.zooms as Zoom[];
 const pieces = timeline.pieces as {id: string; start: number; end: number}[];
 
-const MUSIC = 'music/m473.mp3';
+const MUSIC = 'music/m709.mp3'; // Mixkit 'The Long Road' (hopeful, builds in the second half)
 // Closing logo sting (landscape 1920x1080, 5 s, no audio) appended after the edit.
 export const CLOSING_FRAMES = 150;
 const MAIN_FRAMES = timeline.durationInFrames;

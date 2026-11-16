@@ -1,0 +1,25 @@
+{
+ "clip": "0647",
+ "duration": 28.8213125,
+ "segments": [
+  {
+   "start": 14.38,
+   "end": 17.18,
+   "text": "Alhamdulillah, Alhamdulillah.",
+   "words": [
+    {
+     "w": " Alhamdulillah,",
+     "s": 14.38,
+     "e": 15.78,
+     "p": 0.725
+    },
+    {
+     "w": " Alhamdulillah.",
+     "s": 15.78,
+     "e": 17.18,
+     "p": 0.838
+    }
+   ]
+  }
+ ]
+}

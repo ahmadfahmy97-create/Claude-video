@@ -1,0 +1,416 @@
+{
+ "clip": "0645",
+ "duration": 80.64,
+ "segments": [
+  {
+   "start": 0.4,
+   "end": 3.02,
+   "text": "Assalamualaikum warahmatullahi wabarakatuh.",
+   "words": [
+    {
+     "w": " Assalamualaikum",
+     "s": 0.4,
+     "e": 1.44,
+     "p": 0.798
+    },
+    {
+     "w": " warahmatullahi",
+     "s": 1.44,
+     "e": 3.02,
+     "p": 0.902
+    },
+    {
+     "w": " wabarakatuh.",
+     "s": 3.02,
+     "e": 3.02,
+     "p": 0.99
+    }
+   ]
+  },
+  {
+   "start": 31.33,
+   "end": 34.51,
+   "text": "Kepada kami, tukangkan dan hakikan",
+   "words": [
+    {
+     "w": " Kepada",
+     "s": 31.33,
+     "e": 31.97,
+     "p": 0.484
+    },
+    {
+     "w": " kami,",
+     "s": 31.97,
+     "e": 32.33,
+     "p": 0.946
+    },
+    {
+     "w": " tukangkan",
+     "s": 32.51,
+     "e": 33.57,
+     "p": 0.677
+    },
+    {
+     "w": " dan",
+     "s": 33.57,
+     "e": 33.73,
+     "p": 0.92
+    },
+    {
+     "w": " hakikan",
+     "s": 33.73,
+     "e": 34.51,
+     "p": 0.661
+    }
+   ]
+  },
+  {
+   "start": 34.51,
+   "end": 36.63,
+   "text": "Dapatkan kandilang darah kami",
+   "words": [
+    {
+     "w": " Dapatkan",
+     "s": 34.51,
+     "e": 35.33,
+     "p": 0.418
+    },
+    {
+     "w": " kandilang",
+     "s": 35.33,
+     "e": 35.99,
+     "p": 0.272
+    },
+    {
+     "w": " darah",
+     "s": 35.99,
+     "e": 36.33,
+     "p": 0.835
+    },
+    {
+     "w": " kami",
+     "s": 36.33,
+     "e": 36.63,
+     "p": 0.94
+    }
+   ]
+  },
+  {
+   "start": 36.63,
+   "end": 38.71,
+   "text": "Supaya kami dapat menghiasi",
+   "words": [
+    {
+     "w": " Supaya",
+     "s": 36.63,
+     "e": 37.15,
+     "p": 0.557
+    },
+    {
+     "w": " kami",
+     "s": 37.15,
+     "e": 37.51,
+     "p": 0.989
+    },
+    {
+     "w": " dapat",
+     "s": 37.51,
+     "e": 37.75,
+     "p": 0.949
+    },
+    {
+     "w": " menghiasi",
+     "s": 37.75,
+     "e": 38.71,
+     "p": 0.52
+    }
+   ]
+  },
+  {
+   "start": 38.71,
+   "end": 44.3,
+   "text": "Yang bergoda untuk agama, bahasa dan negara",
+   "words": [
+    {
+     "w": " Yang",
+     "s": 38.71,
+     "e": 39.05,
+     "p": 0.006
+    },
+    {
+     "w": " bergoda",
+     "s": 39.32,
+     "e": 41.94,
+     "p": 0.553
+    },
+    {
+     "w": " untuk",
+     "s": 41.94,
+     "e": 42.28,
+     "p": 0.636
+    },
+    {
+     "w": " agama,",
+     "s": 42.28,
+     "e": 42.9,
+     "p": 0.981
+    },
+    {
+     "w": " bahasa",
+     "s": 43.08,
+     "e": 43.48,
+     "p": 0.796
+    },
+    {
+     "w": " dan",
+     "s": 43.48,
+     "e": 43.74,
+     "p": 0.648
+    },
+    {
+     "w": " negara",
+     "s": 43.74,
+     "e": 44.3,
+     "p": 0.998
+    }
+   ]
+  },
+  {
+   "start": 44.3,
+   "end": 46.52,
+   "text": "Kami memohon kepada anda",
+   "words": [
+    {
+     "w": " Kami",
+     "s": 44.3,
+     "e": 45.04,
+     "p": 0.992
+    },
+    {
+     "w": " memohon",
+     "s": 45.04,
+     "e": 45.56,
+     "p": 0.829
+    },
+    {
+     "w": " kepada",
+     "s": 45.56,
+     "e": 45.86,
+     "p": 0.866
+    },
+    {
+     "w": " anda",
+     "s": 45.86,
+     "e": 46.52,
+     "p": 0.389
+    }
+   ]
+  },
+  {
+   "start": 46.52,
+   "end": 48.3,
+   "text": "Mereka berkakilan lagi",
+   "words": [
+    {
+     "w": " Mereka",
+     "s": 46.52,
+     "e": 47.02,
+     "p": 0.51
+    },
+    {
+     "w": " berkakilan",
+     "s": 47.02,
+     "e": 47.82,
+     "p": 0.505
+    },
+    {
+     "w": " lagi",
+     "s": 47.82,
+     "e": 48.3,
+     "p": 0.387
+    }
+   ]
+  },
+  {
+   "start": 48.3,
+   "end": 51.0,
+   "text": "Ini dengan lipahan terahmatmu",
+   "words": [
+    {
+     "w": " Ini",
+     "s": 48.3,
+     "e": 48.66,
+     "p": 0.027
+    },
+    {
+     "w": " dengan",
+     "s": 48.66,
+     "e": 49.0,
+     "p": 0.189
+    },
+    {
+     "w": " lipahan",
+     "s": 49.0,
+     "e": 49.8,
+     "p": 0.452
+    },
+    {
+     "w": " terahmatmu",
+     "s": 49.8,
+     "e": 51.0,
+     "p": 0.785
+    }
+   ]
+  },
+  {
+   "start": 51.0,
+   "end": 53.0,
+   "text": "Sementara sekarang usaha kami",
+   "words": [
+    {
+     "w": " Sementara",
+     "s": 51.0,
+     "e": 51.78,
+     "p": 0.641
+    },
+    {
+     "w": " sekarang",
+     "s": 51.78,
+     "e": 52.2,
+     "p": 0.655
+    },
+    {
+     "w": " usaha",
+     "s": 52.2,
+     "e": 52.66,
+     "p": 0.71
+    },
+    {
+     "w": " kami",
+     "s": 52.66,
+     "e": 53.0,
+     "p": 0.909
+    }
+   ]
+  },
+  {
+   "start": 53.0,
+   "end": 54.24,
+   "text": "Jangan mencayakan",
+   "words": [
+    {
+     "w": " Jangan",
+     "s": 53.0,
+     "e": 53.3,
+     "p": 0.264
+    },
+    {
+     "w": " mencayakan",
+     "s": 53.3,
+     "e": 54.24,
+     "p": 0.809
+    }
+   ]
+  },
+  {
+   "start": 54.24,
+   "end": 56.82,
+   "text": "Mereka sendiri mendapat kerataan",
+   "words": [
+    {
+     "w": " Mereka",
+     "s": 54.24,
+     "e": 54.94,
+     "p": 0.594
+    },
+    {
+     "w": " sendiri",
+     "s": 54.94,
+     "e": 55.26,
+     "p": 0.64
+    },
+    {
+     "w": " mendapat",
+     "s": 55.26,
+     "e": 55.76,
+     "p": 0.797
+    },
+    {
+     "w": " kerataan",
+     "s": 55.76,
+     "e": 56.82,
+     "p": 0.806
+    }
+   ]
+  },
+  {
+   "start": 56.82,
+   "end": 57.96,
+   "text": "Dan hidayamu",
+   "words": [
+    {
+     "w": " Dan",
+     "s": 56.82,
+     "e": 57.02,
+     "p": 0.445
+    },
+    {
+     "w": " hidayamu",
+     "s": 57.02,
+     "e": 57.96,
+     "p": 0.855
+    }
+   ]
+  },
+  {
+   "start": 57.96,
+   "end": 59.26,
+   "text": "Sesukurnya hanya",
+   "words": [
+    {
+     "w": " Sesukurnya",
+     "s": 57.96,
+     "e": 58.8,
+     "p": 0.748
+    },
+    {
+     "w": " hanya",
+     "s": 58.8,
+     "e": 59.26,
+     "p": 0.887
+    }
+   ]
+  },
+  {
+   "start": 59.26,
+   "end": 76.16,
+   "text": "Terima kasih kerana menonton!",
+   "words": [
+    {
+     "w": " Terima",
+     "s": 59.26,
+     "e": 60.34,
+     "p": 0.774
+    },
+    {
+     "w": " kasih",
+     "s": 60.34,
+     "e": 62.66,
+     "p": 0.997
+    },
+    {
+     "w": " kerana",
+     "s": 62.66,
+     "e": 64.4,
+     "p": 0.822
+    },
+    {
+     "w": " menonton!",
+     "s": 64.4,
+     "e": 76.16,
+     "p": 0.697
+    }
+   ]
+  }
+ ]
+}

@@ -1,4 +1,4 @@
-"""Edit decision list.
+"""Edit decision list – PPDK Anak Istimewa Perlis visit (Pengerusi FAMA speech, clip 0659).
 
 Every piece plays the speaker's audio from `clip` over the source `ranges` (seconds).
 Pauses inside a range are tightened automatically by build.py.
@@ -10,149 +10,108 @@ broll   : list of (source_time_in_audio_clip, video_clip_or_None, video_in_secon
 gfx     : list of (source_time, graphic_type, props) – motion graphics.
 sfx     : list of (source_time, sound_name, volume).
 zoom    : list of (source_time, scale) – punch-ins on the speaker (hides jump cuts).
+
+The previous project's EDL (FAMA Pasar Tani Simpang 4) lives in git history.
 """
+
+S = "0659"  # the speech
 
 PIECES = [
     # ---------------------------------------------------------------- HOOK
     dict(
-        id="hook", clip="0545", ranges=[(272.42, 279.56)], tighten=0.10,
-        caption="Kalau mereka nak beli sayur-sayuran, buah-buahan, harga diskaun lagi 30%, boleh guna SARA.",
+        id="hook", clip=S, ranges=[(344.40, 356.62)], tighten=0.12,
+        caption="Kalau tuan-tuan solat dengan komuniti ni, saya percaya tuan-tuan akan khusyuk, tuan-tuan akan menangis, dan tuan-tuan akan rasa bertuahnya diri kita, sebab kita sempurna.",
+        broll=[(349.62, "0646", 3.0), (351.40, "0647", 2.2), (353.12, None, 0)],
+        gfx=[(344.45, "headline", dict(kicker="PENGERUSI FAMA", text="BILA SOLAT BERSAMA ANAK OKU", dur=3.9))],
+        sfx=[(344.42, "woosh_reverb", 0.22), (349.62, "crystal_chime", 0.28), (355.56, "heartbeat", 0.7)],
+        zoom=[(344.40, 1.0), (346.9, 1.1), (353.12, 1.04), (355.50, 1.22)],
+    ),
+    # ---------------------------------------------------------------- BACKSTORY
+    dict(
+        id="kisah", clip=S, ranges=[(33.50, 49.20), (218.80, 224.45), (234.95, 242.40)], tighten=0.12,
+        caption="Anak angkat yang ayah saya ambil, dia pula, dia bukan ambil yang normal. Dia ambil anak yang OKU. Dua orang, kakak saya lah. Jadi daripada tujuh jadi sembilan lah. Dua-dua dah meninggal dunia. Walaupun sebegini tuan-tuan, dua kakak itulah yang buat susu saya waktu saya kecil. Golongan OKU asnaf ni tak jauh daripada diri saya sendiri. Sebab dia akan mengingatkan daripada mana saya datang.",
+        broll=[(234.95, "0649", 27.0), (240.00, None, 0)],
         gfx=[
-            (272.42, "headline", dict(kicker="MULAI 1 JANUARI 2027", text="SARA BOLEH GUNA DI JUALAN AGRO MADANI", dur=5.6)),
-            (277.90, "bigstat", dict(top="DISKAUN", value="30%", bottom="SEHINGGA", dur=2.2)),
+            (33.55, "tag", dict(text="KISAH PERIBADI", dur=2.6)),
+            (45.00, "bigstat", dict(top="ADIK-BERADIK", value="7 → 9", bottom="2 KAKAK ISTIMEWA", dur=2.7)),
         ],
-        sfx=[(272.42, "pop_long", 0.4), (277.90, "impact_logo", 0.5), (278.0, "coin_win", 0.35)],
-        zoom=[(272.42, 1.12), (275.4, 1.0), (277.9, 1.22)],
+        sfx=[(33.50, "whoosh_cine", 0.18), (45.00, "pop_long", 0.4), (47.80, "heartbeat", 0.45), (240.00, "bell_chime", 0.22)],
+        zoom=[(33.50, 1.0), (38.4, 1.1), (47.80, 1.18), (218.80, 1.0), (222.3, 1.1), (240.00, 1.16)],
     ),
-    # ---------------------------------------------------------------- INTRO
+    # ---------------------------------------------------------------- HOW THE DEAF PRAY IN JEMAAH
     dict(
-        id="intro", clip="0545", ranges=[(5.38, 22.72)], tighten=0.14,
-        caption="Hari ini saya bersama dengan Pengarah FAMA Negeri Perlis, Encik Anzara Azizan, dan juga pasukan FAMA Negeri Perlis untuk meninjau aktiviti dan perjalanan di Pasar Tani Kekal Simpang 4, di Perlis ini.",
-        broll=[(9.74, "0527", 1.2), (14.08, "0523", 49.5), (18.6, "0523", 157.5)],
-        gfx=[(18.92, "location", dict(title="Pasar Tani Kekal Simpang 4", sub="Perlis", dur=4.2))],
-        sfx=[(18.92, "pop_long", 0.45)],
-        zoom=[(5.38, 1.0), (8.4, 1.1)],
-    ),
-    # ---------------------------------------------------------------- WALKABOUT: TALKING TO VENDORS
-    dict(
-        id="v_kacau", clip="0523", ranges=[(23.75, 27.75)], tighten=None,
-        caption="Niaga okey, sini? Okey. FAMA ada kacau tak? Tak.",
+        id="saf", clip=S,
+        ranges=[(357.30, 358.80), (363.00, 368.95), (369.30, 371.45), (372.20, 374.32),
+                (387.65, 391.65), (392.70, 396.85), (399.50, 400.84), (402.70, 403.95)],
+        tighten=0.10,
+        caption="Dia solat macam mana? Kalau kita yang sempurna ni, kita akan dengar imam, Allahu Akbar. Mereka pekak ni, dia tak dengar apa? Jadi kaedah yang mereka ajar, yang kanan sekali, waktu dia sujud, dia boleh tengok sikit yang kat depan, imam. So bila imam dah bergerak, yang kanan sekali akan tepuk yang sebelah dia. Yang sebelah akan tepuk yang sebelah, sampailah yang hujung.",
+        broll=[(363.00, "0647", 9.0), (367.50, None, 0)],
         gfx=[
-            (23.75, "tag", dict(text="JALAN-JALAN PASAR TANI", dur=2.4)),
-            (26.94, "sticker", dict(emoji="😄", dur=1.0)),
+            (357.32, "question", dict(text="MACAM MANA MEREKA SOLAT?", dur=1.6)),
+            (369.30, "sticker", dict(emoji="🧏", dur=1.6)),
+            (387.65, "saf", dict(taps=[394.80, 400.12, 403.30], dur=11.0)),
         ],
-        sfx=[(23.75, "whoosh_fast", 0.18), (26.94, "pop_bubble", 0.6)],
-        zoom=[(23.75, 1.0), (25.64, 1.14)],
+        sfx=[(357.30, "whoosh_fast", 0.18), (357.32, "pop_bubble", 0.45), (369.30, "pop_long", 0.35),
+             (387.65, "magic_sweep", 0.22), (394.80, "click_select", 0.55), (400.12, "click_select", 0.55),
+             (403.30, "click_select", 0.55)],
+        zoom=[(357.30, 1.12), (363.00, 1.0), (369.30, 1.15), (372.20, 1.0), (387.65, 1.0)],
     ),
+    # ---------------------------------------------------------------- RM100K – QURAN BAHASA ISYARAT
     dict(
-        id="v_daging", clip="0523", ranges=[(195.50, 198.62)], tighten=None, voice_gain=1.15,
-        caption="RM28, kita jual RM26 sekilo. Oh, murah. Paling murah.",
-        gfx=[(195.50, "price", dict(old="RM28", new="RM26", oldLabel="HARGA LUAR", newLabel="SEKILO DI SINI", strikeAt=1.1, dur=3.1))],
-        sfx=[(196.62, "coins", 0.5)],
-        zoom=[(195.45, 1.06)],
-    ),
-    dict(
-        id="v_habis", clip="0523", ranges=[(175.42, 179.08), (182.32, 184.78)], tighten=None,
-        caption="Lama dah meniaga sini, okey? Boleh? Ini petang hari habis ya? Biasanya habis? Habis lah.",
-        gfx=[(184.00, "stamp", dict(text="LAKU HABIS!", dur=1.3))],
-        sfx=[(184.00, "pop_hard", 0.45)],
-        zoom=[(175.42, 1.0), (182.32, 1.1)],
-    ),
-    dict(
-        id="v_kakjah", clip="0527", ranges=[(10.36, 11.22), (13.28, 14.60), (15.08, 16.45), (17.24, 19.28)], tighten=None,
-        caption="Meniaga okey, kak? Antara orang yang lama. Haa, meniaga dekat sini. Dia punya killer produk ni.",
-        broll=[(14.60, "0527", 19.0)],
+        id="quran", clip=S, ranges=[(411.90, 415.05), (415.15, 427.45)], tighten=0.12,
+        caption="Allah nak tunjuk pada saya tu. Saya balik tu, saya kata dengan tim saya, saya nak sumbangkan dana yang kita ada, 100 ribu saya bagi kepada Dr. Ahyari untuk Quran Bahasa Isyarat pertama di dunia.",
         gfx=[
-            (10.36, "tag", dict(text="GERAI KAK JAH", dur=2.4)),
-            (18.10, "sticker", dict(emoji="🔥", dur=1.3)),
+            (420.62, "bigstat", dict(top="KEPADA DR. AHYARI", value="RM100K", bottom="SUMBANGAN", dur=3.3)),
+            (424.30, "headline", dict(kicker="PERTAMA DI DUNIA", text="AL-QURAN BAHASA ISYARAT", dur=3.3)),
         ],
-        sfx=[(18.10, "pop_long", 0.45)],
-        zoom=[(10.36, 1.0), (13.28, 1.1)],
+        sfx=[(411.90, "woosh_reverb", 0.16), (420.62, "trailer_impact", 0.26), (424.30, "harp_rise", 0.3)],
+        zoom=[(411.90, 1.06), (415.15, 1.0), (418.3, 1.1), (420.62, 1.2), (424.30, 1.06)],
     ),
+    # ---------------------------------------------------------------- THE FAMA SIGN
     dict(
-        id="v_original", clip="0527", ranges=[(31.48, 33.72), (35.40, 37.40)], tighten=None,
-        caption="Tak buat yang color-color tu? Tak buat. Orang tak minat, orang nak yang original.",
-        gfx=[(36.80, "stamp", dict(text="ORIGINAL!", dur=1.2))],
-        sfx=[(36.80, "pop_hard", 0.4)],
-        zoom=[(31.48, 1.06), (35.40, 1.16)],
-    ),
-    dict(
-        id="v_bangun", clip="0528", ranges=[(5.48, 11.86), (13.26, 15.75)], tighten=None, voice_gain=1.2,
-        caption="Pukul berapa bangun pagi-pagi ni? Kau ambil orang punya? Tak. Buat sendiri? Dia buat sendiri. Subhanallah. Empat pagi bangun lah. Tahajud dulu lah.",
-        gfx=[(13.28, "bigstat", dict(bottom="PENIAGA KUIH TRADISIONAL", value="4 PAGI", top="DAH BANGUN!", dur=2.4))],
-        sfx=[(13.28, "pop_hard", 0.4)],
-        zoom=[(5.48, 1.0), (9.66, 1.1), (13.26, 1.22)],
-    ),
-    # ---------------------------------------------------------------- COMBO MADANI
-    dict(
-        id="combo", clip="0545", ranges=[(148.82, 162.20)], tighten=0.12,
-        caption="Sebentar tadi, seperti yang saya maklumkan, kita dah buat Combo Madani dengan jualan penjimatan 50% daripada harga pasaran luar. Yang asalnya RM24, tadi kita jual pada RM12.",
-        drop_words=["bahagia"],
-        broll=[(151.40, "0522", 79.0), (155.7, "0522", 87.0), (158.0, None, 0)],
+        id="simbol", clip=S,
+        ranges=[(437.40, 438.30), (439.10, 441.99), (446.04, 447.45), (452.30, 460.02),
+                (478.15, 479.92), (494.35, 496.00), (497.40, 498.55)],
+        tighten=0.10,
+        caption="Bila saya dilantik jadi Pengerusi FAMA, orang yang pertama saya kontak, Doktor, saya nak minta tolong, bagi saya satu simbol untuk FAMA, yang kalau saya jumpa golongan ini, saya tunjuk, mereka faham saya daripada FAMA. Ini huruf F. Gerakkan daripada kiri ke kanan. FAMA.",
+        broll=[(452.30, "0650", 38.0), (455.20, None, 0)],
         gfx=[
-            (151.47, "combo", dict(title="SET COMBO MADANI", items=["Minyak masak", "Telur 1 papan", "Bawang"], dur=4.0)),
-            (154.30, "stamp", dict(text="JIMAT 50%", dur=1.9)),
-            (158.80, "price", dict(old="RM24", new="RM12", strikeAt=2.6, dur=4.3)),
+            (437.45, "tag", dict(text="SIMBOL FAMA", dur=2.4)),
+            (478.15, "sign", dict(dur=5.6, fixY=360)),
         ],
-        sfx=[(148.82, "whoosh_fast", 0.18), (151.47, "pop_bubble", 0.5), (154.30, "pop_hard", 0.5),
-             (161.45, "coins", 0.55)],
-        zoom=[(158.0, 1.08), (161.5, 1.2)],
+        sfx=[(437.40, "whoosh_cine", 0.18), (478.15, "magic_sweep", 0.28), (497.40, "crystal_chime", 0.4)],
+        zoom=[(437.40, 1.08), (446.04, 1.0), (455.20, 1.1), (478.15, 1.0)],
     ),
-    # ---------------------------------------------------------------- LAUNCH (happy hour)
+    # ---------------------------------------------------------------- 5 PASAR TANI WITH AN OKU LOT
     dict(
-        id="launch", clip="0522", ranges=[(52.55, 62.30)], tighten=0.12,
-        caption="Maka saya umumkan, harga Happy Hour Set Combo Madani bernilai RM12, bermula sekarang!",
+        id="pasartani", clip=S, ranges=[(632.15, 653.55)], tighten=0.12,
+        caption="Saya punya planning, saya beritahu KP, tahun depan, saya tak nak yang 200 lebih punya pasar tani, saya nak pioneer paling kurang 5 pasar tani ada lot promosi OKU. Kita bagi peluang mereka untuk berniaga, sebab kalau FAMA tak bagi peluang, kita tak jadi contoh.",
+        drop_words=["menaikah"],
+        broll=[(634.26, "0665", 2.0), (637.10, "0657", 1.0), (639.24, None, 0),
+               (644.96, "0672", 6.0), (648.38, "0686", 6.0), (651.10, None, 0)],
         gfx=[
-            (52.55, "tag", dict(text="DETIK PELANCARAN", dur=3.0)),
-            (61.10, "stamp", dict(text="HAPPY HOUR • RM12", dur=2.3, confetti=True)),
+            (634.26, "tag", dict(text="PERANCANGAN 2027", dur=2.8)),
+            (640.42, "bigstat", dict(top="SEKURANG-KURANGNYA", value="5 PASAR TANI", bottom="ADA LOT PROMOSI OKU", dur=4.4)),
+            (651.10, "stamp", dict(text="FAMA JADI CONTOH", dur=2.0)),
         ],
-        sfx=[(61.10, "impact_big", 0.4), (61.25, "applause_cheer", 0.45), (61.25, "achievement", 0.3)],
-        zoom=[(52.55, 1.0), (55.0, 1.1), (61.1, 1.22)],
+        sfx=[(632.15, "woosh_reverb", 0.18), (640.42, "trailer_impact", 0.26), (640.50, "positive", 0.22),
+             (651.10, "pop_hard", 0.4)],
+        zoom=[(632.15, 1.0), (639.24, 1.1), (642.3, 1.2), (651.10, 1.12)],
     ),
-    dict(  # reaction: people collecting their yellow bags (no speech)
-        id="react", clip="0522", ranges=[(64.6, 67.2)], tighten=None, voice_gain=0.35,
-        caption="",
-        broll=[(64.6, "0522", 81.5)],
-        sfx=[],
-    ),
-    # ---------------------------------------------------------------- SARA
+    # ---------------------------------------------------------------- PAYOFF
     dict(
-        id="sara", clip="0545", ranges=[(237.33, 242.86), (248.86, 264.12)], tighten=0.12,
-        caption="Bermula 1 Januari, sebagaimana diumumkan oleh YAB Perdana Menteri dalam bajet baru ini, SARA itu sendiri boleh digunakan untuk pembelian di Jualan Agro Madani. Dia bukan sahaja memberi keuntungan kepada pengguna, tapi juga kepada pengeluar dan usahawan. Harga yang kita tawarkan sehingga 30%.",
-        broll=[(248.86, "0524", 0.4), (253.18, "0523", 232.0), (257.2, "0529", 1.0), (259.85, None, 0)],
-        gfx=[
-            (237.62, "calendar", dict(day="1", month="JANUARI", year="2027", dur=4.6)),
-            (248.92, "sara", dict(title="SARA", sub="Boleh guna di Jualan Agro Madani", dur=4.2)),
-            (255.60, "checklist", dict(items=[["Pengguna", 256.00], ["Pengeluar", 257.38], ["Usahawan", 258.82]], dur=4.2)),
-            (261.80, "bigstat", dict(top="LEBIH MURAH", value="30%", bottom="SEHINGGA", dur=2.6)),
-        ],
-        sfx=[(237.33, "whoosh_fast", 0.18), (237.62, "pop_long", 0.45), (248.92, "correct", 0.35),
-             (256.00, "click_ui", 0.6), (257.38, "click_ui", 0.6), (258.82, "click_ui", 0.6),
-             (261.80, "impact_logo", 0.45)],
-        zoom=[(259.85, 1.06), (262.6, 1.22)],
-    ),
-    # ---------------------------------------------------------------- SUPER EL NINO
-    dict(
-        id="elnino", clip="0545",
-        ranges=[(285.10, 298.40), (306.95, 311.95), (323.55, 324.76), (332.78, 334.72), (370.70, 377.60)],
-        tighten=0.12,
-        caption="Baru-baru ini Jabatan Kaji Cuaca Malaysia telah mewar-warkan bahawa bermula November tahun ini, seluruh dunia akan mengalami satu fenomena yang namanya Super El Nino. Bila kepanasan yang melampau ni, banyak tanaman yang tak menjadi. Jadi apa yang FAMA dah buat? Kami telah mewujudkan satu task force. Bagi pihak FAMA, kami dah bersedia untuk penyediaan bekalan makanan sekurang-kurangnya 3 bulan.",
-        broll=[(306.95, "0540", 86.0), (309.30, "0529", 24.0), (323.55, None, 0), (370.70, "0523", 88.0), (374.6, "0528", 28.0)],
-        gfx=[
-            (297.40, "warning", dict(text="SUPER EL NIÑO", sub="Bermula November 2026", dur=3.4)),
-            (306.95, "heat", dict(dur=5.0)),
-            (323.55, "question", dict(text="APA FAMA DAH BUAT?", dur=1.3)),
-            (333.80, "tag", dict(text="✓ TASK FORCE DIBENTUK", dur=1.6)),
-            (375.80, "bigstat", dict(top="BEKALAN MAKANAN", value="3 BULAN", bottom="SEKURANG-KURANGNYA", dur=2.6)),
-        ],
-        sfx=[(285.10, "whoosh_fast", 0.18), (297.40, "impact_logo", 0.35), (333.80, "pop_hard", 0.45), (375.80, "impact_logo", 0.4), (376.0, "positive", 0.3)],
-        zoom=[(285.10, 1.0), (291.9, 1.1), (297.4, 1.2), (298.2, 1.0), (323.55, 1.18), (332.78, 1.06)],
+        id="lulus", clip=S, ranges=[(721.50, 726.08), (727.10, 730.02), (731.25, 736.95)], tighten=0.12,
+        caption="Minta nanti puan buat satu paper, panjangkan kepada Pengerusi Yayasan Takwa. Just forward to me. I will make sure that berapa yang puan minta tu akan diluluskan, insyaAllah.",
+        broll=[(721.50, "0660", 3.5), (724.85, "0687", 13.0), (731.25, None, 0)],
+        gfx=[(735.93, "stamp", dict(text="AKAN DILULUSKAN ✓", dur=2.0))],
+        sfx=[(721.50, "whoosh_cine", 0.18), (735.93, "impact_big", 0.3), (736.00, "achievement", 0.25)],
+        zoom=[(731.25, 1.06), (733.6, 1.18)],
     ),
     dict(
-        id="outro", clip="0545", ranges=[(408.30, 412.40)], tighten=None,
-        caption="Baik, terima kasih.",
-        gfx=[(409.40, "endcard", dict(line1="Mulai 1 Januari 2027", line2="SARA boleh guna di Jualan Agro Madani", cta="Kongsi dengan keluarga & kawan!", dur=3.0))],
-        sfx=[(409.6, "positive", 0.3)],
-        zoom=[(408.30, 1.0)],
+        id="outro", clip=S, ranges=[(738.85, 742.60)], tighten=None,  # runs past the clip end: silent tail under the end card
+        caption="Assalamualaikum warahmatullahi wabarakatuh.",
+        broll=[(738.85, "0694", 1.0)],
+        gfx=[(738.90, "endcard", dict(line1="PPDK Anak Istimewa Perlis", line2="Pemerkasaan Anak Istimewa, Aspirasi Bersama", cta="Kongsi kalau anda tersentuh 🤍", dur=3.6))],
+        sfx=[(739.0, "bell_chime", 0.3)],
     ),
 ]

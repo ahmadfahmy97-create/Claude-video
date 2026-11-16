@@ -116,13 +116,17 @@ SIZES = {  # height, candidate centre ys (inside the 230..1480 safe band)
     "location": (110, [300, 1080]),
     "tag": (80, [290, 1080]),
     "sticker": (180, [1020, 420, 640]),
+    "saf": (380, [1000, 1080, 420]),
+    "sign": (230, [400, 1060]),
 }
 placed = []
 for g in tl["gfx"]:
     if g["type"] not in SIZES:
         continue
     h, ys = SIZES[g["type"]]
-    if g.get("over"):
+    if g.get("fixY"):
+        g["y"] = g["fixY"]
+    elif g.get("over"):
         base = next(q for q in reversed(placed) if q["type"] == "combo")
         g["y"] = base["y"] + 150
     else:
