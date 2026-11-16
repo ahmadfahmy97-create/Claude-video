@@ -1,4 +1,8 @@
-"""Edit decision list – PPDK Anak Istimewa Perlis visit (Pengerusi FAMA speech, clip 0659).
+"""Edit decision list – Pengerusi FAMA's visit to PPDK ANIPS (Anak Istimewa Perlis).
+
+v2 storyboard: hook -> how deaf jemaah pray -> the visit (founder, kids, kitchen,
+greenhouse, therapy garden) -> why it matters to him -> FAMA's pasar tani plan.
+No funding / donation segments.
 
 Every piece plays the speaker's audio from `clip` over the source `ranges` (seconds).
 Pauses inside a range are tightened automatically by build.py.
@@ -14,7 +18,7 @@ zoom    : list of (source_time, scale) – punch-ins on the speaker (hides jump 
 The previous project's EDL (FAMA Pasar Tani Simpang 4) lives in git history.
 """
 
-S = "0659"  # the speech
+S = "0659"  # Pengerusi FAMA's talk at the centre
 
 PIECES = [
     # ---------------------------------------------------------------- HOOK
@@ -25,18 +29,6 @@ PIECES = [
         gfx=[(344.45, "headline", dict(kicker="PENGERUSI FAMA", text="BILA SOLAT BERSAMA ANAK OKU", dur=3.9))],
         sfx=[(344.42, "woosh_reverb", 0.22), (349.62, "crystal_chime", 0.28), (355.56, "heartbeat", 0.7)],
         zoom=[(344.40, 1.0), (346.9, 1.1), (353.12, 1.04), (355.50, 1.22)],
-    ),
-    # ---------------------------------------------------------------- BACKSTORY
-    dict(
-        id="kisah", clip=S, ranges=[(33.50, 49.20), (218.80, 224.45), (234.95, 242.40)], tighten=0.12,
-        caption="Anak angkat yang ayah saya ambil, dia pula, dia bukan ambil yang normal. Dia ambil anak yang OKU. Dua orang, kakak saya lah. Jadi daripada tujuh jadi sembilan lah. Dua-dua dah meninggal dunia. Walaupun sebegini tuan-tuan, dua kakak itulah yang buat susu saya waktu saya kecil. Golongan OKU asnaf ni tak jauh daripada diri saya sendiri. Sebab dia akan mengingatkan daripada mana saya datang.",
-        broll=[(234.95, "0649", 27.0), (240.00, None, 0)],
-        gfx=[
-            (33.55, "tag", dict(text="KISAH PERIBADI", dur=2.6)),
-            (45.00, "bigstat", dict(top="ADIK-BERADIK", value="7 → 9", bottom="2 KAKAK ISTIMEWA", dur=2.7)),
-        ],
-        sfx=[(33.50, "whoosh_cine", 0.18), (45.00, "pop_long", 0.4), (47.80, "heartbeat", 0.45), (240.00, "bell_chime", 0.22)],
-        zoom=[(33.50, 1.0), (38.4, 1.1), (47.80, 1.18), (218.80, 1.0), (222.3, 1.1), (240.00, 1.16)],
     ),
     # ---------------------------------------------------------------- HOW THE DEAF PRAY IN JEMAAH
     dict(
@@ -56,38 +48,74 @@ PIECES = [
              (403.30, "click_select", 0.55)],
         zoom=[(357.30, 1.12), (363.00, 1.0), (369.30, 1.15), (372.20, 1.0), (387.65, 1.0)],
     ),
-    # ---------------------------------------------------------------- RM100K – QURAN BAHASA ISYARAT
+    # ---------------------------------------------------------------- THE VISIT: ARRIVAL + FOUNDER
     dict(
-        id="quran", clip=S, ranges=[(411.90, 415.05), (415.15, 427.45)], tighten=0.12,
-        caption="Allah nak tunjuk pada saya tu. Saya balik tu, saya kata dengan tim saya, saya nak sumbangkan dana yang kita ada, 100 ribu saya bagi kepada Dr. Ahyari untuk Quran Bahasa Isyarat pertama di dunia.",
+        id="pengasas", clip="0651", ranges=[(3.90, 9.45), (11.95, 13.75), (18.20, 20.90)], tighten=0.12,
+        caption="Sebab keperluan anak lah sebenarnya. Maksudnya tak ada tempat anak nak hantar ke mana. Kalau dulu, anak saya ni tak pernah pergi ke sekolah.",
+        broll=[(3.90, "0688", 1.0), (5.60, "0642", 0.6), (8.00, "0651", 13.0), (18.20, None, 0)],
         gfx=[
-            (420.62, "bigstat", dict(top="KEPADA DR. AHYARI", value="RM100K", bottom="SUMBANGAN", dur=3.3)),
-            (424.30, "headline", dict(kicker="PERTAMA DI DUNIA", text="AL-QURAN BAHASA ISYARAT", dur=3.3)),
+            (3.95, "location", dict(title="PPDK ANIPS", sub="Pusat Pemulihan Dalam Komuniti • Perlis", dur=3.6)),
+            (11.95, "tag", dict(text="PENGASAS PPDK ANIPS", dur=2.6)),
         ],
-        sfx=[(411.90, "woosh_reverb", 0.16), (420.62, "trailer_impact", 0.26), (424.30, "harp_rise", 0.3)],
-        zoom=[(411.90, 1.06), (415.15, 1.0), (418.3, 1.1), (420.62, 1.2), (424.30, 1.06)],
+        sfx=[(3.90, "whoosh_cine", 0.2), (3.95, "pop_long", 0.4)],
+        zoom=[(18.20, 1.08)],
     ),
-    # ---------------------------------------------------------------- THE FAMA SIGN
+    # ---------------------------------------------------------------- MEETING THE KIDS
     dict(
-        id="simbol", clip=S,
-        ranges=[(437.40, 438.30), (439.10, 441.99), (446.04, 447.45), (452.30, 460.02),
-                (478.15, 479.92), (494.35, 496.00), (497.40, 498.55)],
-        tighten=0.10,
-        caption="Bila saya dilantik jadi Pengerusi FAMA, orang yang pertama saya kontak, Doktor, saya nak minta tolong, bagi saya satu simbol untuk FAMA, yang kalau saya jumpa golongan ini, saya tunjuk, mereka faham saya daripada FAMA. Ini huruf F. Gerakkan daripada kiri ke kanan. FAMA.",
-        broll=[(452.30, "0650", 38.0), (455.20, None, 0)],
-        gfx=[
-            (437.45, "tag", dict(text="SIMBOL FAMA", dur=2.4)),
-            (478.15, "sign", dict(dur=5.6, fixY=360)),
-        ],
-        sfx=[(437.40, "whoosh_cine", 0.18), (478.15, "magic_sweep", 0.28), (497.40, "crystal_chime", 0.4)],
-        zoom=[(437.40, 1.08), (446.04, 1.0), (455.20, 1.1), (478.15, 1.0)],
+        id="salam", clip="0643", ranges=[(13.15, 17.35), (19.05, 21.30)], tighten=None, voice_gain=1.2,
+        caption="Salam, Farhi. Salam. Boleh salam? Salam. Salam. Umur apa? Ini 22.",
+        gfx=[(13.20, "tag", dict(text="BERTEMU ANAK-ANAK ANIPS", dur=2.8))],
+        sfx=[(13.15, "whoosh_fast", 0.16), (16.64, "pop_bubble", 0.45)],
+        zoom=[(13.15, 1.0), (19.05, 1.08)],
     ),
-    # ---------------------------------------------------------------- 5 PASAR TANI WITH AN OKU LOT
+    # ---------------------------------------------------------------- WHY IT IS PERSONAL
+    dict(
+        id="kisah", clip=S, ranges=[(33.50, 43.60), (47.75, 49.20), (234.95, 242.40)], tighten=0.12,
+        caption="Anak angkat yang ayah saya ambil, dia pula, dia bukan ambil yang normal. Dia ambil anak yang OKU. Dua orang, kakak saya lah. Dua-dua dah meninggal dunia. Golongan OKU asnaf ni tak jauh daripada diri saya sendiri. Sebab dia akan mengingatkan daripada mana saya datang.",
+        broll=[(234.95, "0645", 34.0), (238.30, "0649", 27.0), (240.00, None, 0)],
+        gfx=[(33.55, "tag", dict(text="KISAH PERIBADI", dur=2.6))],
+        sfx=[(33.50, "whoosh_cine", 0.18), (47.75, "heartbeat", 0.45), (240.00, "bell_chime", 0.22)],
+        zoom=[(33.50, 1.0), (38.4, 1.1), (47.75, 1.18), (234.95, 1.0), (240.00, 1.16)],
+    ),
+    # ---------------------------------------------------------------- KITCHEN: JELLY KERING
+    dict(
+        id="dapur1", clip="0664", ranges=[(10.40, 13.65)], tighten=None,
+        caption="Alhamdulillah, sekarang ni anak-anak kita ni dah boleh buat secara berdikari.",
+        broll=[(10.40, "0665", 2.0)],
+        gfx=[(10.45, "tag", dict(text="DAPUR LATIHAN ANIPS", dur=2.8))],
+        sfx=[(10.40, "whoosh_cine", 0.18)],
+    ),
+    dict(
+        id="dapur2", clip="0665", ranges=[(7.62, 11.70), (16.55, 21.35)], tighten=0.12,
+        caption="Jadi ni kami pilih jelly kering lah. Jelly kering ni dia mudah biasa kan. Dan kalau budak-budak ni silap ukur bahan tu tak ada masalah. Dia tak akan rosak produknya.",
+        broll=[(7.62, "0666", 3.0), (9.94, "0672", 5.0), (16.55, "0665", 16.5), (19.30, "0657", 1.0)],
+        gfx=[(19.30, "stamp", dict(text="PRODUK ANAK ANIPS", dur=2.0))],
+        sfx=[(9.94, "pop_bubble", 0.4), (19.30, "pop_hard", 0.4)],
+    ),
+    # ---------------------------------------------------------------- GREENHOUSE
+    dict(
+        id="kebun", clip="0686", ranges=[(16.88, 23.85), (24.62, 32.52)], tighten=0.12,
+        caption="So budak-budak ni sebenarnya, tanam sayur ni, dia orang sekejap je. Maksudnya settle, lepas tu dia dah lari lah. So kami kena sentiasa fikir pekerjaan-pekerjaan yang orang boleh buat untuk nak fulfill time dan energy dia tu.",
+        broll=[(16.88, "0687", 11.0), (20.40, "0680", 1.0), (22.40, "0683", 2.5), (24.62, None, 0),
+               (27.90, "0689", 4.0), (30.20, "0684", 30.0)],
+        gfx=[(16.92, "tag", dict(text="RUMAH HIJAU & KEBUN TERAPI", dur=2.8))],
+        sfx=[(16.88, "whoosh_cine", 0.18), (22.40, "pop_bubble", 0.35)],
+        zoom=[(24.62, 1.06)],
+    ),
+    # ---------------------------------------------------------------- THERAPY GARDEN
+    dict(
+        id="laman", clip="0692", ranges=[(9.25, 17.02), (20.78, 22.80)], tighten=0.12,
+        caption="So dekat sini, dia akan jadi ruang santai lah. So bila lepas dia orang buat aktiviti tanaman, pertanian dan apa semua ni, dia orang akan lepak kat sini lah. So ada trampolin, siapa nak lompat trampolin, lompat trampolin.",
+        broll=[(9.25, "0693", 2.5), (12.20, None, 0), (20.78, "0692", 3.0)],
+        gfx=[(9.30, "location", dict(title="Laman Terapi Hijau", sub="Ruang santai anak-anak ANIPS", dur=3.2))],
+        sfx=[(9.25, "whoosh_cine", 0.18), (9.30, "pop_long", 0.35)],
+    ),
+    # ---------------------------------------------------------------- FAMA'S PLAN: 5 PASAR TANI WITH AN OKU LOT
     dict(
         id="pasartani", clip=S, ranges=[(632.15, 653.55)], tighten=0.12,
         caption="Saya punya planning, saya beritahu KP, tahun depan, saya tak nak yang 200 lebih punya pasar tani, saya nak pioneer paling kurang 5 pasar tani ada lot promosi OKU. Kita bagi peluang mereka untuk berniaga, sebab kalau FAMA tak bagi peluang, kita tak jadi contoh.",
         drop_words=["menaikah"],
-        broll=[(634.26, "0665", 2.0), (637.10, "0657", 1.0), (639.24, None, 0),
+        broll=[(634.26, "0662", 8.0), (637.10, "0657", 1.0), (639.24, None, 0),
                (644.96, "0672", 6.0), (648.38, "0686", 6.0), (651.10, None, 0)],
         gfx=[
             (634.26, "tag", dict(text="PERANCANGAN 2027", dur=2.8)),
@@ -98,20 +126,11 @@ PIECES = [
              (651.10, "pop_hard", 0.4)],
         zoom=[(632.15, 1.0), (639.24, 1.1), (642.3, 1.2), (651.10, 1.12)],
     ),
-    # ---------------------------------------------------------------- PAYOFF
-    dict(
-        id="lulus", clip=S, ranges=[(721.50, 726.08), (727.10, 730.02), (731.25, 736.95)], tighten=0.12,
-        caption="Minta nanti puan buat satu paper, panjangkan kepada Pengerusi Yayasan Takwa. Just forward to me. I will make sure that berapa yang puan minta tu akan diluluskan, insyaAllah.",
-        broll=[(721.50, "0660", 3.5), (724.85, "0687", 13.0), (731.25, None, 0)],
-        gfx=[(735.93, "stamp", dict(text="AKAN DILULUSKAN ✓", dur=2.0))],
-        sfx=[(721.50, "whoosh_cine", 0.18), (735.93, "impact_big", 0.3), (736.00, "achievement", 0.25)],
-        zoom=[(731.25, 1.06), (733.6, 1.18)],
-    ),
     dict(
         id="outro", clip=S, ranges=[(738.85, 742.60)], tighten=None,  # runs past the clip end: silent tail under the end card
         caption="Assalamualaikum warahmatullahi wabarakatuh.",
         broll=[(738.85, "0694", 1.0)],
-        gfx=[(738.90, "endcard", dict(line1="PPDK Anak Istimewa Perlis", line2="Pemerkasaan Anak Istimewa, Aspirasi Bersama", cta="Kongsi kalau anda tersentuh 🤍", dur=3.6))],
+        gfx=[(738.90, "endcard", dict(line1="Lawatan ke PPDK ANIPS", line2="Pemerkasaan Anak Istimewa, Aspirasi Bersama", cta="Kongsi kalau anda tersentuh 🤍", dur=3.6))],
         sfx=[(739.0, "bell_chime", 0.3)],
     ),
 ]
