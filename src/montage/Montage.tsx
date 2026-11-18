@@ -2,6 +2,7 @@ import React from 'react';
 import {
   AbsoluteFill,
   Audio,
+  Easing,
   OffthreadVideo,
   Sequence,
   interpolate,
@@ -24,11 +25,51 @@ export type Shot = {
   oy: number;
   fadeIn?: number; // cross-dissolve frames from the previous shot
   speed?: number;
+  kind?: string | null;
 };
 
 const shots = data.shots as Shot[];
 export const MAIN = data.durationInFrames;
 export const CLOSING = 125;
+
+// vertical (9:16) media-statement clip: blurred fill + framed portrait on the right
+const TalkView: React.FC<{s: Shot}> = ({s}) => {
+  const f = useCurrentFrame();
+  const o = s.fadeIn ? interpolate(f, [0, s.fadeIn], [0, 1], {extrapolateRight: 'clamp'}) : 1;
+  const af = Math.min(1, f / 6, (s.dur - f) / 10);
+  const rise = interpolate(f, [0, 22], [40, 0], {extrapolateRight: 'clamp', easing: Easing.bezier(0.16, 1, 0.3, 1)});
+  const z = interpolate(f, [0, s.dur], [1.0, 1.04]);
+  const src = staticFile(`mz/${s.src}`);
+  const start = Math.round(s.in * 25);
+  const H = 930;
+  const W = (H * 9) / 16;
+  return (
+    <AbsoluteFill style={{opacity: o, backgroundColor: '#06301C'}}>
+      <AbsoluteFill style={{filter: 'blur(38px) brightness(0.45) saturate(1.2)', transform: 'scale(1.25)'}}>
+        <OffthreadVideo src={src} startFrom={start} muted style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+      </AbsoluteFill>
+      <AbsoluteFill style={{background: 'linear-gradient(to right, rgba(6,48,28,0.85) 0%, rgba(6,48,28,0.35) 55%, rgba(0,0,0,0) 100%)'}} />
+      <div
+        style={{
+          position: 'absolute',
+          right: 150,
+          top: (1080 - H) / 2 + rise,
+          width: W,
+          height: H,
+          borderRadius: 18,
+          overflow: 'hidden',
+          boxShadow: '0 30px 80px rgba(0,0,0,0.55)',
+          outline: '3px solid rgba(245,197,66,0.9)',
+          outlineOffset: 8,
+        }}
+      >
+        <div style={{width: '100%', height: '100%', transform: `scale(${z})`, transformOrigin: '50% 35%'}}>
+          <OffthreadVideo src={src} startFrom={start} volume={Math.max(0, s.vol * af)} style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+        </div>
+      </div>
+    </AbsoluteFill>
+  );
+};
 
 const ShotView: React.FC<{s: Shot}> = ({s}) => {
   const f = useCurrentFrame();
@@ -36,6 +77,7 @@ const ShotView: React.FC<{s: Shot}> = ({s}) => {
   const o = s.fadeIn ? interpolate(f, [0, s.fadeIn], [0, 1], {extrapolateRight: 'clamp'}) : 1;
   // short audio fades so soundbites never click
   const af = Math.min(1, f / 4, (s.dur - f) / 6);
+  if (s.kind === 'talk') return <TalkView s={s} />;
   return (
     <AbsoluteFill style={{opacity: o, overflow: 'hidden'}}>
       <AbsoluteFill style={{transform: `scale(${z})`, transformOrigin: `${s.ox * 100}% ${s.oy * 100}%`}}>
@@ -102,7 +144,7 @@ const Closing: React.FC = () => {
   );
 };
 
-const music = data.music as {src: string; offset: number; volume: number};
+const music = data.music as {src: string; offset: number; volume: number; duck: number};
 const ducks = data.ducks as [number, number][]; // frame ranges where the chairman speaks
 
 const musicVolume = (f: number, total: number) => {
@@ -114,8 +156,8 @@ const musicVolume = (f: number, total: number) => {
     }
     d = Math.min(d, Math.abs(f - s), Math.abs(f - e));
   }
-  // ~-20 dB under speech, eased over 10 frames
-  let v = interpolate(d, [0, 10], [0.1 * music.volume, music.volume], {extrapolateRight: 'clamp'});
+  // music ducks ~-16 dB under the voice, eased over 10 frames
+  let v = interpolate(d, [0, 10], [music.duck * music.volume, music.volume], {extrapolateRight: 'clamp'});
   v *= interpolate(f, [total - 50, total - 1], [1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   return v;
 };

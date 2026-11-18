@@ -190,11 +190,94 @@ const Chapter: React.FC<{g: G}> = ({g}) => {
 };
 
 /* ---------- soundbite subtitles with karaoke highlight ---------- */
+/* ---------- statistic card (count-up) ---------- */
+const Stat: React.FC<{g: G}> = ({g}) => {
+  const f = useCurrentFrame();
+  const out = useOut(g.dur, 12);
+  const right = String(g.side).startsWith('right');
+  const high = String(g.side).endsWith('-top');
+  const low = String(g.side).endsWith('-bottom');
+  const m = String(g.value).match(/^(\D*)([\d,.]+)(.*)$/);
+  let shown = g.value;
+  if (m) {
+    const target = parseFloat(m[2].replace(/,/g, ''));
+    const dec = (m[2].split('.')[1] || '').length;
+    const p = interpolate(f, [4, 30], [0, 1], {...clamp, easing: ease});
+    const v = target * p;
+    const num = dec ? v.toFixed(dec) : Math.round(v).toLocaleString('en-US');
+    shown = `${m[1]}${num}${m[3]}`;
+  }
+  const panel = interpolate(f, [0, 14], [0, 1], {...clamp, easing: ease});
+  return (
+    <AbsoluteFill
+      style={{
+        opacity: out,
+        justifyContent: high ? 'flex-start' : low ? 'flex-end' : 'center',
+        alignItems: right ? 'flex-end' : 'flex-start',
+        padding: high ? '130px 120px 0' : low ? '0 120px 90px' : '0 120px',
+      }}
+    >
+      <div
+        style={{
+          padding: '34px 44px 30px',
+          background: 'linear-gradient(135deg, rgba(6,48,28,0.88), rgba(6,48,28,0.70))',
+          borderLeft: right ? undefined : `6px solid ${K.gold}`,
+          borderRight: right ? `6px solid ${K.gold}` : undefined,
+          borderRadius: 6,
+          transform: `translateX(${(1 - panel) * (right ? 60 : -60)}px)`,
+          opacity: panel,
+          boxShadow: '0 20px 60px rgba(0,0,0,0.35)',
+          textAlign: right ? 'right' : 'left',
+          minWidth: 520,
+        }}
+      >
+        <div style={{fontFamily: MONT, fontWeight: 700, fontSize: 24, letterSpacing: 5, color: K.gold}}>{g.label}</div>
+        <div style={{fontFamily: ANTON, fontSize: 112, lineHeight: 1.05, color: '#fff', letterSpacing: 1}}>{shown}</div>
+        <div style={{fontFamily: MONT, fontWeight: 500, fontSize: 24, color: 'rgba(255,255,255,0.85)'}}>{g.sub}</div>
+      </div>
+    </AbsoluteFill>
+  );
+};
+
+/* ---------- label for the on-camera media statement ---------- */
+const TalkLabel: React.FC<{g: G}> = ({g}) => {
+  const out = useOut(g.dur, 10);
+  return (
+    <AbsoluteFill style={{opacity: out, padding: '120px 0 0 150px'}}>
+      <Rise delay={4}>
+        <div style={{fontFamily: MONT, fontWeight: 700, fontSize: 26, letterSpacing: 8, color: K.gold}}>{g.kicker}</div>
+      </Rise>
+      <Rise delay={8}>
+        <div style={{fontFamily: MONT, fontWeight: 800, fontSize: 60, color: '#fff', textShadow: shadow}}>{g.title}</div>
+      </Rise>
+      <div style={{height: 10}} />
+      <Line delay={12} w={120} h={3} />
+      <Rise delay={14}>
+        <div style={{marginTop: 12, fontFamily: MONT, fontWeight: 500, fontSize: 26, color: 'rgba(255,255,255,0.85)'}}>{g.sub}</div>
+      </Rise>
+    </AbsoluteFill>
+  );
+};
+
 const Sub: React.FC<{g: G}> = ({g}) => {
   const f = useCurrentFrame();
   const t = f / 25;
   const o = interpolate(f, [0, 5, g.dur - 5, g.dur], [0, 1, 1, 0], clamp);
   const top = g.pos === 'top';
+  if (g.pos === 'talk') {
+    return (
+      <AbsoluteFill style={{opacity: o, padding: '420px 0 0 150px'}}>
+        <div style={{width: 1000, fontFamily: MONT, fontWeight: 700, fontSize: 44, lineHeight: 1.32, color: '#fff'}}>
+          <span style={{fontFamily: ANTON, fontSize: 90, color: K.gold, lineHeight: 0.5, verticalAlign: '-0.35em', marginRight: 10}}>“</span>
+          {(g.words as {w: string; s: number}[]).map((w, i) => (
+            <span key={i} style={{color: t >= w.s ? '#fff' : 'rgba(255,255,255,0.4)'}}>
+              {w.w}{' '}
+            </span>
+          ))}
+        </div>
+      </AbsoluteFill>
+    );
+  }
   return (
     <AbsoluteFill style={{justifyContent: top ? 'flex-start' : 'flex-end', alignItems: 'center', padding: top ? '70px 200px' : '0 200px 70px', opacity: o}}>
       <div
@@ -310,6 +393,10 @@ export const Overlay: React.FC<{g: G}> = ({g}) => {
       return <Quote g={g} />;
     case 'end':
       return <End g={g} />;
+    case 'stat':
+      return <Stat g={g} />;
+    case 'talklabel':
+      return <TalkLabel g={g} />;
     default:
       return null;
   }
