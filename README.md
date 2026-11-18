@@ -36,7 +36,7 @@ Raw footage (`/home/user/raw/*.MP4`) and `public/footage/` are not committed (to
 
 # Mengenali Pengerusi FAMA – 16:9 waiting-room montage (Remotion composition `Montage`)
 
-1920×1080 / 25 fps, ~3:01 incl. the 5 s closing logo. Built for lobby / waiting-area screens.
+1920×1080 / 25 fps, 2:00 incl. the 5 s closing logo. Built for lobby / waiting-area screens.
 
 Footage: Drive folder "Video Raw CM" (Firstday CM ke FAMA, Shooting Simbol FAMA, MAHA, Media Tour MAHA,
 Program Jualan Pertanian Melaka, Bidara Flour Mill, Majlis Watikah Sahabat Ilmuwan, FX3/Program Kecergasan).
@@ -52,9 +52,10 @@ scripts/render_montage.sh preview       # 720p preview → out/montage_preview.m
 scripts/render_montage.sh final         # 1080p final  → out/montage_final.mp4
 ```
 
-Music: Mixkit #160 (128 BPM), extended to 3:00 by repeating a 16-bar section (`public/music/m160_ext.mp3`).
+Music: Mixkit #839 "Tears of Joy" (Happy / Uplifting / Folk Pop, 124 BPM), started 13.4 s in on a downbeat
+so its own ending lands after the logo. Passing b-roll plays at 1.6× with 1–2 beat cuts.
 Voice-over: the chairman's media statement at Pasar Tani Kekal Simpang 4, Perlis (FAMA CH › JAM-PTK PERLIS,
-clip 0545) — six full lines cut at word level, pauses tightened, cleaned and normalised (`public/vo/`).
+clip 0545) — six complete lines cut at word level, pauses tightened, cleaned and normalised (`public/vo/`).
 
 Edit structure (every cut on the beat; every clip used once):
 cold open on the chairman's portrait with the MC's arrival announcement as voice-over → title
