@@ -1,8 +1,8 @@
-"""EDL for the 16:9 waiting-room montage "Mengenali Pengerusi FAMA" (v4, 2:00).
+"""EDL for the 16:9 waiting-room montage "Mengenali Pengerusi FAMA" (v5, ~3:00).
 
 Builds src/montage/montage.json (shots, overlays, voice-over, SFX, music ducking) from the mezzanine
 clips in /home/user/mezz (1080p25 H.264 made from the raw FX3/DJI files). Every cut sits on the beat
-grid of the music (Mixkit #839 "Tears of Joy", 124 BPM, 2:00). Passing b-roll plays at 1.6x with 1-2 beat cuts.
+grid of the music (Mixkit #839 "Tears of Joy", 124 BPM, extended to ~3:08 by repeating 28 bars once).
 Every clip is used once (no repeated scenes). Face boxes (YuNet, padded) decide Ken-Burns origins and
 where text goes, so text never sits on a face. Used clips are copied to public/mz.
 
@@ -27,10 +27,10 @@ FACES = os.environ.get("FACES", "/home/user/work/faces")
 WORK = os.environ.get("WORK", "/home/user/work")
 FPS = 25
 
-MUSIC = "music/m839.mp3"  # Mixkit #839 "Tears of Joy" (Happy, Uplifting, Folk Pop), 124 BPM
-MUSIC_OFFSET = 13.355  # start on a downbeat so the song's own ending lands after the closing logo
-BEAT0, BEAT = 0.0, 0.48388  # video t=0 is a downbeat; beat length (s)
-MUSIC_END = 117.6
+MUSIC = "music/m839_ext.mp3"  # Mixkit #839 "Tears of Joy" (Happy, Uplifting, Folk Pop), 124 BPM, 28 bars repeated once
+MUSIC_OFFSET = 0.0
+BEAT0, BEAT = 0.7744, 0.48388  # first beat of the song; beat length (s)
+MUSIC_END = 185.0  # main edit ends 2 s before; the song resolves under the closing logo
 
 
 def bt(n):
@@ -68,20 +68,26 @@ VO = {
     "taskforce": ([(326.45, 334.85)],
                   "Di peringkat ibu pejabat FAMA, kami telah mengorak langkah. Bermula bulan pertama saya berada "
                   "di pejabat, kami telah mewujudkan satu task force."),
-    "sales": ([(37.45, 50.55)],
-              "Pada tahun ini, setakat bulan November ini, FAMA telah mengadakan Jualan Agro Madani yang telah "
-              "mencatat nilai jualannya sebanyak RM79.77 juta."),
-    "bajet": ([(71.28, 86.40)],
-              "Pada tahun hadapan, FAMA dan juga beberapa agensi telah diberikan satu angka yang agak besar juga, "
-              "iaitu 5,000 aktiviti Jualan Agro Madani yang kita akan buat bagi tahun 2027."),
-    "usahawan": ([(92.85, 98.10), (103.70, 110.05)],
-                 "Kita telah melibatkan 39,841 usahawan, dengan nilai penjimatan sebanyak RM25.36 juta."),
-    "sara": ([(243.00, 259.65)],
+    "sales": ([(33.75, 36.80), (37.45, 50.55), (51.25, 63.70)],
+              "Dari segi data yang ada pada FAMA, pada tahun ini setakat bulan November ini, FAMA telah mengadakan "
+              "Jualan Agro Madani yang telah mencatat nilai jualannya sebanyak RM79.77 juta. Itu secara keseluruhan "
+              "di peringkat Malaysia, yang mana melibatkan 3,328 siri penganjuran dan Jualan Agro Madani di seluruh negara."),
+    "bajet": ([(63.85, 86.40)],
+              "Kalau kita lihat dari segi bajet tahun 2027 yang baru-baru ini diumumkan oleh Perdana Menteri Malaysia, "
+              "pada tahun hadapan FAMA dan juga beberapa agensi telah diberikan satu angka yang agak besar juga, iaitu "
+              "5,000 aktiviti Jualan Agro Madani ini yang kita akan buat bagi tahun 2027."),
+    "usahawan": ([(87.85, 98.10), (103.70, 110.05)],
+                 "Data lain yang melibatkan Jualan Agro Madani ini, di seluruh negara kita telah melibatkan 39,841 "
+                 "usahawan, dengan nilai penjimatan sebanyak RM25.36 juta."),
+    "sara": ([(243.00, 268.35)],
              "Bermula 1 Januari, FAMA sebagai salah satu agensi yang menyelia Jualan Agro Madani, SARA itu sendiri "
              "boleh digunakan pembeliannya di Jualan Agro Madani. Dia bukan sahaja memberi keuntungan kepada pengguna, "
-             "tapi kepada juga pengeluar dan usahawan."),
-    "bekalan": ([(370.20, 377.60)],
-                "Bagi pihak FAMA, kami dah bersedia untuk penyediaan bekalan makanan sekurang-kurangnya tiga bulan."),
+             "tapi kepada juga pengeluar dan usahawan. Harga yang kita tawarkan sehingga 30%. Ada yang 10%, ada yang "
+             "20% dan sehingga 30%."),
+    "bekalan": ([(370.20, 377.60), (398.88, 407.20)],
+                "Bagi pihak FAMA, kami dah bersedia untuk penyediaan bekalan makanan sekurang-kurangnya tiga bulan. "
+                "Tapi FAMA, kita ambil satu langkah, kita ambil, kita simpan dan kita berjaga-jaga untuk mendepani "
+                "Super El Nino."),
 }
 GAP_MAX, GAP_KEEP, PAD = 0.32, 0.16, 0.06
 
@@ -148,34 +154,28 @@ def find_word(key, prefix):
 # Shot list in beats (one beat = 0.469 s). Strings mark section starts.
 # --------------------------------------------------------------------------------------------
 edit = [  # (clip, in-point s, beats, speed)
-    "OPEN", ("BK", 1.0, 6, 1), ("BENCH", 4.0, 4, 1), ("READ", 9.0, 8, 1),
-    "TITLE", ("LOOK", 13.0, 10, 1),
-    "NAME", ("C5636", 2.5, 10, 1),
-    "DAY1", ("C5613", 9.0, 3, 1), ("C5617", 1.5, 3, 1), ("C5622", 1.5, 3, 1), ("C5626", 1.0, 3, 1), ("C5630", 0.3, 3, 1),
-    ("C5627", 1.0, 3, 1),
-    "MAHA", ("C7204", 2.0, 2, 1.6), ("C6706", 5.0, 2, 1.6), ("C6686", 3.0, 2, 1.6), ("C6624", 1.5, 2, 1.6),
-    ("C6651", 4.0, 2, 1.6), ("C6660", 3.0, 2, 1.6), ("C6714", 3.0, 2, 1.6), ("C6720", 5.0, 2, 1.6), ("C7213", 0.5, 2, 1.6),
-    ("C7230", 2.0, 2, 1.6), ("C7252", 8.0, 2, 1.6), ("C7256", 2.0, 2, 1.6), ("C6635", 2.0, 2, 1.6), ("C7222", 1.0, 2, 1.6),
-    ("C6630", 4.0, 2, 1.6),
-    "MELAKA", ("C0447", 2.0, 2, 1.6), ("C0408", 1.0, 2, 1.6), ("C0410", 1.5, 2, 1.6), ("C0431", 3.0, 2, 1.6),
-    ("C0443", 2.0, 2, 1.6), ("C0450", 0.5, 2, 1.6), ("C0437", 1.0, 2, 1.6), ("C0454", 0.5, 2, 1.6), ("C0456", 0.5, 2, 1.6),
-    ("C0414", 2.0, 2, 1.6), ("C0657", 0.5, 2, 1.6), ("C6662", 2.0, 2, 1.6), ("C6655", 1.0, 2, 1.6), ("C6683", 2.0, 2, 1.6),
-    ("C7253", 0.5, 2, 1.6), ("C7259", 2.0, 2, 1.6), ("C6676", 10.0, 2, 1.6), ("C7261", 1.0, 2, 1.6), ("C6685", 2.0, 2, 1.6),
-    ("C6664", 0.5, 2, 1.6), ("C6668", 0.5, 2, 1.6), ("C6672", 1.0, 2, 1.6), ("C6729", 1.0, 2, 1.6), ("C0428", 0.5, 2, 1.6),
-    ("C0441", 0.5, 2, 1.6), ("C6644", 0.5, 2, 1.6), ("C6649", 0.5, 2, 1.6), ("C6653", 0.5, 2, 1.6), ("C6658", 2.0, 2, 1.6),
-    ("C6674", 0.5, 2, 1.6), ("C6680", 0.3, 2, 1.6),
-    "TALK", ("SPEECH", None, 16, 1),
-    "TALK_BROLL", ("C0448", 0.5, 2, 1.6), ("C7255", 1.0, 2, 1.6), ("C7217", 1.0, 2, 1.6), ("C6719", 8.0, 2, 1.6),
-    ("C6701", 0.5, 2, 1.6), ("C7205", 2.0, 2, 1.6), ("C6716", 1.0, 2, 1.6), ("C6727", 0.5, 2, 1.6), ("C7214", 0.5, 2, 1.6),
-    "BIDARA", ("C9661", 1.0, 2, 1.6), ("C9680", 2.0, 2, 1.6), ("C9682", 0.5, 2, 1.6), ("C9695", 2.0, 2, 1.6),
-    ("C9692", 0.3, 2, 1.6), ("C9703", 2.0, 2, 1.6), ("C9694", 0.3, 2, 1.6), ("C9691", 6.0, 2, 1.6), ("C9664", 0.5, 2, 1.6),
-    ("C9697", 1.0, 2, 1.6),
-    "WARGA", ("0035_D", 0.5, 2, 1.6), ("0019_D", 1.0, 1, 1.6), ("0045_D", 0.0, 1, 1.6), ("0027_D", 1.0, 1, 1.6),
-    ("0024_D", 1.0, 1, 1.6), ("C6262", 4.0, 2, 1.6), ("C6356", 1.0, 1, 1.6), ("C6380", 0.5, 1, 1.6), ("C6449", 1.0, 1, 1.6),
-    ("C6441", 0.5, 1, 1.6), ("C6327", 1.0, 2, 1.6),
-    "RECAP", ("C5629", 0.3, 2, 1.6), ("C7248", 1.0, 1, 1.6), ("C5620", 1.0, 1, 1.6), ("C7240", 1.0, 1, 1.6),
-    ("C6703", 1.0, 1, 1.6), ("C5621", 0.5, 1, 1.6), ("C6713", 2.0, 1, 1.6), ("C7206", 1.0, 1, 1.6), ("C6616", 1.0, 2, 1.6),
-    ("C5619", 1.0, 1, 1.6), ("C5628", 0.5, 1, 1.6),
+    "OPEN", ("BK", 1.0, 7, 1), ("BENCH", 4.0, 4, 1), ("READ", 9.0, 8, 1),
+    "TITLE", ("LOOK", 13.0, 12, 1),
+    "NAME", ("C5636", 2.5, 12, 1),
+    "DAY1", ("C5613", 9.0, 4, 1), ("C5617", 1.5, 4, 1), ("C5622", 1.5, 4, 1), ("C5626", 1.0, 4, 1), ("C5630", 0.3, 4, 1), ("C5627", 1.0, 4, 1),
+    "MAHA", ("C7204", 2.0, 4, 1), ("C6706", 5.0, 4, 1), ("C6686", 3.0, 4, 1), ("C6624", 1.5, 4, 1), ("C6651", 4.0, 4, 1),
+    ("C6660", 3.0, 4, 1), ("C6714", 3.0, 4, 1), ("C6720", 5.0, 4, 1), ("C7213", 0.5, 4, 1), ("C7230", 2.0, 4, 1), ("C7252", 8.0, 4, 1),
+    ("C7256", 2.0, 4, 1), ("C6635", 2.0, 4, 1), ("C7222", 1.0, 4, 1),
+    "MELAKA", ("C0447", 2.0, 4, 1), ("C0408", 1.0, 4, 1), ("C0410", 1.5, 4, 1), ("C0431", 3.0, 4, 1), ("C0443", 2.0, 4, 1),
+    ("C0450", 0.5, 4, 1), ("C0437", 1.0, 4, 1), ("C0454", 0.5, 4, 1), ("C0456", 0.5, 4, 1), ("C0414", 2.0, 4, 1), ("C0657", 0.5, 4, 1),
+    ("C6630", 4.0, 4, 1), ("C6662", 2.0, 4, 1), ("C6655", 1.0, 4, 1), ("C6683", 2.0, 4, 1), ("C7253", 0.5, 4, 1), ("C7259", 2.0, 4, 1),
+    ("C6676", 10.0, 4, 1), ("C7261", 1.0, 4, 1), ("C6685", 2.0, 4, 1), ("C6664", 0.5, 4, 1), ("C6668", 0.5, 4, 1),
+    ("C6672", 1.0, 2, 1), ("C6729", 1.0, 4, 1),
+    "TALK", ("SPEECH", None, 21, 1),
+    "TALK_BROLL", ("C0428", 0.5, 4, 1), ("C0441", 0.5, 4, 1), ("C0448", 0.5, 4, 1), ("C7255", 1.0, 4, 1), ("C7217", 1.0, 4, 1),
+    ("C6719", 8.0, 4, 1), ("C6701", 0.5, 4, 1), ("C7205", 2.0, 4, 1),
+    "BIDARA", ("C9661", 1.0, 4, 1), ("C9680", 2.0, 4, 1), ("C9682", 0.5, 4, 1), ("C9695", 2.0, 4, 1), ("C9692", 0.3, 4, 1),
+    ("C9703", 2.0, 4, 1), ("C9694", 0.3, 4, 1), ("C9691", 6.0, 4, 1), ("C9664", 0.5, 4, 1), ("C9697", 1.0, 4, 1),
+    "WARGA", ("0035_D", 0.5, 4, 1), ("0019_D", 1.0, 2, 1), ("0045_D", 0.0, 2, 1), ("0027_D", 1.0, 2, 1), ("0024_D", 1.0, 2, 1),
+    ("C6262", 4.0, 4, 1), ("C6356", 1.0, 2, 1), ("C6380", 0.5, 2, 1), ("C6449", 1.0, 2, 1), ("C6441", 0.5, 2, 1), ("C6327", 1.0, 2, 1),
+    "RECAP", ("C5629", 0.3, 2, 1), ("C7248", 1.0, 2, 1), ("C6716", 1.0, 2, 1), ("C6727", 0.5, 2, 1), ("C7214", 0.5, 2, 1),
+    ("C5620", 1.0, 2, 1), ("C7240", 1.0, 2, 1), ("C6703", 1.0, 2, 1), ("C5621", 0.5, 2, 1), ("C6713", 2.0, 2, 1), ("C7206", 1.0, 2, 1),
+    ("C6616", 1.0, 4, 1), ("C5619", 1.0, 2, 1), ("C5628", 0.5, 2, 1),
     "END", ("C6438", 12.0, 0, 1),  # held to MAIN_END under the end title
 ]
 
@@ -379,6 +379,8 @@ s_at = T["MAHA"] + 1.0
 voice("sales", s_at)
 t79 = s_at + find_word("sales", "79")
 stat(t79 - 0.3, t79 + 4.4, "RM79.77 JUTA", "NILAI JUALAN AGRO MADANI", "Seluruh negara · setakat November 2026")
+t3k = s_at + find_word("sales", "3")
+stat(t3k - 0.3, t3k + 4.2, "3,328", "SIRI JUALAN AGRO MADANI", "Dianjurkan di seluruh negara")
 s_end = s_at + vo_files["sales"][1]
 
 # ---- 03 Bersama Rakyat: budget 2027 + entrepreneurs ----
@@ -401,6 +403,8 @@ sp_at = talk["t0"] + 0.5
 ov(talk["t0"] + 0.3, talk["t1"] - 0.2, type="talklabel", kicker="KENYATAAN MEDIA", title="Pengerusi FAMA",
    sub="Pasar Tani Kekal Simpang 4, Perlis  ·  10 November 2026")
 sara_end = voice("sara", sp_at, split_at=talk["t1"])
+t30 = sp_at + find_word("sara", "30")
+stat(max(t30 - 0.3, talk["t1"] + 0.2), max(t30 - 0.3, talk["t1"] + 0.2) + 4.0, "SEHINGGA 30%", "DISKAUN DENGAN SARA", "Di Jualan Agro Madani · mulai 1 Januari 2027")
 
 # ---- 04 Bidara: food supply readiness ----
 chapter(T["BIDARA"], T["BIDARA"] + 3.2, "04", "Memperkasa Industri", "Lawatan ke Bidara Flour Mill")
