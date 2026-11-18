@@ -36,7 +36,7 @@ Raw footage (`/home/user/raw/*.MP4`) and `public/footage/` are not committed (to
 
 # Mengenali Pengerusi FAMA – 16:9 waiting-room montage (Remotion composition `Montage`)
 
-1920×1080 / 25 fps, ~2:31 incl. the 5 s closing logo. Built for lobby / waiting-area screens.
+1920×1080 / 25 fps, ~3:01 incl. the 5 s closing logo. Built for lobby / waiting-area screens.
 
 Footage: Drive folder "Video Raw CM" (Firstday CM ke FAMA, Shooting Simbol FAMA, MAHA, Media Tour MAHA,
 Program Jualan Pertanian Melaka, Bidara Flour Mill, Majlis Watikah Sahabat Ilmuwan, FX3/Program Kecergasan).
@@ -52,7 +52,11 @@ scripts/render_montage.sh preview       # 720p preview → out/montage_preview.m
 scripts/render_montage.sh final         # 1080p final  → out/montage_final.mp4
 ```
 
-Edit structure (cut to the beat of Mixkit track #128, started 9 s in):
+Music: Mixkit #160 (128 BPM), extended to 3:00 by repeating a 16-bar section (`public/music/m160_ext.mp3`).
+Voice-over: the chairman's media statement at Pasar Tani Kekal Simpang 4, Perlis (FAMA CH › JAM-PTK PERLIS,
+clip 0545) — six full lines cut at word level, pauses tightened, cleaned and normalised (`public/vo/`).
+
+Edit structure (every cut on the beat; every clip used once):
 cold open on the chairman's portrait with the MC's arrival announcement as voice-over → title
 "Mengenali Pengerusi FAMA" → name card → 01 Hari Pertama di FAMA → (drum drop) 02 MAHA 2026 →
 03 Bersama Rakyat (Melaka) → 04 Memperkasa Industri (Bidara) → breakdown 05 Ilmu & Kesejahteraan →

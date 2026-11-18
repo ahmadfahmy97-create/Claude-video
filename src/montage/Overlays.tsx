@@ -196,7 +196,7 @@ const Stat: React.FC<{g: G}> = ({g}) => {
   const out = useOut(g.dur, 12);
   const right = String(g.side).startsWith('right');
   const high = String(g.side).endsWith('-top');
-  const low = String(g.side).endsWith('-bottom');
+  const low = String(g.side).endsWith('-bottom') || String(g.side).endsWith('-low');
   const m = String(g.value).match(/^(\D*)([\d,.]+)(.*)$/);
   let shown = g.value;
   if (m) {
@@ -214,7 +214,7 @@ const Stat: React.FC<{g: G}> = ({g}) => {
         opacity: out,
         justifyContent: high ? 'flex-start' : low ? 'flex-end' : 'center',
         alignItems: right ? 'flex-end' : 'flex-start',
-        padding: high ? '130px 120px 0' : low ? '0 120px 90px' : '0 120px',
+        padding: high ? '130px 120px 0' : low ? `0 120px ${String(g.side).endsWith('-low') ? 250 : 90}px` : '0 120px',
       }}
     >
       <div
@@ -262,7 +262,8 @@ const TalkLabel: React.FC<{g: G}> = ({g}) => {
 const Sub: React.FC<{g: G}> = ({g}) => {
   const f = useCurrentFrame();
   const t = f / 25;
-  const o = interpolate(f, [0, 5, g.dur - 5, g.dur], [0, 1, 1, 0], clamp);
+  const e = Math.max(1, Math.min(5, Math.floor(g.dur / 2) - 1));
+  const o = interpolate(f, [0, e, g.dur - e - 0.5, g.dur], [0, 1, 1, 0], clamp);
   const top = g.pos === 'top';
   if (g.pos === 'talk') {
     return (
@@ -288,12 +289,12 @@ const Sub: React.FC<{g: G}> = ({g}) => {
           lineHeight: 1.3,
           textAlign: 'center',
           color: '#fff',
-          textShadow: '0 3px 14px rgba(0,0,0,0.85), 0 0 2px rgba(0,0,0,0.9)',
+          textShadow: '0 2px 4px rgba(0,0,0,0.95), 0 4px 18px rgba(0,0,0,0.9), 0 0 2px #000',
           maxWidth: 1450,
         }}
       >
         {(g.words as {w: string; s: number}[]).map((w, i) => (
-          <span key={i} style={{color: t >= w.s ? '#fff' : 'rgba(255,255,255,0.55)', transition: 'none'}}>
+          <span key={i} style={{color: t >= w.s ? '#fff' : 'rgba(255,255,255,0.72)', transition: 'none'}}>
             {w.w}{' '}
           </span>
         ))}

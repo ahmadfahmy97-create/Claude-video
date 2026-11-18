@@ -1,20 +1,20 @@
 {
- "durationInFrames": 3650,
+ "durationInFrames": 4412,
  "music": {
-  "src": "music/m128.mp3",
-  "offset": 9.0,
-  "volume": 0.55,
-  "duck": 0.16
+  "src": "music/m160_ext.mp3",
+  "offset": 0,
+  "volume": 0.5,
+  "duck": 0.13
  },
  "shots": [
   {
    "src": "Shooting_Simbol_FAMA__C6606.mp4",
    "from": 0,
-   "dur": 80,
+   "dur": 84,
    "in": 1.0,
    "vol": 0.0,
    "z0": 1.0,
-   "z1": 1.08,
+   "z1": 1.07,
    "ox": 0.514,
    "oy": 0.584,
    "fadeIn": 0,
@@ -22,259 +22,259 @@
   },
   {
    "src": "Shooting_Simbol_FAMA__C6604.mp4",
-   "from": 80,
-   "dur": 70,
+   "from": 84,
+   "dur": 47,
    "in": 4.0,
    "vol": 0.0,
    "z0": 1.0,
-   "z1": 1.08,
-   "ox": 0.67,
-   "oy": 0.287,
-   "fadeIn": 10,
+   "z1": 1.07,
+   "ox": 0.666,
+   "oy": 0.289,
+   "fadeIn": 8,
    "kind": null
   },
   {
    "src": "Shooting_Simbol_FAMA__C6605.mp4",
-   "from": 150,
-   "dur": 80,
+   "from": 131,
+   "dur": 93,
    "in": 9.0,
    "vol": 0.0,
    "z0": 1.0,
-   "z1": 1.08,
+   "z1": 1.07,
    "ox": 0.664,
    "oy": 0.259,
-   "fadeIn": 10,
+   "fadeIn": 8,
    "kind": null
   },
   {
    "src": "Shooting_Simbol_FAMA__C6607.mp4",
-   "from": 230,
-   "dur": 155,
+   "from": 224,
+   "dur": 141,
    "in": 13.0,
    "vol": 0.0,
    "z0": 1.0,
-   "z1": 1.08,
+   "z1": 1.07,
    "ox": 0.589,
    "oy": 0.275,
-   "fadeIn": 10,
+   "fadeIn": 8,
    "kind": null
   },
   {
    "src": "Firstday_CM_ke_FAMA__C5636.mp4",
-   "from": 385,
-   "dur": 135,
+   "from": 365,
+   "dur": 141,
    "in": 2.5,
    "vol": 0.0,
-   "z0": 1.02,
-   "z1": 1.08,
+   "z0": 1.0,
+   "z1": 1.07,
    "ox": 0.48,
    "oy": 0.355,
-   "fadeIn": 10,
+   "fadeIn": 8,
    "kind": null
   },
   {
    "src": "Firstday_CM_ke_FAMA__C5613.mp4",
-   "from": 520,
-   "dur": 65,
+   "from": 506,
+   "dur": 47,
    "in": 9.0,
    "vol": 0.0,
-   "z0": 1.02,
-   "z1": 1.08,
-   "ox": 0.374,
-   "oy": 0.389,
-   "fadeIn": 10,
+   "z0": 1.0,
+   "z1": 1.07,
+   "ox": 0.365,
+   "oy": 0.398,
+   "fadeIn": 8,
    "kind": null
   },
   {
    "src": "Firstday_CM_ke_FAMA__C5617.mp4",
-   "from": 585,
-   "dur": 55,
+   "from": 553,
+   "dur": 46,
    "in": 1.5,
    "vol": 0.0,
-   "z0": 1.02,
-   "z1": 1.08,
-   "ox": 0.444,
-   "oy": 0.5,
-   "fadeIn": 10,
+   "z0": 1.0,
+   "z1": 1.07,
+   "ox": 0.417,
+   "oy": 0.535,
+   "fadeIn": 8,
    "kind": null
   },
   {
    "src": "Firstday_CM_ke_FAMA__C5622.mp4",
-   "from": 640,
-   "dur": 55,
+   "from": 599,
+   "dur": 47,
    "in": 1.5,
    "vol": 0.0,
-   "z0": 1.02,
-   "z1": 1.08,
-   "ox": 0.772,
-   "oy": 0.253,
-   "fadeIn": 10,
+   "z0": 1.0,
+   "z1": 1.07,
+   "ox": 0.8,
+   "oy": 0.2,
+   "fadeIn": 8,
    "kind": null
   },
   {
    "src": "Firstday_CM_ke_FAMA__C5626.mp4",
-   "from": 695,
-   "dur": 40,
+   "from": 646,
+   "dur": 47,
    "in": 1.0,
    "vol": 0.0,
-   "z0": 1.02,
-   "z1": 1.08,
+   "z0": 1.0,
+   "z1": 1.07,
    "ox": 0.5,
    "oy": 0.45,
-   "fadeIn": 10,
+   "fadeIn": 8,
    "kind": null
   },
   {
    "src": "Firstday_CM_ke_FAMA__C5630.mp4",
-   "from": 735,
-   "dur": 45,
+   "from": 693,
+   "dur": 47,
    "in": 0.3,
    "vol": 0.0,
-   "z0": 1.02,
-   "z1": 1.08,
+   "z0": 1.0,
+   "z1": 1.07,
    "ox": 0.597,
    "oy": 0.351,
-   "fadeIn": 10,
+   "fadeIn": 8,
    "kind": null
   },
   {
    "src": "Firstday_CM_ke_FAMA__C5627.mp4",
-   "from": 780,
-   "dur": 45,
+   "from": 740,
+   "dur": 47,
    "in": 1.0,
    "vol": 0.0,
-   "z0": 1.02,
-   "z1": 1.08,
+   "z0": 1.0,
+   "z1": 1.07,
    "ox": 0.496,
    "oy": 0.487,
-   "fadeIn": 10,
+   "fadeIn": 8,
    "kind": null
   },
   {
    "src": "MAHA__C7204.mp4",
-   "from": 825,
-   "dur": 58,
+   "from": 787,
+   "dur": 47,
    "in": 2.0,
    "vol": 0.0,
    "z0": 1.04,
    "z1": 1.1,
-   "ox": 0.383,
+   "ox": 0.394,
    "oy": 0.498,
    "fadeIn": 0,
    "kind": null
   },
   {
    "src": "Media_Tour_MAHA__C6706.mp4",
-   "from": 883,
-   "dur": 29,
+   "from": 834,
+   "dur": 47,
    "in": 5.0,
    "vol": 0.0,
-   "z0": 1.04,
-   "z1": 1.1,
-   "ox": 0.427,
-   "oy": 0.308,
+   "z0": 1.1,
+   "z1": 1.04,
+   "ox": 0.468,
+   "oy": 0.306,
    "fadeIn": 0,
    "kind": null
   },
   {
    "src": "Media_Tour_MAHA__C6686.mp4",
-   "from": 912,
-   "dur": 29,
+   "from": 881,
+   "dur": 47,
    "in": 3.0,
    "vol": 0.0,
-   "z0": 1.1,
-   "z1": 1.04,
-   "ox": 0.342,
-   "oy": 0.261,
+   "z0": 1.04,
+   "z1": 1.1,
+   "ox": 0.39,
+   "oy": 0.245,
    "fadeIn": 0,
    "kind": null
   },
   {
    "src": "Media_Tour_MAHA__C6624.mp4",
-   "from": 941,
-   "dur": 29,
+   "from": 928,
+   "dur": 46,
    "in": 1.5,
    "vol": 0.0,
-   "z0": 1.04,
-   "z1": 1.1,
-   "ox": 0.649,
+   "z0": 1.1,
+   "z1": 1.04,
+   "ox": 0.642,
    "oy": 0.339,
    "fadeIn": 0,
    "kind": null
   },
   {
    "src": "Media_Tour_MAHA__C6651.mp4",
-   "from": 970,
-   "dur": 30,
+   "from": 974,
+   "dur": 47,
    "in": 4.0,
    "vol": 0.0,
-   "z0": 1.1,
-   "z1": 1.04,
+   "z0": 1.04,
+   "z1": 1.1,
    "ox": 0.2,
-   "oy": 0.526,
+   "oy": 0.522,
    "fadeIn": 0,
    "kind": null
   },
   {
    "src": "Media_Tour_MAHA__C6660.mp4",
-   "from": 1000,
-   "dur": 29,
+   "from": 1021,
+   "dur": 47,
    "in": 3.0,
    "vol": 0.0,
-   "z0": 1.04,
-   "z1": 1.1,
-   "ox": 0.583,
-   "oy": 0.336,
+   "z0": 1.1,
+   "z1": 1.04,
+   "ox": 0.486,
+   "oy": 0.34,
    "fadeIn": 0,
    "kind": null
   },
   {
    "src": "Media_Tour_MAHA__C6714.mp4",
-   "from": 1029,
-   "dur": 29,
+   "from": 1068,
+   "dur": 47,
    "in": 3.0,
    "vol": 0.0,
-   "z0": 1.1,
-   "z1": 1.04,
-   "ox": 0.577,
-   "oy": 0.366,
+   "z0": 1.04,
+   "z1": 1.1,
+   "ox": 0.569,
+   "oy": 0.354,
    "fadeIn": 0,
    "kind": null
   },
   {
    "src": "Media_Tour_MAHA__C6720.mp4",
-   "from": 1058,
-   "dur": 29,
+   "from": 1115,
+   "dur": 47,
    "in": 5.0,
    "vol": 0.0,
-   "z0": 1.04,
-   "z1": 1.1,
-   "ox": 0.3,
-   "oy": 0.521,
+   "z0": 1.1,
+   "z1": 1.04,
+   "ox": 0.327,
+   "oy": 0.489,
    "fadeIn": 0,
    "kind": null
   },
   {
    "src": "MAHA__C7213.mp4",
-   "from": 1087,
-   "dur": 29,
+   "from": 1162,
+   "dur": 47,
    "in": 0.5,
    "vol": 0.0,
-   "z0": 1.1,
-   "z1": 1.04,
-   "ox": 0.527,
-   "oy": 0.251,
+   "z0": 1.04,
+   "z1": 1.1,
+   "ox": 0.55,
+   "oy": 0.246,
    "fadeIn": 0,
    "kind": null
   },
   {
    "src": "MAHA__C7230.mp4",
-   "from": 1116,
-   "dur": 29,
+   "from": 1209,
+   "dur": 47,
    "in": 2.0,
    "vol": 0.0,
-   "z0": 1.04,
-   "z1": 1.1,
+   "z0": 1.1,
+   "z1": 1.04,
    "ox": 0.5,
    "oy": 0.45,
    "fadeIn": 0,
@@ -282,60 +282,60 @@
   },
   {
    "src": "MAHA__C7252.mp4",
-   "from": 1145,
-   "dur": 29,
+   "from": 1256,
+   "dur": 47,
    "in": 8.0,
    "vol": 0.0,
-   "z0": 1.1,
-   "z1": 1.04,
-   "ox": 0.651,
-   "oy": 0.337,
+   "z0": 1.04,
+   "z1": 1.1,
+   "ox": 0.637,
+   "oy": 0.338,
    "fadeIn": 0,
    "kind": null
   },
   {
    "src": "MAHA__C7256.mp4",
-   "from": 1174,
-   "dur": 29,
+   "from": 1303,
+   "dur": 46,
    "in": 2.0,
    "vol": 0.0,
-   "z0": 1.04,
-   "z1": 1.1,
-   "ox": 0.596,
-   "oy": 0.339,
+   "z0": 1.1,
+   "z1": 1.04,
+   "ox": 0.499,
+   "oy": 0.375,
    "fadeIn": 0,
    "kind": null
   },
   {
    "src": "Media_Tour_MAHA__C6635.mp4",
-   "from": 1203,
-   "dur": 29,
+   "from": 1349,
+   "dur": 47,
    "in": 2.0,
    "vol": 0.0,
-   "z0": 1.1,
-   "z1": 1.04,
-   "ox": 0.517,
-   "oy": 0.419,
+   "z0": 1.04,
+   "z1": 1.1,
+   "ox": 0.461,
+   "oy": 0.42,
    "fadeIn": 0,
    "kind": null
   },
   {
    "src": "MAHA__C7222.mp4",
-   "from": 1232,
-   "dur": 58,
+   "from": 1396,
+   "dur": 47,
    "in": 1.0,
    "vol": 0.0,
-   "z0": 1.04,
-   "z1": 1.1,
-   "ox": 0.471,
-   "oy": 0.408,
+   "z0": 1.1,
+   "z1": 1.04,
+   "ox": 0.441,
+   "oy": 0.404,
    "fadeIn": 0,
    "kind": null
   },
   {
    "src": "Program_Jualan_Perta__C0447.mp4",
-   "from": 1290,
-   "dur": 58,
+   "from": 1443,
+   "dur": 47,
    "in": 2.0,
    "vol": 0.0,
    "z0": 1.04,
@@ -347,125 +347,242 @@
   },
   {
    "src": "Program_Jualan_Perta__C0408.mp4",
-   "from": 1348,
-   "dur": 29,
+   "from": 1490,
+   "dur": 47,
    "in": 1.0,
    "vol": 0.0,
-   "z0": 1.04,
-   "z1": 1.1,
-   "ox": 0.329,
-   "oy": 0.343,
+   "z0": 1.1,
+   "z1": 1.04,
+   "ox": 0.332,
+   "oy": 0.35,
    "fadeIn": 0,
    "kind": null
   },
   {
    "src": "Program_Jualan_Perta__C0410.mp4",
-   "from": 1377,
-   "dur": 29,
+   "from": 1537,
+   "dur": 47,
    "in": 1.5,
    "vol": 0.0,
-   "z0": 1.1,
-   "z1": 1.04,
-   "ox": 0.602,
-   "oy": 0.242,
+   "z0": 1.04,
+   "z1": 1.1,
+   "ox": 0.597,
+   "oy": 0.241,
    "fadeIn": 0,
    "kind": null
   },
   {
    "src": "Program_Jualan_Perta__C0431.mp4",
-   "from": 1406,
-   "dur": 29,
+   "from": 1584,
+   "dur": 47,
    "in": 3.0,
    "vol": 0.0,
-   "z0": 1.04,
-   "z1": 1.1,
-   "ox": 0.454,
-   "oy": 0.671,
+   "z0": 1.1,
+   "z1": 1.04,
+   "ox": 0.416,
+   "oy": 0.666,
    "fadeIn": 0,
    "kind": null
   },
   {
    "src": "Program_Jualan_Perta__C0443.mp4",
-   "from": 1435,
-   "dur": 59,
+   "from": 1631,
+   "dur": 47,
    "in": 2.0,
    "vol": 0.0,
-   "z0": 1.1,
-   "z1": 1.04,
-   "ox": 0.561,
-   "oy": 0.378,
+   "z0": 1.04,
+   "z1": 1.1,
+   "ox": 0.556,
+   "oy": 0.376,
    "fadeIn": 0,
    "kind": null
   },
   {
    "src": "Program_Jualan_Perta__C0450.mp4",
-   "from": 1494,
-   "dur": 29,
+   "from": 1678,
+   "dur": 46,
    "in": 0.5,
    "vol": 0.0,
    "z0": 1.1,
    "z1": 1.04,
-   "ox": 0.47,
-   "oy": 0.364,
+   "ox": 0.455,
+   "oy": 0.366,
    "fadeIn": 0,
    "kind": null
   },
   {
    "src": "Program_Jualan_Perta__C0437.mp4",
-   "from": 1523,
-   "dur": 29,
+   "from": 1724,
+   "dur": 47,
    "in": 1.0,
    "vol": 0.0,
    "z0": 1.04,
    "z1": 1.1,
-   "ox": 0.465,
-   "oy": 0.38,
+   "ox": 0.401,
+   "oy": 0.388,
    "fadeIn": 0,
    "kind": null
   },
   {
-   "src": "Bidara_Flour_Mill__C9661.mp4",
-   "from": 1552,
-   "dur": 29,
-   "in": 1.0,
+   "src": "Program_Jualan_Perta__C0454.mp4",
+   "from": 1771,
+   "dur": 47,
+   "in": 0.5,
    "vol": 0.0,
    "z0": 1.1,
    "z1": 1.04,
-   "ox": 0.264,
-   "oy": 0.236,
+   "ox": 0.473,
+   "oy": 0.404,
    "fadeIn": 0,
    "kind": null
   },
   {
-   "src": "Bidara_Flour_Mill__C9680.mp4",
-   "from": 1581,
-   "dur": 58,
-   "in": 2.0,
-   "vol": 0.0,
-   "z0": 1.04,
-   "z1": 1.1,
-   "ox": 0.378,
-   "oy": 0.344,
-   "fadeIn": 0,
-   "kind": null
-  },
-  {
-   "src": "Bidara_Flour_Mill__C9682.mp4",
-   "from": 1639,
-   "dur": 29,
+   "src": "Program_Jualan_Perta__C0456.mp4",
+   "from": 1818,
+   "dur": 47,
    "in": 0.5,
    "vol": 0.0,
    "z0": 1.04,
    "z1": 1.1,
-   "ox": 0.438,
-   "oy": 0.399,
+   "ox": 0.468,
+   "oy": 0.322,
    "fadeIn": 0,
    "kind": null
   },
   {
-   "src": "Bidara_Flour_Mill__C9695.mp4",
-   "from": 1668,
-   "dur": 58,
+   "src": "Program_Jualan_Perta__C0414.mp4",
+   "from": 1865,
+   "dur": 47,
+   "in": 2.0,
+   "vol": 0.0,
+   "z0": 1.1,
+   "z1": 1.04,
+   "ox": 0.653,
+   "oy": 0.346,
+   "fadeIn": 0,
+   "kind": null
+  },
+  {
+   "src": "Program_Jualan_Perta__C0657.mp4",
+   "from": 1912,
+   "dur": 47,
+   "in": 0.5,
+   "vol": 0.0,
+   "z0": 1.04,
+   "z1": 1.1,
+   "ox": 0.625,
+   "oy": 0.2,
+   "fadeIn": 0,
+   "kind": null
+  },
+  {
+   "src": "Media_Tour_MAHA__C6630.mp4",
+   "from": 1959,
+   "dur": 47,
+   "in": 4.0,
+   "vol": 0.0,
+   "z0": 1.1,
+   "z1": 1.04,
+   "ox": 0.464,
+   "oy": 0.317,
+   "fadeIn": 0,
+   "kind": null
+  },
+  {
+   "src": "Media_Tour_MAHA__C6662.mp4",
+   "from": 2006,
+   "dur": 47,
+   "in": 2.0,
+   "vol": 0.0,
+   "z0": 1.04,
+   "z1": 1.1,
+   "ox": 0.453,
+   "oy": 0.34,
+   "fadeIn": 0,
+   "kind": null
+  },
+  {
+   "src": "Media_Tour_MAHA__C6655.mp4",
+   "from": 2053,
+   "dur": 46,
+   "in": 1.0,
+   "vol": 0.0,
+   "z0": 1.1,
+   "z1": 1.04,
+   "ox": 0.32,
+   "oy": 0.339,
+   "fadeIn": 0,
+   "kind": null
+  },
+  {
+   "src": "Media_Tour_MAHA__C6683.mp4",
+   "from": 2099,
+   "dur": 47,
+   "in": 2.0,
+   "vol": 0.0,
+   "z0": 1.04,
+   "z1": 1.1,
+   "ox": 0.496,
+   "oy": 0.276,
+   "fadeIn": 0,
+   "kind": null
+  },
+  {
+   "src": "MAHA__C7253.mp4",
+   "from": 2146,
+   "dur": 47,
+   "in": 0.5,
+   "vol": 0.0,
+   "z0": 1.1,
+   "z1": 1.04,
+   "ox": 0.494,
+   "oy": 0.368,
+   "fadeIn": 0,
+   "kind": null
+  },
+  {
+   "src": "MAHA__C7259.mp4",
+   "from": 2193,
+   "dur": 47,
+   "in": 2.0,
+   "vol": 0.0,
+   "z0": 1.04,
+   "z1": 1.1,
+   "ox": 0.705,
+   "oy": 0.259,
+   "fadeIn": 0,
+   "kind": null
+  },
+  {
+   "src": "Media_Tour_MAHA__C6676.mp4",
+   "from": 2240,
+   "dur": 47,
+   "in": 10.0,
+   "vol": 0.0,
+   "z0": 1.1,
+   "z1": 1.04,
+   "ox": 0.555,
+   "oy": 0.291,
+   "fadeIn": 0,
+   "kind": null
+  },
+  {
+   "src": "MAHA__C7261.mp4",
+   "from": 2287,
+   "dur": 47,
+   "in": 1.0,
+   "vol": 0.0,
+   "z0": 1.04,
+   "z1": 1.1,
+   "ox": 0.606,
+   "oy": 0.239,
+   "fadeIn": 0,
+   "kind": null
+  },
+  {
+   "src": "Media_Tour_MAHA__C6685.mp4",
+   "from": 2334,
+   "dur": 47,
    "in": 2.0,
    "vol": 0.0,
    "z0": 1.1,
@@ -476,48 +593,308 @@
    "kind": null
   },
   {
+   "src": "Media_Tour_MAHA__C6664.mp4",
+   "from": 2381,
+   "dur": 47,
+   "in": 0.5,
+   "vol": 0.0,
+   "z0": 1.04,
+   "z1": 1.1,
+   "ox": 0.51,
+   "oy": 0.27,
+   "fadeIn": 0,
+   "kind": null
+  },
+  {
+   "src": "Media_Tour_MAHA__C6668.mp4",
+   "from": 2428,
+   "dur": 46,
+   "in": 0.5,
+   "vol": 0.0,
+   "z0": 1.1,
+   "z1": 1.04,
+   "ox": 0.45,
+   "oy": 0.375,
+   "fadeIn": 0,
+   "kind": null
+  },
+  {
+   "src": "Media_Tour_MAHA__C6672.mp4",
+   "from": 2474,
+   "dur": 24,
+   "in": 1.0,
+   "vol": 0.0,
+   "z0": 1.04,
+   "z1": 1.1,
+   "ox": 0.5,
+   "oy": 0.45,
+   "fadeIn": 0,
+   "kind": null
+  },
+  {
+   "src": "Media_Tour_MAHA__C6729.mp4",
+   "from": 2498,
+   "dur": 47,
+   "in": 1.0,
+   "vol": 0.0,
+   "z0": 1.1,
+   "z1": 1.04,
+   "ox": 0.2,
+   "oy": 0.447,
+   "fadeIn": 0,
+   "kind": null
+  },
+  {
+   "src": "JAM_PTK__0545.mp4",
+   "from": 2545,
+   "dur": 246,
+   "in": 242.5,
+   "vol": 0.0,
+   "z0": 1.04,
+   "z1": 1.1,
+   "ox": 0.5,
+   "oy": 0.4,
+   "fadeIn": 10,
+   "kind": "talk"
+  },
+  {
+   "src": "Program_Jualan_Perta__C0428.mp4",
+   "from": 2791,
+   "dur": 47,
+   "in": 0.5,
+   "vol": 0.0,
+   "z0": 1.1,
+   "z1": 1.04,
+   "ox": 0.543,
+   "oy": 0.336,
+   "fadeIn": 0,
+   "kind": null
+  },
+  {
+   "src": "Program_Jualan_Perta__C0441.mp4",
+   "from": 2838,
+   "dur": 47,
+   "in": 0.5,
+   "vol": 0.0,
+   "z0": 1.04,
+   "z1": 1.1,
+   "ox": 0.551,
+   "oy": 0.28,
+   "fadeIn": 0,
+   "kind": null
+  },
+  {
+   "src": "Program_Jualan_Perta__C0448.mp4",
+   "from": 2885,
+   "dur": 46,
+   "in": 0.5,
+   "vol": 0.0,
+   "z0": 1.1,
+   "z1": 1.04,
+   "ox": 0.704,
+   "oy": 0.334,
+   "fadeIn": 0,
+   "kind": null
+  },
+  {
+   "src": "MAHA__C7255.mp4",
+   "from": 2931,
+   "dur": 47,
+   "in": 1.0,
+   "vol": 0.0,
+   "z0": 1.04,
+   "z1": 1.1,
+   "ox": 0.658,
+   "oy": 0.256,
+   "fadeIn": 0,
+   "kind": null
+  },
+  {
+   "src": "MAHA__C7217.mp4",
+   "from": 2978,
+   "dur": 47,
+   "in": 1.0,
+   "vol": 0.0,
+   "z0": 1.1,
+   "z1": 1.04,
+   "ox": 0.602,
+   "oy": 0.336,
+   "fadeIn": 0,
+   "kind": null
+  },
+  {
+   "src": "Media_Tour_MAHA__C6719.mp4",
+   "from": 3025,
+   "dur": 47,
+   "in": 8.0,
+   "vol": 0.0,
+   "z0": 1.04,
+   "z1": 1.1,
+   "ox": 0.334,
+   "oy": 0.412,
+   "fadeIn": 0,
+   "kind": null
+  },
+  {
+   "src": "Media_Tour_MAHA__C6701.mp4",
+   "from": 3072,
+   "dur": 47,
+   "in": 0.5,
+   "vol": 0.0,
+   "z0": 1.1,
+   "z1": 1.04,
+   "ox": 0.536,
+   "oy": 0.282,
+   "fadeIn": 0,
+   "kind": null
+  },
+  {
+   "src": "MAHA__C7205.mp4",
+   "from": 3119,
+   "dur": 47,
+   "in": 2.0,
+   "vol": 0.0,
+   "z0": 1.04,
+   "z1": 1.1,
+   "ox": 0.506,
+   "oy": 0.322,
+   "fadeIn": 0,
+   "kind": null
+  },
+  {
+   "src": "Bidara_Flour_Mill__C9661.mp4",
+   "from": 3166,
+   "dur": 47,
+   "in": 1.0,
+   "vol": 0.0,
+   "z0": 1.1,
+   "z1": 1.04,
+   "ox": 0.239,
+   "oy": 0.25,
+   "fadeIn": 0,
+   "kind": null
+  },
+  {
+   "src": "Bidara_Flour_Mill__C9680.mp4",
+   "from": 3213,
+   "dur": 47,
+   "in": 2.0,
+   "vol": 0.0,
+   "z0": 1.04,
+   "z1": 1.1,
+   "ox": 0.361,
+   "oy": 0.347,
+   "fadeIn": 0,
+   "kind": null
+  },
+  {
+   "src": "Bidara_Flour_Mill__C9682.mp4",
+   "from": 3260,
+   "dur": 46,
+   "in": 0.5,
+   "vol": 0.0,
+   "z0": 1.1,
+   "z1": 1.04,
+   "ox": 0.424,
+   "oy": 0.388,
+   "fadeIn": 0,
+   "kind": null
+  },
+  {
+   "src": "Bidara_Flour_Mill__C9695.mp4",
+   "from": 3306,
+   "dur": 47,
+   "in": 2.0,
+   "vol": 0.0,
+   "z0": 1.04,
+   "z1": 1.1,
+   "ox": 0.5,
+   "oy": 0.45,
+   "fadeIn": 0,
+   "kind": null
+  },
+  {
    "src": "Bidara_Flour_Mill__C9692.mp4",
-   "from": 1726,
-   "dur": 29,
+   "from": 3353,
+   "dur": 47,
    "in": 0.3,
    "vol": 0.0,
    "z0": 1.1,
    "z1": 1.04,
-   "ox": 0.425,
-   "oy": 0.299,
+   "ox": 0.426,
+   "oy": 0.308,
    "fadeIn": 0,
    "kind": null
   },
   {
    "src": "Bidara_Flour_Mill__C9703.mp4",
-   "from": 1755,
-   "dur": 58,
+   "from": 3400,
+   "dur": 47,
    "in": 2.0,
    "vol": 0.0,
    "z0": 1.04,
    "z1": 1.1,
-   "ox": 0.616,
-   "oy": 0.262,
+   "ox": 0.611,
+   "oy": 0.263,
    "fadeIn": 0,
    "kind": null
   },
   {
    "src": "Bidara_Flour_Mill__C9694.mp4",
-   "from": 1813,
-   "dur": 29,
+   "from": 3447,
+   "dur": 47,
    "in": 0.3,
+   "vol": 0.0,
+   "z0": 1.1,
+   "z1": 1.04,
+   "ox": 0.454,
+   "oy": 0.23,
+   "fadeIn": 0,
+   "kind": null
+  },
+  {
+   "src": "Bidara_Flour_Mill__C9691.mp4",
+   "from": 3494,
+   "dur": 47,
+   "in": 6.0,
    "vol": 0.0,
    "z0": 1.04,
    "z1": 1.1,
-   "ox": 0.445,
-   "oy": 0.228,
+   "ox": 0.576,
+   "oy": 0.343,
+   "fadeIn": 0,
+   "kind": null
+  },
+  {
+   "src": "Bidara_Flour_Mill__C9664.mp4",
+   "from": 3541,
+   "dur": 47,
+   "in": 0.5,
+   "vol": 0.0,
+   "z0": 1.1,
+   "z1": 1.04,
+   "ox": 0.453,
+   "oy": 0.34,
+   "fadeIn": 0,
+   "kind": null
+  },
+  {
+   "src": "Bidara_Flour_Mill__C9697.mp4",
+   "from": 3588,
+   "dur": 47,
+   "in": 1.0,
+   "vol": 0.0,
+   "z0": 1.04,
+   "z1": 1.1,
+   "ox": 0.354,
+   "oy": 0.264,
    "fadeIn": 0,
    "kind": null
   },
   {
    "src": "Majlis_Watikah_Sahab__DJI_20260820104224_0035_D.mp4",
-   "from": 1842,
-   "dur": 59,
+   "from": 3635,
+   "dur": 46,
    "in": 0.5,
    "vol": 0.0,
    "z0": 1.1,
@@ -529,12 +906,12 @@
   },
   {
    "src": "Majlis_Watikah_Sahab__DJI_20260820102125_0019_D.mp4",
-   "from": 1901,
-   "dur": 29,
+   "from": 3681,
+   "dur": 24,
    "in": 1.0,
    "vol": 0.0,
-   "z0": 1.1,
-   "z1": 1.04,
+   "z0": 1.04,
+   "z1": 1.1,
    "ox": 0.595,
    "oy": 0.321,
    "fadeIn": 0,
@@ -542,21 +919,21 @@
   },
   {
    "src": "Majlis_Watikah_Sahab__DJI_20260820104952_0045_D.mp4",
-   "from": 1930,
-   "dur": 29,
+   "from": 3705,
+   "dur": 23,
    "in": 0.0,
    "vol": 0.0,
-   "z0": 1.04,
-   "z1": 1.1,
-   "ox": 0.4,
-   "oy": 0.311,
+   "z0": 1.1,
+   "z1": 1.04,
+   "ox": 0.557,
+   "oy": 0.2,
    "fadeIn": 0,
    "kind": null
   },
   {
    "src": "Majlis_Watikah_Sahab__DJI_20260820102623_0027_D.mp4",
-   "from": 1959,
-   "dur": 29,
+   "from": 3728,
+   "dur": 24,
    "in": 1.0,
    "vol": 0.0,
    "z0": 1.1,
@@ -567,26 +944,39 @@
    "kind": null
   },
   {
+   "src": "Majlis_Watikah_Sahab__DJI_20260820102420_0024_D.mp4",
+   "from": 3752,
+   "dur": 23,
+   "in": 1.0,
+   "vol": 0.0,
+   "z0": 1.04,
+   "z1": 1.1,
+   "ox": 0.459,
+   "oy": 0.413,
+   "fadeIn": 0,
+   "kind": null
+  },
+  {
    "src": "FX3__C6262.mp4",
-   "from": 1988,
-   "dur": 58,
+   "from": 3775,
+   "dur": 47,
    "in": 4.0,
    "vol": 0.0,
    "z0": 1.04,
    "z1": 1.1,
-   "ox": 0.53,
-   "oy": 0.282,
+   "ox": 0.55,
+   "oy": 0.263,
    "fadeIn": 0,
    "kind": null
   },
   {
    "src": "FX3__C6356.mp4",
-   "from": 2046,
-   "dur": 29,
+   "from": 3822,
+   "dur": 24,
    "in": 1.0,
    "vol": 0.0,
-   "z0": 1.04,
-   "z1": 1.1,
+   "z0": 1.1,
+   "z1": 1.04,
    "ox": 0.5,
    "oy": 0.45,
    "fadeIn": 0,
@@ -594,12 +984,12 @@
   },
   {
    "src": "FX3__C6380.mp4",
-   "from": 2075,
-   "dur": 29,
+   "from": 3846,
+   "dur": 23,
    "in": 0.5,
    "vol": 0.0,
-   "z0": 1.1,
-   "z1": 1.04,
+   "z0": 1.04,
+   "z1": 1.1,
    "ox": 0.32,
    "oy": 0.307,
    "fadeIn": 0,
@@ -607,8 +997,8 @@
   },
   {
    "src": "FX3__C6449.mp4",
-   "from": 2104,
-   "dur": 29,
+   "from": 3869,
+   "dur": 23,
    "in": 1.0,
    "vol": 0.0,
    "z0": 1.04,
@@ -620,8 +1010,8 @@
   },
   {
    "src": "FX3__C6441.mp4",
-   "from": 2133,
-   "dur": 29,
+   "from": 3892,
+   "dur": 24,
    "in": 0.5,
    "vol": 0.0,
    "z0": 1.1,
@@ -632,61 +1022,35 @@
    "kind": null
   },
   {
-   "src": "Majlis_Watikah_Sahab__DJI_20260820102420_0024_D.mp4",
-   "from": 2162,
-   "dur": 53,
+   "src": "FX3__C6327.mp4",
+   "from": 3916,
+   "dur": 23,
    "in": 1.0,
    "vol": 0.0,
-   "z0": 1.04,
-   "z1": 1.1,
-   "ox": 0.406,
-   "oy": 0.411,
+   "z0": 1.1,
+   "z1": 1.04,
+   "ox": 0.252,
+   "oy": 0.55,
    "fadeIn": 0,
    "kind": null
   },
   {
-   "src": "JAM_PTK__0545.mp4",
-   "from": 2215,
-   "dur": 435,
-   "in": 242.4,
-   "vol": 0.0,
-   "z0": 1.0,
-   "z1": 1.04,
-   "ox": 0.5,
-   "oy": 0.4,
-   "fadeIn": 10,
-   "kind": "talk"
-  },
-  {
    "src": "Firstday_CM_ke_FAMA__C5629.mp4",
-   "from": 2650,
-   "dur": 98,
-   "in": 0.0,
-   "vol": 0.0,
-   "z0": 1.0,
-   "z1": 1.04,
-   "ox": 0.591,
-   "oy": 0.423,
-   "fadeIn": 10,
-   "kind": null
-  },
-  {
-   "src": "Program_Jualan_Perta__C0454.mp4",
-   "from": 2748,
+   "from": 3939,
    "dur": 24,
-   "in": 0.5,
+   "in": 0.3,
    "vol": 0.0,
    "z0": 1.04,
    "z1": 1.1,
-   "ox": 0.487,
-   "oy": 0.411,
+   "ox": 0.606,
+   "oy": 0.422,
    "fadeIn": 0,
    "kind": null
   },
   {
    "src": "MAHA__C7248.mp4",
-   "from": 2772,
-   "dur": 30,
+   "from": 3963,
+   "dur": 23,
    "in": 1.0,
    "vol": 0.0,
    "z0": 1.04,
@@ -697,65 +1061,26 @@
    "kind": null
   },
   {
-   "src": "Media_Tour_MAHA__C6719.mp4",
-   "from": 2802,
-   "dur": 29,
-   "in": 8.0,
-   "vol": 0.0,
-   "z0": 1.04,
-   "z1": 1.1,
-   "ox": 0.34,
-   "oy": 0.42,
-   "fadeIn": 0,
-   "kind": null
-  },
-  {
    "src": "Media_Tour_MAHA__C6716.mp4",
-   "from": 2831,
-   "dur": 29,
+   "from": 3986,
+   "dur": 24,
    "in": 1.0,
    "vol": 0.0,
-   "z0": 1.04,
-   "z1": 1.1,
+   "z0": 1.1,
+   "z1": 1.04,
    "ox": 0.494,
    "oy": 0.328,
    "fadeIn": 0,
    "kind": null
   },
   {
-   "src": "Bidara_Flour_Mill__C9691.mp4",
-   "from": 2860,
-   "dur": 29,
-   "in": 6.0,
-   "vol": 0.0,
-   "z0": 1.04,
-   "z1": 1.1,
-   "ox": 0.596,
-   "oy": 0.354,
-   "fadeIn": 0,
-   "kind": null
-  },
-  {
-   "src": "Program_Jualan_Perta__C0456.mp4",
-   "from": 2889,
-   "dur": 29,
-   "in": 0.5,
-   "vol": 0.0,
-   "z0": 1.04,
-   "z1": 1.1,
-   "ox": 0.453,
-   "oy": 0.293,
-   "fadeIn": 0,
-   "kind": null
-  },
-  {
    "src": "Media_Tour_MAHA__C6727.mp4",
-   "from": 2918,
-   "dur": 29,
+   "from": 4010,
+   "dur": 23,
    "in": 0.5,
    "vol": 0.0,
-   "z0": 1.04,
-   "z1": 1.1,
+   "z0": 1.1,
+   "z1": 1.04,
    "ox": 0.503,
    "oy": 0.513,
    "fadeIn": 0,
@@ -763,8 +1088,8 @@
   },
   {
    "src": "MAHA__C7214.mp4",
-   "from": 2947,
-   "dur": 29,
+   "from": 4033,
+   "dur": 23,
    "in": 0.5,
    "vol": 0.0,
    "z0": 1.04,
@@ -776,8 +1101,8 @@
   },
   {
    "src": "Firstday_CM_ke_FAMA__C5620.mp4",
-   "from": 2976,
-   "dur": 29,
+   "from": 4056,
+   "dur": 24,
    "in": 1.0,
    "vol": 0.0,
    "z0": 1.04,
@@ -788,26 +1113,13 @@
    "kind": null
   },
   {
-   "src": "Media_Tour_MAHA__C6630.mp4",
-   "from": 3005,
-   "dur": 29,
-   "in": 4.0,
-   "vol": 0.0,
-   "z0": 1.04,
-   "z1": 1.1,
-   "ox": 0.485,
-   "oy": 0.307,
-   "fadeIn": 0,
-   "kind": null
-  },
-  {
    "src": "MAHA__C7240.mp4",
-   "from": 3034,
-   "dur": 29,
+   "from": 4080,
+   "dur": 23,
    "in": 1.0,
    "vol": 0.0,
-   "z0": 1.04,
-   "z1": 1.1,
+   "z0": 1.1,
+   "z1": 1.04,
    "ox": 0.572,
    "oy": 0.439,
    "fadeIn": 0,
@@ -815,129 +1127,103 @@
   },
   {
    "src": "Media_Tour_MAHA__C6703.mp4",
-   "from": 3063,
-   "dur": 29,
+   "from": 4103,
+   "dur": 24,
    "in": 1.0,
    "vol": 0.0,
-   "z0": 1.04,
-   "z1": 1.1,
+   "z0": 1.1,
+   "z1": 1.04,
    "ox": 0.2,
    "oy": 0.7,
    "fadeIn": 0,
    "kind": null
   },
   {
-   "src": "Program_Jualan_Perta__C0657.mp4",
-   "from": 3092,
-   "dur": 29,
+   "src": "Firstday_CM_ke_FAMA__C5621.mp4",
+   "from": 4127,
+   "dur": 23,
    "in": 0.5,
    "vol": 0.0,
    "z0": 1.04,
    "z1": 1.1,
-   "ox": 0.495,
-   "oy": 0.207,
+   "ox": 0.5,
+   "oy": 0.45,
    "fadeIn": 0,
    "kind": null
   },
   {
-   "src": "MAHA__C7253.mp4",
-   "from": 3121,
-   "dur": 29,
-   "in": 0.5,
-   "vol": 0.0,
-   "z0": 1.04,
-   "z1": 1.1,
-   "ox": 0.485,
-   "oy": 0.393,
-   "fadeIn": 0,
-   "kind": null
-  },
-  {
-   "src": "Program_Jualan_Perta__C0414.mp4",
-   "from": 3150,
-   "dur": 29,
+   "src": "Media_Tour_MAHA__C6713.mp4",
+   "from": 4150,
+   "dur": 24,
    "in": 2.0,
    "vol": 0.0,
    "z0": 1.04,
    "z1": 1.1,
-   "ox": 0.596,
-   "oy": 0.35,
+   "ox": 0.512,
+   "oy": 0.342,
    "fadeIn": 0,
    "kind": null
   },
   {
-   "src": "Bidara_Flour_Mill__C9664.mp4",
-   "from": 3179,
-   "dur": 29,
-   "in": 0.5,
+   "src": "MAHA__C7206.mp4",
+   "from": 4174,
+   "dur": 23,
+   "in": 1.0,
    "vol": 0.0,
-   "z0": 1.04,
-   "z1": 1.1,
-   "ox": 0.533,
-   "oy": 0.355,
-   "fadeIn": 0,
-   "kind": null
-  },
-  {
-   "src": "Media_Tour_MAHA__C6701.mp4",
-   "from": 3208,
-   "dur": 30,
-   "in": 0.5,
-   "vol": 0.0,
-   "z0": 1.04,
-   "z1": 1.1,
-   "ox": 0.575,
-   "oy": 0.285,
-   "fadeIn": 0,
-   "kind": null
-  },
-  {
-   "src": "MAHA__C7205.mp4",
-   "from": 3238,
-   "dur": 29,
-   "in": 2.0,
-   "vol": 0.0,
-   "z0": 1.04,
-   "z1": 1.1,
-   "ox": 0.462,
-   "oy": 0.338,
-   "fadeIn": 0,
-   "kind": null
-  },
-  {
-   "src": "Media_Tour_MAHA__C6683.mp4",
-   "from": 3267,
-   "dur": 58,
-   "in": 2.0,
-   "vol": 0.0,
-   "z0": 1.04,
-   "z1": 1.1,
-   "ox": 0.501,
-   "oy": 0.273,
+   "z0": 1.1,
+   "z1": 1.04,
+   "ox": 0.721,
+   "oy": 0.404,
    "fadeIn": 0,
    "kind": null
   },
   {
    "src": "Media_Tour_MAHA__C6616.mp4",
-   "from": 3325,
-   "dur": 58,
+   "from": 4197,
+   "dur": 47,
    "in": 1.0,
    "vol": 0.0,
-   "z0": 1.04,
-   "z1": 1.1,
+   "z0": 1.1,
+   "z1": 1.04,
    "ox": 0.8,
    "oy": 0.458,
    "fadeIn": 0,
    "kind": null
   },
   {
-   "src": "FX3__C6438.mp4",
-   "from": 3383,
-   "dur": 267,
-   "in": 9.02,
+   "src": "Firstday_CM_ke_FAMA__C5619.mp4",
+   "from": 4244,
+   "dur": 23,
+   "in": 1.0,
    "vol": 0.0,
-   "z0": 1.0,
-   "z1": 1.05,
+   "z0": 1.04,
+   "z1": 1.1,
+   "ox": 0.781,
+   "oy": 0.327,
+   "fadeIn": 0,
+   "kind": null
+  },
+  {
+   "src": "Firstday_CM_ke_FAMA__C5628.mp4",
+   "from": 4267,
+   "dur": 24,
+   "in": 0.5,
+   "vol": 0.0,
+   "z0": 1.1,
+   "z1": 1.04,
+   "ox": 0.503,
+   "oy": 0.52,
+   "fadeIn": 0,
+   "kind": null
+  },
+  {
+   "src": "FX3__C6438.mp4",
+   "from": 4291,
+   "dur": 121,
+   "in": 12.0,
+   "vol": 0.0,
+   "z0": 1.1,
+   "z1": 1.04,
    "ox": 0.5,
    "oy": 0.45,
    "fadeIn": 0,
@@ -946,7 +1232,7 @@
  ],
  "overlays": [
   {
-   "from": 65,
+   "from": 40,
    "dur": 171,
    "type": "sub",
    "pos": "bottom",
@@ -1010,16 +1296,16 @@
    ]
   },
   {
-   "from": 232,
-   "dur": 150,
+   "from": 227,
+   "dur": 136,
    "type": "title",
    "side": "left",
    "kicker": "MENGENALI",
    "title": "PENGERUSI FAMA"
   },
   {
-   "from": 392,
-   "dur": 126,
+   "from": 373,
+   "dur": 128,
    "type": "name",
    "side": "left",
    "pos": "bottom",
@@ -1029,8 +1315,8 @@
    "note": "Berkhidmat sejak 1 Ogos 2026"
   },
   {
-   "from": 524,
-   "dur": 86,
+   "from": 509,
+   "dur": 87,
    "type": "chapter",
    "side": "right",
    "pos": "top",
@@ -1039,103 +1325,111 @@
    "sub": "4 Ogos 2026  ·  Ibu Pejabat FAMA"
   },
   {
-   "from": 532,
-   "dur": 219,
+   "from": 530,
+   "dur": 88,
    "type": "sub",
    "pos": "bottom",
    "words": [
     {
      "w": "Di",
-     "s": 0.07
+     "s": 0.0
     },
     {
      "w": "peringkat",
-     "s": 0.63
+     "s": 0.56
     },
     {
      "w": "ibu",
-     "s": 0.95
+     "s": 0.88
     },
     {
      "w": "pejabat",
-     "s": 1.13
+     "s": 1.06
     },
     {
      "w": "FAMA,",
-     "s": 1.45
+     "s": 1.38
     },
     {
      "w": "kami",
-     "s": 1.97
+     "s": 1.9
     },
     {
      "w": "telah",
-     "s": 2.21
+     "s": 2.14
     },
     {
      "w": "mengorak",
-     "s": 2.59
+     "s": 2.52
     },
     {
      "w": "langkah.",
-     "s": 3.07
-    },
-    {
-     "w": "Bermula",
-     "s": 3.99
-    },
-    {
-     "w": "bulan",
-     "s": 4.55
-    },
-    {
-     "w": "pertama",
-     "s": 5.13
-    },
-    {
-     "w": "saya",
-     "s": 5.39
-    },
-    {
-     "w": "berada",
-     "s": 5.69
-    },
-    {
-     "w": "di",
-     "s": 5.85
-    },
-    {
-     "w": "pejabat,",
-     "s": 6.39
-    },
-    {
-     "w": "kami",
-     "s": 6.57
-    },
-    {
-     "w": "telah",
-     "s": 6.83
-    },
-    {
-     "w": "mewujudkan",
-     "s": 7.43
-    },
-    {
-     "w": "satu",
-     "s": 7.73
-    },
-    {
-     "w": "task",
-     "s": 7.97
-    },
-    {
-     "w": "force.",
-     "s": 8.21
+     "s": 3.0
     }
    ]
   },
   {
-   "from": 829,
+   "from": 618,
+   "dur": 119,
+   "type": "sub",
+   "pos": "bottom",
+   "words": [
+    {
+     "w": "Bermula",
+     "s": 0.0
+    },
+    {
+     "w": "bulan",
+     "s": 0.56
+    },
+    {
+     "w": "pertama",
+     "s": 1.14
+    },
+    {
+     "w": "saya",
+     "s": 1.4
+    },
+    {
+     "w": "berada",
+     "s": 1.7
+    },
+    {
+     "w": "di",
+     "s": 1.86
+    },
+    {
+     "w": "pejabat,",
+     "s": 2.4
+    },
+    {
+     "w": "kami",
+     "s": 2.58
+    },
+    {
+     "w": "telah",
+     "s": 2.84
+    },
+    {
+     "w": "mewujudkan",
+     "s": 3.44
+    },
+    {
+     "w": "satu",
+     "s": 3.74
+    },
+    {
+     "w": "task",
+     "s": 3.98
+    },
+    {
+     "w": "force.",
+     "s": 4.22
+    }
+   ]
+  },
+  {
+   "from": 791,
    "dur": 81,
    "type": "chapter",
    "side": "left",
@@ -1145,108 +1439,245 @@
    "sub": "Pameran Pertanian, Hortikultur & Agro-Pelancongan Malaysia"
   },
   {
-   "from": 930,
-   "dur": 338,
+   "from": 813,
+   "dur": 234,
    "type": "sub",
    "pos": "bottom",
    "words": [
     {
-     "w": "Pada",
-     "s": 0.05
+     "w": "Dari",
+     "s": 0.0
     },
     {
-     "w": "tahun",
-     "s": 1.13
+     "w": "segi",
+     "s": 0.68
     },
     {
-     "w": "ini,",
-     "s": 1.51
-    },
-    {
-     "w": "setakat",
-     "s": 1.73
-    },
-    {
-     "w": "bulan",
-     "s": 2.11
-    },
-    {
-     "w": "November",
-     "s": 4.35
-    },
-    {
-     "w": "ini,",
-     "s": 5.07
-    },
-    {
-     "w": "FAMA",
-     "s": 5.23
-    },
-    {
-     "w": "telah",
-     "s": 5.59
-    },
-    {
-     "w": "mengadakan",
-     "s": 6.19
-    },
-    {
-     "w": "Jualan",
-     "s": 6.69
-    },
-    {
-     "w": "Agro",
-     "s": 7.03
-    },
-    {
-     "w": "Madani",
-     "s": 7.45
+     "w": "data",
+     "s": 1.12
     },
     {
      "w": "yang",
-     "s": 8.07
+     "s": 1.48
+    },
+    {
+     "w": "ada",
+     "s": 1.92
+    },
+    {
+     "w": "pada",
+     "s": 2.5
+    },
+    {
+     "w": "FAMA,",
+     "s": 2.66
+    },
+    {
+     "w": "pada",
+     "s": 3.05
+    },
+    {
+     "w": "tahun",
+     "s": 4.13
+    },
+    {
+     "w": "ini",
+     "s": 4.51
+    },
+    {
+     "w": "setakat",
+     "s": 4.73
+    },
+    {
+     "w": "bulan",
+     "s": 5.11
+    },
+    {
+     "w": "November",
+     "s": 7.35
+    },
+    {
+     "w": "ini,",
+     "s": 7.73
+    },
+    {
+     "w": "FAMA",
+     "s": 7.89
     },
     {
      "w": "telah",
-     "s": 8.51
+     "s": 8.25
     },
     {
-     "w": "mencatat",
-     "s": 8.89
-    },
-    {
-     "w": "nilai",
-     "s": 10.21
-    },
-    {
-     "w": "jualannya",
-     "s": 10.61
-    },
-    {
-     "w": "sebanyak",
-     "s": 11.03
-    },
-    {
-     "w": "RM79.77",
-     "s": 12.65
-    },
-    {
-     "w": "juta.",
-     "s": 13.11
+     "w": "mengadakan",
+     "s": 8.85
     }
    ]
   },
   {
-   "from": 1188,
-   "dur": 122,
+   "from": 1047,
+   "dur": 162,
+   "type": "sub",
+   "pos": "bottom",
+   "words": [
+    {
+     "w": "Jualan",
+     "s": 0.0
+    },
+    {
+     "w": "Agro",
+     "s": 0.34
+    },
+    {
+     "w": "Madani",
+     "s": 0.76
+    },
+    {
+     "w": "yang",
+     "s": 1.38
+    },
+    {
+     "w": "telah",
+     "s": 1.82
+    },
+    {
+     "w": "mencatat",
+     "s": 2.2
+    },
+    {
+     "w": "nilai",
+     "s": 2.6
+    },
+    {
+     "w": "jualannya",
+     "s": 3.52
+    },
+    {
+     "w": "sebanyak",
+     "s": 3.92
+    },
+    {
+     "w": "RM79.77",
+     "s": 4.34
+    },
+    {
+     "w": "juta.",
+     "s": 5.96
+    }
+   ]
+  },
+  {
+   "from": 1209,
+   "dur": 253,
+   "type": "sub",
+   "pos": "bottom",
+   "words": [
+    {
+     "w": "Itu",
+     "s": 0.0
+    },
+    {
+     "w": "secara",
+     "s": 0.38
+    },
+    {
+     "w": "keseluruhan",
+     "s": 0.88
+    },
+    {
+     "w": "di",
+     "s": 1.58
+    },
+    {
+     "w": "peringkat",
+     "s": 1.76
+    },
+    {
+     "w": "Malaysia,",
+     "s": 2.28
+    },
+    {
+     "w": "yang",
+     "s": 2.88
+    },
+    {
+     "w": "mana",
+     "s": 3.72
+    },
+    {
+     "w": "melibatkan",
+     "s": 4.38
+    },
+    {
+     "w": "3,328",
+     "s": 4.78
+    },
+    {
+     "w": "siri",
+     "s": 6.46
+    },
+    {
+     "w": "penganjuran",
+     "s": 8.42
+    },
+    {
+     "w": "dan",
+     "s": 9.68
+    },
+    {
+     "w": "Jualan",
+     "s": 9.86
+    }
+   ]
+  },
+  {
+   "from": 1462,
+   "dur": 65,
+   "type": "sub",
+   "pos": "top",
+   "words": [
+    {
+     "w": "Agro",
+     "s": 0.0
+    },
+    {
+     "w": "Madani",
+     "s": 0.14
+    },
+    {
+     "w": "di",
+     "s": 0.56
+    },
+    {
+     "w": "seluruh",
+     "s": 0.94
+    },
+    {
+     "w": "negara.",
+     "s": 1.88
+    }
+   ]
+  },
+  {
+   "from": 1137,
+   "dur": 118,
    "type": "stat",
-   "side": "right",
+   "side": "right-low",
    "value": "RM79.77 JUTA",
    "label": "NILAI JUALAN AGRO MADANI",
    "sub": "Seluruh negara · setakat November 2026"
   },
   {
-   "from": 1294,
+   "from": 1311,
+   "dur": 112,
+   "type": "stat",
+   "side": "right-low",
+   "value": "3,328",
+   "label": "SIRI JUALAN AGRO MADANI",
+   "sub": "Dianjurkan di seluruh negara"
+  },
+  {
+   "from": 1447,
    "dur": 76,
    "type": "chapter",
    "side": "right",
@@ -1256,44 +1687,599 @@
    "sub": "Program Jualan Pertanian  ·  Melaka"
   },
   {
-   "from": 1373,
-   "dur": 131,
+   "from": 1534,
+   "dur": 158,
    "type": "sub",
    "pos": "top",
    "words": [
     {
-     "w": "Kita",
-     "s": 0.03
+     "w": "Kalau",
+     "s": 0.0
     },
     {
-     "w": "telah",
-     "s": 0.35
+     "w": "kita",
+     "s": 0.56
     },
     {
-     "w": "melibatkan",
-     "s": 0.77
+     "w": "lihat",
+     "s": 0.74
     },
     {
-     "w": "39,841",
-     "s": 2.35
+     "w": "dari",
+     "s": 1.08
     },
     {
-     "w": "usahawan.",
-     "s": 4.15
+     "w": "segi",
+     "s": 1.56
+    },
+    {
+     "w": "bajet",
+     "s": 2.28
+    },
+    {
+     "w": "tahun",
+     "s": 2.84
+    },
+    {
+     "w": "2027",
+     "s": 3.62
+    },
+    {
+     "w": "yang",
+     "s": 4.06
+    },
+    {
+     "w": "baru-baru",
+     "s": 4.22
+    },
+    {
+     "w": "ini",
+     "s": 4.46
+    },
+    {
+     "w": "diumumkan",
+     "s": 4.58
+    },
+    {
+     "w": "oleh",
+     "s": 5.04
+    },
+    {
+     "w": "Perdana",
+     "s": 5.32
+    },
+    {
+     "w": "Menteri",
+     "s": 5.6
+    },
+    {
+     "w": "Malaysia,",
+     "s": 5.92
     }
    ]
   },
   {
-   "from": 1407,
-   "dur": 113,
+   "from": 1692,
+   "dur": 252,
+   "type": "sub",
+   "pos": "bottom",
+   "words": [
+    {
+     "w": "pada",
+     "s": 0.0
+    },
+    {
+     "w": "tahun",
+     "s": 0.64
+    },
+    {
+     "w": "hadapan",
+     "s": 1.42
+    },
+    {
+     "w": "FAMA",
+     "s": 1.82
+    },
+    {
+     "w": "dan",
+     "s": 2.3
+    },
+    {
+     "w": "juga",
+     "s": 3.4
+    },
+    {
+     "w": "beberapa",
+     "s": 3.62
+    },
+    {
+     "w": "agensi",
+     "s": 3.82
+    },
+    {
+     "w": "telah",
+     "s": 4.28
+    },
+    {
+     "w": "diberikan",
+     "s": 4.66
+    },
+    {
+     "w": "satu",
+     "s": 4.88
+    },
+    {
+     "w": "angka",
+     "s": 5.46
+    },
+    {
+     "w": "yang",
+     "s": 7.34
+    },
+    {
+     "w": "agak",
+     "s": 9.22
+    },
+    {
+     "w": "besar",
+     "s": 9.56
+    },
+    {
+     "w": "juga,",
+     "s": 9.86
+    }
+   ]
+  },
+  {
+   "from": 1944,
+   "dur": 150,
+   "type": "sub",
+   "pos": "bottom",
+   "words": [
+    {
+     "w": "iaitu",
+     "s": 0.0
+    },
+    {
+     "w": "5,000",
+     "s": 0.34
+    },
+    {
+     "w": "aktiviti",
+     "s": 0.62
+    },
+    {
+     "w": "Jualan",
+     "s": 0.96
+    },
+    {
+     "w": "Agro",
+     "s": 1.96
+    },
+    {
+     "w": "Madani",
+     "s": 2.24
+    },
+    {
+     "w": "ini",
+     "s": 2.44
+    },
+    {
+     "w": "yang",
+     "s": 2.68
+    },
+    {
+     "w": "kita",
+     "s": 2.92
+    },
+    {
+     "w": "akan",
+     "s": 3.12
+    },
+    {
+     "w": "buat",
+     "s": 3.28
+    },
+    {
+     "w": "bagi",
+     "s": 3.5
+    },
+    {
+     "w": "tahun",
+     "s": 3.78
+    },
+    {
+     "w": "2027.",
+     "s": 4.08
+    }
+   ]
+  },
+  {
+   "from": 1945,
+   "dur": 112,
    "type": "stat",
-   "side": "left-bottom",
+   "side": "left-low",
+   "value": "5,000",
+   "label": "AKTIVITI JUALAN AGRO MADANI",
+   "sub": "Sasaran tahun 2027"
+  },
+  {
+   "from": 2103,
+   "dur": 228,
+   "type": "sub",
+   "pos": "bottom",
+   "words": [
+    {
+     "w": "Data",
+     "s": 0.0
+    },
+    {
+     "w": "lain",
+     "s": 0.72
+    },
+    {
+     "w": "yang",
+     "s": 1.02
+    },
+    {
+     "w": "melibatkan",
+     "s": 1.32
+    },
+    {
+     "w": "Jualan",
+     "s": 1.88
+    },
+    {
+     "w": "Agro",
+     "s": 2.18
+    },
+    {
+     "w": "Madani",
+     "s": 2.72
+    },
+    {
+     "w": "ini,",
+     "s": 3.3
+    },
+    {
+     "w": "di",
+     "s": 4.5
+    },
+    {
+     "w": "seluruh",
+     "s": 4.74
+    },
+    {
+     "w": "negara",
+     "s": 5.0
+    },
+    {
+     "w": "kita",
+     "s": 5.32
+    },
+    {
+     "w": "telah",
+     "s": 5.74
+    },
+    {
+     "w": "melibatkan",
+     "s": 6.66
+    },
+    {
+     "w": "39,841",
+     "s": 7.32
+    }
+   ]
+  },
+  {
+   "from": 2331,
+   "dur": 195,
+   "type": "sub",
+   "pos": "bottom",
+   "words": [
+    {
+     "w": "usahawan,",
+     "s": 0.0
+    },
+    {
+     "w": "dengan",
+     "s": 1.4
+    },
+    {
+     "w": "nilai",
+     "s": 2.0
+    },
+    {
+     "w": "penjimatan",
+     "s": 3.58
+    },
+    {
+     "w": "sebanyak",
+     "s": 5.06
+    },
+    {
+     "w": "RM25.36",
+     "s": 5.4
+    },
+    {
+     "w": "juta.",
+     "s": 6.54
+    }
+   ]
+  },
+  {
+   "from": 2262,
+   "dur": 103,
+   "type": "stat",
+   "side": "left-low",
    "value": "39,841",
    "label": "USAHAWAN TERLIBAT",
    "sub": "Jualan Agro Madani · seluruh negara"
   },
   {
-   "from": 1556,
+   "from": 2450,
+   "dur": 98,
+   "type": "stat",
+   "side": "left-low",
+   "value": "RM25.36 JUTA",
+   "label": "NILAI PENJIMATAN RAKYAT",
+   "sub": "Jualan Agro Madani"
+  },
+  {
+   "from": 2552,
+   "dur": 234,
+   "type": "talklabel",
+   "kicker": "KENYATAAN MEDIA",
+   "title": "Pengerusi FAMA",
+   "sub": "Pasar Tani Kekal Simpang 4, Perlis  ·  10 November 2026"
+  },
+  {
+   "from": 2559,
+   "dur": 149,
+   "type": "sub",
+   "pos": "talk",
+   "words": [
+    {
+     "w": "Bermula",
+     "s": 0.0
+    },
+    {
+     "w": "1",
+     "s": 0.48
+    },
+    {
+     "w": "Januari,",
+     "s": 0.68
+    },
+    {
+     "w": "FAMA",
+     "s": 1.3
+    },
+    {
+     "w": "sebagai",
+     "s": 1.52
+    },
+    {
+     "w": "salah",
+     "s": 1.86
+    },
+    {
+     "w": "satu",
+     "s": 2.06
+    },
+    {
+     "w": "agensi",
+     "s": 2.3
+    },
+    {
+     "w": "yang",
+     "s": 2.9
+    },
+    {
+     "w": "menyelia",
+     "s": 3.7
+    },
+    {
+     "w": "Jualan",
+     "s": 4.56
+    },
+    {
+     "w": "Agro",
+     "s": 4.8
+    },
+    {
+     "w": "Madani,",
+     "s": 5.02
+    },
+    {
+     "w": "SARA",
+     "s": 5.26
+    },
+    {
+     "w": "itu",
+     "s": 5.52
+    },
+    {
+     "w": "sendiri",
+     "s": 5.74
+    }
+   ]
+  },
+  {
+   "from": 2708,
+   "dur": 83,
+   "type": "sub",
+   "pos": "talk",
+   "words": [
+    {
+     "w": "boleh",
+     "s": 0.0
+    },
+    {
+     "w": "digunakan",
+     "s": 0.24
+    },
+    {
+     "w": "pembeliannya",
+     "s": 0.68
+    },
+    {
+     "w": "di",
+     "s": 1.36
+    },
+    {
+     "w": "Jualan",
+     "s": 2.34
+    },
+    {
+     "w": "Agro",
+     "s": 2.64
+    },
+    {
+     "w": "Madani.",
+     "s": 2.84
+    },
+    {
+     "w": "Dia",
+     "s": 3.0
+    },
+    {
+     "w": "bukan",
+     "s": 3.12
+    }
+   ]
+  },
+  {
+   "from": 2800,
+   "dur": 152,
+   "type": "sub",
+   "pos": "bottom",
+   "words": [
+    {
+     "w": "sahaja",
+     "s": 0.0
+    },
+    {
+     "w": "memberi",
+     "s": 1.24
+    },
+    {
+     "w": "keuntungan",
+     "s": 1.58
+    },
+    {
+     "w": "kepada",
+     "s": 2.08
+    },
+    {
+     "w": "pengguna,",
+     "s": 2.32
+    },
+    {
+     "w": "tapi",
+     "s": 2.92
+    },
+    {
+     "w": "kepada",
+     "s": 3.14
+    },
+    {
+     "w": "juga",
+     "s": 3.5
+    },
+    {
+     "w": "pengeluar",
+     "s": 3.74
+    },
+    {
+     "w": "dan",
+     "s": 4.96
+    },
+    {
+     "w": "usahawan.",
+     "s": 5.16
+    }
+   ]
+  },
+  {
+   "from": 2952,
+   "dur": 218,
+   "type": "sub",
+   "pos": "bottom",
+   "words": [
+    {
+     "w": "Harga",
+     "s": 0.0
+    },
+    {
+     "w": "yang",
+     "s": 0.68
+    },
+    {
+     "w": "kita",
+     "s": 1.0
+    },
+    {
+     "w": "tawarkan",
+     "s": 1.36
+    },
+    {
+     "w": "sehingga",
+     "s": 1.92
+    },
+    {
+     "w": "30%.",
+     "s": 2.84
+    },
+    {
+     "w": "Ada",
+     "s": 4.8
+    },
+    {
+     "w": "yang",
+     "s": 4.9
+    },
+    {
+     "w": "10%,",
+     "s": 5.66
+    },
+    {
+     "w": "ada",
+     "s": 5.88
+    },
+    {
+     "w": "yang",
+     "s": 6.28
+    },
+    {
+     "w": "20%",
+     "s": 6.46
+    },
+    {
+     "w": "dan",
+     "s": 6.94
+    },
+    {
+     "w": "sehingga",
+     "s": 7.18
+    },
+    {
+     "w": "30%.",
+     "s": 7.52
+    }
+   ]
+  },
+  {
+   "from": 3015,
+   "dur": 100,
+   "type": "stat",
+   "side": "right-low",
+   "value": "SEHINGGA 30%",
+   "label": "DISKAUN DENGAN SARA",
+   "sub": "Di Jualan Agro Madani · mulai 1 Januari 2027"
+  },
+  {
+   "from": 3170,
    "dur": 76,
    "type": "chapter",
    "side": "right",
@@ -1303,68 +2289,165 @@
    "sub": "Lawatan ke Bidara Flour Mill"
   },
   {
-   "from": 1602,
-   "dur": 195,
+   "from": 3187,
+   "dur": 175,
    "type": "sub",
    "pos": "bottom",
    "words": [
     {
      "w": "Bagi",
-     "s": 0.06
+     "s": 0.0
     },
     {
      "w": "pihak",
-     "s": 1.18
+     "s": 1.12
     },
     {
      "w": "FAMA,",
-     "s": 1.44
+     "s": 1.38
     },
     {
      "w": "kami",
-     "s": 2.1
+     "s": 2.04
     },
     {
      "w": "dah",
-     "s": 2.4
+     "s": 2.34
     },
     {
      "w": "bersedia",
-     "s": 2.6
+     "s": 2.54
     },
     {
      "w": "untuk",
-     "s": 3.02
+     "s": 2.96
     },
     {
      "w": "penyediaan",
-     "s": 4.46
+     "s": 3.54
     },
     {
      "w": "bekalan",
-     "s": 5.16
+     "s": 4.4
     },
     {
      "w": "makanan",
-     "s": 5.66
+     "s": 5.1
     },
     {
      "w": "sekurang-kurangnya",
-     "s": 6.4
+     "s": 5.6
     },
     {
      "w": "tiga",
-     "s": 6.82
+     "s": 6.34
     },
     {
      "w": "bulan.",
-     "s": 7.06
+     "s": 6.76
     }
    ]
   },
   {
-   "from": 1846,
-   "dur": 86,
+   "from": 3362,
+   "dur": 165,
+   "type": "sub",
+   "pos": "bottom",
+   "words": [
+    {
+     "w": "Tapi",
+     "s": 0.0
+    },
+    {
+     "w": "FAMA,",
+     "s": 0.38
+    },
+    {
+     "w": "kita",
+     "s": 1.36
+    },
+    {
+     "w": "ambil",
+     "s": 1.46
+    },
+    {
+     "w": "satu",
+     "s": 2.24
+    },
+    {
+     "w": "langkah,",
+     "s": 2.48
+    },
+    {
+     "w": "kita",
+     "s": 3.02
+    },
+    {
+     "w": "ambil,",
+     "s": 3.12
+    },
+    {
+     "w": "kita",
+     "s": 3.42
+    },
+    {
+     "w": "simpan",
+     "s": 3.54
+    },
+    {
+     "w": "dan",
+     "s": 3.96
+    },
+    {
+     "w": "kita",
+     "s": 4.54
+    },
+    {
+     "w": "berjaga-jaga",
+     "s": 4.88
+    },
+    {
+     "w": "untuk",
+     "s": 5.68
+    },
+    {
+     "w": "mendepani",
+     "s": 5.98
+    }
+   ]
+  },
+  {
+   "from": 3527,
+   "dur": 61,
+   "type": "sub",
+   "pos": "bottom",
+   "words": [
+    {
+     "w": "Super",
+     "s": 0.0
+    },
+    {
+     "w": "El",
+     "s": 0.48
+    },
+    {
+     "w": "Nino.",
+     "s": 1.08
+    }
+   ]
+  },
+  {
+   "from": 3349,
+   "dur": 107,
+   "type": "stat",
+   "side": "right-low",
+   "value": "3 BULAN",
+   "label": "STOK BEKALAN MAKANAN",
+   "sub": "Persediaan FAMA mendepani Super El Nino"
+  },
+  {
+   "from": 3638,
+   "dur": 87,
    "type": "chapter",
    "side": "left",
    "pos": "bottom",
@@ -1373,168 +2456,8 @@
    "sub": "Majlis Watikah Sahabat Ilmuwan  ·  Program Kecergasan FAMA"
   },
   {
-   "from": 2222,
-   "dur": 423,
-   "type": "talklabel",
-   "kicker": "KENYATAAN MEDIA",
-   "title": "Pengerusi FAMA",
-   "sub": "Pasar Tani Kekal Simpang 4, Perlis  ·  10 November 2026"
-  },
-  {
-   "from": 2230,
-   "dur": 411,
-   "type": "sub",
-   "pos": "talk",
-   "words": [
-    {
-     "w": "Bermula",
-     "s": 0.06
-    },
-    {
-     "w": "1",
-     "s": 0.54
-    },
-    {
-     "w": "Januari,",
-     "s": 0.74
-    },
-    {
-     "w": "FAMA",
-     "s": 1.92
-    },
-    {
-     "w": "sebagai",
-     "s": 2.14
-    },
-    {
-     "w": "salah",
-     "s": 2.48
-    },
-    {
-     "w": "satu",
-     "s": 2.68
-    },
-    {
-     "w": "agensi",
-     "s": 2.92
-    },
-    {
-     "w": "yang",
-     "s": 3.52
-    },
-    {
-     "w": "menyelia",
-     "s": 4.32
-    },
-    {
-     "w": "Jualan",
-     "s": 5.18
-    },
-    {
-     "w": "Agro",
-     "s": 5.42
-    },
-    {
-     "w": "Madani,",
-     "s": 5.64
-    },
-    {
-     "w": "SARA",
-     "s": 6.26
-    },
-    {
-     "w": "itu",
-     "s": 6.52
-    },
-    {
-     "w": "sendiri",
-     "s": 6.74
-    },
-    {
-     "w": "boleh",
-     "s": 6.96
-    },
-    {
-     "w": "digunakan",
-     "s": 7.2
-    },
-    {
-     "w": "pembeliannya",
-     "s": 7.64
-    },
-    {
-     "w": "di",
-     "s": 8.32
-    },
-    {
-     "w": "Jualan",
-     "s": 9.3
-    },
-    {
-     "w": "Agro",
-     "s": 9.6
-    },
-    {
-     "w": "Madani.",
-     "s": 9.8
-    },
-    {
-     "w": "Dia",
-     "s": 9.96
-    },
-    {
-     "w": "bukan",
-     "s": 10.08
-    },
-    {
-     "w": "sahaja",
-     "s": 10.66
-    },
-    {
-     "w": "memberi",
-     "s": 11.16
-    },
-    {
-     "w": "keuntungan",
-     "s": 12.24
-    },
-    {
-     "w": "kepada",
-     "s": 12.74
-    },
-    {
-     "w": "pengguna,",
-     "s": 12.98
-    },
-    {
-     "w": "tapi",
-     "s": 13.58
-    },
-    {
-     "w": "kepada",
-     "s": 13.8
-    },
-    {
-     "w": "juga",
-     "s": 14.16
-    },
-    {
-     "w": "pengeluar",
-     "s": 14.4
-    },
-    {
-     "w": "dan",
-     "s": 15.62
-    },
-    {
-     "w": "usahawan.",
-     "s": 15.82
-    }
-   ]
-  },
-  {
-   "from": 3450,
-   "dur": 200,
+   "from": 4296,
+   "dur": 116,
    "type": "end",
    "kicker": "SELAMAT DATANG KE",
    "title": "FAMA",
@@ -1544,166 +2467,187 @@
  "sfx": [
   {
    "name": "whoosh_cine",
-   "at": 221,
+   "at": 216,
    "volume": 0.35
   },
   {
    "name": "impact_big",
-   "at": 230,
-   "volume": 0.42
+   "at": 224,
+   "volume": 0.38
   },
   {
    "name": "swoosh_accent",
-   "at": 390,
-   "volume": 0.3
-  },
-  {
-   "name": "whoosh_air",
-   "at": 512,
-   "volume": 0.22
-  },
-  {
-   "name": "riser",
-   "at": 760,
-   "volume": 0.4
-  },
-  {
-   "name": "impact_whoosh",
-   "at": 825,
-   "volume": 0.45
-  },
-  {
-   "name": "pop_long",
-   "at": 1188,
+   "at": 370,
    "volume": 0.3
   },
   {
    "name": "whoosh_cine",
-   "at": 1283,
-   "volume": 0.3
-  },
-  {
-   "name": "pop_long",
-   "at": 1407,
-   "volume": 0.3
-  },
-  {
-   "name": "whoosh_cine",
-   "at": 1544,
-   "volume": 0.3
-  },
-  {
-   "name": "whoosh_cine",
-   "at": 1835,
+   "at": 498,
    "volume": 0.28
   },
   {
-   "name": "shutter",
-   "at": 1847,
-   "volume": 0.2
+   "name": "whoosh_cine",
+   "at": 779,
+   "volume": 0.28
   },
   {
-   "name": "whoosh_air",
-   "at": 2205,
-   "volume": 0.22
+   "name": "pop_long",
+   "at": 1137,
+   "volume": 0.28
   },
   {
-   "name": "riser",
-   "at": 2683,
-   "volume": 0.32
-  },
-  {
-   "name": "impact_big",
-   "at": 2748,
-   "volume": 0.36
+   "name": "pop_long",
+   "at": 1311,
+   "volume": 0.28
   },
   {
    "name": "whoosh_cine",
-   "at": 3442,
+   "at": 1436,
+   "volume": 0.28
+  },
+  {
+   "name": "pop_long",
+   "at": 1945,
+   "volume": 0.28
+  },
+  {
+   "name": "pop_long",
+   "at": 2262,
+   "volume": 0.28
+  },
+  {
+   "name": "pop_long",
+   "at": 2450,
+   "volume": 0.28
+  },
+  {
+   "name": "whoosh_air",
+   "at": 2535,
+   "volume": 0.22
+  },
+  {
+   "name": "pop_long",
+   "at": 3015,
+   "volume": 0.28
+  },
+  {
+   "name": "whoosh_cine",
+   "at": 3158,
+   "volume": 0.28
+  },
+  {
+   "name": "pop_long",
+   "at": 3349,
+   "volume": 0.28
+  },
+  {
+   "name": "whoosh_cine",
+   "at": 3627,
+   "volume": 0.28
+  },
+  {
+   "name": "whoosh_cine",
+   "at": 3932,
+   "volume": 0.28
+  },
+  {
+   "name": "riser",
+   "at": 4226,
    "volume": 0.3
   },
   {
    "name": "impact_whoosh",
-   "at": 3450,
+   "at": 4296,
    "volume": 0.32
   }
  ],
  "flashes": [
-  825,
-  1290,
-  1552,
-  1842,
-  2748,
-  3450
+  787,
+  1443,
+  3166,
+  3635,
+  3939,
+  4296
  ],
  "vo": [
   {
    "src": "vo/mc.m4a",
-   "at": 65,
+   "at": 40,
    "in": 0,
    "dur": 162,
    "volume": 1.0
   },
   {
    "src": "vo/taskforce.m4a",
-   "at": 532,
+   "at": 528,
    "in": 0,
-   "dur": 210,
+   "dur": 203,
    "volume": 1.0
   },
   {
    "src": "vo/sales.m4a",
-   "at": 930,
+   "at": 812,
    "in": 0,
-   "dur": 329,
+   "dur": 708,
+   "volume": 1.0
+  },
+  {
+   "src": "vo/bajet.m4a",
+   "at": 1533,
+   "in": 0,
+   "dur": 554,
    "volume": 1.0
   },
   {
    "src": "vo/usahawan.m4a",
-   "at": 1373,
+   "at": 2103,
    "in": 0,
-   "dur": 123,
-   "volume": 1.0
-  },
-  {
-   "src": "vo/bekalan.m4a",
-   "at": 1602,
-   "in": 0,
-   "dur": 186,
+   "dur": 417,
    "volume": 1.0
   },
   {
    "src": "vo/sara.m4a",
-   "at": 2230,
+   "at": 2557,
    "in": 0,
-   "dur": 403,
+   "dur": 606,
+   "volume": 1.0
+  },
+  {
+   "src": "vo/bekalan.m4a",
+   "at": 3186,
+   "in": 0,
+   "dur": 395,
    "volume": 1.0
   }
  ],
  "ducks": [
   [
-   62,
-   228
+   37,
+   202
   ],
   [
-   529,
-   743
+   525,
+   729
   ],
   [
-   927,
-   1259
+   809,
+   1518
   ],
   [
-   1370,
-   1495
+   1530,
+   2085
   ],
   [
-   1599,
-   1788
+   2100,
+   2518
   ],
   [
-   2212,
-   2633
+   2554,
+   3161
+  ],
+  [
+   3183,
+   3579
   ]
  ]
 }
