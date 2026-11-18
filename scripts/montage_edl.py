@@ -162,7 +162,7 @@ shots[-1]["t1"] = BREAK
 
 t = BREAK
 for i, (k, tin, d) in enumerate(breakdown):
-    add(k, t, t + d, tin, fade=10, z=(1.0, 1.04), vol=1.0 if k == "SPEECH" else 0.0, kind="talk" if k == "SPEECH" else None)
+    add(k, t, t + d, tin, fade=10, z=(1.0, 1.04), vol=0.0, kind="talk" if k == "SPEECH" else None)
     t += d
 print(f"break ends {shots[-1]['t1']:.2f}  peak2 {PEAK2:.2f}")
 shots[-1]["t1"] = PEAK2
@@ -249,12 +249,26 @@ def fx(name, tt, vol):
 SUB_OPTS = {"bottom": (200, 860, 1720, 1060), "top": (200, 20, 1720, 220)}
 
 
-def voice(key, at, src="SPEECH", src_in=None, src_len=None, words=None):
-    """Place a voice-over line: audio + karaoke subtitle + music duck."""
+def vo_file(key, src, a, length):
+    """Cut a speech segment and loudness-normalise it (-16 LUFS) so every line sits at the same level."""
+    import subprocess
+    os.makedirs(f"{ROOT}/public/vo", exist_ok=True)
+    out = f"{ROOT}/public/vo/{key}.m4a"
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{a:.3f}", "-t", f"{length:.3f}", "-i", f"{MEZZ}/{clip(src)}.mp4",
+                    "-vn", "-ac", "2", "-ar", "48000", "-af",
+                    "highpass=f=80,afade=t=in:d=0.08,loudnorm=I=-16:TP=-2:LRA=7",
+                    "-c:a", "aac", "-b:a", "192k", out], check=True)
+    return f"vo/{key}.m4a"
+
+
+def voice(key, at, src="SPEECH", src_in=None, src_len=None, words=None, sub=True):
+    """Place a voice-over line: normalised audio + karaoke subtitle + music duck."""
     if key in VO:
         v = VO[key]
         src_in, src_len, words = v["a"], v["b"] - v["a"], vo_words(key)
-    vo_tracks.append(dict(src=clip(src) + ".mp4", at=F(at), **{"in": src_in}, dur=F(src_len), volume=1.0))
+    vo_tracks.append(dict(src=vo_file(key, src, src_in, src_len), at=F(at), **{"in": 0}, dur=F(src_len), volume=1.0))
+    if not sub:
+        return at + src_len
     pos = pick(at, at + src_len, SUB_OPTS)
     ov(at, at + src_len + 0.35, type="sub", pos=pos, words=words)
     ducks.append([F(at) - 3, F(at + src_len)])
@@ -337,6 +351,7 @@ ov(sp["t0"] + 0.3, sp["t1"] - 0.2, type="talklabel", kicker="KENYATAAN MEDIA", t
    sub="Pasar Tani Kekal Simpang 4, Perlis  ·  10 November 2026")
 L = VO["sara"]["b"] - VO["sara"]["a"]
 ov(sp_voice_at, sp_voice_at + L + 0.35, type="sub", pos="talk", words=vo_words("sara"))
+voice("sara", sp_voice_at, sub=False)  # the talk shot itself is muted; its line plays normalised
 ducks.append([F(sp["t0"]) - 3, F(sp_voice_at + L)])
 
 # End title
@@ -368,7 +383,7 @@ flashes = [F(DROP), F(m_t), F(b_t), F(w_t), F(PEAK2), F(ENDT)]
 
 # --------------------------------------------------------------------------------------------
 os.makedirs(f"{ROOT}/public/mz", exist_ok=True)
-used = sorted({s["src"] for s in shots} | {v["src"] for v in vo_tracks})
+used = sorted({s["src"] for s in shots})
 for f in os.listdir(f"{ROOT}/public/mz"):
     if f not in used:
         os.remove(f"{ROOT}/public/mz/{f}")

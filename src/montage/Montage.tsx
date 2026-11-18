@@ -196,7 +196,7 @@ export const Montage: React.FC = () => {
       {(data.vo as {src: string; at: number; in: number; dur: number; volume: number}[]).map((v, i) => (
         <Sequence key={`v${i}`} from={v.at} durationInFrames={v.dur} layout="none">
           <Audio
-            src={staticFile(`mz/${v.src}`)}
+            src={staticFile(v.src)}
             startFrom={Math.round(v.in * 25)}
             volume={(f) => v.volume * Math.min(1, f / 3, (v.dur - f) / 8)}
           />
