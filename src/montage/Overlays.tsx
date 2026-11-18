@@ -78,7 +78,7 @@ const Title: React.FC<{g: G}> = ({g}) => {
           <div
             style={{
               fontFamily: ANTON,
-              fontSize: 168,
+              fontSize: 140,
               lineHeight: 1,
               letterSpacing: 4,
               color: 'transparent',
@@ -121,7 +121,7 @@ const Name: React.FC<{g: G}> = ({g}) => {
             <div style={{fontFamily: MONT, fontWeight: 600, fontSize: 30, letterSpacing: 6, color: K.gold, textShadow: shadow}}>{g.honor}</div>
           </Rise>
           <Rise delay={8}>
-            <div style={{fontFamily: MONT, fontWeight: 800, fontSize: 64, lineHeight: 1.08, color: '#fff', textShadow: shadow, textAlign: right ? 'right' : 'left'}}>
+            <div style={{fontFamily: MONT, fontWeight: 800, fontSize: 64, lineHeight: 1.08, color: '#fff', textShadow: shadow, whiteSpace: 'pre-line', textAlign: right ? 'right' : 'left'}}>
               {g.name}
             </div>
           </Rise>

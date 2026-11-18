@@ -31,3 +31,29 @@ Raw footage (`/home/user/raw/*.MP4`) and `public/footage/` are not committed (to
 ## Assets
 - SFX & music: Mixkit (free licence, commercial use, no attribution required).
 - Fonts: Montserrat, Anton (SIL Open Font Licence), bundled in `public/fonts`.
+
+---
+
+# Mengenali Pengerusi FAMA – 16:9 waiting-room montage (Remotion composition `Montage`)
+
+1920×1080 / 25 fps, ~2:31 incl. the 5 s closing logo. Built for lobby / waiting-area screens.
+
+Footage: Drive folder "Video Raw CM" (Firstday CM ke FAMA, Shooting Simbol FAMA, MAHA, Media Tour MAHA,
+Program Jualan Pertanian Melaka, Bidara Flour Mill, Majlis Watikah Sahabat Ilmuwan, FX3/Program Kecergasan).
+
+```bash
+python3 scripts/montage/list_drive.py <folderId> /home/user/work/cm_files.json   # list the shared folder
+python3 scripts/montage/fetch.py        # download → 1080p25 H.264 mezzanine in /home/user/mezz (raw deleted)
+python3 scripts/montage/transcribe.py   # faster-whisper word timestamps (finds the MC announcement)
+python3 scripts/montage/faces.py        # YuNet face boxes per clip
+python3 scripts/montage/sheets.py       # contact sheets for picking shots
+python3 scripts/montage_edl.py          # the edit → src/montage/montage.json, copies used clips to public/mz
+scripts/render_montage.sh preview       # 720p preview → out/montage_preview.mp4
+scripts/render_montage.sh final         # 1080p final  → out/montage_final.mp4
+```
+
+Edit structure (cut to the beat of Mixkit track #128, started 9 s in):
+cold open on the chairman's portrait with the MC's arrival announcement as voice-over → title
+"Mengenali Pengerusi FAMA" → name card → 01 Hari Pertama di FAMA → (drum drop) 02 MAHA 2026 →
+03 Bersama Rakyat (Melaka) → 04 Memperkasa Industri (Bidara) → breakdown 05 Ilmu & Kesejahteraan →
+final recap → "Selamat Datang ke FAMA" → closing logo.

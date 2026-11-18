@@ -151,6 +151,15 @@ export const Montage: React.FC = () => {
         startFrom={Math.round(music.offset * 25)}
         volume={(f) => musicVolume(f, durationInFrames)}
       />
+      {(data.vo as {src: string; at: number; in: number; dur: number; volume: number}[]).map((v, i) => (
+        <Sequence key={`v${i}`} from={v.at} durationInFrames={v.dur} layout="none">
+          <Audio
+            src={staticFile(`mz/${v.src}`)}
+            startFrom={Math.round(v.in * 25)}
+            volume={(f) => v.volume * Math.min(1, f / 3, (v.dur - f) / 8)}
+          />
+        </Sequence>
+      ))}
       {(data.sfx as {name: string; at: number; volume: number}[]).map((s, i) => (
         <Sequence key={`s${i}`} from={s.at} durationInFrames={150} layout="none">
           <Audio src={staticFile(`sfx/${s.name}.mp3`)} volume={s.volume} />

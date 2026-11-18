@@ -3,3 +3,4 @@ out
 public/footage
 *.wav
 __pycache__
+public/mz

@@ -1,0 +1,1188 @@
+{
+ "durationInFrames": 3650,
+ "music": {
+  "src": "music/m128.mp3",
+  "offset": 9.0,
+  "volume": 0.55
+ },
+ "shots": [
+  {
+   "src": "Shooting_Simbol_FAMA__C6606.mp4",
+   "from": 0,
+   "dur": 80,
+   "in": 1.0,
+   "vol": 0.0,
+   "z0": 1.0,
+   "z1": 1.08,
+   "ox": 0.514,
+   "oy": 0.584,
+   "fadeIn": 0
+  },
+  {
+   "src": "Shooting_Simbol_FAMA__C6604.mp4",
+   "from": 80,
+   "dur": 70,
+   "in": 4.0,
+   "vol": 0.0,
+   "z0": 1.0,
+   "z1": 1.08,
+   "ox": 0.67,
+   "oy": 0.287,
+   "fadeIn": 10
+  },
+  {
+   "src": "Shooting_Simbol_FAMA__C6605.mp4",
+   "from": 150,
+   "dur": 80,
+   "in": 9.0,
+   "vol": 0.0,
+   "z0": 1.0,
+   "z1": 1.08,
+   "ox": 0.664,
+   "oy": 0.259,
+   "fadeIn": 10
+  },
+  {
+   "src": "Shooting_Simbol_FAMA__C6607.mp4",
+   "from": 230,
+   "dur": 155,
+   "in": 13.0,
+   "vol": 0.0,
+   "z0": 1.0,
+   "z1": 1.08,
+   "ox": 0.589,
+   "oy": 0.275,
+   "fadeIn": 10
+  },
+  {
+   "src": "Firstday_CM_ke_FAMA__C5636.mp4",
+   "from": 385,
+   "dur": 135,
+   "in": 2.5,
+   "vol": 0.0,
+   "z0": 1.02,
+   "z1": 1.08,
+   "ox": 0.48,
+   "oy": 0.355,
+   "fadeIn": 10
+  },
+  {
+   "src": "Firstday_CM_ke_FAMA__C5613.mp4",
+   "from": 520,
+   "dur": 65,
+   "in": 9.0,
+   "vol": 0.0,
+   "z0": 1.02,
+   "z1": 1.08,
+   "ox": 0.374,
+   "oy": 0.389,
+   "fadeIn": 10
+  },
+  {
+   "src": "Firstday_CM_ke_FAMA__C5617.mp4",
+   "from": 585,
+   "dur": 55,
+   "in": 1.5,
+   "vol": 0.0,
+   "z0": 1.02,
+   "z1": 1.08,
+   "ox": 0.444,
+   "oy": 0.5,
+   "fadeIn": 10
+  },
+  {
+   "src": "Firstday_CM_ke_FAMA__C5622.mp4",
+   "from": 640,
+   "dur": 55,
+   "in": 1.5,
+   "vol": 0.0,
+   "z0": 1.02,
+   "z1": 1.08,
+   "ox": 0.772,
+   "oy": 0.253,
+   "fadeIn": 10
+  },
+  {
+   "src": "Firstday_CM_ke_FAMA__C5626.mp4",
+   "from": 695,
+   "dur": 40,
+   "in": 1.0,
+   "vol": 0.0,
+   "z0": 1.02,
+   "z1": 1.08,
+   "ox": 0.5,
+   "oy": 0.45,
+   "fadeIn": 10
+  },
+  {
+   "src": "Firstday_CM_ke_FAMA__C5630.mp4",
+   "from": 735,
+   "dur": 45,
+   "in": 0.3,
+   "vol": 0.0,
+   "z0": 1.02,
+   "z1": 1.08,
+   "ox": 0.597,
+   "oy": 0.351,
+   "fadeIn": 10
+  },
+  {
+   "src": "Firstday_CM_ke_FAMA__C5627.mp4",
+   "from": 780,
+   "dur": 45,
+   "in": 1.0,
+   "vol": 0.0,
+   "z0": 1.02,
+   "z1": 1.08,
+   "ox": 0.496,
+   "oy": 0.487,
+   "fadeIn": 10
+  },
+  {
+   "src": "MAHA__C7204.mp4",
+   "from": 825,
+   "dur": 58,
+   "in": 2.0,
+   "vol": 0.0,
+   "z0": 1.04,
+   "z1": 1.1,
+   "ox": 0.383,
+   "oy": 0.498,
+   "fadeIn": 0
+  },
+  {
+   "src": "MAHA__C7208.mp4",
+   "from": 883,
+   "dur": 29,
+   "in": 1.0,
+   "vol": 0.0,
+   "z0": 1.04,
+   "z1": 1.1,
+   "ox": 0.597,
+   "oy": 0.268,
+   "fadeIn": 0
+  },
+  {
+   "src": "Media_Tour_MAHA__C6706.mp4",
+   "from": 912,
+   "dur": 29,
+   "in": 5.0,
+   "vol": 0.0,
+   "z0": 1.1,
+   "z1": 1.04,
+   "ox": 0.427,
+   "oy": 0.308,
+   "fadeIn": 0
+  },
+  {
+   "src": "Media_Tour_MAHA__C6686.mp4",
+   "from": 941,
+   "dur": 29,
+   "in": 3.0,
+   "vol": 0.0,
+   "z0": 1.04,
+   "z1": 1.1,
+   "ox": 0.342,
+   "oy": 0.261,
+   "fadeIn": 0
+  },
+  {
+   "src": "Media_Tour_MAHA__C6624.mp4",
+   "from": 970,
+   "dur": 30,
+   "in": 1.5,
+   "vol": 0.0,
+   "z0": 1.1,
+   "z1": 1.04,
+   "ox": 0.649,
+   "oy": 0.339,
+   "fadeIn": 0
+  },
+  {
+   "src": "Media_Tour_MAHA__C6626.mp4",
+   "from": 1000,
+   "dur": 29,
+   "in": 1.5,
+   "vol": 0.0,
+   "z0": 1.04,
+   "z1": 1.1,
+   "ox": 0.608,
+   "oy": 0.332,
+   "fadeIn": 0
+  },
+  {
+   "src": "Media_Tour_MAHA__C6651.mp4",
+   "from": 1029,
+   "dur": 29,
+   "in": 4.0,
+   "vol": 0.0,
+   "z0": 1.1,
+   "z1": 1.04,
+   "ox": 0.2,
+   "oy": 0.526,
+   "fadeIn": 0
+  },
+  {
+   "src": "Media_Tour_MAHA__C6660.mp4",
+   "from": 1058,
+   "dur": 29,
+   "in": 3.0,
+   "vol": 0.0,
+   "z0": 1.04,
+   "z1": 1.1,
+   "ox": 0.583,
+   "oy": 0.336,
+   "fadeIn": 0
+  },
+  {
+   "src": "Media_Tour_MAHA__C6714.mp4",
+   "from": 1087,
+   "dur": 58,
+   "in": 3.0,
+   "vol": 0.0,
+   "z0": 1.1,
+   "z1": 1.04,
+   "ox": 0.547,
+   "oy": 0.351,
+   "fadeIn": 0
+  },
+  {
+   "src": "Media_Tour_MAHA__C6720.mp4",
+   "from": 1145,
+   "dur": 29,
+   "in": 5.0,
+   "vol": 0.0,
+   "z0": 1.1,
+   "z1": 1.04,
+   "ox": 0.3,
+   "oy": 0.521,
+   "fadeIn": 0
+  },
+  {
+   "src": "MAHA__C7213.mp4",
+   "from": 1174,
+   "dur": 29,
+   "in": 0.5,
+   "vol": 0.0,
+   "z0": 1.04,
+   "z1": 1.1,
+   "ox": 0.527,
+   "oy": 0.251,
+   "fadeIn": 0
+  },
+  {
+   "src": "MAHA__C7230.mp4",
+   "from": 1203,
+   "dur": 58,
+   "in": 2.0,
+   "vol": 0.0,
+   "z0": 1.1,
+   "z1": 1.04,
+   "ox": 0.5,
+   "oy": 0.45,
+   "fadeIn": 0
+  },
+  {
+   "src": "MAHA__C7252.mp4",
+   "from": 1261,
+   "dur": 29,
+   "in": 8.0,
+   "vol": 0.0,
+   "z0": 1.1,
+   "z1": 1.04,
+   "ox": 0.651,
+   "oy": 0.337,
+   "fadeIn": 0
+  },
+  {
+   "src": "MAHA__C7259.mp4",
+   "from": 1290,
+   "dur": 29,
+   "in": 2.0,
+   "vol": 0.0,
+   "z0": 1.04,
+   "z1": 1.1,
+   "ox": 0.731,
+   "oy": 0.28,
+   "fadeIn": 0
+  },
+  {
+   "src": "MAHA__C7256.mp4",
+   "from": 1319,
+   "dur": 29,
+   "in": 2.0,
+   "vol": 0.0,
+   "z0": 1.1,
+   "z1": 1.04,
+   "ox": 0.596,
+   "oy": 0.339,
+   "fadeIn": 0
+  },
+  {
+   "src": "Media_Tour_MAHA__C6662.mp4",
+   "from": 1348,
+   "dur": 29,
+   "in": 2.0,
+   "vol": 0.0,
+   "z0": 1.04,
+   "z1": 1.1,
+   "ox": 0.419,
+   "oy": 0.332,
+   "fadeIn": 0
+  },
+  {
+   "src": "Media_Tour_MAHA__C6655.mp4",
+   "from": 1377,
+   "dur": 29,
+   "in": 1.0,
+   "vol": 0.0,
+   "z0": 1.1,
+   "z1": 1.04,
+   "ox": 0.329,
+   "oy": 0.335,
+   "fadeIn": 0
+  },
+  {
+   "src": "Media_Tour_MAHA__C6676.mp4",
+   "from": 1406,
+   "dur": 59,
+   "in": 10.0,
+   "vol": 0.0,
+   "z0": 1.04,
+   "z1": 1.1,
+   "ox": 0.577,
+   "oy": 0.295,
+   "fadeIn": 0
+  },
+  {
+   "src": "MAHA__C7217.mp4",
+   "from": 1465,
+   "dur": 29,
+   "in": 1.0,
+   "vol": 0.0,
+   "z0": 1.04,
+   "z1": 1.1,
+   "ox": 0.612,
+   "oy": 0.332,
+   "fadeIn": 0
+  },
+  {
+   "src": "MAHA__C7261.mp4",
+   "from": 1494,
+   "dur": 29,
+   "in": 1.0,
+   "vol": 0.0,
+   "z0": 1.1,
+   "z1": 1.04,
+   "ox": 0.624,
+   "oy": 0.248,
+   "fadeIn": 0
+  },
+  {
+   "src": "Media_Tour_MAHA__C6635.mp4",
+   "from": 1523,
+   "dur": 29,
+   "in": 2.0,
+   "vol": 0.0,
+   "z0": 1.04,
+   "z1": 1.1,
+   "ox": 0.517,
+   "oy": 0.419,
+   "fadeIn": 0
+  },
+  {
+   "src": "MAHA__C7222.mp4",
+   "from": 1552,
+   "dur": 58,
+   "in": 1.0,
+   "vol": 0.0,
+   "z0": 1.1,
+   "z1": 1.04,
+   "ox": 0.471,
+   "oy": 0.408,
+   "fadeIn": 0
+  },
+  {
+   "src": "Program_Jualan_Perta__C0447.mp4",
+   "from": 1610,
+   "dur": 58,
+   "in": 2.0,
+   "vol": 0.0,
+   "z0": 1.1,
+   "z1": 1.04,
+   "ox": 0.5,
+   "oy": 0.45,
+   "fadeIn": 0
+  },
+  {
+   "src": "Program_Jualan_Perta__C0408.mp4",
+   "from": 1668,
+   "dur": 29,
+   "in": 1.0,
+   "vol": 0.0,
+   "z0": 1.1,
+   "z1": 1.04,
+   "ox": 0.329,
+   "oy": 0.343,
+   "fadeIn": 0
+  },
+  {
+   "src": "Program_Jualan_Perta__C0410.mp4",
+   "from": 1697,
+   "dur": 29,
+   "in": 1.5,
+   "vol": 0.0,
+   "z0": 1.04,
+   "z1": 1.1,
+   "ox": 0.602,
+   "oy": 0.242,
+   "fadeIn": 0
+  },
+  {
+   "src": "Program_Jualan_Perta__C0431.mp4",
+   "from": 1726,
+   "dur": 29,
+   "in": 3.0,
+   "vol": 0.0,
+   "z0": 1.1,
+   "z1": 1.04,
+   "ox": 0.454,
+   "oy": 0.671,
+   "fadeIn": 0
+  },
+  {
+   "src": "Program_Jualan_Perta__C0442.mp4",
+   "from": 1755,
+   "dur": 29,
+   "in": 0.5,
+   "vol": 0.0,
+   "z0": 1.04,
+   "z1": 1.1,
+   "ox": 0.571,
+   "oy": 0.379,
+   "fadeIn": 0
+  },
+  {
+   "src": "Program_Jualan_Perta__C0443.mp4",
+   "from": 1784,
+   "dur": 58,
+   "in": 2.0,
+   "vol": 0.0,
+   "z0": 1.1,
+   "z1": 1.04,
+   "ox": 0.561,
+   "oy": 0.378,
+   "fadeIn": 0
+  },
+  {
+   "src": "Program_Jualan_Perta__C0444.mp4",
+   "from": 1842,
+   "dur": 29,
+   "in": 0.3,
+   "vol": 0.0,
+   "z0": 1.1,
+   "z1": 1.04,
+   "ox": 0.475,
+   "oy": 0.298,
+   "fadeIn": 0
+  },
+  {
+   "src": "Program_Jualan_Perta__C0450.mp4",
+   "from": 1871,
+   "dur": 30,
+   "in": 0.5,
+   "vol": 0.0,
+   "z0": 1.04,
+   "z1": 1.1,
+   "ox": 0.47,
+   "oy": 0.364,
+   "fadeIn": 0
+  },
+  {
+   "src": "Bidara_Flour_Mill__C9661.mp4",
+   "from": 1901,
+   "dur": 29,
+   "in": 1.0,
+   "vol": 0.0,
+   "z0": 1.1,
+   "z1": 1.04,
+   "ox": 0.264,
+   "oy": 0.236,
+   "fadeIn": 0
+  },
+  {
+   "src": "Bidara_Flour_Mill__C9680.mp4",
+   "from": 1930,
+   "dur": 58,
+   "in": 2.0,
+   "vol": 0.0,
+   "z0": 1.04,
+   "z1": 1.1,
+   "ox": 0.378,
+   "oy": 0.344,
+   "fadeIn": 0
+  },
+  {
+   "src": "Bidara_Flour_Mill__C9682.mp4",
+   "from": 1988,
+   "dur": 29,
+   "in": 0.5,
+   "vol": 0.0,
+   "z0": 1.04,
+   "z1": 1.1,
+   "ox": 0.438,
+   "oy": 0.399,
+   "fadeIn": 0
+  },
+  {
+   "src": "Bidara_Flour_Mill__C9695.mp4",
+   "from": 2017,
+   "dur": 58,
+   "in": 2.0,
+   "vol": 0.0,
+   "z0": 1.1,
+   "z1": 1.04,
+   "ox": 0.5,
+   "oy": 0.45,
+   "fadeIn": 0
+  },
+  {
+   "src": "Bidara_Flour_Mill__C9699.mp4",
+   "from": 2075,
+   "dur": 29,
+   "in": 0.5,
+   "vol": 0.0,
+   "z0": 1.1,
+   "z1": 1.04,
+   "ox": 0.444,
+   "oy": 0.26,
+   "fadeIn": 0
+  },
+  {
+   "src": "Bidara_Flour_Mill__C9697.mp4",
+   "from": 2104,
+   "dur": 29,
+   "in": 1.0,
+   "vol": 0.0,
+   "z0": 1.04,
+   "z1": 1.1,
+   "ox": 0.36,
+   "oy": 0.267,
+   "fadeIn": 0
+  },
+  {
+   "src": "Bidara_Flour_Mill__C9703.mp4",
+   "from": 2133,
+   "dur": 58,
+   "in": 2.0,
+   "vol": 0.0,
+   "z0": 1.1,
+   "z1": 1.04,
+   "ox": 0.616,
+   "oy": 0.262,
+   "fadeIn": 0
+  },
+  {
+   "src": "Bidara_Flour_Mill__C9686.mp4",
+   "from": 2191,
+   "dur": 24,
+   "in": 0.2,
+   "vol": 0.0,
+   "z0": 1.1,
+   "z1": 1.04,
+   "ox": 0.514,
+   "oy": 0.295,
+   "fadeIn": 0
+  },
+  {
+   "src": "Majlis_Watikah_Sahab__DJI_20260820104224_0035_D.mp4",
+   "from": 2215,
+   "dur": 67,
+   "in": 0.5,
+   "vol": 0.0,
+   "z0": 1.0,
+   "z1": 1.06,
+   "ox": 0.8,
+   "oy": 0.538,
+   "fadeIn": 8
+  },
+  {
+   "src": "Majlis_Watikah_Sahab__DJI_20260820102125_0019_D.mp4",
+   "from": 2282,
+   "dur": 66,
+   "in": 1.0,
+   "vol": 0.0,
+   "z0": 1.0,
+   "z1": 1.06,
+   "ox": 0.575,
+   "oy": 0.313,
+   "fadeIn": 8
+  },
+  {
+   "src": "Majlis_Watikah_Sahab__DJI_20260820104952_0045_D.mp4",
+   "from": 2348,
+   "dur": 64,
+   "in": 0.0,
+   "vol": 0.0,
+   "z0": 1.0,
+   "z1": 1.06,
+   "ox": 0.426,
+   "oy": 0.261,
+   "fadeIn": 8
+  },
+  {
+   "src": "FX3__C6262.mp4",
+   "from": 2412,
+   "dur": 68,
+   "in": 4.0,
+   "vol": 0.0,
+   "z0": 1.0,
+   "z1": 1.06,
+   "ox": 0.551,
+   "oy": 0.298,
+   "fadeIn": 8
+  },
+  {
+   "src": "FX3__C6356.mp4",
+   "from": 2480,
+   "dur": 65,
+   "in": 1.0,
+   "vol": 0.0,
+   "z0": 1.0,
+   "z1": 1.06,
+   "ox": 0.5,
+   "oy": 0.45,
+   "fadeIn": 8
+  },
+  {
+   "src": "FX3__C6380.mp4",
+   "from": 2545,
+   "dur": 65,
+   "in": 0.5,
+   "vol": 0.0,
+   "z0": 1.0,
+   "z1": 1.06,
+   "ox": 0.318,
+   "oy": 0.313,
+   "fadeIn": 8
+  },
+  {
+   "src": "FX3__C6449.mp4",
+   "from": 2610,
+   "dur": 67,
+   "in": 1.0,
+   "vol": 0.0,
+   "z0": 1.0,
+   "z1": 1.06,
+   "ox": 0.51,
+   "oy": 0.358,
+   "fadeIn": 8
+  },
+  {
+   "src": "FX3__C6438.mp4",
+   "from": 2677,
+   "dur": 71,
+   "in": 2.0,
+   "vol": 0.0,
+   "z0": 1.0,
+   "z1": 1.06,
+   "ox": 0.5,
+   "oy": 0.45,
+   "fadeIn": 8
+  },
+  {
+   "src": "Program_Jualan_Perta__C0443.mp4",
+   "from": 2748,
+   "dur": 24,
+   "in": 6.0,
+   "vol": 0.0,
+   "z0": 1.04,
+   "z1": 1.1,
+   "ox": 0.577,
+   "oy": 0.346,
+   "fadeIn": 0
+  },
+  {
+   "src": "MAHA__C7252.mp4",
+   "from": 2772,
+   "dur": 30,
+   "in": 14.0,
+   "vol": 0.0,
+   "z0": 1.04,
+   "z1": 1.1,
+   "ox": 0.487,
+   "oy": 0.379,
+   "fadeIn": 0
+  },
+  {
+   "src": "Media_Tour_MAHA__C6660.mp4",
+   "from": 2802,
+   "dur": 29,
+   "in": 8.0,
+   "vol": 0.0,
+   "z0": 1.04,
+   "z1": 1.1,
+   "ox": 0.441,
+   "oy": 0.323,
+   "fadeIn": 0
+  },
+  {
+   "src": "Media_Tour_MAHA__C6703.mp4",
+   "from": 2831,
+   "dur": 29,
+   "in": 1.0,
+   "vol": 0.0,
+   "z0": 1.04,
+   "z1": 1.1,
+   "ox": 0.2,
+   "oy": 0.7,
+   "fadeIn": 0
+  },
+  {
+   "src": "Media_Tour_MAHA__C6713.mp4",
+   "from": 2860,
+   "dur": 29,
+   "in": 2.0,
+   "vol": 0.0,
+   "z0": 1.04,
+   "z1": 1.1,
+   "ox": 0.539,
+   "oy": 0.343,
+   "fadeIn": 0
+  },
+  {
+   "src": "Media_Tour_MAHA__C6720.mp4",
+   "from": 2889,
+   "dur": 29,
+   "in": 11.0,
+   "vol": 0.0,
+   "z0": 1.04,
+   "z1": 1.1,
+   "ox": 0.423,
+   "oy": 0.401,
+   "fadeIn": 0
+  },
+  {
+   "src": "Bidara_Flour_Mill__C9703.mp4",
+   "from": 2918,
+   "dur": 29,
+   "in": 7.0,
+   "vol": 0.0,
+   "z0": 1.04,
+   "z1": 1.1,
+   "ox": 0.682,
+   "oy": 0.237,
+   "fadeIn": 0
+  },
+  {
+   "src": "Firstday_CM_ke_FAMA__C5623.mp4",
+   "from": 2947,
+   "dur": 29,
+   "in": 0.5,
+   "vol": 0.0,
+   "z0": 1.04,
+   "z1": 1.1,
+   "ox": 0.66,
+   "oy": 0.303,
+   "fadeIn": 0
+  },
+  {
+   "src": "Media_Tour_MAHA__C6616.mp4",
+   "from": 2976,
+   "dur": 58,
+   "in": 1.0,
+   "vol": 0.0,
+   "z0": 1.04,
+   "z1": 1.1,
+   "ox": 0.8,
+   "oy": 0.458,
+   "fadeIn": 0
+  },
+  {
+   "src": "MAHA__C7206.mp4",
+   "from": 3034,
+   "dur": 29,
+   "in": 1.0,
+   "vol": 0.0,
+   "z0": 1.04,
+   "z1": 1.1,
+   "ox": 0.721,
+   "oy": 0.404,
+   "fadeIn": 0
+  },
+  {
+   "src": "Program_Jualan_Perta__C0431.mp4",
+   "from": 3063,
+   "dur": 29,
+   "in": 9.0,
+   "vol": 0.0,
+   "z0": 1.04,
+   "z1": 1.1,
+   "ox": 0.223,
+   "oy": 0.602,
+   "fadeIn": 0
+  },
+  {
+   "src": "Media_Tour_MAHA__C6683.mp4",
+   "from": 3092,
+   "dur": 29,
+   "in": 2.0,
+   "vol": 0.0,
+   "z0": 1.04,
+   "z1": 1.1,
+   "ox": 0.601,
+   "oy": 0.275,
+   "fadeIn": 0
+  },
+  {
+   "src": "Program_Jualan_Perta__C0444.mp4",
+   "from": 3121,
+   "dur": 29,
+   "in": 0.3,
+   "vol": 0.0,
+   "z0": 1.04,
+   "z1": 1.1,
+   "ox": 0.475,
+   "oy": 0.298,
+   "fadeIn": 0
+  },
+  {
+   "src": "MAHA__C7259.mp4",
+   "from": 3150,
+   "dur": 29,
+   "in": 5.0,
+   "vol": 0.0,
+   "z0": 1.04,
+   "z1": 1.1,
+   "ox": 0.598,
+   "oy": 0.351,
+   "fadeIn": 0
+  },
+  {
+   "src": "Media_Tour_MAHA__C6624.mp4",
+   "from": 3179,
+   "dur": 29,
+   "in": 5.0,
+   "vol": 0.0,
+   "z0": 1.04,
+   "z1": 1.1,
+   "ox": 0.554,
+   "oy": 0.34,
+   "fadeIn": 0
+  },
+  {
+   "src": "Bidara_Flour_Mill__C9680.mp4",
+   "from": 3208,
+   "dur": 30,
+   "in": 7.0,
+   "vol": 0.0,
+   "z0": 1.04,
+   "z1": 1.1,
+   "ox": 0.527,
+   "oy": 0.333,
+   "fadeIn": 0
+  },
+  {
+   "src": "Program_Jualan_Perta__C0447.mp4",
+   "from": 3238,
+   "dur": 58,
+   "in": 7.0,
+   "vol": 0.0,
+   "z0": 1.04,
+   "z1": 1.1,
+   "ox": 0.5,
+   "oy": 0.45,
+   "fadeIn": 0
+  },
+  {
+   "src": "Media_Tour_MAHA__C6636.mp4",
+   "from": 3296,
+   "dur": 29,
+   "in": 1.0,
+   "vol": 0.0,
+   "z0": 1.04,
+   "z1": 1.1,
+   "ox": 0.8,
+   "oy": 0.461,
+   "fadeIn": 0
+  },
+  {
+   "src": "Shooting_Simbol_FAMA__C6605.mp4",
+   "from": 3325,
+   "dur": 58,
+   "in": 20.0,
+   "vol": 0.0,
+   "z0": 1.04,
+   "z1": 1.1,
+   "ox": 0.662,
+   "oy": 0.24,
+   "fadeIn": 0
+  },
+  {
+   "src": "Shooting_Simbol_FAMA__C6607.mp4",
+   "from": 3383,
+   "dur": 58,
+   "in": 15.0,
+   "vol": 0.0,
+   "z0": 1.04,
+   "z1": 1.1,
+   "ox": 0.597,
+   "oy": 0.266,
+   "fadeIn": 0
+  },
+  {
+   "src": "FX3__C6438.mp4",
+   "from": 3441,
+   "dur": 209,
+   "in": 11.35,
+   "vol": 0.0,
+   "z0": 1.0,
+   "z1": 1.05,
+   "ox": 0.5,
+   "oy": 0.45,
+   "fadeIn": 0
+  }
+ ],
+ "overlays": [
+  {
+   "from": 65,
+   "dur": 170,
+   "type": "sub",
+   "pos": "bottom",
+   "words": [
+    {
+     "w": "Mengumumkan",
+     "s": 0.0
+    },
+    {
+     "w": "ketibaan",
+     "s": 0.88
+    },
+    {
+     "w": "Yang",
+     "s": 1.58
+    },
+    {
+     "w": "Berusaha",
+     "s": 1.86
+    },
+    {
+     "w": "Tuan",
+     "s": 2.38
+    },
+    {
+     "w": "Haji",
+     "s": 2.72
+    },
+    {
+     "w": "Abang",
+     "s": 3.0
+    },
+    {
+     "w": "Ahmad",
+     "s": 3.26
+    },
+    {
+     "w": "Kerdee",
+     "s": 3.6
+    },
+    {
+     "w": "bin",
+     "s": 4.16
+    },
+    {
+     "w": "Abang",
+     "s": 4.36
+    },
+    {
+     "w": "Masagus,",
+     "s": 4.66
+    },
+    {
+     "w": "Pengerusi",
+     "s": 5.64
+    },
+    {
+     "w": "FAMA",
+     "s": 6.04
+    }
+   ]
+  },
+  {
+   "from": 232,
+   "dur": 150,
+   "type": "title",
+   "side": "left",
+   "kicker": "MENGENALI",
+   "title": "PENGERUSI FAMA"
+  },
+  {
+   "from": 392,
+   "dur": 126,
+   "type": "name",
+   "side": "left",
+   "pos": "bottom",
+   "honor": "YBRS. TUAN HAJI",
+   "name": "Abang Ahmad Kerdee\nbin Abang Masagus",
+   "role": "PENGERUSI FAMA",
+   "note": "Berkhidmat sejak 1 Ogos 2026"
+  },
+  {
+   "from": 524,
+   "dur": 86,
+   "type": "chapter",
+   "side": "right",
+   "pos": "bottom",
+   "num": "01",
+   "title": "Hari Pertama di FAMA",
+   "sub": "4 Ogos 2026  ·  Ibu Pejabat FAMA"
+  },
+  {
+   "from": 829,
+   "dur": 81,
+   "type": "chapter",
+   "side": "left",
+   "pos": "bottom",
+   "num": "02",
+   "title": "MAHA 2026",
+   "sub": "Pameran Pertanian, Hortikultur & Agro-Pelancongan Malaysia"
+  },
+  {
+   "from": 1614,
+   "dur": 76,
+   "type": "chapter",
+   "side": "left",
+   "pos": "bottom",
+   "num": "03",
+   "title": "Bersama Rakyat",
+   "sub": "Program Jualan Pertanian  ·  Melaka"
+  },
+  {
+   "from": 1904,
+   "dur": 77,
+   "type": "chapter",
+   "side": "left",
+   "pos": "bottom",
+   "num": "04",
+   "title": "Memperkasa Industri",
+   "sub": "Lawatan ke Bidara Flour Mill"
+  },
+  {
+   "from": 2219,
+   "dur": 91,
+   "type": "chapter",
+   "side": "left",
+   "pos": "bottom",
+   "num": "05",
+   "title": "Ilmu & Kesejahteraan",
+   "sub": "Majlis Watikah Sahabat Ilmuwan  ·  Program Kecergasan FAMA"
+  },
+  {
+   "from": 3450,
+   "dur": 200,
+   "type": "end",
+   "kicker": "SELAMAT DATANG KE",
+   "title": "FAMA",
+   "sub": "LEMBAGA PEMASARAN PERTANIAN PERSEKUTUAN"
+  }
+ ],
+ "sfx": [
+  {
+   "name": "whoosh_cine",
+   "at": 221,
+   "volume": 0.35
+  },
+  {
+   "name": "impact_big",
+   "at": 230,
+   "volume": 0.42
+  },
+  {
+   "name": "swoosh_accent",
+   "at": 390,
+   "volume": 0.3
+  },
+  {
+   "name": "whoosh_air",
+   "at": 512,
+   "volume": 0.25
+  },
+  {
+   "name": "shutter",
+   "at": 695,
+   "volume": 0.25
+  },
+  {
+   "name": "riser",
+   "at": 760,
+   "volume": 0.4
+  },
+  {
+   "name": "impact_whoosh",
+   "at": 825,
+   "volume": 0.45
+  },
+  {
+   "name": "whoosh_cine",
+   "at": 1602,
+   "volume": 0.3
+  },
+  {
+   "name": "whoosh_cine",
+   "at": 1893,
+   "volume": 0.3
+  },
+  {
+   "name": "whoosh_air",
+   "at": 2205,
+   "volume": 0.25
+  },
+  {
+   "name": "shutter",
+   "at": 2742,
+   "volume": 0.25
+  },
+  {
+   "name": "riser",
+   "at": 2683,
+   "volume": 0.32
+  },
+  {
+   "name": "impact_big",
+   "at": 2748,
+   "volume": 0.36
+  },
+  {
+   "name": "whoosh_cine",
+   "at": 3442,
+   "volume": 0.3
+  },
+  {
+   "name": "impact_whoosh",
+   "at": 3450,
+   "volume": 0.32
+  }
+ ],
+ "flashes": [
+  825,
+  1610,
+  1901,
+  2748,
+  3450
+ ],
+ "vo": [
+  {
+   "src": "Majlis_Watikah_Sahab__DJI_20260820101909_0013_D.mp4",
+   "at": 65,
+   "in": 0.0,
+   "dur": 162,
+   "volume": 1.0
+  }
+ ],
+ "ducks": [
+  [
+   63,
+   228
+  ]
+ ]
+}
