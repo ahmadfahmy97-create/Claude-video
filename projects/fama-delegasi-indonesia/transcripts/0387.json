@@ -1,0 +1,104 @@
+{
+ "clip": "0387",
+ "duration": 11.8186875,
+ "segments": [
+  {
+   "start": 0.0,
+   "end": 3.32,
+   "text": "Keren, keren. Jadi saya akhiri dengan",
+   "words": [
+    {
+     "w": " Keren,",
+     "s": 0.0,
+     "e": 0.32,
+     "p": 0.751
+    },
+    {
+     "w": " keren.",
+     "s": 0.32,
+     "e": 0.42,
+     "p": 0.994
+    },
+    {
+     "w": " Jadi",
+     "s": 1.26,
+     "e": 2.1,
+     "p": 0.861
+    },
+    {
+     "w": " saya",
+     "s": 2.1,
+     "e": 2.48,
+     "p": 0.569
+    },
+    {
+     "w": " akhiri",
+     "s": 2.48,
+     "e": 2.96,
+     "p": 0.981
+    },
+    {
+     "w": " dengan",
+     "s": 2.96,
+     "e": 3.32,
+     "p": 0.989
+    }
+   ]
+  },
+  {
+   "start": 3.32,
+   "end": 7.48,
+   "text": "Wa bilahi taufiq wal hidayah. Assalamualaikum warahmatullahi wabarakatuh.",
+   "words": [
+    {
+     "w": " Wa",
+     "s": 3.32,
+     "e": 3.7,
+     "p": 0.264
+    },
+    {
+     "w": " bilahi",
+     "s": 3.7,
+     "e": 4.02,
+     "p": 0.69
+    },
+    {
+     "w": " taufiq",
+     "s": 4.02,
+     "e": 4.44,
+     "p": 0.949
+    },
+    {
+     "w": " wal",
+     "s": 4.44,
+     "e": 4.62,
+     "p": 0.285
+    },
+    {
+     "w": " hidayah.",
+     "s": 4.62,
+     "e": 5.24,
+     "p": 0.954
+    },
+    {
+     "w": " Assalamualaikum",
+     "s": 5.6,
+     "e": 6.44,
+     "p": 0.997
+    },
+    {
+     "w": " warahmatullahi",
+     "s": 6.44,
+     "e": 6.96,
+     "p": 0.981
+    },
+    {
+     "w": " wabarakatuh.",
+     "s": 6.96,
+     "e": 7.48,
+     "p": 0.997
+    }
+   ]
+  }
+ ]
+}

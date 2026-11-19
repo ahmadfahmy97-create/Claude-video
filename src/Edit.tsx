@@ -10,18 +10,42 @@ import {
   useCurrentFrame,
   useVideoConfig,
 } from 'remotion';
-import timeline from './timeline.json';
 import {Captions} from './Captions';
 import {Graphic} from './Graphics';
 
 type Zoom = {start: number; scale: number; piece: string; ox?: number; oy?: number};
-const zooms = timeline.zooms as Zoom[];
-const pieces = timeline.pieces as {id: string; start: number; end: number}[];
+type Piece = {id: string; start: number; end: number};
 
-const MUSIC = 'music/m473.mp3';
+export type Timeline = {
+  fps: number;
+  durationInFrames: number;
+  captions: any[];
+  speech: number[][];
+  gfx: any[];
+  sfx: {name: string; start: number; volume: number}[];
+  zooms: Zoom[];
+  cuts: number[];
+  pieces: Piece[];
+};
+
+export type ProjectConfig = {
+  id: string;
+  timeline: Timeline;
+  footage: string; // path under public/
+  music: string; // path under public/
+  musicOpen?: number; // music level in speech gaps
+  musicUnder?: number; // music level under speech
+  musicLoudPieces?: string[]; // pieces with no talking where the music comes up
+  keyWords?: RegExp; // caption words to tint once spoken
+  closing?: boolean; // append the logo sting
+};
+
 // Closing logo sting (landscape 1920x1080, 5 s, no audio) appended after the edit.
 export const CLOSING_FRAMES = 150;
-const MAIN_FRAMES = timeline.durationInFrames;
+export const totalFrames = (cfg: ProjectConfig) => cfg.timeline.durationInFrames + (cfg.closing === false ? 0 : CLOSING_FRAMES);
+
+const Ctx = React.createContext<ProjectConfig>(null as unknown as ProjectConfig);
+export const useProject = () => React.useContext(Ctx);
 
 const Closing: React.FC = () => {
   const frame = useCurrentFrame();
@@ -38,12 +62,14 @@ const Closing: React.FC = () => {
 
 const FadeToBlack: React.FC = () => {
   const frame = useCurrentFrame();
+  const MAIN_FRAMES = useProject().timeline.durationInFrames;
   const o = interpolate(frame, [MAIN_FRAMES - 10, MAIN_FRAMES - 1], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   return <AbsoluteFill style={{backgroundColor: 'black', opacity: o}} />;
 };
 
 const useZoom = () => {
   const frame = useCurrentFrame();
+  const zooms = useProject().timeline.zooms;
   const {fps} = useVideoConfig();
   const t = frame / fps;
   let i = -1;
@@ -60,6 +86,8 @@ const useZoom = () => {
 
 const Footage: React.FC = () => {
   const frame = useCurrentFrame();
+  const {timeline, footage} = useProject();
+  const pieces = timeline.pieces;
   const {fps} = useVideoConfig();
   const {scale, ox, oy} = useZoom();
   // little "push" at every new section
@@ -70,13 +98,14 @@ const Footage: React.FC = () => {
   }
   return (
     <AbsoluteFill style={{transform: `scale(${scale * bump})`, transformOrigin: `${ox * 100}% ${oy * 100}%`}}>
-      <OffthreadVideo src={staticFile('footage/base.mp4')} />
+      <OffthreadVideo src={staticFile(footage)} />
     </AbsoluteFill>
   );
 };
 
 const SectionFlash: React.FC = () => {
   const frame = useCurrentFrame();
+  const pieces = useProject().timeline.pieces;
   const {fps} = useVideoConfig();
   let o = 0;
   for (const p of pieces) {
@@ -96,33 +125,39 @@ const Grade: React.FC = () => (
   />
 );
 
-const musicVolume = (frame: number, fps: number, total: number) => {
+const musicVolume = (cfg: ProjectConfig, frame: number, fps: number, total: number) => {
+  const {timeline} = cfg;
+  const MAIN_FRAMES = timeline.durationInFrames;
   const t = frame / fps;
   let d = 99;
-  for (const [s, e] of timeline.speech as number[][]) {
+  for (const [s, e] of timeline.speech) {
     if (t >= s && t <= e) {
       d = 0;
       break;
     }
     d = Math.min(d, Math.abs(t - s), Math.abs(t - e));
   }
-  const piece = pieces.find((p) => t >= p.start && t < p.end)?.id;
-  const open = piece === 'react' ? 0.34 : frame >= MAIN_FRAMES ? 0.3 : 0.24;
-  const under = 0.075; // music sits ~-22 dB under the voice
+  const piece = timeline.pieces.find((p) => t >= p.start && t < p.end)?.id ?? '';
+  const base = cfg.musicOpen ?? 0.24;
+  const open = (cfg.musicLoudPieces ?? []).includes(piece) ? base * 1.4 : frame >= MAIN_FRAMES ? base * 1.25 : base;
+  const under = cfg.musicUnder ?? 0.075; // music sits ~-22 dB under the voice
   let v = interpolate(d, [0, 0.35], [under, open], {extrapolateRight: 'clamp'});
   v *= interpolate(frame, [0, 12], [0.6, 1], {extrapolateRight: 'clamp'});
   v *= interpolate(frame, [total - 75, total - 1], [1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   return v;
 };
 
-export const Main: React.FC = () => {
+export const Edit: React.FC<{cfg: ProjectConfig}> = ({cfg}) => {
   const {fps, durationInFrames} = useVideoConfig();
+  const {timeline} = cfg;
+  const MAIN_FRAMES = timeline.durationInFrames;
   return (
+    <Ctx.Provider value={cfg}>
     <AbsoluteFill style={{backgroundColor: 'black'}}>
       <Sequence durationInFrames={MAIN_FRAMES}>
         <Footage />
         <Grade />
-        {(timeline.gfx as any[]).map((g, i) => (
+        {timeline.gfx.map((g, i) => (
           <Sequence key={i} from={Math.round(g.start * fps)} durationInFrames={Math.round(g.dur * fps)} layout="none">
             <Graphic g={g} />
           </Sequence>
@@ -131,19 +166,24 @@ export const Main: React.FC = () => {
         <SectionFlash />
         <FadeToBlack />
       </Sequence>
-      <Sequence from={MAIN_FRAMES} durationInFrames={CLOSING_FRAMES}>
-        <Closing />
-      </Sequence>
-      <Sequence from={MAIN_FRAMES + 4} durationInFrames={fps * 5} layout="none">
-        <Audio src={staticFile('sfx/impact_logo.mp3')} volume={0.4} />
-      </Sequence>
+      {cfg.closing === false ? null : (
+        <>
+          <Sequence from={MAIN_FRAMES} durationInFrames={CLOSING_FRAMES}>
+            <Closing />
+          </Sequence>
+          <Sequence from={MAIN_FRAMES + 4} durationInFrames={fps * 5} layout="none">
+            <Audio src={staticFile('sfx/impact_logo.mp3')} volume={0.4} />
+          </Sequence>
+        </>
+      )}
 
-      <Audio src={staticFile(MUSIC)} loop volume={(f) => musicVolume(f, fps, durationInFrames)} />
-      {(timeline.sfx as {name: string; start: number; volume: number}[]).map((s, i) => (
+      <Audio src={staticFile(cfg.music)} loop volume={(f) => musicVolume(cfg, f, fps, durationInFrames)} />
+      {timeline.sfx.map((s, i) => (
         <Sequence key={`s${i}`} from={Math.round(s.start * fps)} durationInFrames={fps * 6} layout="none">
           <Audio src={staticFile(`sfx/${s.name}.mp3`)} volume={s.volume} />
         </Sequence>
       ))}
     </AbsoluteFill>
+    </Ctx.Provider>
   );
 };

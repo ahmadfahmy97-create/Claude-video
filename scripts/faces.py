@@ -1,26 +1,30 @@
 """Detect faces in public/footage/base.mp4 and place captions / graphics / zoom origins
 so nothing sits on top of a face. Updates src/timeline.json in place.
 
-Usage: python3 scripts/faces.py
+Usage: python3 scripts/faces.py <project>
 """
 import json
 import os
 import subprocess
+import sys
 
 import cv2
 import numpy as np
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MODEL = os.environ.get("YUNET", "/home/user/models/yunet.onnx")
-CACHE = f"{ROOT}/src/faces.json"
+PROJECT = sys.argv[1]
+TL = f"{ROOT}/src/projects/{PROJECT}/timeline.json"
+BASE = f"{ROOT}/public/footage/{PROJECT}/base.mp4"
+CACHE = f"{ROOT}/src/projects/{PROJECT}/faces.json"
 W, H, STEP = 540, 960, 3  # analyse at half res, every 3rd frame (10 fps)
 
-tl = json.load(open(f"{ROOT}/src/timeline.json"))
+tl = json.load(open(TL))
 FPS = tl["fps"]
 
-if not os.path.exists(CACHE) or os.path.getmtime(CACHE) < os.path.getmtime(f"{ROOT}/public/footage/base.mp4"):
+if not os.path.exists(CACHE) or os.path.getmtime(CACHE) < os.path.getmtime(BASE):
     det = cv2.FaceDetectorYN.create(MODEL, "", (W, H), 0.55)
-    proc = subprocess.Popen(["ffmpeg", "-v", "error", "-i", f"{ROOT}/public/footage/base.mp4", "-vf",
+    proc = subprocess.Popen(["ffmpeg", "-v", "error", "-i", BASE, "-vf",
                              f"select='not(mod(n\\,{STEP}))',scale={W}:{H}", "-vsync", "0", "-f", "rawvideo",
                              "-pix_fmt", "bgr24", "-"], stdout=subprocess.PIPE)
     faces = []
@@ -116,6 +120,12 @@ SIZES = {  # height, candidate centre ys (inside the 230..1480 safe band)
     "location": (110, [300, 1080]),
     "tag": (80, [290, 1080]),
     "sticker": (180, [1020, 420, 640]),
+    "agencies": (420, [1000, 450, 1060]),
+    "kamus": (300, [1010, 420, 1090]),
+    "proverb": (360, [990, 430, 1060]),
+    "event": (170, [330, 1090]),
+    "flow": (230, [420, 1020, 1100]),
+    "rule": (200, [1000, 420, 1090]),
 }
 placed = []
 for g in tl["gfx"]:
@@ -131,11 +141,19 @@ for g in tl["gfx"]:
             o = overlap(g["start"], g["start"] + g["dur"], y - h / 2, y + h / 2) + i * 2000  # prefer earlier slots
             # don't sit on another graphic that is still on screen
             for q in placed:
-                if q["start"] + q["dur"] > g["start"] and abs(q["y"] - y) < (SIZES[q["type"]][0] + h) / 2:
+                tail = q["start"] + q["dur"] - g["start"]
+                # a graphic that is only finishing its exit (<0.6 s) gets cut short instead of blocking the slot
+                if 0.6 > tail > 0:
+                    continue
+                if tail > 0 and abs(q["y"] - y) < (SIZES[q["type"]][0] + h) / 2:
                     o += 1e9
             if best is None or o < best[0]:
                 best = (o, y)
         g["y"] = best[1]
+        for q in placed:
+            tail = q["start"] + q["dur"] - g["start"]
+            if 0.6 > tail > 0 and abs(q["y"] - g["y"]) < (SIZES[q["type"]][0] + h) / 2:
+                q["dur"] = round(g["start"] - q["start"], 3)
     g["h"] = h
     placed.append(g)
     print(f"  {g['type']:9s} @{g['start']:6.2f}s +{g['dur']:.1f} -> y={g['y']}")
@@ -143,6 +161,9 @@ for g in tl["gfx"]:
 # ------------------------------------------------------------------ captions (avoid graphics hard, faces soft)
 moved = 0
 for p in tl["captions"]:
+    # a graphic that already spells the words out (e.g. a proverb card) mutes the captions under it
+    mid = (p["start"] + p["end"]) / 2
+    p["hide"] = any(g.get("muteCaptions") and g["start"] <= mid <= g["start"] + g["dur"] for g in tl["gfx"])
     nchar = sum(len(w["text"]) + 1 for w in p["words"])
     cap_h = 95 if nchar <= 18 else 175
     best = None
@@ -163,5 +184,5 @@ for p in tl["captions"]:
     moved += best[1] != 1300
 print("captions moved:", moved)
 
-json.dump(tl, open(f"{ROOT}/src/timeline.json", "w"), ensure_ascii=False, indent=1)
-print("updated src/timeline.json")
+json.dump(tl, open(TL, "w"), ensure_ascii=False, indent=1)
+print(f"updated {TL}")

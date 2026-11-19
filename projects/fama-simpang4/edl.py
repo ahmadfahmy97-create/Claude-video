@@ -12,6 +12,9 @@ sfx     : list of (source_time, sound_name, volume).
 zoom    : list of (source_time, scale) – punch-ins on the speaker (hides jump cuts).
 """
 
+RAW = "/home/user/raw"
+WORK = "/home/user/work"
+
 PIECES = [
     # ---------------------------------------------------------------- HOOK
     dict(

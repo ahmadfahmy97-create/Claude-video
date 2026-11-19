@@ -1,8 +1,8 @@
-"""Turn scripts/edl.py into:
-  public/footage/base.mp4   – cut picture (A-roll + B-roll) with cleaned voice track
-  src/timeline.json         – captions, graphics, sfx, zooms, speech intervals (output seconds)
+"""Turn projects/<project>/edl.py into:
+  public/footage/<project>/base.mp4   – cut picture (A-roll + B-roll) with cleaned voice track
+  src/projects/<project>/timeline.json – captions, graphics, sfx, zooms, speech intervals (output seconds)
 
-Usage: python3 scripts/build.py [--skip-video]
+Usage: python3 scripts/build.py <project> [--skip-video]
 """
 import difflib
 import json
@@ -14,16 +14,22 @@ from concurrent.futures import ThreadPoolExecutor
 
 import numpy as np
 
-sys.path.insert(0, os.path.dirname(__file__))
-from edl import PIECES  # noqa: E402
-
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-RAW = os.environ.get("RAW_DIR", "/home/user/raw")
-WORK = os.environ.get("WORK_DIR", "/home/user/work")
+PROJECT = next(a for a in sys.argv[1:] if not a.startswith("--"))
+PDIR = f"{ROOT}/projects/{PROJECT}"
+sys.path.insert(0, PDIR)
+import edl  # noqa: E402
+
+PIECES = edl.PIECES
+RAW = os.environ.get("RAW_DIR", getattr(edl, "RAW", "/home/user/raw"))
+WORK = os.environ.get("WORK_DIR", getattr(edl, "WORK", "/home/user/work"))
+FOOT = f"{ROOT}/public/footage/{PROJECT}"
+TL = f"{ROOT}/src/projects/{PROJECT}/timeline.json"
 FPS = 30
 SR = 48000
 os.makedirs(WORK, exist_ok=True)
-os.makedirs(f"{ROOT}/public/footage", exist_ok=True)
+os.makedirs(FOOT, exist_ok=True)
+os.makedirs(os.path.dirname(TL), exist_ok=True)
 SKIP_VIDEO = "--skip-video" in sys.argv
 
 # ------------------------------------------------------------------ audio helpers
@@ -55,7 +61,7 @@ def band_db(x):
 
 
 def words_of(clip):
-    d = json.load(open(f"{ROOT}/transcripts/{clip}.json"))
+    d = json.load(open(f"{PDIR}/transcripts/{clip}.json"))
     return [w for s in d["segments"] for w in s["words"]]
 
 
@@ -220,8 +226,8 @@ if not SKIP_VIDEO:
             f.write(f"file '{fn}'\n")
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", f"{WORK}/concat.txt",
                     "-i", f"{WORK}/voice.wav", "-map", "0:v", "-map", "1:a", "-c:v", "copy",
-                    "-c:a", "aac", "-b:a", "256k", "-shortest", f"{ROOT}/public/footage/base.mp4"], check=True)
-    print("wrote public/footage/base.mp4")
+                    "-c:a", "aac", "-b:a", "256k", "-shortest", f"{FOOT}/base.mp4"], check=True)
+    print(f"wrote {FOOT}/base.mp4")
 
 # ------------------------------------------------------------------ captions
 def norm_tok(t):
@@ -317,8 +323,11 @@ for po in pieces_out:
     pg = []
     for (t, typ, props) in p.get("gfx", []):
         props = dict(props)
-        if typ == "checklist":
-            props["items"] = [[name, round(to_out(tt), 3)] for name, tt in props["items"]]
+        # graphics with their own beats: the last element of each item (and mergeAt) is a source-audio time
+        if typ in ("checklist", "agencies", "flow", "rule"):
+            props["items"] = [list(it[:-1]) + [round(to_out(it[-1]), 3)] for it in props["items"]]
+        if "mergeAt" in props:
+            props["mergeAt"] = round(to_out(props["mergeAt"]), 3)
         g = dict(type=typ, start=round(to_out(t), 3), piece=p["id"], **props)
         # never spill into the next section
         spill = {"bigstat": 0.5, "stamp": 0.6, "sticker": 0.7}.get(typ, 0.0)  # let the big number breathe over the cut
@@ -354,5 +363,5 @@ for (clip, src, n) in video_chunks:
 zooms.sort(key=lambda z: z["start"])
 json.dump(dict(fps=FPS, durationInFrames=TOTAL, captions=pages_out, speech=speech_m, gfx=gfx, sfx=sfx,
                zooms=zooms, cuts=cuts, pieces=pieces_meta),
-          open(f"{ROOT}/src/timeline.json", "w"), ensure_ascii=False, indent=1)
-print("wrote src/timeline.json:", len(pages_out), "caption pages,", len(gfx), "graphics,", len(sfx), "sfx")
+          open(TL, "w"), ensure_ascii=False, indent=1)
+print(f"wrote {TL}:", len(pages_out), "caption pages,", len(gfx), "graphics,", len(sfx), "sfx")

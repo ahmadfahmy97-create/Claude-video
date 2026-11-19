@@ -1,6 +1,7 @@
 import React from 'react';
 import {AbsoluteFill, interpolate, random, spring, useCurrentFrame, useVideoConfig} from 'remotion';
 import {ANTON, C, CX, MONT, SAFE, SAFE_W, stroke} from './theme';
+import {extraGraphic, FlagID, FlagMY} from './GraphicsExtra';
 
 type G = {type: string; start: number; dur: number; y?: number; [k: string]: any};
 
@@ -72,7 +73,7 @@ const Headline: React.FC<{g: G}> = ({g}) => {
       <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '0 16px', marginTop: 14, maxWidth: SAFE_W}}>
         {words.map((w, i) => {
           const s = spring({frame: frame - 3 - i * 2, fps, config: {damping: 12, stiffness: 220, mass: 0.5}});
-          const hi = w === 'SARA';
+          const hi = (g.hi as string[] | undefined)?.some((h) => w.replace(/[^\w]/g, '') === h) ?? w === 'SARA';
           return (
             <span
               key={i}
@@ -100,6 +101,12 @@ const BigStat: React.FC<{g: G}> = ({g}) => {
   const {frame, fps, enter, exit} = useAnim(g.dur);
   const slam = spring({frame, fps, config: {damping: 9, stiffness: 260, mass: 0.6}});
   const shake = frame < 8 ? Math.sin(frame * 2.2) * (8 - frame) * 1.6 : 0;
+  // optional count-up for plain numbers (e.g. 0 -> 34)
+  const num = Number(g.value);
+  const shown =
+    g.countFrom !== undefined && !Number.isNaN(num)
+      ? String(Math.round(interpolate(frame, [0, Math.round(0.7 * fps)], [Number(g.countFrom), num], {extrapolateRight: 'clamp'})))
+      : g.value;
   return (
     <Centered y={g.y ?? 420} style={{opacity: exit, transform: `translateY(-50%) translateX(${shake}px)`}}>
       <div
@@ -130,7 +137,7 @@ const BigStat: React.FC<{g: G}> = ({g}) => {
           ...stroke(18),
         }}
       >
-        {g.value}
+        {shown}
       </div>
       <div style={{fontFamily: ANTON, fontSize: 64, color: 'white', marginTop: -6, opacity: enter, ...stroke(10)}}>{g.top}</div>
     </Centered>
@@ -254,12 +261,12 @@ const Stamp: React.FC<{g: G}> = ({g}) => {
         <div
           style={{
             fontFamily: ANTON,
-            fontSize: 108,
-            color: C.yellow,
+            fontSize: g.small ? 78 : 108,
+            color: g.color === 'red' ? 'white' : C.yellow,
             padding: '10px 36px',
-            border: `10px solid ${C.yellow}`,
+            border: `10px solid ${g.color === 'red' ? 'white' : C.yellow}`,
             borderRadius: 26,
-            background: 'rgba(6,78,59,0.88)',
+            background: g.color === 'red' ? 'rgba(185,28,28,0.92)' : 'rgba(6,78,59,0.88)',
             transform: `scale(${interpolate(s, [0, 1], [3, 1])}) rotate(-7deg)`,
             opacity: interpolate(s, [0, 0.25], [0, 1], {extrapolateRight: 'clamp'}),
             boxShadow: '0 16px 50px rgba(0,0,0,0.5)',
@@ -515,6 +522,13 @@ const EndCard: React.FC<{g: G}> = ({g}) => {
           border: '4px solid rgba(255,255,255,0.7)',
         }}
       >
+        {g.flags ? (
+          <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 18, marginBottom: 12}}>
+            <FlagMY w={96} />
+            <span style={{fontSize: 56}}>🤝</span>
+            <FlagID w={72} />
+          </div>
+        ) : null}
         <div style={{fontFamily: MONT, fontWeight: 900, fontSize: 38, color: C.yellow, letterSpacing: 1.5}}>{g.line1.toUpperCase()}</div>
         <div style={{fontFamily: ANTON, fontSize: 82, color: 'white', lineHeight: 1.08, marginTop: 6}}>{g.line2.toUpperCase()}</div>
         <div
@@ -598,6 +612,6 @@ export const Graphic: React.FC<{g: G}> = ({g}) => {
     case 'endcard':
       return <EndCard g={g} />;
     default:
-      return null;
+      return extraGraphic(g);
   }
 };

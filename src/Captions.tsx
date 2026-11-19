@@ -1,19 +1,20 @@
 import React from 'react';
 import {interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
-import timeline from './timeline.json';
+import {useProject} from './Edit';
 import {C, CX, MONT, SAFE_W, stroke} from './theme';
 
 type Word = {text: string; start: number; end: number};
 type Page = {start: number; end: number; words: Word[]; y?: number};
 
-const KEY = /^(RM\d+|\d+%?|SARA|FAMA|Super|El|Nino\.?|Combo|Madani|Happy|Hour|30%|50%|3)[.,!?]?$/i;
 
 export const Captions: React.FC = () => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
+  const {timeline, keyWords} = useProject();
+  const KEY = keyWords ?? /^(RM\d+|\d+%?)[.,!?]?$/i;
   const t = frame / fps;
   const page = (timeline.captions as Page[]).find((p) => t >= p.start && t < p.end);
-  if (!page) return null;
+  if (!page || (page as any).hide) return null;
   const f0 = Math.round(page.start * fps);
   const pop = spring({frame: frame - f0, fps, config: {damping: 13, stiffness: 240, mass: 0.5}});
   const y = page.y ?? 1300;
