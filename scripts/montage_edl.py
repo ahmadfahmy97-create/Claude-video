@@ -64,23 +64,17 @@ DUR["JAM_PTK__0545.mp4"] = 413.5
 # Voice-over script (source ranges in clip 0545) + clean display text
 # --------------------------------------------------------------------------------------------
 W0545 = json.load(open(f"{WORK}/w0545.json"))
-VO = {  # no sales / revenue / savings figures (removed at the chairman's office's request)
-    "taskforce": ([(326.45, 334.85)],
-                  "Di peringkat ibu pejabat FAMA, kami telah mengorak langkah. Bermula bulan pertama saya berada "
-                  "di pejabat, kami telah mewujudkan satu task force."),
-    "elnino": ([(285.15, 311.95)],
-               "Baru-baru ni Jabatan Kaji Cuaca Malaysia telah mewar-warkan bahawa bermula November tahun ini, "
-               "seluruh dunia akan mengalami satu fenomena yang namanya Super El Nino. Super El Nino ni jarang berlaku, "
-               "tapi bila berlaku, satu dunia akan mengalami kepanasan yang melampau. Jadi bila kepanasan yang "
-               "melampau ni, banyak tanaman yang tak menjadi."),
-    "sku": ([(334.90, 348.50), (349.10, 350.05)],
-            "FAMA ni, kita menjaga 34 jenis SKU sahaja. Contoh kalau boleh saya berikan, cili, kobis, halia, kunyit, "
-            "sayur-sayuran, sawi, pelbagai jenis sayur."),
-    "bekalan": ([(360.90, 377.60), (398.88, 407.20)],
-                "Kami sudah bersedia dengan satu plan intervensi yang saya boleh katakan, sekiranya berlaku Super El Nino "
-                "ni, bagi pihak FAMA kami dah bersedia untuk penyediaan bekalan makanan sekurang-kurangnya tiga bulan. "
-                "Tapi FAMA, kita ambil satu langkah, kita ambil, kita simpan dan kita berjaga-jaga untuk mendepani "
-                "Super El Nino."),
+VO = {  # what FAMA does — no figures, no sales/revenue data, no El Nino
+    "taskforce": ([(323.55, 324.75), (326.45, 334.85)],
+                  "Jadi, apa yang FAMA dah buat? Di peringkat ibu pejabat FAMA, kami telah mengorak langkah. "
+                  "Bermula bulan pertama saya berada di pejabat, kami telah mewujudkan satu task force."),
+    "agromadani": ([(23.25, 33.60)],
+                   "Saya ingin memaklumkan bahawa pada hari ini juga kita telah ada Jualan Agro Madani, yang baru "
+                   "selesai kita adakan sebentar tadi."),
+    "bekalan": ([(370.20, 375.82), (383.45, 389.85), (398.88, 404.55)],
+                "Bagi pihak FAMA, kami dah bersedia untuk penyediaan bekalan makanan. Macam sayur, dia tak boleh lama, "
+                "tapi kita letak dalam cold storage dengan freezer kita. Plan itu kita dah ada. Tapi FAMA, kita ambil "
+                "satu langkah, kita ambil, kita simpan dan kita berjaga-jaga."),
     "sara": ([(243.00, 253.05)],
              "Bermula 1 Januari, FAMA sebagai salah satu agensi yang menyelia Jualan Agro Madani, SARA itu sendiri "
              "boleh digunakan pembeliannya di Jualan Agro Madani."),
@@ -371,19 +365,11 @@ voice("taskforce", T["DAY1"] + 0.9)
 
 # ---- 02 MAHA: Agro Madani sales ----
 chapter(T["MAHA"], T["MAHA"] + 3.4, "02", "MAHA 2026", "Pameran Pertanian, Hortikultur & Agro-Pelancongan Malaysia")
-e_at = T["MAHA"] + 1.0
-e_end = voice("elnino", e_at)
-q_at = e_end + 0.7
-q_end = voice("sku", q_at)
-t34 = q_at + find_word("sku", "34")
-stat(t34 - 0.3, t34 + 4.2, "34 JENIS", "HASIL PERTANIAN DIJAGA FAMA", "Cili, kobis, halia, kunyit, sayur-sayuran")
+voice("agromadani", T["MAHA"] + 1.2)
 
 # ---- 03 Bersama Rakyat: food-supply readiness ----
 chapter(T["MELAKA"], T["MELAKA"] + 3.2, "03", "Bersama Rakyat", "Program Jualan Pertanian  ·  Melaka")
-k_at = max(q_end + 0.8, T["MELAKA"] + 0.6)
-k_end = voice("bekalan", k_at)
-t3b = k_at + find_word("bekalan", "tiga")
-stat(t3b - 0.3, t3b + 4.0, "3 BULAN", "STOK BEKALAN MAKANAN", "Persediaan FAMA mendepani Super El Nino")
+k_end = voice("bekalan", T["MELAKA"] + 1.0)
 assert k_end < T["TALK"] - 0.3, (k_end, T["TALK"])
 
 # ---- on-camera media statement (SARA at Jualan Agro Madani) ----
