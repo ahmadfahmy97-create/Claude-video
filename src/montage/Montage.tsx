@@ -156,7 +156,7 @@ const musicVolume = (f: number, total: number) => {
     }
     d = Math.min(d, Math.abs(f - s), Math.abs(f - e));
   }
-  // music ducks ~-16 dB under the voice, eased over 10 frames
+  // music ducks ~-12 dB under the voice, eased over 10 frames
   let v = interpolate(d, [0, 10], [music.duck * music.volume, music.volume], {extrapolateRight: 'clamp'});
   v *= interpolate(f, [total - 50, total - 1], [1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   return v;

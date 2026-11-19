@@ -450,7 +450,7 @@ for f in os.listdir(f"{ROOT}/public/vo"):
 
 out = dict(
     durationInFrames=F(MAIN_END),
-    music=dict(src=MUSIC, offset=MUSIC_OFFSET, volume=0.5, duck=0.13),
+    music=dict(src=MUSIC, offset=MUSIC_OFFSET, volume=0.5, duck=0.24),
     shots=[dict(src=s["src"], **{"from": F(s["t0"])}, dur=F(s["t1"]) - F(s["t0"]), **{"in": s["in"]}, vol=s["vol"],
                 z0=s["z"][0], z1=s["z"][1], ox=s["ox"], oy=s["oy"], fadeIn=s["fadeIn"], kind=s["kind"], speed=s["speed"]) for s in shots],
     overlays=[{("from" if k == "from_" else k): v for k, v in o.items()} for o in overlays],
