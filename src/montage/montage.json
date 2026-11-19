@@ -1534,241 +1534,360 @@
   },
   {
    "from": 856,
-   "dur": 234,
+   "dur": 201,
    "type": "sub",
    "pos": "bottom",
    "words": [
     {
-     "w": "Dari",
+     "w": "Baru-baru",
      "s": 0.0
     },
     {
-     "w": "segi",
-     "s": 0.68
+     "w": "ni",
+     "s": 0.22
     },
     {
-     "w": "data",
-     "s": 1.12
+     "w": "Jabatan",
+     "s": 0.34
     },
     {
-     "w": "yang",
-     "s": 1.48
+     "w": "Kaji",
+     "s": 0.5
     },
     {
-     "w": "ada",
-     "s": 1.92
+     "w": "Cuaca",
+     "s": 0.92
     },
     {
-     "w": "pada",
-     "s": 2.5
-    },
-    {
-     "w": "FAMA,",
-     "s": 2.66
-    },
-    {
-     "w": "pada",
-     "s": 3.05
-    },
-    {
-     "w": "tahun",
-     "s": 4.13
-    },
-    {
-     "w": "ini",
-     "s": 4.51
-    },
-    {
-     "w": "setakat",
-     "s": 4.73
-    },
-    {
-     "w": "bulan",
-     "s": 5.11
-    },
-    {
-     "w": "November",
-     "s": 7.35
-    },
-    {
-     "w": "ini,",
-     "s": 7.73
-    },
-    {
-     "w": "FAMA",
-     "s": 7.89
+     "w": "Malaysia",
+     "s": 1.22
     },
     {
      "w": "telah",
-     "s": 8.25
+     "s": 1.56
     },
     {
-     "w": "mengadakan",
-     "s": 8.85
+     "w": "mewar-warkan",
+     "s": 2.5
+    },
+    {
+     "w": "bahawa",
+     "s": 3.02
+    },
+    {
+     "w": "bermula",
+     "s": 3.94
+    },
+    {
+     "w": "November",
+     "s": 4.46
+    },
+    {
+     "w": "tahun",
+     "s": 5.08
+    },
+    {
+     "w": "ini,",
+     "s": 6.16
+    },
+    {
+     "w": "seluruh",
+     "s": 7.04
     }
    ]
   },
   {
-   "from": 1090,
-   "dur": 162,
+   "from": 1057,
+   "dur": 135,
    "type": "sub",
    "pos": "bottom",
    "words": [
     {
-     "w": "Jualan",
+     "w": "dunia",
      "s": 0.0
     },
     {
-     "w": "Agro",
-     "s": 0.34
+     "w": "akan",
+     "s": 0.3
     },
     {
-     "w": "Madani",
-     "s": 0.76
+     "w": "mengalami",
+     "s": 0.62
+    },
+    {
+     "w": "satu",
+     "s": 1.24
+    },
+    {
+     "w": "fenomena",
+     "s": 1.86
     },
     {
      "w": "yang",
-     "s": 1.38
+     "s": 3.74
     },
     {
-     "w": "telah",
-     "s": 1.82
-    },
-    {
-     "w": "mencatat",
-     "s": 2.2
-    },
-    {
-     "w": "nilai",
-     "s": 2.6
-    },
-    {
-     "w": "jualannya",
-     "s": 3.52
-    },
-    {
-     "w": "sebanyak",
+     "w": "namanya",
      "s": 3.92
     },
     {
-     "w": "RM79.77",
-     "s": 4.34
+     "w": "Super",
+     "s": 4.28
     },
     {
-     "w": "juta.",
+     "w": "El",
+     "s": 4.66
+    },
+    {
+     "w": "Nino.",
+     "s": 4.84
+    }
+   ]
+  },
+  {
+   "from": 1192,
+   "dur": 194,
+   "type": "sub",
+   "pos": "bottom",
+   "words": [
+    {
+     "w": "Super",
+     "s": 0.0
+    },
+    {
+     "w": "El",
+     "s": 0.64
+    },
+    {
+     "w": "Nino",
+     "s": 0.82
+    },
+    {
+     "w": "ni",
+     "s": 1.1
+    },
+    {
+     "w": "jarang",
+     "s": 1.24
+    },
+    {
+     "w": "berlaku,",
+     "s": 1.62
+    },
+    {
+     "w": "tapi",
+     "s": 2.08
+    },
+    {
+     "w": "bila",
+     "s": 2.28
+    },
+    {
+     "w": "berlaku,",
+     "s": 2.52
+    },
+    {
+     "w": "satu",
+     "s": 3.3
+    },
+    {
+     "w": "dunia",
+     "s": 3.98
+    },
+    {
+     "w": "akan",
+     "s": 4.98
+    },
+    {
+     "w": "mengalami",
+     "s": 5.3
+    },
+    {
+     "w": "kepanasan",
+     "s": 5.7
+    },
+    {
+     "w": "yang",
+     "s": 7.04
+    },
+    {
+     "w": "melampau.",
+     "s": 7.3
+    }
+   ]
+  },
+  {
+   "from": 1386,
+   "dur": 148,
+   "type": "sub",
+   "pos": "bottom",
+   "words": [
+    {
+     "w": "Jadi",
+     "s": 0.0
+    },
+    {
+     "w": "bila",
+     "s": 0.76
+    },
+    {
+     "w": "kepanasan",
+     "s": 0.92
+    },
+    {
+     "w": "yang",
+     "s": 1.68
+    },
+    {
+     "w": "melampau",
+     "s": 1.88
+    },
+    {
+     "w": "ni,",
+     "s": 2.28
+    },
+    {
+     "w": "banyak",
+     "s": 2.66
+    },
+    {
+     "w": "tanaman",
+     "s": 3.94
+    },
+    {
+     "w": "yang",
+     "s": 4.44
+    },
+    {
+     "w": "tak",
+     "s": 4.84
+    },
+    {
+     "w": "menjadi.",
+     "s": 5.24
+    }
+   ]
+  },
+  {
+   "from": 1561,
+   "dur": 100,
+   "type": "sub",
+   "pos": "top",
+   "words": [
+    {
+     "w": "FAMA",
+     "s": 0.0
+    },
+    {
+     "w": "ni,",
+     "s": 0.5
+    },
+    {
+     "w": "kita",
+     "s": 0.66
+    },
+    {
+     "w": "menjaga",
+     "s": 1.06
+    },
+    {
+     "w": "34",
+     "s": 1.78
+    },
+    {
+     "w": "jenis",
+     "s": 2.46
+    },
+    {
+     "w": "SKU",
+     "s": 2.94
+    },
+    {
+     "w": "sahaja.",
+     "s": 3.36
+    }
+   ]
+  },
+  {
+   "from": 1661,
+   "dur": 156,
+   "type": "sub",
+   "pos": "top",
+   "words": [
+    {
+     "w": "Contoh",
+     "s": 0.0
+    },
+    {
+     "w": "kalau",
+     "s": 0.18
+    },
+    {
+     "w": "boleh",
+     "s": 0.48
+    },
+    {
+     "w": "saya",
+     "s": 0.66
+    },
+    {
+     "w": "berikan,",
+     "s": 1.12
+    },
+    {
+     "w": "cili,",
+     "s": 1.68
+    },
+    {
+     "w": "kobis,",
+     "s": 2.46
+    },
+    {
+     "w": "halia,",
+     "s": 3.24
+    },
+    {
+     "w": "kunyit,",
+     "s": 3.94
+    },
+    {
+     "w": "sayur-sayuran,",
+     "s": 4.14
+    },
+    {
+     "w": "sawi,",
+     "s": 4.94
+    },
+    {
+     "w": "pelbagai",
+     "s": 5.68
+    },
+    {
+     "w": "jenis",
      "s": 5.96
     }
    ]
   },
   {
-   "from": 1252,
-   "dur": 253,
+   "from": 1817,
+   "dur": 17,
    "type": "sub",
    "pos": "bottom",
    "words": [
     {
-     "w": "Itu",
+     "w": "sayur.",
      "s": 0.0
-    },
-    {
-     "w": "secara",
-     "s": 0.38
-    },
-    {
-     "w": "keseluruhan",
-     "s": 0.88
-    },
-    {
-     "w": "di",
-     "s": 1.58
-    },
-    {
-     "w": "peringkat",
-     "s": 1.76
-    },
-    {
-     "w": "Malaysia,",
-     "s": 2.28
-    },
-    {
-     "w": "yang",
-     "s": 2.88
-    },
-    {
-     "w": "mana",
-     "s": 3.72
-    },
-    {
-     "w": "melibatkan",
-     "s": 4.38
-    },
-    {
-     "w": "3,328",
-     "s": 4.78
-    },
-    {
-     "w": "siri",
-     "s": 6.46
-    },
-    {
-     "w": "penganjuran",
-     "s": 8.42
-    },
-    {
-     "w": "dan",
-     "s": 9.68
-    },
-    {
-     "w": "Jualan",
-     "s": 9.86
     }
    ]
   },
   {
-   "from": 1505,
-   "dur": 65,
-   "type": "sub",
-   "pos": "bottom",
-   "words": [
-    {
-     "w": "Agro",
-     "s": 0.0
-    },
-    {
-     "w": "Madani",
-     "s": 0.14
-    },
-    {
-     "w": "di",
-     "s": 0.56
-    },
-    {
-     "w": "seluruh",
-     "s": 0.94
-    },
-    {
-     "w": "negara.",
-     "s": 1.88
-    }
-   ]
-  },
-  {
-   "from": 1180,
-   "dur": 118,
+   "from": 1580,
+   "dur": 113,
    "type": "stat",
    "side": "right-low",
-   "value": "RM79.77 JUTA",
-   "label": "NILAI JUALAN AGRO MADANI",
-   "sub": "Seluruh negara · setakat November 2026"
-  },
-  {
-   "from": 1354,
-   "dur": 112,
-   "type": "stat",
-   "side": "right-low",
-   "value": "3,328",
-   "label": "SIRI JUALAN AGRO MADANI",
-   "sub": "Dianjurkan di seluruh negara"
+   "value": "34 JENIS",
+   "label": "HASIL PERTANIAN DIJAGA FAMA",
+   "sub": "Cili, kobis, halia, kunyit, sayur-sayuran"
   },
   {
    "from": 1511,
@@ -1781,343 +1900,237 @@
    "sub": "Program Jualan Pertanian  ·  Melaka"
   },
   {
-   "from": 1577,
-   "dur": 158,
+   "from": 1847,
+   "dur": 205,
    "type": "sub",
-   "pos": "top",
+   "pos": "bottom",
    "words": [
     {
-     "w": "Kalau",
+     "w": "Kami",
      "s": 0.0
     },
     {
-     "w": "kita",
-     "s": 0.56
+     "w": "sudah",
+     "s": 0.48
     },
     {
-     "w": "lihat",
-     "s": 0.74
+     "w": "bersedia",
+     "s": 0.8
     },
     {
-     "w": "dari",
-     "s": 1.08
+     "w": "dengan",
+     "s": 1.34
     },
     {
-     "w": "segi",
-     "s": 1.56
+     "w": "satu",
+     "s": 2.0
     },
     {
-     "w": "bajet",
-     "s": 2.28
+     "w": "plan",
+     "s": 2.42
     },
     {
-     "w": "tahun",
-     "s": 2.84
-    },
-    {
-     "w": "2027",
-     "s": 3.62
+     "w": "intervensi",
+     "s": 2.7
     },
     {
      "w": "yang",
-     "s": 4.06
+     "s": 3.44
     },
     {
-     "w": "baru-baru",
-     "s": 4.22
+     "w": "saya",
+     "s": 4.24
     },
     {
-     "w": "ini",
-     "s": 4.46
+     "w": "boleh",
+     "s": 4.48
     },
     {
-     "w": "diumumkan",
-     "s": 4.58
+     "w": "katakan,",
+     "s": 4.7
     },
     {
-     "w": "oleh",
-     "s": 5.04
+     "w": "sekiranya",
+     "s": 5.5
     },
     {
-     "w": "Perdana",
-     "s": 5.32
+     "w": "berlaku",
+     "s": 6.02
     },
     {
-     "w": "Menteri",
-     "s": 5.6
+     "w": "Super",
+     "s": 6.52
+    }
+   ]
+  },
+  {
+   "from": 2052,
+   "dur": 187,
+   "type": "sub",
+   "pos": "bottom",
+   "words": [
+    {
+     "w": "El",
+     "s": 0.0
     },
     {
-     "w": "Malaysia,",
+     "w": "Nino",
+     "s": 0.28
+    },
+    {
+     "w": "ni,",
+     "s": 0.7
+    },
+    {
+     "w": "bagi",
+     "s": 1.82
+    },
+    {
+     "w": "pihak",
+     "s": 2.08
+    },
+    {
+     "w": "FAMA",
+     "s": 2.74
+    },
+    {
+     "w": "kami",
+     "s": 3.04
+    },
+    {
+     "w": "dah",
+     "s": 3.24
+    },
+    {
+     "w": "bersedia",
+     "s": 3.66
+    },
+    {
+     "w": "untuk",
+     "s": 4.24
+    },
+    {
+     "w": "penyediaan",
+     "s": 5.1
+    },
+    {
+     "w": "bekalan",
+     "s": 5.8
+    },
+    {
+     "w": "makanan",
+     "s": 6.3
+    },
+    {
+     "w": "sekurang-kurangnya",
+     "s": 7.04
+    }
+   ]
+  },
+  {
+   "from": 2239,
+   "dur": 155,
+   "type": "sub",
+   "pos": "bottom",
+   "words": [
+    {
+     "w": "tiga",
+     "s": 0.0
+    },
+    {
+     "w": "bulan.",
+     "s": 0.24
+    },
+    {
+     "w": "Tapi",
+     "s": 0.62
+    },
+    {
+     "w": "FAMA,",
+     "s": 1.02
+    },
+    {
+     "w": "kita",
+     "s": 1.6
+    },
+    {
+     "w": "ambil",
+     "s": 1.7
+    },
+    {
+     "w": "satu",
+     "s": 2.48
+    },
+    {
+     "w": "langkah,",
+     "s": 2.72
+    },
+    {
+     "w": "kita",
+     "s": 3.26
+    },
+    {
+     "w": "ambil,",
+     "s": 3.36
+    },
+    {
+     "w": "kita",
+     "s": 3.66
+    },
+    {
+     "w": "simpan",
+     "s": 3.78
+    },
+    {
+     "w": "dan",
+     "s": 4.2
+    },
+    {
+     "w": "kita",
+     "s": 4.78
+    },
+    {
+     "w": "berjaga-jaga",
+     "s": 5.12
+    },
+    {
+     "w": "untuk",
      "s": 5.92
     }
    ]
   },
   {
-   "from": 1735,
-   "dur": 252,
+   "from": 2394,
+   "dur": 76,
    "type": "sub",
    "pos": "bottom",
    "words": [
     {
-     "w": "pada",
+     "w": "mendepani",
      "s": 0.0
     },
     {
-     "w": "tahun",
-     "s": 0.64
+     "w": "Super",
+     "s": 0.6
     },
     {
-     "w": "hadapan",
-     "s": 1.42
+     "w": "El",
+     "s": 1.08
     },
     {
-     "w": "FAMA",
-     "s": 1.82
-    },
-    {
-     "w": "dan",
-     "s": 2.3
-    },
-    {
-     "w": "juga",
-     "s": 3.4
-    },
-    {
-     "w": "beberapa",
-     "s": 3.62
-    },
-    {
-     "w": "agensi",
-     "s": 3.82
-    },
-    {
-     "w": "telah",
-     "s": 4.28
-    },
-    {
-     "w": "diberikan",
-     "s": 4.66
-    },
-    {
-     "w": "satu",
-     "s": 4.88
-    },
-    {
-     "w": "angka",
-     "s": 5.46
-    },
-    {
-     "w": "yang",
-     "s": 7.34
-    },
-    {
-     "w": "agak",
-     "s": 9.22
-    },
-    {
-     "w": "besar",
-     "s": 9.56
-    },
-    {
-     "w": "juga,",
-     "s": 9.86
+     "w": "Nino.",
+     "s": 1.68
     }
    ]
   },
   {
-   "from": 1987,
-   "dur": 150,
-   "type": "sub",
-   "pos": "bottom",
-   "words": [
-    {
-     "w": "iaitu",
-     "s": 0.0
-    },
-    {
-     "w": "5,000",
-     "s": 0.34
-    },
-    {
-     "w": "aktiviti",
-     "s": 0.62
-    },
-    {
-     "w": "Jualan",
-     "s": 0.96
-    },
-    {
-     "w": "Agro",
-     "s": 1.96
-    },
-    {
-     "w": "Madani",
-     "s": 2.24
-    },
-    {
-     "w": "ini",
-     "s": 2.44
-    },
-    {
-     "w": "yang",
-     "s": 2.68
-    },
-    {
-     "w": "kita",
-     "s": 2.92
-    },
-    {
-     "w": "akan",
-     "s": 3.12
-    },
-    {
-     "w": "buat",
-     "s": 3.28
-    },
-    {
-     "w": "bagi",
-     "s": 3.5
-    },
-    {
-     "w": "tahun",
-     "s": 3.78
-    },
-    {
-     "w": "2027.",
-     "s": 4.08
-    }
-   ]
-  },
-  {
-   "from": 1988,
-   "dur": 112,
+   "from": 2231,
+   "dur": 108,
    "type": "stat",
    "side": "right-low",
-   "value": "5,000",
-   "label": "AKTIVITI JUALAN AGRO MADANI",
-   "sub": "Sasaran tahun 2027"
-  },
-  {
-   "from": 2146,
-   "dur": 228,
-   "type": "sub",
-   "pos": "bottom",
-   "words": [
-    {
-     "w": "Data",
-     "s": 0.0
-    },
-    {
-     "w": "lain",
-     "s": 0.72
-    },
-    {
-     "w": "yang",
-     "s": 1.02
-    },
-    {
-     "w": "melibatkan",
-     "s": 1.32
-    },
-    {
-     "w": "Jualan",
-     "s": 1.88
-    },
-    {
-     "w": "Agro",
-     "s": 2.18
-    },
-    {
-     "w": "Madani",
-     "s": 2.72
-    },
-    {
-     "w": "ini,",
-     "s": 3.3
-    },
-    {
-     "w": "di",
-     "s": 4.5
-    },
-    {
-     "w": "seluruh",
-     "s": 4.74
-    },
-    {
-     "w": "negara",
-     "s": 5.0
-    },
-    {
-     "w": "kita",
-     "s": 5.32
-    },
-    {
-     "w": "telah",
-     "s": 5.74
-    },
-    {
-     "w": "melibatkan",
-     "s": 6.66
-    },
-    {
-     "w": "39,841",
-     "s": 7.32
-    }
-   ]
-  },
-  {
-   "from": 2374,
-   "dur": 195,
-   "type": "sub",
-   "pos": "bottom",
-   "words": [
-    {
-     "w": "usahawan,",
-     "s": 0.0
-    },
-    {
-     "w": "dengan",
-     "s": 1.4
-    },
-    {
-     "w": "nilai",
-     "s": 2.0
-    },
-    {
-     "w": "penjimatan",
-     "s": 3.58
-    },
-    {
-     "w": "sebanyak",
-     "s": 5.06
-    },
-    {
-     "w": "RM25.36",
-     "s": 5.4
-    },
-    {
-     "w": "juta.",
-     "s": 6.54
-    }
-   ]
-  },
-  {
-   "from": 2305,
-   "dur": 103,
-   "type": "stat",
-   "side": "right-low",
-   "value": "39,841",
-   "label": "USAHAWAN TERLIBAT",
-   "sub": "Jualan Agro Madani · seluruh negara"
-  },
-  {
-   "from": 2493,
-   "dur": 98,
-   "type": "stat",
-   "side": "left-low",
-   "value": "RM25.36 JUTA",
-   "label": "NILAI PENJIMATAN RAKYAT",
-   "sub": "Jualan Agro Madani"
+   "value": "3 BULAN",
+   "label": "STOK BEKALAN MAKANAN",
+   "sub": "Persediaan FAMA mendepani Super El Nino"
   },
   {
    "from": 2652,
@@ -2159,15 +2172,15 @@
     },
     {
      "w": "satu",
-     "s": 2.06
-    },
-    {
-     "w": "agensi",
      "s": 2.3
     },
     {
-     "w": "yang",
+     "w": "agensi",
      "s": 2.9
+    },
+    {
+     "w": "yang",
+     "s": 3.12
     },
     {
      "w": "menyelia",
@@ -2201,7 +2214,7 @@
   },
   {
    "from": 2807,
-   "dur": 75,
+   "dur": 86,
    "type": "sub",
    "pos": "talk",
    "words": [
@@ -2211,341 +2224,39 @@
     },
     {
      "w": "digunakan",
-     "s": 0.24
+     "s": 0.68
     },
     {
      "w": "pembeliannya",
-     "s": 0.68
+     "s": 1.36
     },
     {
      "w": "di",
-     "s": 1.36
-    },
-    {
-     "w": "Jualan",
      "s": 2.34
     },
     {
-     "w": "Agro",
+     "w": "Jualan",
      "s": 2.64
     },
     {
+     "w": "Agro",
+     "s": 2.84
+    },
+    {
      "w": "Madani.",
-     "s": 2.84
+     "s": 3.0
     }
    ]
-  },
-  {
-   "from": 2882,
-   "dur": 16,
-   "type": "sub",
-   "pos": "talk",
-   "words": [
-    {
-     "w": "Dia",
-     "s": 0.0
-    },
-    {
-     "w": "bukan",
-     "s": 0.12
-    }
-   ]
-  },
-  {
-   "from": 2900,
-   "dur": 151,
-   "type": "sub",
-   "pos": "bottom",
-   "words": [
-    {
-     "w": "sahaja",
-     "s": 0.0
-    },
-    {
-     "w": "memberi",
-     "s": 1.24
-    },
-    {
-     "w": "keuntungan",
-     "s": 1.58
-    },
-    {
-     "w": "kepada",
-     "s": 2.08
-    },
-    {
-     "w": "pengguna,",
-     "s": 2.32
-    },
-    {
-     "w": "tapi",
-     "s": 2.92
-    },
-    {
-     "w": "kepada",
-     "s": 3.14
-    },
-    {
-     "w": "juga",
-     "s": 3.5
-    },
-    {
-     "w": "pengeluar",
-     "s": 3.74
-    },
-    {
-     "w": "dan",
-     "s": 4.96
-    },
-    {
-     "w": "usahawan.",
-     "s": 5.16
-    }
-   ]
-  },
-  {
-   "from": 3051,
-   "dur": 219,
-   "type": "sub",
-   "pos": "bottom",
-   "words": [
-    {
-     "w": "Harga",
-     "s": 0.0
-    },
-    {
-     "w": "yang",
-     "s": 0.68
-    },
-    {
-     "w": "kita",
-     "s": 1.0
-    },
-    {
-     "w": "tawarkan",
-     "s": 1.36
-    },
-    {
-     "w": "sehingga",
-     "s": 1.92
-    },
-    {
-     "w": "30%.",
-     "s": 2.84
-    },
-    {
-     "w": "Ada",
-     "s": 4.8
-    },
-    {
-     "w": "yang",
-     "s": 4.9
-    },
-    {
-     "w": "10%,",
-     "s": 5.66
-    },
-    {
-     "w": "ada",
-     "s": 5.88
-    },
-    {
-     "w": "yang",
-     "s": 6.28
-    },
-    {
-     "w": "20%",
-     "s": 6.46
-    },
-    {
-     "w": "dan",
-     "s": 6.94
-    },
-    {
-     "w": "sehingga",
-     "s": 7.18
-    },
-    {
-     "w": "30%.",
-     "s": 7.52
-    }
-   ]
-  },
-  {
-   "from": 3115,
-   "dur": 100,
-   "type": "stat",
-   "side": "right-low",
-   "value": "SEHINGGA 30%",
-   "label": "DISKAUN DENGAN SARA",
-   "sub": "Di Jualan Agro Madani · mulai 1 Januari 2027"
   },
   {
    "from": 3289,
    "dur": 77,
    "type": "chapter",
-   "side": "right",
-   "pos": "top",
+   "side": "left",
+   "pos": "bottom",
    "num": "04",
    "title": "Memperkasa Industri",
    "sub": "Lawatan ke Bidara Flour Mill"
-  },
-  {
-   "from": 3307,
-   "dur": 175,
-   "type": "sub",
-   "pos": "bottom",
-   "words": [
-    {
-     "w": "Bagi",
-     "s": 0.0
-    },
-    {
-     "w": "pihak",
-     "s": 1.12
-    },
-    {
-     "w": "FAMA,",
-     "s": 1.38
-    },
-    {
-     "w": "kami",
-     "s": 2.04
-    },
-    {
-     "w": "dah",
-     "s": 2.34
-    },
-    {
-     "w": "bersedia",
-     "s": 2.54
-    },
-    {
-     "w": "untuk",
-     "s": 2.96
-    },
-    {
-     "w": "penyediaan",
-     "s": 3.54
-    },
-    {
-     "w": "bekalan",
-     "s": 4.4
-    },
-    {
-     "w": "makanan",
-     "s": 5.1
-    },
-    {
-     "w": "sekurang-kurangnya",
-     "s": 5.6
-    },
-    {
-     "w": "tiga",
-     "s": 6.34
-    },
-    {
-     "w": "bulan.",
-     "s": 6.76
-    }
-   ]
-  },
-  {
-   "from": 3482,
-   "dur": 165,
-   "type": "sub",
-   "pos": "bottom",
-   "words": [
-    {
-     "w": "Tapi",
-     "s": 0.0
-    },
-    {
-     "w": "FAMA,",
-     "s": 0.38
-    },
-    {
-     "w": "kita",
-     "s": 1.36
-    },
-    {
-     "w": "ambil",
-     "s": 1.46
-    },
-    {
-     "w": "satu",
-     "s": 2.24
-    },
-    {
-     "w": "langkah,",
-     "s": 2.48
-    },
-    {
-     "w": "kita",
-     "s": 3.02
-    },
-    {
-     "w": "ambil,",
-     "s": 3.12
-    },
-    {
-     "w": "kita",
-     "s": 3.42
-    },
-    {
-     "w": "simpan",
-     "s": 3.54
-    },
-    {
-     "w": "dan",
-     "s": 3.96
-    },
-    {
-     "w": "kita",
-     "s": 4.54
-    },
-    {
-     "w": "berjaga-jaga",
-     "s": 4.88
-    },
-    {
-     "w": "untuk",
-     "s": 5.68
-    },
-    {
-     "w": "mendepani",
-     "s": 5.98
-    }
-   ]
-  },
-  {
-   "from": 3647,
-   "dur": 60,
-   "type": "sub",
-   "pos": "bottom",
-   "words": [
-    {
-     "w": "Super",
-     "s": 0.0
-    },
-    {
-     "w": "El",
-     "s": 0.48
-    },
-    {
-     "w": "Nino.",
-     "s": 1.08
-    }
-   ]
-  },
-  {
-   "from": 3469,
-   "dur": 107,
-   "type": "stat",
-   "side": "right-low",
-   "value": "3 BULAN",
-   "label": "STOK BEKALAN MAKANAN",
-   "sub": "Persediaan FAMA mendepani Super El Nino"
   },
   {
    "from": 3773,
@@ -2593,33 +2304,18 @@
    "volume": 0.28
   },
   {
-   "name": "pop_long",
-   "at": 1180,
-   "volume": 0.28
-  },
-  {
-   "name": "pop_long",
-   "at": 1354,
-   "volume": 0.28
-  },
-  {
    "name": "whoosh_cine",
    "at": 1500,
    "volume": 0.28
   },
   {
    "name": "pop_long",
-   "at": 1988,
+   "at": 1580,
    "volume": 0.28
   },
   {
    "name": "pop_long",
-   "at": 2305,
-   "volume": 0.28
-  },
-  {
-   "name": "pop_long",
-   "at": 2493,
+   "at": 2231,
    "volume": 0.28
   },
   {
@@ -2628,18 +2324,8 @@
    "volume": 0.22
   },
   {
-   "name": "pop_long",
-   "at": 3115,
-   "volume": 0.28
-  },
-  {
    "name": "whoosh_cine",
    "at": 3278,
-   "volume": 0.28
-  },
-  {
-   "name": "pop_long",
-   "at": 3469,
    "volume": 0.28
   },
   {
@@ -2687,38 +2373,31 @@
    "volume": 1.0
   },
   {
-   "src": "vo/sales.m4a",
+   "src": "vo/elnino.m4a",
    "at": 855,
    "in": 0,
-   "dur": 708,
+   "dur": 672,
    "volume": 1.0
   },
   {
-   "src": "vo/bajet.m4a",
-   "at": 1576,
+   "src": "vo/sku.m4a",
+   "at": 1542,
    "in": 0,
-   "dur": 554,
+   "dur": 285,
    "volume": 1.0
   },
   {
-   "src": "vo/usahawan.m4a",
-   "at": 2146,
+   "src": "vo/bekalan.m4a",
+   "at": 1846,
    "in": 0,
-   "dur": 417,
+   "dur": 618,
    "volume": 1.0
   },
   {
    "src": "vo/sara.m4a",
    "at": 2657,
    "in": 0,
-   "dur": 606,
-   "volume": 1.0
-  },
-  {
-   "src": "vo/bekalan.m4a",
-   "at": 3306,
-   "in": 0,
-   "dur": 395,
+   "dur": 230,
    "volume": 1.0
   }
  ],
@@ -2733,23 +2412,19 @@
   ],
   [
    852,
-   1561
+   1525
   ],
   [
-   1573,
-   2128
+   1539,
+   1826
   ],
   [
-   2143,
-   2561
+   1843,
+   2461
   ],
   [
    2654,
-   3261
-  ],
-  [
-   3303,
-   3699
+   2885
   ]
  ]
 }
