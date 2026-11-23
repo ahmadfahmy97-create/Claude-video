@@ -2,6 +2,7 @@ import React from 'react';
 import {
   AbsoluteFill,
   Audio,
+  Freeze,
   OffthreadVideo,
   Sequence,
   interpolate,
@@ -18,7 +19,8 @@ type Zoom = {start: number; scale: number; piece: string; ox?: number; oy?: numb
 const zooms = timeline.zooms as Zoom[];
 const pieces = timeline.pieces as {id: string; start: number; end: number}[];
 
-const MUSIC = 'music/m473.mp3';
+const MUSIC = 'music/m33.mp3';
+const freezes = ((timeline as any).freezes ?? []) as {start: number; end: number}[];
 // Closing logo sting (landscape 1920x1080, 5 s, no audio) appended after the edit.
 export const CLOSING_FRAMES = 150;
 const MAIN_FRAMES = timeline.durationInFrames;
@@ -62,6 +64,9 @@ const Footage: React.FC = () => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const {scale, ox, oy} = useZoom();
+  const t = frame / fps;
+  const fz = freezes.find((f) => t >= f.start && t < f.end + 0.05);
+  if (fz) return <PhotoFreeze start={fz.start} />;
   // little "push" at every new section
   let bump = 1;
   for (const p of pieces) {
@@ -71,6 +76,43 @@ const Footage: React.FC = () => {
   return (
     <AbsoluteFill style={{transform: `scale(${scale * bump})`, transformOrigin: `${ox * 100}% ${oy * 100}%`}}>
       <OffthreadVideo src={staticFile('footage/base.mp4')} />
+    </AbsoluteFill>
+  );
+};
+
+// Group photo: the picture freezes, flashes white and drops into a tilted print over a blurred copy.
+const PhotoFreeze: React.FC<{start: number}> = ({start}) => {
+  const frame = useCurrentFrame();
+  const {fps} = useVideoConfig();
+  const f0 = Math.round(start * fps);
+  const k = frame - f0;
+  const s = spring({frame: k - 2, fps, config: {damping: 14, stiffness: 160, mass: 0.8}});
+  const flash = interpolate(k, [0, 2, 9], [0, 1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const vid = <OffthreadVideo src={staticFile('footage/base.mp4')} muted />;
+  return (
+    <AbsoluteFill>
+      <Freeze frame={f0}>
+        <AbsoluteFill style={{filter: 'blur(28px) brightness(0.55)', transform: 'scale(1.15)'}}>{vid}</AbsoluteFill>
+        <div
+          style={{
+            position: 'absolute',
+            left: 500 - 410,
+            top: 250,
+            width: 820,
+            height: 1100,
+            background: 'white',
+            padding: '22px 22px 90px',
+            boxSizing: 'border-box',
+            boxShadow: '0 30px 80px rgba(0,0,0,0.6)',
+            transform: `scale(${interpolate(s, [0, 1], [1.25, 1])}) rotate(${interpolate(s, [0, 1], [0, -3])}deg)`,
+          }}
+        >
+          <div style={{width: '100%', height: '100%', overflow: 'hidden', position: 'relative'}}>
+            <div style={{position: 'absolute', left: 388 - 540 * 1.15, top: 494 - 1170 * 1.15, width: 1080, height: 1920, transform: 'scale(1.15)', transformOrigin: '0 0'}}>{vid}</div>
+          </div>
+        </div>
+      </Freeze>
+      <AbsoluteFill style={{backgroundColor: 'white', opacity: flash}} />
     </AbsoluteFill>
   );
 };
@@ -107,7 +149,7 @@ const musicVolume = (frame: number, fps: number, total: number) => {
     d = Math.min(d, Math.abs(t - s), Math.abs(t - e));
   }
   const piece = pieces.find((p) => t >= p.start && t < p.end)?.id;
-  const open = piece === 'react' ? 0.34 : frame >= MAIN_FRAMES ? 0.3 : 0.24;
+  const open = piece === 'names' ? 0.075 : frame >= MAIN_FRAMES ? 0.3 : 0.24;
   const under = 0.075; // music sits ~-22 dB under the voice
   let v = interpolate(d, [0, 0.35], [under, open], {extrapolateRight: 'clamp'});
   v *= interpolate(frame, [0, 12], [0.6, 1], {extrapolateRight: 'clamp'});

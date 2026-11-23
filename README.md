@@ -1,4 +1,4 @@
-# Lawatan FAMA – Pasar Tani Kekal Simpang 4 (Remotion edit)
+# Kunjungan Muhibah Persatuan Alumni FAMA (Remotion edit)
 
 Vertical 1080×1920 / 30 fps short for TikTok & Instagram Reels, built with Remotion.
 
@@ -21,7 +21,8 @@ npm run preview       # half-res preview render -> out/preview.mp4
 npm run render        # full-res final -> out/final.mp4
 ```
 
-Raw footage (`/home/user/raw/*.MP4`) and `public/footage/` are not committed (too large).
+Raw footage (27 DJI clips, `RAW_DIR`, default `/home/user/raw`) and `public/footage/` are not committed (too large).
+Build with `RAW_DIR=/path/to/clips WORK_DIR=/tmp/work python3 scripts/build.py`.
 
 ## Layout rules
 - Safe area: x 60–940, y 230–1480 (TikTok + IG Reels UI clear).

@@ -254,7 +254,7 @@ const Stamp: React.FC<{g: G}> = ({g}) => {
         <div
           style={{
             fontFamily: ANTON,
-            fontSize: 108,
+            fontSize: Math.min(108, Math.round(1150 / [...String(g.text)].length)),
             color: C.yellow,
             padding: '10px 36px',
             border: `10px solid ${C.yellow}`,
@@ -401,7 +401,7 @@ const Checklist: React.FC<{g: G}> = ({g}) => {
   const {frame, fps, exit} = useAnim(g.dur);
   return (
     <Centered y={g.y ?? 420} style={{opacity: exit}}>
-      <div style={{fontFamily: MONT, fontWeight: 900, fontSize: 38, color: 'white', marginBottom: 10, letterSpacing: 1, ...stroke(8)}}>UNTUNG BERSAMA</div>
+      <div style={{fontFamily: MONT, fontWeight: 900, fontSize: 38, color: 'white', marginBottom: 10, letterSpacing: 1, ...stroke(8)}}>{g.title ?? 'UNTUNG BERSAMA'}</div>
       <div style={{display: 'flex', gap: 16, flexWrap: 'wrap', justifyContent: 'center'}}>
         {(g.items as [string, number][]).map(([name, at], i) => {
           const f = Math.round((at - g.start) * fps);
@@ -565,6 +565,94 @@ const Sticker: React.FC<{g: G}> = ({g}) => {
   );
 };
 
+// Names recited from memory: a counter that ticks on every name.
+const NameCount: React.FC<{g: G}> = ({g}) => {
+  const {frame, fps, enter, exit} = useAnim(g.dur);
+  const t = g.start + frame / fps;
+  const ticks: number[] = g.ticks;
+  const n = ticks.filter((x) => x <= t + 1e-3).length;
+  const last = ticks[Math.max(0, n - 1)];
+  const bump = spring({frame: frame - Math.round((last - g.start) * fps), fps, config: {damping: 9, stiffness: 320, mass: 0.5}});
+  return (
+    <Centered y={g.y ?? 1000} style={{opacity: exit}}>
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: 26,
+          background: 'rgba(11,11,11,0.82)',
+          border: `5px solid ${C.yellow}`,
+          borderRadius: 30,
+          padding: '18px 34px',
+          boxShadow: '0 16px 44px rgba(0,0,0,0.5)',
+          transform: `scale(${interpolate(enter, [0, 1], [0.6, 1])})`,
+          opacity: enter,
+        }}
+      >
+        <div style={{fontSize: 92}}>🧠</div>
+        <div>
+          <div style={{fontFamily: MONT, fontWeight: 900, fontSize: 30, color: C.yellow, letterSpacing: 1.5}}>{g.label}</div>
+          <div style={{display: 'flex', alignItems: 'baseline', gap: 14}}>
+            <span
+              style={{
+                fontFamily: ANTON,
+                fontSize: 150,
+                lineHeight: 1,
+                color: 'white',
+                display: 'inline-block',
+                transform: `scale(${interpolate(bump, [0, 1], [1.45, 1])})`,
+              }}
+            >
+              {n}
+            </span>
+            <span style={{fontFamily: ANTON, fontSize: 64, color: 'white', opacity: 0.85}}>NAMA</span>
+          </div>
+          <div style={{display: 'flex', gap: 8, marginTop: 4}}>
+            {ticks.map((_, i) => (
+              <div key={i} style={{width: 46, height: 10, borderRadius: 5, background: i < n ? C.yellow : 'rgba(255,255,255,0.25)'}} />
+            ))}
+          </div>
+        </div>
+      </div>
+    </Centered>
+  );
+};
+
+// Three bars of the logo assemble into the letter F, then the hand sign label lands.
+const FSign: React.FC<{g: G}> = ({g}) => {
+  const {frame, fps, enter, exit} = useAnim(g.dur);
+  const bar = (i: number) => spring({frame: frame - 4 - i * 6, fps, config: {damping: 12, stiffness: 240, mass: 0.6}});
+  const b0 = bar(0), b1 = bar(1), b2 = bar(2);
+  const lab = spring({frame: frame - 26, fps, config: {damping: 10, stiffness: 260, mass: 0.6}});
+  const grad = 'linear-gradient(135deg, #22C55E 0%, #16A34A 45%, #1D4ED8 100%)';
+  const barStyle = (p: number, extra: React.CSSProperties): React.CSSProperties => ({
+    position: 'absolute',
+    background: grad,
+    borderRadius: 22,
+    boxShadow: '0 10px 26px rgba(0,0,0,0.45)',
+    border: '4px solid rgba(255,255,255,0.9)',
+    opacity: interpolate(p, [0, 0.3], [0, 1], {extrapolateRight: 'clamp'}),
+    ...extra,
+  });
+  return (
+    <Centered y={g.y ?? 960} style={{opacity: exit}}>
+      <div style={{display: 'flex', alignItems: 'center', gap: 40, opacity: enter}}>
+        <div style={{position: 'relative', width: 210, height: 300, transform: 'skewX(-10deg)'}}>
+          <div style={barStyle(b0, {left: 0, top: 0, width: 62, height: interpolate(b0, [0, 1], [0, 300])})} />
+          <div style={barStyle(b1, {left: 0, top: 0, height: 62, width: interpolate(b1, [0, 1], [0, 210])})} />
+          <div style={barStyle(b2, {left: 0, top: 122, height: 58, width: interpolate(b2, [0, 1], [0, 160])})} />
+        </div>
+        <div style={{transform: `scale(${interpolate(lab, [0, 1], [0.3, 1])})`, opacity: lab, textAlign: 'center'}}>
+          <div style={{fontFamily: MONT, fontWeight: 900, fontSize: 34, color: C.black, background: C.yellow, borderRadius: 10, padding: '4px 14px'}}>
+            3 GARIS = HURUF F
+          </div>
+          <div style={{fontSize: 150, lineHeight: 1.1}}>🤟</div>
+        </div>
+      </div>
+    </Centered>
+  );
+};
+
 export const Graphic: React.FC<{g: G}> = ({g}) => {
   switch (g.type) {
     case 'headline':
@@ -597,6 +685,10 @@ export const Graphic: React.FC<{g: G}> = ({g}) => {
       return <Question g={g} />;
     case 'endcard':
       return <EndCard g={g} />;
+    case 'namecount':
+      return <NameCount g={g} />;
+    case 'fsign':
+      return <FSign g={g} />;
     default:
       return null;
   }

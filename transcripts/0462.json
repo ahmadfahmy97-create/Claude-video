@@ -1,0 +1,37 @@
+{
+ "clip": "0462",
+ "duration": 18.432,
+ "segments": [
+  {
+   "start": 8.4,
+   "end": 15.94,
+   "text": "Terima kasih kerana menonton!",
+   "words": [
+    {
+     "w": " Terima",
+     "s": 8.4,
+     "e": 9.8,
+     "p": 0.561
+    },
+    {
+     "w": " kasih",
+     "s": 9.8,
+     "e": 11.2,
+     "p": 0.997
+    },
+    {
+     "w": " kerana",
+     "s": 11.2,
+     "e": 15.36,
+     "p": 0.843
+    },
+    {
+     "w": " menonton!",
+     "s": 15.36,
+     "e": 15.94,
+     "p": 0.993
+    }
+   ]
+  }
+ ]
+}

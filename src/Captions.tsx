@@ -6,7 +6,7 @@ import {C, CX, MONT, SAFE_W, stroke} from './theme';
 type Word = {text: string; start: number; end: number};
 type Page = {start: number; end: number; words: Word[]; y?: number};
 
-const KEY = /^(RM\d+|\d+%?|SARA|FAMA|Super|El|Nino\.?|Combo|Madani|Happy|Hour|30%|50%|3)[.,!?]?$/i;
+const KEY = /^(\d+|FAMA|MAHA|Alumni|lawyer|opponent|guest|honour|legasi|hebat|empat|maaf|F|simbol|tiga|bisu|memori)[.,!?]?$/i;
 
 export const Captions: React.FC = () => {
   const frame = useCurrentFrame();

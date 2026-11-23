@@ -310,7 +310,7 @@ for s, e in speech:
         speech_m.append([s, e])
 
 # ------------------------------------------------------------------ events
-gfx, sfx, zooms, pieces_meta = [], [], [], []
+gfx, sfx, zooms, pieces_meta, freezes = [], [], [], [], []
 for po in pieces_out:
     p, to_out = po["p"], po["to_out"]
     pieces_meta.append(dict(id=p["id"], start=po["start"] / FPS, end=po["end"] / FPS))
@@ -319,6 +319,8 @@ for po in pieces_out:
         props = dict(props)
         if typ == "checklist":
             props["items"] = [[name, round(to_out(tt), 3)] for name, tt in props["items"]]
+        if "ticks" in props:
+            props["ticks"] = [round(to_out(tt), 3) for tt in props["ticks"]]
         g = dict(type=typ, start=round(to_out(t), 3), piece=p["id"], **props)
         # never spill into the next section
         spill = {"bigstat": 0.5, "stamp": 0.6, "sticker": 0.7}.get(typ, 0.0)  # let the big number breathe over the cut
@@ -337,6 +339,8 @@ for po in pieces_out:
     gfx += pg
     for (t, name, vol) in p.get("sfx", []):
         sfx.append(dict(name=name, start=round(to_out(t), 3), volume=vol))
+    if p.get("freeze") is not None:
+        freezes.append(dict(start=round(to_out(p["freeze"]), 3), end=round(po["end"] / FPS, 3)))
     for (t, scale) in p.get("zoom", []):
         zooms.append(dict(start=round(to_out(t), 3), scale=scale, piece=p["id"]))
     # every piece starts unzoomed unless it says otherwise
@@ -353,6 +357,6 @@ for (clip, src, n) in video_chunks:
 
 zooms.sort(key=lambda z: z["start"])
 json.dump(dict(fps=FPS, durationInFrames=TOTAL, captions=pages_out, speech=speech_m, gfx=gfx, sfx=sfx,
-               zooms=zooms, cuts=cuts, pieces=pieces_meta),
+               zooms=zooms, cuts=cuts, pieces=pieces_meta, freezes=freezes),
           open(f"{ROOT}/src/timeline.json", "w"), ensure_ascii=False, indent=1)
 print("wrote src/timeline.json:", len(pages_out), "caption pages,", len(gfx), "graphics,", len(sfx), "sfx")
