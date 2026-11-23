@@ -17,7 +17,7 @@ import {Graphic} from './Graphics';
 
 type Zoom = {start: number; scale: number; piece: string; ox?: number; oy?: number};
 const zooms = timeline.zooms as Zoom[];
-const pieces = timeline.pieces as {id: string; start: number; end: number}[];
+const pieces = timeline.pieces as {id: string; start: number; end: number; soft?: boolean}[];
 
 const MUSIC = 'music/m33.mp3';
 const freezes = ((timeline as any).freezes ?? []) as {start: number; end: number}[];
@@ -71,7 +71,7 @@ const Footage: React.FC = () => {
   let bump = 1;
   for (const p of pieces) {
     const f0 = Math.round(p.start * fps);
-    if (f0 > 0 && frame >= f0 && frame < f0 + 10) bump = interpolate(frame - f0, [0, 9], [1.07, 1], {extrapolateRight: 'clamp'});
+    if (f0 > 0 && !p.soft && frame >= f0 && frame < f0 + 10) bump = interpolate(frame - f0, [0, 9], [1.07, 1], {extrapolateRight: 'clamp'});
   }
   return (
     <AbsoluteFill style={{transform: `scale(${scale * bump})`, transformOrigin: `${ox * 100}% ${oy * 100}%`}}>
@@ -123,7 +123,7 @@ const SectionFlash: React.FC = () => {
   let o = 0;
   for (const p of pieces) {
     const f0 = Math.round(p.start * fps);
-    if (f0 > 0 && frame >= f0 && frame < f0 + 6) o = interpolate(frame - f0, [0, 5], [0.45, 0]);
+    if (f0 > 0 && !p.soft && frame >= f0 && frame < f0 + 6) o = interpolate(frame - f0, [0, 5], [0.45, 0]);
   }
   return <AbsoluteFill style={{backgroundColor: 'white', opacity: o, pointerEvents: 'none'}} />;
 };
@@ -149,7 +149,7 @@ const musicVolume = (frame: number, fps: number, total: number) => {
     d = Math.min(d, Math.abs(t - s), Math.abs(t - e));
   }
   const piece = pieces.find((p) => t >= p.start && t < p.end)?.id;
-  const open = piece === 'names' ? 0.075 : frame >= MAIN_FRAMES ? 0.3 : 0.24;
+  const open = piece?.startsWith('m_') ? 0.34 : frame >= MAIN_FRAMES ? 0.3 : 0.24;
   const under = 0.075; // music sits ~-22 dB under the voice
   let v = interpolate(d, [0, 0.35], [under, open], {extrapolateRight: 'clamp'});
   v *= interpolate(frame, [0, 12], [0.6, 1], {extrapolateRight: 'clamp'});
